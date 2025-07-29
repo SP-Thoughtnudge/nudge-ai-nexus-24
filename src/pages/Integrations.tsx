@@ -1,35 +1,49 @@
-
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
-import { Check, Database, MessageSquare, Layers, ArrowRight } from "lucide-react";
-import IntegrationsCloud from "@/components/product/integrations-cloud";
+import { Input } from "@/components/ui/input";
+import { Search, ArrowRight, Brain, Mail, MessageCircle } from "lucide-react";
 
 const Integrations = () => {
-  const categories = [
-    {
-      title: "Customer Data Platforms",
-      platforms: ["Segment", "mParticle", "RudderStack", "Tealium"]
-    },
-    {
-      title: "Marketing Automation",
-      platforms: ["Braze", "Iterable", "Klaviyo", "Customer.io"]
-    },
-    {
-      title: "CRM & ESP",
-      platforms: ["Salesforce Marketing Cloud", "HubSpot", "Mailchimp", "SendGrid"]
-    },
-    {
-      title: "Messaging & Channels",
-      platforms: ["Twilio", "OneSignal", "Sendbird", "Firebase"]
-    },
-    {
-      title: "E-Commerce",
-      platforms: ["Shopify", "BigCommerce", "Magento", "WooCommerce"]
-    }
+  const [searchTerm, setSearchTerm] = useState("");
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const integrations = [
+    // E-commerce
+    { name: "Shopify", category: "E-commerce" },
+    { name: "WooCommerce", category: "E-commerce" },
+    
+    // Marketing & CDP
+    { name: "Salesforce", category: "Marketing & CDP" },
+    { name: "Segment", category: "Marketing & CDP" },
+    { name: "Klaviyo", category: "Marketing & CDP" },
+    { name: "CleverTap", category: "Marketing & CDP" },
+    { name: "MoEngage", category: "Marketing & CDP" },
+    { name: "Braze", category: "Marketing & CDP" },
+    { name: "Iterable", category: "Marketing & CDP" },
+    { name: "Mixpanel", category: "Marketing & CDP" },
+    
+    // Communication
+    { name: "SendGrid", category: "Communication" },
+    { name: "Gupshup", category: "Communication" },
+    { name: "Firebase", category: "Communication" },
+    { name: "Salesforce Marketing Cloud", category: "Communication" },
+    { name: "Mailchimp", category: "Communication" },
+    
+    // Support
+    { name: "Zendesk", category: "Support" },
+    { name: "Freshdesk", category: "Support" }
   ];
+
+  const categories = ["All", "E-commerce", "Marketing & CDP", "Communication", "Support"];
+
+  const filteredIntegrations = integrations.filter(integration => {
+    const matchesSearch = integration.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = activeCategory === "All" || integration.category === activeCategory;
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -38,239 +52,164 @@ const Integrations = () => {
         {/* Hero Section */}
         <section className="pt-32 pb-16 md:pt-40 md:pb-20">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-3xl mx-auto text-center">
+            <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-brand-black mb-6 animate-fade-in">
-                Connect With Your Existing Tech Stack
+                Connect Your Stack. Amplify Your Intelligence.
               </h1>
               <p className="text-xl text-gray-600 mb-8 animate-fade-in [animation-delay:200ms]">
-                Thoughtnudge integrates seamlessly with 50+ platforms, enhancing your current tools with autonomous intelligence rather than replacing them.
+                Thoughtnudge seamlessly integrates with the tools you already use. We handle the heavy lifting, turning your existing stack into an autonomous growth engine without creating new data silos.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Integration Cloud */}
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-4 md:px-6">
-            <IntegrationsCloud />
-          </div>
-        </section>
-
-        {/* How Integration Works */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
-                How Integration Works
-              </h2>
-              <p className="text-xl text-gray-600">
-                Get up and running in days, not weeks or months.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">            
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="space-y-4">
-                  <div className="h-12 w-12 flex items-center justify-center bg-brand-orange/20 text-brand-orange rounded-full text-lg font-bold">
-                    <Database className="h-6 w-6" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-brand-black">Connect Your Data</h4>
-                  <p className="text-gray-600">
-                    Integrate with your CDP, data warehouse, or directly with your website/app to gather customer signals.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-brand-orange mr-2 flex-shrink-0 mt-0.5" />
-                      <span>Simple API connections</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-brand-orange mr-2 flex-shrink-0 mt-0.5" />
-                      <span>Pre-built connectors</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="h-12 w-12 flex items-center justify-center bg-brand-orange/20 text-brand-orange rounded-full text-lg font-bold">
-                    <Layers className="h-6 w-6" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-brand-black">AI Processing Layer</h4>
-                  <p className="text-gray-600">
-                    Our AI analyzes signals and makes autonomous decisions for each customer in real-time.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-brand-orange mr-2 flex-shrink-0 mt-0.5" />
-                      <span>No code required</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-brand-orange mr-2 flex-shrink-0 mt-0.5" />
-                      <span>Secure data processing</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="h-12 w-12 flex items-center justify-center bg-brand-orange/20 text-brand-orange rounded-full text-lg font-bold">
-                    <MessageSquare className="h-6 w-6" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-brand-black">Activation Through Your Stack</h4>
-                  <p className="text-gray-600">
-                    Decisions flow to your existing execution channels—email, SMS, push, on-site—through our API.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-brand-orange mr-2 flex-shrink-0 mt-0.5" />
-                      <span>Unified channel management</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 text-brand-orange mr-2 flex-shrink-0 mt-0.5" />
-                      <span>Consistent customer experience</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Integration Categories */}
+        {/* Integration Ecosystem */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
-                Our Integration Partners
+                Explore Our Ecosystem
               </h2>
-              <p className="text-xl text-gray-600">
-                Compatible with the tools you already use and love.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {categories.map((category, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h4 className="text-lg font-semibold text-brand-black mb-4">
-                    {category.title}
-                  </h4>
-                  <ul className="space-y-2">
-                    {category.platforms.map((platform, pIndex) => (
-                      <li key={pIndex} className="flex items-center">
-                        <span className="w-2 h-2 bg-brand-orange rounded-full mr-2"></span>
-                        <span>{platform}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-
-              <div className="bg-gradient-to-br from-brand-orange/10 to-brand-orange/5 p-6 rounded-lg flex flex-col justify-center items-center text-center">
-                <h4 className="text-lg font-semibold text-brand-black mb-2">
-                  Don't see your platform?
-                </h4>
-                <p className="text-gray-600 mb-4">
-                  Our flexible API means we can integrate with almost any system.
-                </p>
-                <Button variant="outline" asChild>
-                  <Link to="/contact">Contact us to discuss</Link>
-                </Button>
+            {/* Search and Filter */}
+            <div className="max-w-4xl mx-auto mb-12">
+              <div className="relative mb-8">
+                <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                <Input
+                  type="text"
+                  placeholder="Search for a tool (e.g., Shopify)"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10 py-3 text-lg"
+                />
               </div>
+
+              {/* Category Filter Buttons */}
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={activeCategory === category ? "default" : "outline"}
+                    onClick={() => setActiveCategory(category)}
+                    className="rounded-full"
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            {/* Integration Logos Grid */}
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                {filteredIntegrations.map((integration, index) => (
+                  <div
+                    key={index}
+                    className="h-20 w-full bg-gray-50 rounded-lg flex items-center justify-center border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="text-center">
+                      <div className="font-medium text-sm">{integration.name}</div>
+                      <div className="text-xs text-gray-500 mt-1">{integration.category}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {filteredIntegrations.length === 0 && (
+                <div className="text-center py-12">
+                  <p className="text-gray-500 text-lg">No integrations found matching your search.</p>
+                  <p className="text-gray-400 mt-2">Try adjusting your search term or category filter.</p>
+                </div>
+              )}
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
+        {/* Integration Philosophy Visual */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
-                Benefits of Our Integration Approach
+                An Intelligence Layer, Not Another Silo
               </h2>
-              <p className="text-xl text-gray-600">
-                Enhance what you have without the pain of ripping and replacing.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                <h4 className="text-xl font-semibold text-brand-black mb-4">Fast Implementation</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-brand-orange mr-3 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Quick Setup</p>
-                      <p className="text-sm text-gray-600">Most customers are up and running within days</p>
+            <div className="max-w-6xl mx-auto">
+              <div className="bg-gray-50 p-8 md:p-12 rounded-xl">
+                {/* Visual Diagram */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center mb-8">
+                  {/* Left Side - Data Sources */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-brand-black text-center mb-4">Data Sources</h3>
+                    <div className="space-y-3">
+                      {["Shopify", "Salesforce", "Segment", "Zendesk"].map((platform) => (
+                        <div key={platform} className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center">
+                          {platform}
+                        </div>
+                      ))}
                     </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-brand-orange mr-3 mt-0.5" />
-                    <div>
-                      <p className="font-medium">No Migration Required</p>
-                      <p className="text-sm text-gray-600">Keep your existing tools and infrastructure</p>
+                    <div className="flex justify-center lg:justify-end">
+                      <ArrowRight className="h-6 w-6 text-brand-orange hidden lg:block" />
                     </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-brand-orange mr-3 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Minimal IT Resources</p>
-                      <p className="text-sm text-gray-600">Our team handles the technical heavy lifting</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+                  </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                <h4 className="text-xl font-semibold text-brand-black mb-4">Business Impact</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-brand-orange mr-3 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Maximize Existing Investments</p>
-                      <p className="text-sm text-gray-600">Get more ROI from your current tech stack</p>
+                  {/* Center - AI Brain */}
+                  <div className="text-center">
+                    <div className="bg-gradient-to-br from-brand-orange to-brand-pink p-8 rounded-full mx-auto w-32 h-32 flex items-center justify-center mb-4">
+                      <Brain className="h-12 w-12 text-white" />
                     </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-brand-orange mr-3 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Single Customer View</p>
-                      <p className="text-sm text-gray-600">Unify data across all systems for true 1:1 personalization</p>
+                    <h3 className="text-lg font-semibold text-brand-black">Thoughtnudge AI Brain</h3>
+                    <p className="text-sm text-gray-600 mt-2">Central Intelligence Layer</p>
+                  </div>
+
+                  {/* Right Side - Channels */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-brand-black text-center mb-4">Channels</h3>
+                    <div className="flex justify-center lg:justify-start">
+                      <ArrowRight className="h-6 w-6 text-brand-orange hidden lg:block" />
                     </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-brand-orange mr-3 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Future-Proof</p>
-                      <p className="text-sm text-gray-600">Easily add new channels and tools as your needs evolve</p>
+                    <div className="space-y-3">
+                      {[
+                        { name: "Email", icon: Mail },
+                        { name: "WhatsApp", icon: MessageCircle },
+                        { name: "Push", icon: MessageCircle }
+                      ].map((channel) => (
+                        <div key={channel.name} className="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center flex items-center justify-center gap-2">
+                          <channel.icon className="h-4 w-4" />
+                          {channel.name}
+                        </div>
+                      ))}
                     </div>
-                  </li>
-                </ul>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    Our platform acts as the central brain for your customer engagement. We ingest contextual data from your entire stack and use that intelligence to orchestrate actions through your existing communication channels.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* Request Integration CTA */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
-                Ready to Integrate Thoughtnudge?
+                Our Ecosystem is Growing Every Day
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Our team will guide you through the integration process and ensure a smooth setup.
+                We are constantly adding new integrations. If you don't see a tool you rely on, let us know. Our flexible API is designed to connect with a wide range of modern platforms.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="orange" size="lg" asChild>
-                  <Link to="/demo">
-                    Request Integration Consultation
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" className="group" asChild>
-                  <Link to="/product">
-                    <span>Learn More About Our Technology</span>
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-              </div>
+              <Button variant="outline" size="lg" asChild>
+                <a href="mailto:hello@thoughtnudge.com">
+                  Suggest an Integration
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </section>

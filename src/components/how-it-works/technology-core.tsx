@@ -1,5 +1,6 @@
-import { Database, Brain, Zap } from "lucide-react";
+import { Database, Brain, Zap, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const TechnologyCore = () => {
   const parts = [
@@ -72,22 +73,29 @@ const TechnologyCore = () => {
           <Card className="p-8 bg-gradient-to-br from-background via-muted/20 to-primary/5 border-primary/10">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                Seamless Integration with Your Existing Stack
+                Seamlessly Connects with Your Existing Stack
               </h3>
-              <p className="text-muted-foreground">
-                No rip-and-replace. Thoughtnudge works with your current tools and systems.
+              <p className="text-muted-foreground mb-8">
+                No rip-and-replace. Thoughtnudge acts as an intelligence layer that makes your current tools more profitable. From e-commerce platforms to CDPs, we handle the heavy lifting of integration.
               </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {["CRM", "Push Notifications", "WhatsApp", "In-App Messaging"].map((integration, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-12 h-12 mx-auto mb-2 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <div className="w-6 h-6 bg-primary/60 rounded"></div>
+              
+              {/* Partner Logos Row */}
+              <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
+                {["Shopify", "Klaviyo", "Segment", "CleverTap", "Mixpanel", "Salesforce"].map((partner, index) => (
+                  <div key={index} className="bg-white p-3 px-4 rounded-lg shadow-sm border border-gray-100 min-w-[100px]">
+                    <div className="text-sm font-medium text-gray-700 text-center">{partner}</div>
                   </div>
-                  <p className="text-sm font-medium text-muted-foreground">{integration}</p>
-                </div>
-              ))}
+                ))}
+              </div>
+              
+              {/* CTA Link */}
+              <Link 
+                to="/integrations" 
+                className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
+              >
+                View All Integrations
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
             </div>
           </Card>
         </div>

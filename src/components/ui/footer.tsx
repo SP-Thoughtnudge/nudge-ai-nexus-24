@@ -1,12 +1,13 @@
 
 import { Link } from "react-router-dom";
+import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 py-16">
+    <footer style={{ backgroundColor: '#F8F9FA' }} className="py-16">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Column 1 - Brand */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          {/* Column 1 - Brand & Social */}
           <div className="space-y-4">
             <Link to="/" className="flex items-start">
               <img 
@@ -15,100 +16,107 @@ const Footer = () => {
                 className="h-10 w-auto"
               />
             </Link>
-            <p className="text-gray-600">
-              Your AI teammate that makes 1:1 marketing decisions in real time.
+            <p className="text-gray-700 font-medium">
+              The Autonomous Growth Engine
             </p>
             <div className="flex space-x-4 mt-4">
-              <a href="https://linkedin.com" className="text-gray-600 hover:text-brand-orange">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                  <rect width="4" height="12" x="2" y="9"/>
-                  <circle cx="4" cy="4" r="2"/>
-                </svg>
-              </a>
-              <a href="https://twitter.com" className="text-gray-600 hover:text-brand-orange">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-twitter">
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-                </svg>
+              <a 
+                href="https://www.linkedin.com/company/thoughtnudge" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-600 hover:text-brand-pink transition-colors"
+              >
+                <Linkedin className="w-6 h-6" />
               </a>
             </div>
           </div>
 
-          {/* Column 2 - Product */}
+          {/* Column 2 - Platform */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-brand-black">Product</h3>
+            <h3 className="text-lg font-semibold text-gray-900">Platform</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/how-it-works" className="text-gray-600 hover:text-brand-orange">
+                <Link to="/product" className="text-gray-600 hover:text-brand-pink transition-colors">
+                  Product
+                </Link>
+              </li>
+              <li>
+                <Link to="/how-it-works" className="text-gray-600 hover:text-brand-pink transition-colors">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link to="/use-cases" className="text-gray-600 hover:text-brand-orange">
-                  Use Cases
-                </Link>
-              </li>
-              <li>
-                <Link to="/integrations" className="text-gray-600 hover:text-brand-orange">
+                <Link to="/integrations" className="text-gray-600 hover:text-brand-pink transition-colors">
                   Integrations
                 </Link>
               </li>
               <li>
-                <Link to="/product" className="text-gray-600 hover:text-brand-orange">
-                  Product Overview
+                <Link to="/pricing" className="text-gray-600 hover:text-brand-pink transition-colors">
+                  Pricing
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3 - Resources */}
+          {/* Column 3 - Solutions */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-brand-black">Resources</h3>
+            <h3 className="text-lg font-semibold text-gray-900">Solutions</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/blog" className="text-gray-600 hover:text-brand-orange">
+                <Link to="/solutions/d2c" className="text-gray-600 hover:text-brand-pink transition-colors">
+                  For E-commerce & D2C
+                </Link>
+              </li>
+              <li>
+                <Link to="/solutions/digital-services" className="text-gray-600 hover:text-brand-pink transition-colors">
+                  For Digital Services & Apps
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4 - Company */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-gray-900">Company</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/about-us" className="text-gray-600 hover:text-brand-pink transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-gray-600 hover:text-brand-pink transition-colors">
                   Blog
                 </Link>
               </li>
-              <li>
-                <Link to="/case-studies" className="text-gray-600 hover:text-brand-orange">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-gray-600 hover:text-brand-orange">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/careers" className="text-gray-600 hover:text-brand-orange">
-                  Careers
-                </Link>
-              </li>
             </ul>
           </div>
 
-          {/* Column 4 - Call to Action */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-brand-black">Ready to transform your marketing?</h3>
-            <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer" className="inline-flex bg-brand-pink hover:bg-brand-pink/90 text-white py-2 px-4 rounded-md font-medium transition-colors">
-              Book a Demo
-            </a>
-            <p className="text-gray-600 text-sm mt-2">
-              Get a personalized tour of the platform
+          {/* Column 5 - CTA Block */}
+          <div className="space-y-4 p-6 border border-gray-300 rounded-lg bg-white">
+            <h4 className="text-lg font-semibold text-gray-900">Ready to Grow?</h4>
+            <p className="text-gray-600 text-sm">
+              Get a free, data-driven audit of your growth strategy and see your untapped revenue potential.
             </p>
+            <Link 
+              to="/growth-audit" 
+              className="inline-flex bg-brand-pink hover:bg-brand-pink/90 text-white py-2 px-4 rounded-md font-medium transition-colors"
+            >
+              Request a Growth Audit
+            </Link>
           </div>
         </div>
 
-        <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        {/* Full-Width Bottom Bar */}
+        <div className="border-t border-gray-300 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} ThoughtNudge. All rights reserved.
+            © 2025 Thoughtnudge. All Rights Reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-gray-500 text-sm hover:text-brand-orange">
+            <Link to="/privacy-policy" className="text-gray-500 text-sm hover:text-brand-pink transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-gray-500 text-sm hover:text-brand-orange">
+            <Link to="/terms-of-service" className="text-gray-500 text-sm hover:text-brand-pink transition-colors">
               Terms of Service
             </Link>
           </div>

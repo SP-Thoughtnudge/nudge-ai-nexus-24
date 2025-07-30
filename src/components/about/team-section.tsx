@@ -8,14 +8,14 @@ const TeamSection = () => {
     {
       name: "Himanshu Chauhan",
       role: "Co-founder & CEO",
-      bio: "A seasoned product and business leader with experience scaling growth at tech leaders like Ericsson and Uniphore. Himanshu drives the vision for Thoughtnudge, applying his strategic insights from ISB, Hyderabad to solve fundamental business challenges with cutting-edge AI.",
+      bio: "Before founding Thoughtnudge, Himanshu spent over a decade on the front lines of technology, leading product and strategy at both established leaders like Ericsson and high-growth startups like Uniphore. This unique blend of enterprise scale and startup agility shapes his vision for the company: to use his insights from ISB, Hyderabad to solve the fundamental growth challenges that every B2C business faces. He is obsessed with finding a better way for brands and customers to connect in the digital world.",
       image: "/placeholder.svg",
       linkedin: "https://www.linkedin.com/in/himanshuchauhan04/"
     },
     {
       name: "Sthitapragnya Kalita",
       role: "Co-founder & CTO",
-      bio: "A hands-on technologist and AI expert with a background in building scalable machine learning systems at Amazon. Sthitapragnya leads the technology at Thoughtnudge, translating complex behavioral science principles into a powerful, adaptive intelligence engine. He holds degrees from two of India's most prestigious institutions: IIT (BHU) and ISB, Hyderabad.",
+      bio: "A hands-on technologist and AI expert, Sthitapragnya honed his skills building large-scale machine learning systems at Amazon. As CTO, he is the architect of our core technology, focused on the complex challenge of translating the nuances of behavioral science into a powerful, adaptive intelligence engine. He holds degrees from two of India's most prestigious institutions, IIT (BHU) and ISB, Hyderabad, giving him a rare perspective that spans both deep technology and business strategy.",
       image: "/placeholder.svg",
       linkedin: "https://www.linkedin.com/in/sthitapragnya-kalita-21890b18/"
     }

@@ -76,7 +76,7 @@ export const contentfulService = {
       }
 
       const response = await client.getEntries(query);
-      console.log('Blog posts response:', response);
+      console.log('Blog posts response with fields:', response.items.map(item => ({ title: item.fields.title, slug: item.fields.slug })));
       return response.items as unknown as BlogPost[];
     } catch (error) {
       console.error('Error fetching blog posts:', error);
@@ -84,28 +84,45 @@ export const contentfulService = {
     }
   },
 
-  // Get a single blog post by slug (generated from title)
+  // Get a single blog post by slug
   async getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
     try {
       console.log('Fetching blog post with slug:', slug);
       
-      // Get all blog posts and find the one with matching slug
-      const response = await client.getEntries({
+      // First try to fetch using the slug field directly
+      const directResponse = await client.getEntries({
+        content_type: 'blogPost',
+        'fields.slug': slug,
+        include: 2,
+      });
+
+      console.log('Direct slug search response:', directResponse);
+
+      if (directResponse.items.length > 0) {
+        console.log('Found blog post via slug field:', directResponse.items[0]);
+        return directResponse.items[0] as unknown as BlogPost;
+      }
+
+      // Fallback: Get all posts and compare generated slugs
+      const allPostsResponse = await client.getEntries({
         content_type: 'blogPost',
         include: 2,
       });
 
-      console.log('All blog posts response:', response);
+      console.log('All blog posts for fallback search:', allPostsResponse.items.map(item => ({ 
+        title: item.fields.title, 
+        slug: item.fields.slug,
+        generatedSlug: this.generateSlug(item.fields.title)
+      })));
 
-      // Find the post by matching the generated slug
-      const matchingPost = response.items.find((item: any) => {
+      const matchingPost = allPostsResponse.items.find((item: any) => {
         const generatedSlug = this.generateSlug(item.fields.title);
         console.log('Comparing slugs:', generatedSlug, 'vs', slug);
-        return generatedSlug === slug;
+        return generatedSlug === slug || item.fields.slug === slug;
       });
 
       if (matchingPost) {
-        console.log('Found matching blog post:', matchingPost);
+        console.log('Found matching blog post via fallback:', matchingPost);
         return matchingPost as unknown as BlogPost;
       }
       

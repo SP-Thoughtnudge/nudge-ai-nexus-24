@@ -31,20 +31,6 @@ const NewHeroSection = () => {
             </Button>
           </div>
 
-          {/* Social Proof */}
-          <div className="border-t border-gray-200 pt-12">
-            <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-8 font-inter">
-              TRUSTED BY THE FASTEST-GROWING BRANDS
-            </p>
-            <div className="flex justify-center items-center space-x-12 opacity-60 grayscale">
-              <div className="text-2xl font-bold text-gray-400">Chalo</div>
-              <div className="text-2xl font-bold text-gray-400">Cookd</div>
-              <div className="text-2xl font-bold text-gray-400">Sure</div>
-              <div className="text-2xl font-bold text-gray-400">Conscious Chemist</div>
-              <div className="text-2xl font-bold text-gray-400">Enphase Energy</div>
-              <div className="text-2xl font-bold text-gray-400">Charmacy Milano</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

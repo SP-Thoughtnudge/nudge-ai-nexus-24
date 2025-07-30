@@ -7,6 +7,7 @@ import { Calendar, Clock, ExternalLink, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { contentfulService, BlogPost } from "@/lib/contentful";
 import { renderRichText } from "@/lib/contentful-rich-text";
+import { updateSEOTags, addStructuredData, createArticleSchema } from "@/lib/seo";
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -27,19 +28,20 @@ const BlogPostPage = () => {
 
   useEffect(() => {
     if (post) {
-      // Update page title and meta description for SEO
-      document.title = `${post.fields.title} | Thoughtnudge Blog`;
-      if (post.fields.metaDescription) {
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-          metaDesc.setAttribute('content', post.fields.metaDescription);
-        } else {
-          const meta = document.createElement('meta');
-          meta.name = 'description';
-          meta.content = post.fields.metaDescription;
-          document.head.appendChild(meta);
-        }
-      }
+      // Update SEO tags
+      updateSEOTags({
+        title: `${post.fields.title} | Thoughtnudge Blog`,
+        description: post.fields.metaDescription || post.fields.excerpt,
+        url: `https://www.thoughtnudge.com/blog/${post.fields.slug || contentfulService.generateSlug(post.fields.title)}`,
+        image: post.fields.featuredImage?.fields?.file?.url ? `https:${post.fields.featuredImage.fields.file.url}` : undefined,
+        type: "article",
+        author: post.fields.author?.fields?.name,
+        publishedTime: post.sys.createdAt,
+        modifiedTime: post.sys.createdAt
+      });
+
+      // Add Article structured data
+      addStructuredData(createArticleSchema(post));
     }
   }, [post]);
 

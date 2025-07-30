@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { ArrowRight, Calendar, User, Clock, Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { contentfulService, BlogPost } from "@/lib/contentful";
+import { updateSEOTags, addStructuredData, blogSchema } from "@/lib/seo";
 
 const Blogs = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -18,6 +19,20 @@ const Blogs = () => {
   const [loading, setLoading] = useState(true);
 
   const categories = ["All", "Behavioral Science", "AI & Product", "Case Studies"];
+
+  useEffect(() => {
+    // SEO optimization
+    updateSEOTags({
+      title: "Thoughtnudge Blog | AI, Behavioral Science & Marketing Insights",
+      description: "Explore insights on AI-powered marketing, behavioral science, and autonomous customer decisioning. Stay updated with the latest in marketing technology.",
+      url: "https://www.thoughtnudge.com/blogs",
+      image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      type: "website"
+    });
+
+    // Add Blog structured data
+    addStructuredData(blogSchema);
+  }, []);
 
   useEffect(() => {
     const fetchBlogs = async () => {

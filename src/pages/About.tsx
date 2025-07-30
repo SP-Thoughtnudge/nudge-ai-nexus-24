@@ -6,10 +6,38 @@ import { Button } from "@/components/ui/button";
 import StorySection from "@/components/about/story-section";
 import ValuesSection from "@/components/about/values-section";
 import TeamSection from "@/components/about/team-section";
+import { updateSEOTags, addStructuredData, createPersonSchema } from "@/lib/seo";
 
 const About = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // SEO optimization
+    updateSEOTags({
+      title: "About Thoughtnudge | AI-Powered Marketing Innovation Team",
+      description: "Meet the team behind Thoughtnudge's revolutionary AI platform. Learn about our mission to make digital interactions more human through intelligent automation.",
+      url: "https://www.thoughtnudge.com/about",
+      image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      type: "website"
+    });
+
+    // Add founders structured data
+    const foundersData = [
+      createPersonSchema({
+        name: "Shashank Sharma",
+        role: "Co-Founder & CEO",
+        bio: "Leading the vision for autonomous AI decisioning in marketing",
+        linkedinUrl: "https://www.linkedin.com/in/shashank-sharma-thoughtnudge"
+      }),
+      createPersonSchema({
+        name: "Aditya Srivastava", 
+        role: "Co-Founder & CTO",
+        bio: "Building the technical foundation for AI-powered customer intelligence",
+        linkedinUrl: "https://www.linkedin.com/in/aditya-srivastava-thoughtnudge"
+      })
+    ];
+    
+    addStructuredData(foundersData);
   }, []);
 
   return (

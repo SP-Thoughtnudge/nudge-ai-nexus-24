@@ -3,6 +3,7 @@ import { useEffect, lazy, Suspense } from "react";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import NewHeroSection from "@/components/home/new-hero-section";
+import LogoCloud from "@/components/home/logo-cloud";
 import LazySection from "@/components/ui/lazy-section";
 
 // Lazy load non-critical sections
@@ -33,6 +34,7 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <NewHeroSection />
+        <LogoCloud />
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
             <OutcomesSection />

@@ -27,6 +27,7 @@ export interface BlogPost {
   sys: {
     id: string;
     createdAt: string;
+    publishedAt?: string;
   };
   fields: {
     title: string;
@@ -45,6 +46,7 @@ export interface BlogPost {
     category: 'Behavioral Science' | 'AI & Product' | 'Case Studies';
     metaDescription?: string;
     isFeatured?: boolean;
+    publishedAt?: string; // Optional field for explicit publish date
   };
 }
 

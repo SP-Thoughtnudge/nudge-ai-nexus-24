@@ -55,8 +55,9 @@ const Blogs = () => {
     fetchBlogs();
   }, [activeFilter, searchQuery]);
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
+  const formatDate = (post: BlogPost) => {
+    const dateToUse = post.fields.publishedAt || post.sys.publishedAt || post.sys.createdAt;
+    return new Date(dateToUse).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
@@ -126,10 +127,9 @@ const Blogs = () => {
                               className="w-10 h-10 rounded-full bg-gray-200 mr-3"
                             />
                           )}
-                          <div className="text-sm">
-                            <p className="font-medium text-gray-900">{featuredPost.fields.author.fields.name}</p>
-                            <p className="text-gray-500">{formatDate(featuredPost.sys.createdAt)}</p>
-                          </div>
+                           <div className="text-sm">
+                             <p className="font-medium text-gray-900">by {featuredPost.fields.author.fields.name} • {formatDate(featuredPost)}</p>
+                           </div>
                         </div>
                       </CardContent>
                     </Link>
@@ -158,11 +158,11 @@ const Blogs = () => {
                             <h3 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-pink-600 transition-colors line-clamp-2">
                               {post.fields.title}
                             </h3>
-                            <div className="flex items-center text-xs text-gray-500">
-                              <span>{post.fields.author.fields.name}</span>
-                              <span className="mx-2">•</span>
-                              <span>{calculateReadTime(post.fields.content)}</span>
-                            </div>
+                             <div className="flex items-center text-xs text-gray-500">
+                               <span>by {post.fields.author.fields.name} • {formatDate(post)}</span>
+                               <span className="mx-2">•</span>
+                               <span>{calculateReadTime(post.fields.content)}</span>
+                             </div>
                           </CardContent>
                         </div>
                       </Link>
@@ -282,10 +282,9 @@ const Blogs = () => {
                                 className="w-8 h-8 rounded-full bg-gray-200 mr-3"
                               />
                             )}
-                            <div className="text-sm">
-                              <p className="font-medium text-gray-900">{blog.fields.author.fields.name}</p>
-                              <p className="text-gray-500">{formatDate(blog.sys.createdAt)}</p>
-                            </div>
+                             <div className="text-sm">
+                               <p className="font-medium text-gray-900">by {blog.fields.author.fields.name} • {formatDate(blog)}</p>
+                             </div>
                           </div>
                           <div className="text-sm text-gray-500">
                             {calculateReadTime(blog.fields.content)}

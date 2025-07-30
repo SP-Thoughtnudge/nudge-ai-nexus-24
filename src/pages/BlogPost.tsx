@@ -88,8 +88,9 @@ const BlogPostPage = () => {
     );
   }
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
+  const formatDate = (post: BlogPost) => {
+    const dateToUse = post.fields.publishedAt || post.sys.publishedAt || post.sys.createdAt;
+    return new Date(dateToUse).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
@@ -140,24 +141,19 @@ const BlogPostPage = () => {
                           className="w-12 h-12 rounded-full mr-3"
                         />
                       )}
-                      <div>
-                        <p className="font-semibold text-gray-900">{post.fields.author.fields.name}</p>
-                        {post.fields.author.fields.linkedinUrl && (
-                          <a
-                            href={post.fields.author.fields.linkedinUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-pink-600 hover:text-pink-700 flex items-center"
-                          >
-                            LinkedIn <ExternalLink className="ml-1 h-3 w-3" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center text-gray-500 text-sm">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      <span>{formatDate(post.sys.createdAt)}</span>
+                       <div>
+                         <p className="font-semibold text-gray-900">by {post.fields.author.fields.name} • {formatDate(post)}</p>
+                         {post.fields.author.fields.linkedinUrl && (
+                           <a
+                             href={post.fields.author.fields.linkedinUrl}
+                             target="_blank"
+                             rel="noopener noreferrer"
+                             className="text-sm text-pink-600 hover:text-pink-700 flex items-center"
+                           >
+                             LinkedIn <ExternalLink className="ml-1 h-3 w-3" />
+                           </a>
+                         )}
+                       </div>
                     </div>
                   </div>
                   

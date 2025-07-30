@@ -24,7 +24,7 @@ const Navbar = () => {
           <img 
             src="/lovable-uploads/db57410a-d435-45cc-afcb-4ae995c8b5e0.png" 
             alt="Thoughtnudge Logo" 
-            className="h-12 w-auto"
+            className="h-16 w-auto py-2"
           />
         </Link>
 

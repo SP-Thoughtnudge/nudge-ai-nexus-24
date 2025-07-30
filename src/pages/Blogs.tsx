@@ -9,6 +9,7 @@ import { ArrowRight, Calendar, User, Clock, Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { contentfulService, BlogPost } from "@/lib/contentful";
 import { updateSEOTags, addStructuredData, blogSchema } from "@/lib/seo";
+import OptimizedImage from "@/components/ui/optimized-image";
 
 const Blogs = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -96,10 +97,11 @@ const Blogs = () => {
                   <Card className="overflow-hidden h-full group cursor-pointer">
                     <Link to={`/blog/${featuredPost.fields.slug || contentfulService.generateSlug(featuredPost.fields.title)}`}>
                       <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
-                        <img 
+                        <OptimizedImage 
                           src={`https:${featuredPost.fields.featuredImage.fields.file.url}`}
                           alt={featuredPost.fields.featuredImage.fields.title || featuredPost.fields.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          priority
                         />
                         <div className="absolute top-4 left-4">
                           <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full text-sm font-medium">
@@ -121,10 +123,11 @@ const Blogs = () => {
                         </p>
                         <div className="flex items-center">
                           {featuredPost.fields.author.fields.photo && (
-                            <img 
+                            <OptimizedImage 
                               src={`https:${featuredPost.fields.author.fields.photo.fields.file.url}`}
                               alt={featuredPost.fields.author.fields.name}
                               className="w-10 h-10 rounded-full bg-gray-200 mr-3"
+                              lazy
                             />
                           )}
                            <div className="text-sm">
@@ -143,10 +146,11 @@ const Blogs = () => {
                       <Link to={`/blog/${post.fields.slug || contentfulService.generateSlug(post.fields.title)}`}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                           <div className="aspect-[4/3] xl:aspect-square bg-gray-100 relative overflow-hidden">
-                            <img 
+                            <OptimizedImage 
                               src={`https:${post.fields.featuredImage.fields.file.url}`}
                               alt={post.fields.featuredImage.fields.title || post.fields.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                              lazy
                             />
                           </div>
                           <CardContent className="p-6">
@@ -255,10 +259,11 @@ const Blogs = () => {
                   <Card key={blog.sys.id} className="overflow-hidden h-full flex flex-col group cursor-pointer">
                     <Link to={`/blog/${blog.fields.slug || contentfulService.generateSlug(blog.fields.title)}`} className="h-full flex flex-col">
                       <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
-                        <img 
+                        <OptimizedImage 
                           src={`https:${blog.fields.featuredImage.fields.file.url}`}
                           alt={blog.fields.featuredImage.fields.title || blog.fields.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          lazy
                         />
                       </div>
                       <CardContent className="p-6 flex-grow flex flex-col">
@@ -276,10 +281,11 @@ const Blogs = () => {
                         <div className="flex items-center justify-between mt-auto">
                           <div className="flex items-center">
                             {blog.fields.author.fields.photo && (
-                              <img 
+                              <OptimizedImage 
                                 src={`https:${blog.fields.author.fields.photo.fields.file.url}`}
                                 alt={blog.fields.author.fields.name}
                                 className="w-8 h-8 rounded-full bg-gray-200 mr-3"
+                                lazy
                               />
                             )}
                              <div className="text-sm">

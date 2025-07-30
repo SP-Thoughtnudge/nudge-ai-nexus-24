@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
 import PerformanceMonitor from "@/components/ui/performance-monitor";
 import ImagePreloader from "@/components/ui/image-preloader";
+import { useWebVitals } from "@/hooks/use-web-vitals";
 // Lazy load components for better performance
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -44,6 +45,9 @@ const criticalImages = [
 ];
 
 const App = () => {
+  // Initialize web vitals monitoring
+  useWebVitals();
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

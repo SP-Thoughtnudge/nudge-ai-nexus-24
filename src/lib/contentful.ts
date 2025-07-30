@@ -50,6 +50,27 @@ export interface BlogPost {
   };
 }
 
+// Simple in-memory cache for API responses
+const cache = new Map<string, { data: any; timestamp: number; ttl: number }>();
+
+// Cache helper functions
+const getCacheKey = (method: string, params: any) => {
+  return `${method}_${JSON.stringify(params)}`;
+};
+
+const getFromCache = (key: string) => {
+  const cached = cache.get(key);
+  if (cached && Date.now() - cached.timestamp < cached.ttl) {
+    return cached.data;
+  }
+  cache.delete(key);
+  return null;
+};
+
+const setCache = (key: string, data: any, ttl: number = 5 * 60 * 1000) => { // 5 minutes default
+  cache.set(key, { data, timestamp: Date.now(), ttl });
+};
+
 export const contentfulService = {
   // Helper function to generate slug from title
   generateSlug(title: string): string {
@@ -63,6 +84,10 @@ export const contentfulService = {
 
   // Get all blog posts (excluding featured posts if isFeatured field exists)
   async getBlogPosts(category?: string, searchQuery?: string): Promise<BlogPost[]> {
+    const cacheKey = getCacheKey('getBlogPosts', { category, searchQuery });
+    const cached = getFromCache(cacheKey);
+    if (cached) return cached;
+
     try {
       const query: any = {
         content_type: 'blogPost',
@@ -94,7 +119,9 @@ export const contentfulService = {
       }
 
       const response = await client.getEntries(query);
-      return response.items as unknown as BlogPost[];
+      const data = response.items as unknown as BlogPost[];
+      setCache(cacheKey, data);
+      return data;
     } catch (error) {
       console.error('Error fetching blog posts:', error);
       return [];
@@ -103,6 +130,10 @@ export const contentfulService = {
 
   // Get the latest featured blog post
   async getFeaturedBlogPost(): Promise<BlogPost | null> {
+    const cacheKey = getCacheKey('getFeaturedBlogPost', {});
+    const cached = getFromCache(cacheKey);
+    if (cached) return cached;
+
     try {
       const response = await client.getEntries({
         content_type: 'blogPost',
@@ -112,10 +143,9 @@ export const contentfulService = {
         limit: 1,
       });
 
-      if (response.items.length > 0) {
-        return response.items[0] as unknown as BlogPost;
-      }
-      return null;
+      const data = response.items.length > 0 ? response.items[0] as unknown as BlogPost : null;
+      setCache(cacheKey, data);
+      return data;
     } catch (error) {
       // If isFeatured field doesn't exist, return null (no featured post)
       console.log('isFeatured field not found, no featured post available');
@@ -125,6 +155,10 @@ export const contentfulService = {
 
   // Get a single blog post by slug
   async getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+    const cacheKey = getCacheKey('getBlogPostBySlug', { slug });
+    const cached = getFromCache(cacheKey);
+    if (cached) return cached;
+
     try {
       console.log('Fetching blog post with slug:', slug);
       
@@ -139,7 +173,9 @@ export const contentfulService = {
 
       if (directResponse.items.length > 0) {
         console.log('Found blog post via slug field:', directResponse.items[0]);
-        return directResponse.items[0] as unknown as BlogPost;
+        const data = directResponse.items[0] as unknown as BlogPost;
+        setCache(cacheKey, data, 15 * 60 * 1000); // 15 minutes cache for individual posts
+        return data;
       }
 
       // Fallback: Get all posts and compare generated slugs
@@ -162,7 +198,9 @@ export const contentfulService = {
 
       if (matchingPost) {
         console.log('Found matching blog post via fallback:', matchingPost);
-        return matchingPost as unknown as BlogPost;
+        const data = matchingPost as unknown as BlogPost;
+        setCache(cacheKey, data, 15 * 60 * 1000); // 15 minutes cache for individual posts
+        return data;
       }
       
       console.log('No blog post found with slug:', slug);
@@ -175,6 +213,10 @@ export const contentfulService = {
 
   // Get featured blog posts (most recent 3-4)
   async getFeaturedBlogPosts(limit = 4): Promise<BlogPost[]> {
+    const cacheKey = getCacheKey('getFeaturedBlogPosts', { limit });
+    const cached = getFromCache(cacheKey);
+    if (cached) return cached;
+
     try {
       const response = await client.getEntries({
         content_type: 'blogPost',
@@ -183,21 +225,74 @@ export const contentfulService = {
         limit,
       });
 
-      return response.items as unknown as BlogPost[];
+      const data = response.items as unknown as BlogPost[];
+      setCache(cacheKey, data);
+      return data;
     } catch (error) {
       console.error('Error fetching featured blog posts:', error);
       return [];
     }
   },
 
+  // Get related posts by category (for the related posts section)
+  async getRelatedPosts(currentPostId: string, category: string, limit = 3): Promise<BlogPost[]> {
+    const cacheKey = getCacheKey('getRelatedPosts', { currentPostId, category, limit });
+    const cached = getFromCache(cacheKey);
+    if (cached) return cached;
+
+    try {
+      // First try to get posts from the same category
+      const response = await client.getEntries({
+        content_type: 'blogPost',
+        include: 2,
+        order: ['-sys.createdAt'],
+        'fields.category': category,
+        'sys.id[ne]': currentPostId, // Exclude current post
+        limit,
+      });
+
+      let relatedPosts = response.items as unknown as BlogPost[];
+
+      // If we don't have enough posts from the same category, fill with recent posts
+      if (relatedPosts.length < limit) {
+        const recentResponse = await client.getEntries({
+          content_type: 'blogPost',
+          include: 2,
+          order: ['-sys.createdAt'],
+          'sys.id[ne]': currentPostId, // Exclude current post
+          limit: limit - relatedPosts.length,
+        });
+
+        const recentPosts = recentResponse.items as unknown as BlogPost[];
+        // Combine and deduplicate
+        const allPosts = [...relatedPosts, ...recentPosts];
+        relatedPosts = allPosts.filter((post, index, self) => 
+          index === self.findIndex(p => p.sys.id === post.sys.id)
+        );
+      }
+
+      setCache(cacheKey, relatedPosts);
+      return relatedPosts;
+    } catch (error) {
+      console.error('Error fetching related posts:', error);
+      return [];
+    }
+  },
+
   // Get all authors
   async getAuthors(): Promise<Author[]> {
+    const cacheKey = getCacheKey('getAuthors', {});
+    const cached = getFromCache(cacheKey);
+    if (cached) return cached;
+
     try {
       const response = await client.getEntries({
         content_type: 'author',
       });
 
-      return response.items as unknown as Author[];
+      const data = response.items as unknown as Author[];
+      setCache(cacheKey, data, 30 * 60 * 1000); // 30 minutes cache for authors
+      return data;
     } catch (error) {
       console.error('Error fetching authors:', error);
       return [];

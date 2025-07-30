@@ -8,10 +8,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { contentfulService, BlogPost } from "@/lib/contentful";
 import { renderRichText } from "@/lib/contentful-rich-text";
 import { updateSEOTags, addStructuredData, createArticleSchema } from "@/lib/seo";
+import OptimizedImage from "@/components/ui/optimized-image";
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
+  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,6 +22,17 @@ const BlogPostPage = () => {
       setLoading(true);
       const fetchedPost = await contentfulService.getBlogPostBySlug(slug);
       setPost(fetchedPost);
+      
+      // Fetch related posts if we have a post
+      if (fetchedPost) {
+        const related = await contentfulService.getRelatedPosts(
+          fetchedPost.sys.id,
+          fetchedPost.fields.category,
+          3
+        );
+        setRelatedPosts(related);
+      }
+      
       setLoading(false);
     };
 
@@ -44,6 +57,15 @@ const BlogPostPage = () => {
       addStructuredData(createArticleSchema(post));
     }
   }, [post]);
+
+  const formatDate = (post: BlogPost) => {
+    const dateToUse = post.fields.publishedAt || post.sys.publishedAt || post.sys.createdAt;
+    return new Date(dateToUse).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
 
   if (loading) {
     return (
@@ -88,15 +110,6 @@ const BlogPostPage = () => {
     );
   }
 
-  const formatDate = (post: BlogPost) => {
-    const dateToUse = post.fields.publishedAt || post.sys.publishedAt || post.sys.createdAt;
-    return new Date(dateToUse).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
@@ -135,10 +148,11 @@ const BlogPostPage = () => {
                   <div className="flex items-center space-x-6 mb-8">
                     <div className="flex items-center">
                       {post.fields.author.fields.photo && (
-                        <img
+                        <OptimizedImage
                           src={`https:${post.fields.author.fields.photo.fields.file.url}`}
                           alt={post.fields.author.fields.name}
                           className="w-12 h-12 rounded-full mr-3"
+                          priority
                         />
                       )}
                        <div>
@@ -159,10 +173,11 @@ const BlogPostPage = () => {
                   
                   {/* Featured Image */}
                   <div className="mb-8">
-                    <img
+                    <OptimizedImage
                       src={`https:${post.fields.featuredImage.fields.file.url}`}
                       alt={post.fields.featuredImage.fields.title || post.fields.title}
                       className="w-full rounded-lg shadow-lg"
+                      priority
                     />
                   </div>
                 </header>
@@ -185,10 +200,11 @@ const BlogPostPage = () => {
                     <h3 className="font-bold mb-4 text-gray-900">About the Author</h3>
                     <div className="flex items-center mb-4">
                       {post.fields.author.fields.photo && (
-                        <img
+                        <OptimizedImage
                           src={`https:${post.fields.author.fields.photo.fields.file.url}`}
                           alt={post.fields.author.fields.name}
                           className="w-16 h-16 rounded-full mr-4"
+                          lazy
                         />
                       )}
                       <div>
@@ -227,6 +243,56 @@ const BlogPostPage = () => {
             </div>
 
           </div>
+
+          {/* Related Posts Section */}
+          {relatedPosts.length > 0 && (
+            <div className="mt-20 mb-20">
+              <div className="border-t border-gray-200 pt-20">
+                <h3 className="text-3xl font-bold mb-8 text-gray-900">Continue Reading</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {relatedPosts.map((relatedPost) => (
+                    <Card key={relatedPost.sys.id} className="overflow-hidden h-full flex flex-col group cursor-pointer">
+                      <Link to={`/blog/${relatedPost.fields.slug || contentfulService.generateSlug(relatedPost.fields.title)}`} className="h-full flex flex-col">
+                        <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                          <OptimizedImage 
+                            src={`https:${relatedPost.fields.featuredImage.fields.file.url}`}
+                            alt={relatedPost.fields.featuredImage.fields.title || relatedPost.fields.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            lazy
+                          />
+                        </div>
+                        <CardContent className="p-6 flex-grow flex flex-col">
+                          <div className="mb-3">
+                            <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">
+                              {relatedPost.fields.category}
+                            </span>
+                          </div>
+                          <h4 className="font-bold text-xl mb-3 text-gray-900 group-hover:text-pink-600 transition-colors flex-grow line-clamp-2">
+                            {relatedPost.fields.title}
+                          </h4>
+                          <div className="flex items-center mt-auto">
+                            {relatedPost.fields.author.fields.photo && (
+                              <OptimizedImage 
+                                src={`https:${relatedPost.fields.author.fields.photo.fields.file.url}`}
+                                alt={relatedPost.fields.author.fields.name}
+                                className="w-8 h-8 rounded-full bg-gray-200 mr-3"
+                                lazy
+                              />
+                            )}
+                            <div className="text-sm">
+                              <p className="font-medium text-gray-900">
+                                by {relatedPost.fields.author.fields.name} • {formatDate(relatedPost)}
+                              </p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Link>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </main>
       <Footer />

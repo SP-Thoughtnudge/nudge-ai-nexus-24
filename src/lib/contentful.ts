@@ -48,6 +48,16 @@ export interface BlogPost {
 }
 
 export const contentfulService = {
+  // Helper function to generate slug from title
+  generateSlug(title: string): string {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9 -]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+  },
+
   // Get all blog posts
   async getBlogPosts(category?: string, searchQuery?: string): Promise<BlogPost[]> {
     try {
@@ -66,6 +76,7 @@ export const contentfulService = {
       }
 
       const response = await client.getEntries(query);
+      console.log('Blog posts response:', response);
       return response.items as unknown as BlogPost[];
     } catch (error) {
       console.error('Error fetching blog posts:', error);
@@ -73,24 +84,31 @@ export const contentfulService = {
     }
   },
 
-  // Get a single blog post by slug
+  // Get a single blog post by slug (generated from title)
   async getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
     try {
       console.log('Fetching blog post with slug:', slug);
+      
+      // Get all blog posts and find the one with matching slug
       const response = await client.getEntries({
         content_type: 'blogPost',
-        'fields.slug': slug,
         include: 2,
       });
 
-      console.log('Contentful response:', response);
-      console.log('Items found:', response.items.length);
+      console.log('All blog posts response:', response);
 
-      if (response.items.length > 0) {
-        const post = response.items[0] as unknown as BlogPost;
-        console.log('Found blog post:', post);
-        return post;
+      // Find the post by matching the generated slug
+      const matchingPost = response.items.find((item: any) => {
+        const generatedSlug = this.generateSlug(item.fields.title);
+        console.log('Comparing slugs:', generatedSlug, 'vs', slug);
+        return generatedSlug === slug;
+      });
+
+      if (matchingPost) {
+        console.log('Found matching blog post:', matchingPost);
+        return matchingPost as unknown as BlogPost;
       }
+      
       console.log('No blog post found with slug:', slug);
       return null;
     } catch (error) {

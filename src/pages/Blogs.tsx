@@ -82,7 +82,7 @@ const Blogs = () => {
                 {/* Featured Post - 60% width */}
                 <div className="lg:col-span-3">
                   <Card className="overflow-hidden h-full group cursor-pointer">
-                    <Link to={`/blog/${featuredPost.fields.slug}`}>
+                    <Link to={`/blog/${contentfulService.generateSlug(featuredPost.fields.title)}`}>
                       <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
                         <img 
                           src={`https:${featuredPost.fields.featuredImage.fields.file.url}`}
@@ -129,7 +129,7 @@ const Blogs = () => {
                 <div className="lg:col-span-2 space-y-6">
                   {recentPosts.map((post) => (
                     <Card key={post.sys.id} className="overflow-hidden group cursor-pointer">
-                      <Link to={`/blog/${post.fields.slug}`}>
+                      <Link to={`/blog/${contentfulService.generateSlug(post.fields.title)}`}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                           <div className="aspect-[4/3] xl:aspect-square bg-gray-100 relative overflow-hidden">
                             <img 
@@ -242,7 +242,7 @@ const Blogs = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredBlogs.map((blog) => (
                   <Card key={blog.sys.id} className="overflow-hidden h-full flex flex-col group cursor-pointer">
-                    <Link to={`/blog/${blog.fields.slug}`} className="h-full flex flex-col">
+                    <Link to={`/blog/${contentfulService.generateSlug(blog.fields.title)}`} className="h-full flex flex-col">
                       <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
                         <img 
                           src={`https:${blog.fields.featuredImage.fields.file.url}`}

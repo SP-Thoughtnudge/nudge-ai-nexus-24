@@ -7,6 +7,7 @@ import LazySection from "@/components/ui/lazy-section";
 
 // Lazy load non-critical sections
 const OutcomesSection = lazy(() => import("@/components/home/outcomes-section"));
+const LogoCloud = lazy(() => import("@/components/home/logo-cloud"));
 const ProblemStatement = lazy(() => import("@/components/home/problem-statement"));
 const SolutionProcess = lazy(() => import("@/components/home/solution-process"));
 const TestimonialProof = lazy(() => import("@/components/home/testimonial-proof"));
@@ -36,6 +37,11 @@ const Index = () => {
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
             <OutcomesSection />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-32 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <LogoCloud />
           </LazySection>
         </Suspense>
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>

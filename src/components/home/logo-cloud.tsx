@@ -5,16 +5,46 @@ const LogoCloud = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-8">
           <p className="text-lg font-semibold text-brand-black">
-            Trusted by innovative growth teams
+            Trusted by the fastest-growing brands
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center mb-12">
-          {['Cookd', 'Chalo', 'Enphase Energy', 'Conscious Chemist', 'Charmacy Milano', 'Sure Financials'].map((company) => (
-            <div key={company} className="h-12 w-32 bg-gray-50 rounded flex items-center justify-center border border-gray-100">
-              <span className="text-sm font-medium text-brand-gray">{company}</span>
-            </div>
-          ))}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center mb-12">
+          <div className="h-16 w-32 flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/fdb6b5c4-d2a2-4941-9ddb-e83a7a3c1405.png" 
+              alt="Cookd logo" 
+              className="max-h-12 max-w-28 object-contain"
+            />
+          </div>
+          <div className="h-16 w-32 flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/d272b1ae-7a4c-4930-bbac-a1129eb9995d.png" 
+              alt="Conscious Chemist logo" 
+              className="max-h-12 max-w-28 object-contain"
+            />
+          </div>
+          <div className="h-16 w-32 flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/8c669d46-6964-4055-8e6e-20f3bc765de7.png" 
+              alt="Enphase Energy logo" 
+              className="max-h-12 max-w-28 object-contain"
+            />
+          </div>
+          <div className="h-16 w-32 flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/a07ecbd6-7550-4580-960f-ed75258bcd48.png" 
+              alt="Sure Financials logo" 
+              className="max-h-12 max-w-28 object-contain"
+            />
+          </div>
+          <div className="h-16 w-32 flex items-center justify-center">
+            <img 
+              src="/lovable-uploads/32b33b09-d96e-4958-84cb-ff8e964decb2.png" 
+              alt="Charmacy Milano logo" 
+              className="max-h-12 max-w-28 object-contain"
+            />
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center mt-8 border-t border-gray-100 pt-12">

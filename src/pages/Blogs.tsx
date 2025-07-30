@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
@@ -7,99 +7,57 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Calendar, User, Clock, Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { contentfulService, BlogPost } from "@/lib/contentful";
 
 const Blogs = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-
-  // Updated blog data with new categories
-  const blogs = [
-    {
-      id: "1",
-      title: "Beyond A/B Testing: How AI is Transforming Customer Engagement",
-      excerpt: "Traditional A/B testing is becoming obsolete as AI-driven personalization offers more nuanced, individual-level optimization in real-time.",
-      author: "Sarah Johnson",
-      authorImage: "/placeholder.svg",
-      date: "May 1, 2025",
-      readTime: "8 min read",
-      category: "AI & Product",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop",
-      tags: ["AI", "Customer Experience", "Personalization"],
-      featured: true
-    },
-    {
-      id: "2",
-      title: "The Psychology of Personalization: Why One-Size-Fits-All Marketing Fails",
-      excerpt: "Understanding the psychological principles behind why personalized experiences dramatically outperform generic ones across all customer touchpoints.",
-      author: "Michael Chen",
-      authorImage: "/placeholder.svg",
-      date: "April 28, 2025",
-      readTime: "6 min read",
-      category: "Behavioral Science",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop",
-      tags: ["Psychology", "Marketing", "Customer Behavior"]
-    },
-    {
-      id: "3",
-      title: "Building Customer Loyalty in the AI Era",
-      excerpt: "How autonomous AI agents are creating deeper customer relationships through continuous learning and adaptation to individual preferences.",
-      author: "Elena Rodriguez",
-      authorImage: "/placeholder.svg",
-      date: "April 24, 2025",
-      readTime: "11 min read",
-      category: "Case Studies",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
-      tags: ["Customer Loyalty", "AI", "Retention"]
-    },
-    {
-      id: "4",
-      title: "From Data Silos to Unified Intelligence: The New Marketing Tech Stack",
-      excerpt: "How organizations are breaking down data silos and creating a unified customer intelligence layer that powers all engagement channels.",
-      author: "James Wilson",
-      authorImage: "/placeholder.svg",
-      date: "April 20, 2025",
-      readTime: "9 min read",
-      category: "AI & Product",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop",
-      tags: ["MarTech", "Data Integration", "Customer Data"]
-    },
-    {
-      id: "5",
-      title: "The ROI of AI-Driven Customer Engagement",
-      excerpt: "A deep dive into the measurable business impacts of implementing autonomous AI agents for customer engagement across industries.",
-      author: "Priya Patel",
-      authorImage: "/placeholder.svg",
-      date: "April 15, 2025",
-      readTime: "7 min read",
-      category: "Case Studies",
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=600&fit=crop",
-      tags: ["ROI", "Business Case", "AI Implementation"]
-    },
-    {
-      id: "6",
-      title: "Ethical AI: Balancing Personalization and Privacy",
-      excerpt: "How businesses can leverage AI for personalization while respecting customer privacy and maintaining ethical standards.",
-      author: "Thomas Brown",
-      authorImage: "/placeholder.svg",
-      date: "April 10, 2025",
-      readTime: "10 min read",
-      category: "Behavioral Science",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
-      tags: ["Ethics", "Privacy", "Responsible AI"]
-    }
-  ];
+  const [blogs, setBlogs] = useState<BlogPost[]>([]);
+  const [featuredBlogs, setFeaturedBlogs] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const categories = ["All", "Behavioral Science", "AI & Product", "Case Studies"];
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      setLoading(true);
+      try {
+        const [allBlogs, featured] = await Promise.all([
+          contentfulService.getBlogPosts(activeFilter, searchQuery),
+          contentfulService.getFeaturedBlogPosts(4)
+        ]);
+        setBlogs(allBlogs);
+        setFeaturedBlogs(featured);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      }
+      setLoading(false);
+    };
+
+    fetchBlogs();
+  }, [activeFilter, searchQuery]);
+
+  const featuredPost = featuredBlogs[0];
+  const recentPosts = featuredBlogs.slice(1, 3);
   
-  const featuredPost = blogs.find(blog => blog.featured) || blogs[0];
-  const recentPosts = blogs.filter(blog => !blog.featured).slice(0, 2);
-  
-  const filteredBlogs = blogs.filter(blog => {
-    const matchesCategory = activeFilter === "All" || blog.category === activeFilter;
-    const matchesSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         blog.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch && !blog.featured;
-  });
+  const filteredBlogs = blogs.filter(blog => 
+    blog.sys.id !== featuredPost?.sys.id
+  );
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
+  const calculateReadTime = (content: any) => {
+    // Simple read time calculation based on content length
+    const words = JSON.stringify(content).split(' ').length;
+    const readTime = Math.ceil(words / 200); // Average reading speed
+    return `${readTime} min read`;
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -107,88 +65,102 @@ const Blogs = () => {
       <main className="flex-grow pt-24 pb-20">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           
-          {/* Section 1: Hero / Featured Content */}
-          <div className="mb-20">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              {/* Featured Post - 60% width */}
-              <div className="lg:col-span-3">
-                <Card className="overflow-hidden h-full group cursor-pointer">
-                  <Link to={`/blog/${featuredPost.id}`}>
-                    <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
-                      <img 
-                        src={featuredPost.image} 
-                        alt={featuredPost.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full text-sm font-medium">
-                          Featured
-                        </span>
-                      </div>
-                    </div>
-                    <CardContent className="p-8">
-                      <div className="mb-3">
-                        <span className="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-sm font-medium">
-                          {featuredPost.category}
-                        </span>
-                      </div>
-                      <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-900 group-hover:text-pink-600 transition-colors">
-                        {featuredPost.title}
-                      </h2>
-                      <p className="text-gray-600 mb-6 leading-relaxed">
-                        {featuredPost.excerpt}
-                      </p>
-                      <div className="flex items-center">
+          {/* Page Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+              Insights & Perspectives
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore the latest thinking on AI-driven customer engagement, behavioral science, and the future of autonomous growth.
+            </p>
+          </div>
+
+          {/* Section 1: Featured Content */}
+          {!loading && featuredPost && (
+            <div className="mb-20">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                {/* Featured Post - 60% width */}
+                <div className="lg:col-span-3">
+                  <Card className="overflow-hidden h-full group cursor-pointer">
+                    <Link to={`/blog/${featuredPost.fields.slug}`}>
+                      <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
                         <img 
-                          src={featuredPost.authorImage} 
-                          alt={featuredPost.author}
-                          className="w-10 h-10 rounded-full bg-gray-200 mr-3"
+                          src={`https:${featuredPost.fields.featuredImage.fields.file.url}`}
+                          alt={featuredPost.fields.featuredImage.fields.title || featuredPost.fields.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="text-sm">
-                          <p className="font-medium text-gray-900">{featuredPost.author}</p>
-                          <p className="text-gray-500">{featuredPost.date}</p>
+                        <div className="absolute top-4 left-4">
+                          <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full text-sm font-medium">
+                            Featured
+                          </span>
                         </div>
                       </div>
-                    </CardContent>
-                  </Link>
-                </Card>
-              </div>
-              
-              {/* Recent Posts - 40% width */}
-              <div className="lg:col-span-2 space-y-6">
-                {recentPosts.map((post) => (
-                  <Card key={post.id} className="overflow-hidden group cursor-pointer">
-                    <Link to={`/blog/${post.id}`}>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                        <div className="aspect-[4/3] xl:aspect-square bg-gray-100 relative overflow-hidden">
-                          <img 
-                            src={post.image} 
-                            alt={post.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          />
+                      <CardContent className="p-8">
+                        <div className="mb-3">
+                          <span className="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-sm font-medium">
+                            {featuredPost.fields.category}
+                          </span>
                         </div>
-                        <CardContent className="p-6">
-                          <div className="mb-2">
-                            <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">
-                              {post.category}
-                            </span>
+                        <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-900 group-hover:text-pink-600 transition-colors">
+                          {featuredPost.fields.title}
+                        </h2>
+                        <p className="text-gray-600 mb-6 leading-relaxed">
+                          {featuredPost.fields.excerpt}
+                        </p>
+                        <div className="flex items-center">
+                          {featuredPost.fields.author.fields.photo && (
+                            <img 
+                              src={`https:${featuredPost.fields.author.fields.photo.fields.file.url}`}
+                              alt={featuredPost.fields.author.fields.name}
+                              className="w-10 h-10 rounded-full bg-gray-200 mr-3"
+                            />
+                          )}
+                          <div className="text-sm">
+                            <p className="font-medium text-gray-900">{featuredPost.fields.author.fields.name}</p>
+                            <p className="text-gray-500">{formatDate(featuredPost.sys.createdAt)}</p>
                           </div>
-                          <h3 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-pink-600 transition-colors line-clamp-2">
-                            {post.title}
-                          </h3>
-                          <div className="flex items-center text-xs text-gray-500">
-                            <span>{post.author}</span>
-                            <span className="mx-2">•</span>
-                            <span>{post.readTime}</span>
-                          </div>
-                        </CardContent>
-                      </div>
+                        </div>
+                      </CardContent>
                     </Link>
                   </Card>
-                ))}
+                </div>
+                
+                {/* Recent Posts - 40% width */}
+                <div className="lg:col-span-2 space-y-6">
+                  {recentPosts.map((post) => (
+                    <Card key={post.sys.id} className="overflow-hidden group cursor-pointer">
+                      <Link to={`/blog/${post.fields.slug}`}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                          <div className="aspect-[4/3] xl:aspect-square bg-gray-100 relative overflow-hidden">
+                            <img 
+                              src={`https:${post.fields.featuredImage.fields.file.url}`}
+                              alt={post.fields.featuredImage.fields.title || post.fields.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                          </div>
+                          <CardContent className="p-6">
+                            <div className="mb-2">
+                              <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">
+                                {post.fields.category}
+                              </span>
+                            </div>
+                            <h3 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-pink-600 transition-colors line-clamp-2">
+                              {post.fields.title}
+                            </h3>
+                            <div className="flex items-center text-xs text-gray-500">
+                              <span>{post.fields.author.fields.name}</span>
+                              <span className="mx-2">•</span>
+                              <span>{calculateReadTime(post.fields.content)}</span>
+                            </div>
+                          </CardContent>
+                        </div>
+                      </Link>
+                    </Card>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           {/* Section 2: Newsletter Subscription CTA */}
           <div className="mb-20 bg-gray-50 rounded-2xl p-8 lg:p-12">
@@ -246,50 +218,74 @@ const Blogs = () => {
             </div>
 
             {/* Blog Posts Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredBlogs.map((blog) => (
-                <Card key={blog.id} className="overflow-hidden h-full flex flex-col group cursor-pointer">
-                  <Link to={`/blog/${blog.id}`} className="h-full flex flex-col">
-                    <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
-                      <img 
-                        src={blog.image} 
-                        alt={blog.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
+            {loading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[...Array(6)].map((_, index) => (
+                  <Card key={index} className="overflow-hidden h-full flex flex-col">
+                    <div className="aspect-[4/3] bg-gray-200 animate-pulse"></div>
                     <CardContent className="p-6 flex-grow flex flex-col">
-                      <div className="mb-3">
-                        <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">
-                          {blog.category}
-                        </span>
-                      </div>
-                      <h3 className="font-bold text-xl mb-3 text-gray-900 group-hover:text-pink-600 transition-colors flex-grow">
-                        {blog.title}
-                      </h3>
-                      <p className="text-gray-600 mb-6 leading-relaxed line-clamp-3">
-                        {blog.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between mt-auto">
-                        <div className="flex items-center">
-                          <img 
-                            src={blog.authorImage} 
-                            alt={blog.author}
-                            className="w-8 h-8 rounded-full bg-gray-200 mr-3"
-                          />
-                          <div className="text-sm">
-                            <p className="font-medium text-gray-900">{blog.author}</p>
-                            <p className="text-gray-500">{blog.date}</p>
-                          </div>
-                        </div>
-                        <div className="text-sm text-gray-500">
-                          {blog.readTime}
+                      <div className="h-6 bg-gray-200 rounded mb-3 animate-pulse"></div>
+                      <div className="h-4 bg-gray-200 rounded mb-2 animate-pulse"></div>
+                      <div className="h-4 bg-gray-200 rounded mb-6 animate-pulse w-3/4"></div>
+                      <div className="flex items-center mt-auto">
+                        <div className="w-8 h-8 bg-gray-200 rounded-full mr-3 animate-pulse"></div>
+                        <div className="space-y-1 flex-1">
+                          <div className="h-3 bg-gray-200 rounded animate-pulse"></div>
+                          <div className="h-3 bg-gray-200 rounded animate-pulse w-2/3"></div>
                         </div>
                       </div>
                     </CardContent>
-                  </Link>
-                </Card>
-              ))}
-            </div>
+                  </Card>
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredBlogs.map((blog) => (
+                  <Card key={blog.sys.id} className="overflow-hidden h-full flex flex-col group cursor-pointer">
+                    <Link to={`/blog/${blog.fields.slug}`} className="h-full flex flex-col">
+                      <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                        <img 
+                          src={`https:${blog.fields.featuredImage.fields.file.url}`}
+                          alt={blog.fields.featuredImage.fields.title || blog.fields.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <CardContent className="p-6 flex-grow flex flex-col">
+                        <div className="mb-3">
+                          <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">
+                            {blog.fields.category}
+                          </span>
+                        </div>
+                        <h3 className="font-bold text-xl mb-3 text-gray-900 group-hover:text-pink-600 transition-colors flex-grow">
+                          {blog.fields.title}
+                        </h3>
+                        <p className="text-gray-600 mb-6 leading-relaxed line-clamp-3">
+                          {blog.fields.excerpt}
+                        </p>
+                        <div className="flex items-center justify-between mt-auto">
+                          <div className="flex items-center">
+                            {blog.fields.author.fields.photo && (
+                              <img 
+                                src={`https:${blog.fields.author.fields.photo.fields.file.url}`}
+                                alt={blog.fields.author.fields.name}
+                                className="w-8 h-8 rounded-full bg-gray-200 mr-3"
+                              />
+                            )}
+                            <div className="text-sm">
+                              <p className="font-medium text-gray-900">{blog.fields.author.fields.name}</p>
+                              <p className="text-gray-500">{formatDate(blog.sys.createdAt)}</p>
+                            </div>
+                          </div>
+                          <div className="text-sm text-gray-500">
+                            {calculateReadTime(blog.fields.content)}
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Link>
+                  </Card>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Section 4: Pagination */}

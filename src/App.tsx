@@ -17,6 +17,7 @@ import Integrations from "./pages/Integrations";
 import About from "./pages/About";
 import GrowthAudit from "./pages/GrowthAudit";
 import Blogs from "./pages/Blogs";
+import BlogPost from "./pages/BlogPost";
 import Brochure from "./pages/Brochure";
 import EcommerceBrochure from "./pages/EcommerceBrochure";
 import TelecomBrochure from "./pages/TelecomBrochure";
@@ -44,6 +45,7 @@ const App = () => {
             <Route path="/integrations" element={<Integrations />} />
             <Route path="/about" element={<About />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/brochure" element={<Brochure />} />
             <Route path="/brochure/ecommerce" element={<EcommerceBrochure />} />
             <Route path="/brochure/telecom" element={<TelecomBrochure />} />

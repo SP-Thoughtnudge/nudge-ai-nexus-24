@@ -59,15 +59,29 @@ export const contentfulService = {
       .trim();
   },
 
-  // Get all blog posts (excluding featured posts)
+  // Get all blog posts (excluding featured posts if isFeatured field exists)
   async getBlogPosts(category?: string, searchQuery?: string): Promise<BlogPost[]> {
     try {
       const query: any = {
         content_type: 'blogPost',
         include: 2,
         order: ['-sys.createdAt'],
-        'fields.isFeatured[ne]': true, // Exclude featured posts
       };
+
+      // Only exclude featured posts if the isFeatured field exists
+      try {
+        // Test if isFeatured field exists by making a simple query
+        const testResponse = await client.getEntries({
+          content_type: 'blogPost',
+          'fields.isFeatured': true,
+          limit: 1,
+        });
+        // If no error, the field exists, so we can exclude featured posts
+        query['fields.isFeatured[ne]'] = true;
+      } catch (error) {
+        // If error, the field doesn't exist yet, so we'll get all posts
+        console.log('isFeatured field not found, showing all posts');
+      }
 
       if (category && category !== 'All') {
         query['fields.category'] = category;
@@ -101,7 +115,8 @@ export const contentfulService = {
       }
       return null;
     } catch (error) {
-      console.error('Error fetching featured blog post:', error);
+      // If isFeatured field doesn't exist, return null (no featured post)
+      console.log('isFeatured field not found, no featured post available');
       return null;
     }
   },

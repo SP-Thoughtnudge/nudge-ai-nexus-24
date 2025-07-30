@@ -76,15 +76,22 @@ export const contentfulService = {
   // Get a single blog post by slug
   async getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
     try {
+      console.log('Fetching blog post with slug:', slug);
       const response = await client.getEntries({
         content_type: 'blogPost',
         'fields.slug': slug,
         include: 2,
       });
 
+      console.log('Contentful response:', response);
+      console.log('Items found:', response.items.length);
+
       if (response.items.length > 0) {
-        return response.items[0] as unknown as BlogPost;
+        const post = response.items[0] as unknown as BlogPost;
+        console.log('Found blog post:', post);
+        return post;
       }
+      console.log('No blog post found with slug:', slug);
       return null;
     } catch (error) {
       console.error('Error fetching blog post:', error);

@@ -4,7 +4,6 @@ import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import NewHeroSection from "@/components/home/new-hero-section";
 import OutcomesSection from "@/components/home/outcomes-section";
-import LogoCloud from "@/components/home/logo-cloud";
 import ProblemStatement from "@/components/home/problem-statement";
 import SolutionProcess from "@/components/home/solution-process";
 import TestimonialProof from "@/components/home/testimonial-proof";
@@ -32,7 +31,6 @@ const Index = () => {
       <main className="flex-grow">
         <NewHeroSection />
         <OutcomesSection />
-        <LogoCloud />
         <ProblemStatement />
         <SolutionProcess />
         <TestimonialProof />

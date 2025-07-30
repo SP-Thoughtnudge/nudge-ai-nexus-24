@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { ProductHero } from "@/components/product/product-hero";
-import { PlatformPillars } from "@/components/product/platform-pillars";
-import PsychographicDna from "@/components/product/psychographic-dna";
-import { UseCasesAction } from "@/components/product/use-cases-action";
-import FinalCta from "@/components/home/final-cta";
+import LazySection from "@/components/ui/lazy-section";
 import { updateSEOTags, addStructuredData, softwareApplicationSchema } from "@/lib/seo";
+
+// Lazy load non-critical sections
+const PlatformPillars = lazy(() => import("@/components/product/platform-pillars"));
+const PsychographicDna = lazy(() => import("@/components/product/psychographic-dna"));
+const UseCasesAction = lazy(() => import("@/components/product/use-cases-action"));
+const FinalCta = lazy(() => import("@/components/home/final-cta"));
 
 const Product = () => {
   useEffect(() => {
@@ -30,13 +33,29 @@ const Product = () => {
       <main>
         <ProductHero />
         
-        <PlatformPillars />
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <PlatformPillars />
+          </LazySection>
+        </Suspense>
         
-        <PsychographicDna />
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <PsychographicDna />
+          </LazySection>
+        </Suspense>
         
-        <UseCasesAction />
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <UseCasesAction />
+          </LazySection>
+        </Suspense>
         
-        <FinalCta />
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <FinalCta />
+          </LazySection>
+        </Suspense>
       </main>
       
       <Footer />

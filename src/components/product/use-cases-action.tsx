@@ -54,7 +54,7 @@ const useCases = [
   }
 ];
 
-export const UseCasesAction = () => {
+const UseCasesAction = () => {
   const [activeUseCase, setActiveUseCase] = useState("existing");
 
   const currentUseCase = useCases.find(uc => uc.id === activeUseCase) || useCases[0];
@@ -137,3 +137,5 @@ export const UseCasesAction = () => {
     </section>
   );
 };
+
+export default UseCasesAction;

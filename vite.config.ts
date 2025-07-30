@@ -26,25 +26,50 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-select', '@radix-ui/react-tabs'],
+          icons: ['lucide-react'],
+          forms: ['react-hook-form', '@hookform/resolvers', 'zod'],
+          charts: ['recharts'],
+          'home-components': ['/src/components/home/'],
+          'product-components': ['/src/components/product/'],
+          'how-it-works-components': ['/src/components/how-it-works/'],
+        },
+        chunkFileNames: (chunkInfo) => {
+          const facadeModuleId = chunkInfo.facadeModuleId ? chunkInfo.facadeModuleId.split('/').pop()?.replace('.tsx', '').replace('.ts', '') : 'chunk';
+          return `js/${facadeModuleId}-[hash].js`;
         },
       },
     },
-    // Enable minification
+    // Enable aggressive minification
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: mode === 'production',
         drop_debugger: mode === 'production',
+        pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
+      },
+      mangle: {
+        safari10: true,
       },
     },
     // Asset optimization
-    assetsInlineLimit: 4096,
+    assetsInlineLimit: 2048, // Reduce inline limit for better caching
     cssCodeSplit: true,
     sourcemap: mode === 'development',
+    target: 'esnext',
+    modulePreload: {
+      polyfill: false,
+    },
   },
   // Performance optimizations
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
+    include: ['react', 'react-dom', 'react-router-dom', 'lucide-react', '@radix-ui/react-dialog'],
+    exclude: ['@tanstack/react-query'],
+  },
+  esbuild: {
+    target: 'esnext',
+    minifyIdentifiers: mode === 'production',
+    minifySyntax: true,
+    minifyWhitespace: true,
   },
 }));

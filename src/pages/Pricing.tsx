@@ -1,13 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import PricingHero from "@/components/pricing/pricing-hero";
-import PricingPhilosophy from "@/components/pricing/pricing-philosophy";
-import PricingProcess from "@/components/pricing/pricing-process";
-import PricingIncludes from "@/components/pricing/pricing-includes";
-import PricingFaq from "@/components/pricing/pricing-faq";
-import PricingCta from "@/components/pricing/pricing-cta";
+import LazySection from "@/components/ui/lazy-section";
 import { updateSEOTags } from "@/lib/seo";
+
+// Lazy load non-critical sections
+const PricingPhilosophy = lazy(() => import("@/components/pricing/pricing-philosophy"));
+const PricingProcess = lazy(() => import("@/components/pricing/pricing-process"));
+const PricingIncludes = lazy(() => import("@/components/pricing/pricing-includes"));
+const PricingFaq = lazy(() => import("@/components/pricing/pricing-faq"));
+const PricingCta = lazy(() => import("@/components/pricing/pricing-cta"));
 
 const Pricing = () => {
   useEffect(() => {
@@ -28,11 +31,31 @@ const Pricing = () => {
       <Navbar />
       <main className="flex-grow">
         <PricingHero />
-        <PricingPhilosophy />
-        <PricingProcess />
-        <PricingIncludes />
-        <PricingFaq />
-        <PricingCta />
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <PricingPhilosophy />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <PricingProcess />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <PricingIncludes />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <PricingFaq />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <PricingCta />
+          </LazySection>
+        </Suspense>
       </main>
       <Footer />
     </div>

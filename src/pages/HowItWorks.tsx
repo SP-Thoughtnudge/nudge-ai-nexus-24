@@ -1,14 +1,17 @@
 
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import NewHeroSection from "@/components/how-it-works/new-hero-section";
-import EvolutionComparison from "@/components/how-it-works/evolution-comparison";
-import JourneyDivergence from "@/components/how-it-works/journey-divergence";
-import ThreeStepProcess from "@/components/how-it-works/three-step-process";
-import TechnologyCore from "@/components/how-it-works/technology-core";
-import FinalCta from "@/components/home/final-cta";
+import LazySection from "@/components/ui/lazy-section";
 import { updateSEOTags } from "@/lib/seo";
+
+// Lazy load non-critical sections
+const EvolutionComparison = lazy(() => import("@/components/how-it-works/evolution-comparison"));
+const JourneyDivergence = lazy(() => import("@/components/how-it-works/journey-divergence"));
+const ThreeStepProcess = lazy(() => import("@/components/how-it-works/three-step-process"));
+const TechnologyCore = lazy(() => import("@/components/how-it-works/technology-core"));
+const FinalCta = lazy(() => import("@/components/home/final-cta"));
 
 const HowItWorks = () => {
   useEffect(() => {
@@ -30,11 +33,31 @@ const HowItWorks = () => {
       <Navbar />
       <main className="flex-grow">
         <NewHeroSection />
-        <EvolutionComparison />
-        <JourneyDivergence />
-        <ThreeStepProcess />
-        <TechnologyCore />
-        <FinalCta />
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <EvolutionComparison />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <JourneyDivergence />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <ThreeStepProcess />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <TechnologyCore />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <FinalCta />
+          </LazySection>
+        </Suspense>
       </main>
       <Footer />
     </div>

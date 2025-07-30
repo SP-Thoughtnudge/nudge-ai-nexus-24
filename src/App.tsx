@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
 import PerformanceMonitor from "@/components/ui/performance-monitor";
+import ImagePreloader from "@/components/ui/image-preloader";
 // Lazy load components for better performance
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -27,13 +28,27 @@ const InsuranceBrochure = lazy(() => import("./pages/InsuranceBrochure"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 
 // Create a new QueryClient instance
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      gcTime: 10 * 60 * 1000, // 10 minutes
+    },
+  },
+});
+
+// Critical images to preload
+const criticalImages = [
+  '/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png',
+  '/lovable-uploads/d20048b9-627e-42af-9034-d893f184e5a2.png',
+];
 
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <PerformanceMonitor />
+        <ImagePreloader images={criticalImages} priority />
         <Toaster />
         <Sonner />
         <BrowserRouter>

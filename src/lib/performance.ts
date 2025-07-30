@@ -78,6 +78,27 @@ export const addResourceHints = () => {
   preconnect('https://fonts.gstatic.com');
 };
 
+// Priority route preloading
+export const preloadRouteComponents = () => {
+  const routes = [
+    () => import('../pages/Product'),
+    () => import('../pages/HowItWorks'),
+    () => import('../pages/Solutions'),
+    () => import('../pages/Pricing'),
+  ];
+
+  // Preload route components when browser is idle
+  if ('requestIdleCallback' in window) {
+    (window as any).requestIdleCallback(() => {
+      routes.forEach(routeImport => {
+        routeImport().catch(() => {
+          // Silently handle preload failures
+        });
+      });
+    });
+  }
+};
+
 // Initialize performance optimizations
 export const initPerformanceOptimizations = () => {
   if (typeof window === 'undefined') return;
@@ -88,13 +109,25 @@ export const initPerformanceOptimizations = () => {
   // Add resource hints
   addResourceHints();
   
-  // Prefetch likely next pages on hover
+  // Preload route components
+  preloadRouteComponents();
+  
+  // Prefetch likely next pages on hover (debounced)
+  let hoverTimeout: number;
   document.addEventListener('mouseover', (e) => {
     const target = e.target as HTMLElement;
     const link = target.closest('a[href]') as HTMLAnchorElement;
     
     if (link && link.href.startsWith(window.location.origin)) {
-      prefetchResource(link.href);
+      clearTimeout(hoverTimeout);
+      hoverTimeout = window.setTimeout(() => {
+        prefetchResource(link.href);
+      }, 100); // Debounce hover events
     }
+  }, { passive: true });
+
+  // Clear timeout on mouse leave
+  document.addEventListener('mouseleave', () => {
+    clearTimeout(hoverTimeout);
   }, { passive: true });
 };

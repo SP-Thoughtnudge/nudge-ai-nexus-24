@@ -139,7 +139,7 @@ const pillars = [
   }
 ];
 
-export const PlatformPillars = () => {
+const PlatformPillars = () => {
   const [activePillar, setActivePillar] = useState("agents");
 
   const currentPillar = pillars.find(p => p.id === activePillar) || pillars[0];
@@ -201,3 +201,5 @@ export const PlatformPillars = () => {
     </section>
   );
 };
+
+export default PlatformPillars;

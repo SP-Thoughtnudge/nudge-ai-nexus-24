@@ -13,7 +13,8 @@ const Blogs = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
-  const [featuredBlogs, setFeaturedBlogs] = useState<BlogPost[]>([]);
+  const [featuredPost, setFeaturedPost] = useState<BlogPost | null>(null);
+  const [recentPosts, setRecentPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
   const categories = ["All", "Behavioral Science", "AI & Product", "Case Studies"];
@@ -22,12 +23,14 @@ const Blogs = () => {
     const fetchBlogs = async () => {
       setLoading(true);
       try {
-        const [allBlogs, featured] = await Promise.all([
+        const [allBlogs, featured, recent] = await Promise.all([
           contentfulService.getBlogPosts(activeFilter, searchQuery),
-          contentfulService.getFeaturedBlogPosts(4)
+          contentfulService.getFeaturedBlogPost(),
+          contentfulService.getFeaturedBlogPosts(3)
         ]);
         setBlogs(allBlogs);
-        setFeaturedBlogs(featured);
+        setFeaturedPost(featured);
+        setRecentPosts(recent);
       } catch (error) {
         console.error('Error fetching blogs:', error);
       }
@@ -36,13 +39,6 @@ const Blogs = () => {
 
     fetchBlogs();
   }, [activeFilter, searchQuery]);
-
-  const featuredPost = featuredBlogs[0];
-  const recentPosts = featuredBlogs.slice(1, 3);
-  
-  const filteredBlogs = blogs.filter(blog => 
-    blog.sys.id !== featuredPost?.sys.id
-  );
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -240,7 +236,7 @@ const Blogs = () => {
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredBlogs.map((blog) => (
+                {blogs.map((blog) => (
                   <Card key={blog.sys.id} className="overflow-hidden h-full flex flex-col group cursor-pointer">
                     <Link to={`/blog/${blog.fields.slug || contentfulService.generateSlug(blog.fields.title)}`} className="h-full flex flex-col">
                       <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">

@@ -44,6 +44,7 @@ export interface BlogPost {
     author: Author;
     category: 'Behavioral Science' | 'AI & Product' | 'Case Studies';
     metaDescription?: string;
+    isFeatured?: boolean;
   };
 }
 
@@ -58,13 +59,14 @@ export const contentfulService = {
       .trim();
   },
 
-  // Get all blog posts
+  // Get all blog posts (excluding featured posts)
   async getBlogPosts(category?: string, searchQuery?: string): Promise<BlogPost[]> {
     try {
       const query: any = {
         content_type: 'blogPost',
         include: 2,
         order: ['-sys.createdAt'],
+        'fields.isFeatured[ne]': true, // Exclude featured posts
       };
 
       if (category && category !== 'All') {
@@ -76,11 +78,31 @@ export const contentfulService = {
       }
 
       const response = await client.getEntries(query);
-      console.log('Blog posts response with fields:', response.items.map(item => ({ title: item.fields.title, slug: item.fields.slug })));
       return response.items as unknown as BlogPost[];
     } catch (error) {
       console.error('Error fetching blog posts:', error);
       return [];
+    }
+  },
+
+  // Get the latest featured blog post
+  async getFeaturedBlogPost(): Promise<BlogPost | null> {
+    try {
+      const response = await client.getEntries({
+        content_type: 'blogPost',
+        include: 2,
+        order: ['-sys.createdAt'],
+        'fields.isFeatured': true,
+        limit: 1,
+      });
+
+      if (response.items.length > 0) {
+        return response.items[0] as unknown as BlogPost;
+      }
+      return null;
+    } catch (error) {
+      console.error('Error fetching featured blog post:', error);
+      return null;
     }
   },
 

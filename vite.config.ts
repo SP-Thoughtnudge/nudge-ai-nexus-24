@@ -30,9 +30,6 @@ export default defineConfig(({ mode }) => ({
           icons: ['lucide-react'],
           forms: ['react-hook-form', '@hookform/resolvers', 'zod'],
           charts: ['recharts'],
-          'home-components': ['/src/components/home/'],
-          'product-components': ['/src/components/product/'],
-          'how-it-works-components': ['/src/components/how-it-works/'],
         },
         chunkFileNames: (chunkInfo) => {
           const facadeModuleId = chunkInfo.facadeModuleId ? chunkInfo.facadeModuleId.split('/').pop()?.replace('.tsx', '').replace('.ts', '') : 'chunk';

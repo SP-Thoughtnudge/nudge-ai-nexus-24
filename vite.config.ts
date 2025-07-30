@@ -19,4 +19,32 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Code splitting optimization
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+        },
+      },
+    },
+    // Enable minification
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
+      },
+    },
+    // Asset optimization
+    assetsInlineLimit: 4096,
+    cssCodeSplit: true,
+    sourcemap: mode === 'development',
+  },
+  // Performance optimizations
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
+  },
 }));

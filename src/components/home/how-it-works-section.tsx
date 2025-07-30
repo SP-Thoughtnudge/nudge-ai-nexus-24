@@ -15,7 +15,13 @@ const Step = ({ number, title, description, imageUrl, isReversed = false }) => {
       <div className="w-full md:w-1/2">
         <div className="rounded-xl overflow-hidden shadow-lg relative">
           <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-brand-pink/10 mix-blend-overlay"></div>
-          <img src={imageUrl} alt={title} className="w-full h-auto" />
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="w-full h-auto" 
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </div>

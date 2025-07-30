@@ -1,0 +1,21 @@
+{
+  "name": "Thoughtnudge - Autonomous AI Decisioning Platform",
+  "short_name": "Thoughtnudge",
+  "description": "AI-powered autonomous decisioning platform that makes 1:1 marketing decisions in real time across every channel and customer, at scale.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#E94B8B",
+  "icons": [
+    {
+      "src": "/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

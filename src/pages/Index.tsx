@@ -1,13 +1,16 @@
 
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import NewHeroSection from "@/components/home/new-hero-section";
-import OutcomesSection from "@/components/home/outcomes-section";
-import ProblemStatement from "@/components/home/problem-statement";
-import SolutionProcess from "@/components/home/solution-process";
-import TestimonialProof from "@/components/home/testimonial-proof";
-import FinalCta from "@/components/home/final-cta";
+import LazySection from "@/components/ui/lazy-section";
+
+// Lazy load non-critical sections
+const OutcomesSection = lazy(() => import("@/components/home/outcomes-section"));
+const ProblemStatement = lazy(() => import("@/components/home/problem-statement"));
+const SolutionProcess = lazy(() => import("@/components/home/solution-process"));
+const TestimonialProof = lazy(() => import("@/components/home/testimonial-proof"));
+const FinalCta = lazy(() => import("@/components/home/final-cta"));
 import { updateSEOTags, addStructuredData, organizationSchema } from "@/lib/seo";
 
 const Index = () => {
@@ -30,11 +33,31 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <NewHeroSection />
-        <OutcomesSection />
-        <ProblemStatement />
-        <SolutionProcess />
-        <TestimonialProof />
-        <FinalCta />
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <OutcomesSection />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <ProblemStatement />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <SolutionProcess />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <TestimonialProof />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <FinalCta />
+          </LazySection>
+        </Suspense>
       </main>
       <Footer />
     </div>

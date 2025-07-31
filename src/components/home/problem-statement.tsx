@@ -1,6 +1,9 @@
 import { AlertTriangle, DollarSign, MessageSquare } from "lucide-react";
+import { useFadeInOnScroll } from "@/hooks/use-fade-in-on-scroll";
 
 const ProblemStatement = () => {
+  const { elementRef, isVisible } = useFadeInOnScroll({ threshold: 0.1, rootMargin: '100px' });
+  
   const problems = [
     {
       icon: AlertTriangle,
@@ -28,9 +31,23 @@ const ProblemStatement = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div ref={elementRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {problems.map((problem, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+            <div 
+              key={index} 
+              className={`
+                bg-white p-8 rounded-xl shadow-sm border border-gray-100 
+                transition-all duration-500 ease-out
+                hover:scale-[1.03] hover:shadow-lg hover:-translate-y-1
+                ${isVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-8'
+                }
+              `}
+              style={{
+                transitionDelay: isVisible ? `${index * 100}ms` : '0ms'
+              }}
+            >
               <div className="flex justify-center mb-6">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
                   <problem.icon className="w-8 h-8 text-primary" />

@@ -5,6 +5,7 @@ import Footer from "@/components/ui/footer";
 import NewHeroSection from "@/components/home/new-hero-section";
 import LogoCloud from "@/components/home/logo-cloud";
 import LazySection from "@/components/ui/lazy-section";
+import FadeInSection from "@/components/ui/fade-in-section";
 
 // Lazy load non-critical sections
 const OutcomesSection = lazy(() => import("@/components/home/outcomes-section"));
@@ -34,30 +35,48 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <NewHeroSection />
-        <LogoCloud />
+        
+        <FadeInSection>
+          <LogoCloud />
+        </FadeInSection>
+        
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <OutcomesSection />
+            <FadeInSection delay={100}>
+              <OutcomesSection />
+            </FadeInSection>
           </LazySection>
         </Suspense>
+        
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <ProblemStatement />
+            <FadeInSection delay={200}>
+              <ProblemStatement />
+            </FadeInSection>
           </LazySection>
         </Suspense>
+        
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <SolutionProcess />
+            <FadeInSection delay={300}>
+              <SolutionProcess />
+            </FadeInSection>
           </LazySection>
         </Suspense>
+        
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <TestimonialProof />
+            <FadeInSection delay={400}>
+              <TestimonialProof />
+            </FadeInSection>
           </LazySection>
         </Suspense>
+        
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <FinalCta />
+            <FadeInSection delay={500}>
+              <FinalCta />
+            </FadeInSection>
           </LazySection>
         </Suspense>
       </main>

@@ -3,6 +3,7 @@ import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import SolutionsHero from "@/components/solutions/solutions-hero";
 import LazySection from "@/components/ui/lazy-section";
+import FadeInSection from "@/components/ui/fade-in-section";
 
 // Lazy load non-critical sections
 const SolutionCards = lazy(() => import("@/components/solutions/solution-cards"));
@@ -17,13 +18,17 @@ const Solutions = () => {
       
       <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
         <LazySection>
-          <SolutionCards />
+          <FadeInSection delay={100}>
+            <SolutionCards />
+          </FadeInSection>
         </LazySection>
       </Suspense>
       
       <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
         <LazySection>
-          <SolutionsCta />
+          <FadeInSection delay={200}>
+            <SolutionsCta />
+          </FadeInSection>
         </LazySection>
       </Suspense>
       

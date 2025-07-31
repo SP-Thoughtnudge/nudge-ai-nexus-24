@@ -3,6 +3,7 @@ import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { ProductHero } from "@/components/product/product-hero";
 import LazySection from "@/components/ui/lazy-section";
+import FadeInSection from "@/components/ui/fade-in-section";
 import { updateSEOTags, addStructuredData, softwareApplicationSchema } from "@/lib/seo";
 
 // Lazy load non-critical sections
@@ -35,25 +36,33 @@ const Product = () => {
         
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <PlatformPillars />
+            <FadeInSection delay={100}>
+              <PlatformPillars />
+            </FadeInSection>
           </LazySection>
         </Suspense>
         
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <PsychographicDna />
+            <FadeInSection delay={200}>
+              <PsychographicDna />
+            </FadeInSection>
           </LazySection>
         </Suspense>
         
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <UseCasesAction />
+            <FadeInSection delay={300}>
+              <UseCasesAction />
+            </FadeInSection>
           </LazySection>
         </Suspense>
         
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <FinalCta />
+            <FadeInSection delay={400}>
+              <FinalCta />
+            </FadeInSection>
           </LazySection>
         </Suspense>
       </main>

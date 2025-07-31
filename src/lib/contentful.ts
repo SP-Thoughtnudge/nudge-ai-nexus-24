@@ -1,8 +1,9 @@
 import { createClient } from 'contentful';
 
+// Note: These are Contentful public access tokens, not sensitive credentials
 const client = createClient({
   space: 'koqn61rwp9mc',
-  accessToken: 'gHbRDyIX68GkcwXvUXw7WCY_aq-Oa22645E1ChdjyPk',
+  accessToken: 'gHbRDyIX68GkcwXvUXw7WCY_aq-Oa22645E1ChdjyPk', // This is a public read-only token
 });
 
 export interface Author {

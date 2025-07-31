@@ -34,17 +34,28 @@ const GrowthAuditForm = () => {
 
   return (
     <div className="w-full">
-      <iframe
-        data-tally-src="https://tally.so/embed/mOMq2M?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
-        loading="lazy"
-        width="100%"
-        height="600"
-        frameBorder="0"
-        marginHeight={0}
-        marginWidth={0}
-        title="Growth Audit Form"
-        className="rounded-lg"
-      ></iframe>
+      <div 
+        className="p-6 border border-gray-200 rounded-xl shadow-sm"
+        style={{
+          padding: '24px',
+          border: '1px solid #E2E8F0',
+          borderRadius: '12px',
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)'
+        }}
+      >
+        <h3 className="text-xl font-semibold text-gray-900 mb-6">Get Your Free Audit</h3>
+        <iframe
+          data-tally-src="https://tally.so/embed/mOMq2M?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
+          loading="lazy"
+          width="100%"
+          height="600"
+          frameBorder="0"
+          marginHeight={0}
+          marginWidth={0}
+          title="Growth Audit Form"
+          className="rounded-lg"
+        ></iframe>
+      </div>
     </div>
   );
 };

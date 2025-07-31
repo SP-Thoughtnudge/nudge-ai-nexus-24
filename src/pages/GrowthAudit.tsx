@@ -10,7 +10,7 @@ const GrowthAudit = () => {
       <div className="absolute top-6 left-6 z-10">
         <Link to="/" className="block">
           <img 
-            src="/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png" 
+            src="/lovable-uploads/30f61a0f-8f24-4631-90a5-4de19741aa8c.png" 
             alt="Thoughtnudge" 
             className="h-8 w-auto hover:opacity-80 transition-opacity"
           />

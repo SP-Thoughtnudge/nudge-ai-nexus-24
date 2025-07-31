@@ -1,30 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Check, ArrowRight } from "lucide-react";
 import founderHeadshot from "@/assets/founder-headshot.jpg";
+import { contentfulService } from "@/lib/contentful";
+import LazyImage from "@/components/ui/lazy-image";
 
 const AuditThankYou = () => {
-  // Sample blog posts for "While You Wait" section
-  const blogPosts = [
-    {
-      id: 1,
-      title: "The Hidden Psychology Behind Customer Churn",
-      image: "/lovable-uploads/a5fe38da-06fb-45bc-b3e9-7e3cb1ad7542.png",
-      slug: "hidden-psychology-customer-churn"
-    },
-    {
-      id: 2,
-      title: "How AI-Driven Nudges Increased Revenue by 127%",
-      image: "/lovable-uploads/6123fdf1-d4b8-4faf-b42b-01ff3ef8c6b1.png",
-      slug: "ai-driven-nudges-revenue-increase"
-    },
-    {
-      id: 3,
-      title: "Beyond A/B Testing: The Future of Customer Engagement",
-      image: "/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
-      slug: "beyond-ab-testing-future-engagement"
-    }
-  ];
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const posts = await contentfulService.getBlogPosts();
+        setBlogPosts(posts.slice(0, 3)); // Get first 3 posts
+      } catch (error) {
+        console.error('Error fetching blog posts:', error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -135,20 +130,20 @@ const AuditThankYou = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <div key={post.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div key={post.sys?.id || post.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={post.image}
-                    alt={post.title}
+                  <LazyImage 
+                    src={post.fields?.featuredImage?.fields?.file?.url ? `https:${post.fields.featuredImage.fields.file.url}?w=400&h=225&fit=fill&f=center` : post.image}
+                    alt={post.fields?.featuredImage?.fields?.title || post.fields?.title || post.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-brand-black mb-4 line-clamp-2">
-                    {post.title}
+                    {post.fields?.title || post.title}
                   </h3>
                   <Link 
-                    to={`/blog/${post.slug}`}
+                    to={`/blog/${post.fields?.slug || contentfulService.generateSlug(post.fields?.title || post.title) || post.slug}`}
                     className="inline-flex items-center text-brand-pink hover:text-brand-pink/80 font-medium transition-colors"
                   >
                     Read More 

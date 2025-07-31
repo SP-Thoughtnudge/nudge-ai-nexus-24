@@ -9,7 +9,7 @@ import { ArrowRight, Calendar, User, Clock, Search } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { contentfulService, BlogPost } from "@/lib/contentful";
 import { updateSEOTags, addStructuredData, blogSchema } from "@/lib/seo";
-import OptimizedImage from "@/components/ui/optimized-image";
+import LazyImage from "@/components/ui/lazy-image";
 
 const Blogs = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -97,12 +97,12 @@ const Blogs = () => {
                   <Card className="overflow-hidden h-full group cursor-pointer">
                     <Link to={`/blog/${featuredPost.fields.slug || contentfulService.generateSlug(featuredPost.fields.title)}`}>
                       <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
-                        <OptimizedImage 
-                          src={`https:${featuredPost.fields.featuredImage.fields.file.url}`}
-                          alt={featuredPost.fields.featuredImage.fields.title || featuredPost.fields.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          priority
-                        />
+                         <LazyImage 
+                           src={`https:${featuredPost.fields.featuredImage.fields.file.url}?w=800&h=600&fit=fill&f=center`}
+                           alt={featuredPost.fields.featuredImage.fields.title || featuredPost.fields.title}
+                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                           priority
+                         />
                         <div className="absolute top-4 left-4">
                           <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full text-sm font-medium">
                             Featured
@@ -123,12 +123,11 @@ const Blogs = () => {
                         </p>
                         <div className="flex items-center">
                           {featuredPost.fields.author.fields.photo && (
-                            <OptimizedImage 
-                              src={`https:${featuredPost.fields.author.fields.photo.fields.file.url}`}
-                              alt={featuredPost.fields.author.fields.name}
-                              className="w-10 h-10 rounded-full bg-gray-200 mr-3"
-                              lazy
-                            />
+                             <LazyImage 
+                               src={`https:${featuredPost.fields.author.fields.photo.fields.file.url}?w=80&h=80&fit=fill&f=face`}
+                               alt={featuredPost.fields.author.fields.name}
+                               className="w-10 h-10 rounded-full bg-gray-200 mr-3"
+                             />
                           )}
                            <div className="text-sm">
                              <p className="font-medium text-gray-900">by {featuredPost.fields.author.fields.name} • {formatDate(featuredPost)}</p>
@@ -147,11 +146,10 @@ const Blogs = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                            <div className="aspect-[4/3] xl:aspect-square bg-gray-100 relative overflow-hidden">
                              {post.fields.featuredImage?.fields?.file?.url ? (
-                               <OptimizedImage 
-                                 src={`https:${post.fields.featuredImage.fields.file.url}`}
+                               <LazyImage 
+                                 src={`https:${post.fields.featuredImage.fields.file.url}?w=400&h=300&fit=fill&f=center`}
                                  alt={post.fields.featuredImage.fields.title || post.fields.title}
                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                 lazy
                                />
                              ) : (
                                <div className="w-full h-full bg-gray-200 flex items-center justify-center">
@@ -266,11 +264,10 @@ const Blogs = () => {
                     <Link to={`/blog/${blog.fields.slug || contentfulService.generateSlug(blog.fields.title)}`} className="h-full flex flex-col">
                        <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
                          {blog.fields.featuredImage?.fields?.file?.url ? (
-                           <OptimizedImage 
-                             src={`https:${blog.fields.featuredImage.fields.file.url}`}
+                           <LazyImage 
+                             src={`https:${blog.fields.featuredImage.fields.file.url}?w=400&h=300&fit=fill&f=center`}
                              alt={blog.fields.featuredImage.fields.title || blog.fields.title}
                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             lazy
                            />
                          ) : (
                            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
@@ -293,12 +290,11 @@ const Blogs = () => {
                         <div className="flex items-center justify-between mt-auto">
                           <div className="flex items-center">
                             {blog.fields.author.fields.photo && (
-                              <OptimizedImage 
-                                src={`https:${blog.fields.author.fields.photo.fields.file.url}`}
-                                alt={blog.fields.author.fields.name}
-                                className="w-8 h-8 rounded-full bg-gray-200 mr-3"
-                                lazy
-                              />
+                               <LazyImage 
+                                 src={`https:${blog.fields.author.fields.photo.fields.file.url}?w=64&h=64&fit=fill&f=face`}
+                                 alt={blog.fields.author.fields.name}
+                                 className="w-8 h-8 rounded-full bg-gray-200 mr-3"
+                               />
                             )}
                              <div className="text-sm">
                                <p className="font-medium text-gray-900">by {blog.fields.author.fields.name} • {formatDate(blog)}</p>

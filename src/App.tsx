@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
 import PerformanceMonitor from "@/components/ui/performance-monitor";
 import ImagePreloader from "@/components/ui/image-preloader";
+import ScrollToTop from "@/components/ui/scroll-to-top";
+import BackToTopButton from "@/components/ui/back-to-top-button";
 import { useWebVitals } from "@/hooks/use-web-vitals";
 // Lazy load components for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -57,6 +59,8 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
+          <BackToTopButton />
           <Suspense fallback={
             <div className="min-h-screen flex items-center justify-center">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>

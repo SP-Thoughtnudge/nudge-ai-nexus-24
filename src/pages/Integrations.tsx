@@ -50,7 +50,7 @@ const Integrations = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="pt-32 pb-16 md:pt-40 md:pb-20">
+        <section className="pt-32 pb-16 md:pt-40 md:pb-20 page-with-navbar">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-brand-black mb-6 animate-fade-in">

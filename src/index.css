@@ -80,6 +80,11 @@
   .text-2xs {
     font-size: 0.7rem;
   }
+  
+  /* Global class for pages with fixed navbar */
+  .page-with-navbar {
+    @apply pt-24 md:pt-28;
+  }
 }
 
 @layer utilities {

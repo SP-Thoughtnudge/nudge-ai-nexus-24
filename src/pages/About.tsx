@@ -45,7 +45,7 @@ const About = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="pt-32 pb-16 md:pb-24 bg-gradient-to-b from-white to-gray-50">
+        <section className="pt-32 pb-16 md:pb-24 bg-gradient-to-b from-white to-gray-50 page-with-navbar">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-brand-black mb-6 leading-tight">

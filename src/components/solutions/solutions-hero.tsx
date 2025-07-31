@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const SolutionsHero = () => {
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-b from-background to-gray-50/50 py-20">
+    <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-b from-background to-gray-50/50 py-20 page-with-navbar">
       {/* Background decoration */}
       <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>

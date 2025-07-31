@@ -20,7 +20,7 @@ const NewHeroSection = () => {
           </h1>
           
           <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed font-inter">
-            Our goal-driven AI understands the unique psychology of each customer to autonomously drive upsells, win-backs, and higher LTV — freeing your team to focus on strategy.
+            Our goal-driven AI acts as a dedicated marketer for every customer, understanding their unique psychology to autonomously drive upsells, win-backs, and higher LTV. <span className="font-semibold text-gray-900">Guaranteed.</span>
           </p>
           
           <div className="mb-16">

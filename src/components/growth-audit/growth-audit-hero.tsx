@@ -74,6 +74,20 @@ const GrowthAuditHero = () => {
           </div>
         </div>
       </div>
+
+      {/* CTA Section */}
+      <div className="space-y-4 pt-8 border-t border-gray-100">
+        <a href="#form" className="inline-block">
+          <button className="bg-brand-pink text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-pink/90 transition-colors">
+            Start My Growth Audit
+          </button>
+        </a>
+        <div className="text-sm text-brand-gray">
+          <a href="/privacy-policy" className="hover:text-brand-pink transition-colors">
+            We respect your privacy.
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

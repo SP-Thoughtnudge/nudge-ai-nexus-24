@@ -12,7 +12,7 @@ const GrowthAudit = () => {
           <img 
             src="/lovable-uploads/30f61a0f-8f24-4631-90a5-4de19741aa8c.png" 
             alt="Thoughtnudge" 
-            className="h-16 w-auto hover:opacity-80 transition-opacity"
+            className="h-12 w-auto hover:opacity-80 transition-opacity"
           />
         </Link>
       </div>

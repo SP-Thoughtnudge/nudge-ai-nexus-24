@@ -27,7 +27,7 @@ const Product = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background page-with-navbar">
+    <div className="min-h-screen bg-background">
       <Navbar />
       
       <main>

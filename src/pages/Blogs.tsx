@@ -145,14 +145,20 @@ const Blogs = () => {
                     <Card key={post.sys.id} className="overflow-hidden group cursor-pointer">
                       <Link to={`/blog/${post.fields.slug || contentfulService.generateSlug(post.fields.title)}`}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                          <div className="aspect-[4/3] xl:aspect-square bg-gray-100 relative overflow-hidden">
-                            <OptimizedImage 
-                              src={`https:${post.fields.featuredImage.fields.file.url}`}
-                              alt={post.fields.featuredImage.fields.title || post.fields.title}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                              lazy
-                            />
-                          </div>
+                           <div className="aspect-[4/3] xl:aspect-square bg-gray-100 relative overflow-hidden">
+                             {post.fields.featuredImage?.fields?.file?.url ? (
+                               <OptimizedImage 
+                                 src={`https:${post.fields.featuredImage.fields.file.url}`}
+                                 alt={post.fields.featuredImage.fields.title || post.fields.title}
+                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 lazy
+                               />
+                             ) : (
+                               <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                                 <span className="text-gray-400 text-sm">No image available</span>
+                               </div>
+                             )}
+                           </div>
                           <CardContent className="p-6">
                             <div className="mb-2">
                               <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">
@@ -258,14 +264,20 @@ const Blogs = () => {
                 {blogs.map((blog) => (
                   <Card key={blog.sys.id} className="overflow-hidden h-full flex flex-col group cursor-pointer">
                     <Link to={`/blog/${blog.fields.slug || contentfulService.generateSlug(blog.fields.title)}`} className="h-full flex flex-col">
-                      <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
-                        <OptimizedImage 
-                          src={`https:${blog.fields.featuredImage.fields.file.url}`}
-                          alt={blog.fields.featuredImage.fields.title || blog.fields.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          lazy
-                        />
-                      </div>
+                       <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                         {blog.fields.featuredImage?.fields?.file?.url ? (
+                           <OptimizedImage 
+                             src={`https:${blog.fields.featuredImage.fields.file.url}`}
+                             alt={blog.fields.featuredImage.fields.title || blog.fields.title}
+                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             lazy
+                           />
+                         ) : (
+                           <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                             <span className="text-gray-400 text-sm">No image available</span>
+                           </div>
+                         )}
+                       </div>
                       <CardContent className="p-6 flex-grow flex flex-col">
                         <div className="mb-3">
                           <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">

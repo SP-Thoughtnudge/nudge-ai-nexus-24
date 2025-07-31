@@ -1,6 +1,7 @@
 import { Target, Settings, Rocket } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import AnimatedGrowthChart from "./animated-growth-chart";
 
 const ThreeStepProcess = () => {
   const steps = [
@@ -105,29 +106,7 @@ const ThreeStepProcess = () => {
                         </div>
                       )}
                       
-                      {index === 2 && (
-                        <div className="p-6 w-full">
-                          <div className="flex items-center justify-between mb-4">
-                            <Button variant="default" size="sm">
-                              <Rocket className="w-4 h-4 mr-2" />
-                              Launch
-                            </Button>
-                            <div className="text-sm text-muted-foreground">Live</div>
-                          </div>
-                          <div className="space-y-2">
-                            <div className="flex items-end space-x-1 h-16">
-                              {[3, 5, 4, 7, 6, 9, 8, 12, 10, 15].map((height, i) => (
-                                <div
-                                  key={i}
-                                  className="bg-primary rounded-t"
-                                  style={{ height: `${height * 3}px`, width: '8px' }}
-                                ></div>
-                              ))}
-                            </div>
-                            <div className="text-xs text-primary font-semibold">↗ 127% Growth</div>
-                          </div>
-                        </div>
-                      )}
+                      {index === 2 && <AnimatedGrowthChart />}
                     </div>
                   </Card>
                 </div>

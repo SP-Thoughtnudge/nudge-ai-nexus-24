@@ -9,14 +9,14 @@ const TeamSection = () => {
       name: "Himanshu Chauhan",
       role: "Co-founder & CEO",
       bio: "Before founding Thoughtnudge, Himanshu spent over a decade on the front lines of technology, leading product and strategy at both established leaders like Ericsson and high-growth startups like Uniphore. This unique blend of enterprise scale and startup agility shapes his vision for the company: to use his insights from ISB, Hyderabad to solve the fundamental growth challenges that every B2C business faces. He is obsessed with finding a better way for brands and customers to connect in the digital world.",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/a5fe38da-06fb-45bc-b3e9-7e3cb1ad7542.png",
       linkedin: "https://www.linkedin.com/in/himanshuchauhan04/"
     },
     {
       name: "Sthitapragnya Kalita",
       role: "Co-founder & CTO",
       bio: "A hands-on technologist and AI expert, Sthitapragnya honed his skills building large-scale machine learning systems at Amazon. As CTO, he is the architect of our core technology, focused on the complex challenge of translating the nuances of behavioral science into a powerful, adaptive intelligence engine. He holds degrees from two of India's most prestigious institutions, IIT (BHU) and ISB, Hyderabad, giving him a rare perspective that spans both deep technology and business strategy.",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/51fecef0-3481-428b-85bb-708be0c42c88.png",
       linkedin: "https://www.linkedin.com/in/sthitapragnya-kalita-21890b18/"
     }
   ];
@@ -37,11 +37,12 @@ const TeamSection = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {founders.map((founder, index) => (
               <Card key={index} className="overflow-hidden border-none shadow-lg">
-                <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+                <div className="aspect-square overflow-hidden bg-gray-100 rounded-lg">
                   <img 
                     src={founder.image} 
-                    alt={founder.name} 
+                    alt={`Headshot of ${founder.name}, ${founder.role} of Thoughtnudge`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <CardContent className="p-6">

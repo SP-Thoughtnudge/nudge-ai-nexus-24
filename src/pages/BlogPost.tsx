@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
+import LazyImage from '@/components/ui/lazy-image';
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ExternalLink, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -254,11 +255,10 @@ const BlogPostPage = () => {
                     <Card key={relatedPost.sys.id} className="overflow-hidden h-full flex flex-col group cursor-pointer">
                       <Link to={`/blog/${relatedPost.fields.slug || contentfulService.generateSlug(relatedPost.fields.title)}`} className="h-full flex flex-col">
                         <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
-                          <OptimizedImage 
-                            src={`https:${relatedPost.fields.featuredImage.fields.file.url}`}
+                          <LazyImage 
+                            src={`https:${relatedPost.fields.featuredImage.fields.file.url}?w=400&h=300&fit=fill&f=center`}
                             alt={relatedPost.fields.featuredImage.fields.title || relatedPost.fields.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            lazy
                           />
                         </div>
                         <CardContent className="p-6 flex-grow flex flex-col">
@@ -272,11 +272,10 @@ const BlogPostPage = () => {
                           </h4>
                           <div className="flex items-center mt-auto">
                             {relatedPost.fields.author.fields.photo && (
-                              <OptimizedImage 
-                                src={`https:${relatedPost.fields.author.fields.photo.fields.file.url}`}
+                              <LazyImage 
+                                src={`https:${relatedPost.fields.author.fields.photo.fields.file.url}?w=64&h=64&fit=fill&f=face`}
                                 alt={relatedPost.fields.author.fields.name}
                                 className="w-8 h-8 rounded-full bg-gray-200 mr-3"
-                                lazy
                               />
                             )}
                             <div className="text-sm">

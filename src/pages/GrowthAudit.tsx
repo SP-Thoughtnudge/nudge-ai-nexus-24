@@ -18,7 +18,7 @@ const GrowthAudit = () => {
       </div>
       
       {/* No navigation or footer for distraction-free experience */}
-      <div className="container mx-auto px-4 py-8 md:py-16">
+      <div className="container mx-auto px-4 py-8 md:py-16 pt-24 md:pt-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start max-w-6xl mx-auto">
           {/* Left Column: Persuasive Content */}
           <GrowthAuditHero />

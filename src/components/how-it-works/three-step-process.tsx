@@ -2,6 +2,8 @@ import { Target, Settings, Rocket } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import AnimatedGrowthChart from "./animated-growth-chart";
+import GoalSelectionInterface from "./goal-selection-interface";
+import ToolkitBuilder from "./toolkit-builder";
 
 const ThreeStepProcess = () => {
   const steps = [
@@ -9,7 +11,7 @@ const ThreeStepProcess = () => {
       number: "01",
       icon: Target,
       title: "Define Your Goal",
-      description: "Start with the business outcome. Tell the platform your objective (e.g., \"Increase pass renewals by 15%\") and the specific event that measures success (e.g., a \"payment_complete\" event).",
+      description: "Start with the business outcome. You tell the platform your objective—like 'Drive Higher Renewals' or 'Maximize Upsell Revenue'—and the specific event that measures success (e.g., a 'payment_complete' event). The AI will then work to maximize this goal.",
       visual: "Goal-setting UI mockup"
     },
     {
@@ -71,40 +73,9 @@ const ThreeStepProcess = () => {
                 <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
                   <Card className="p-8 bg-gradient-to-br from-muted/50 to-muted/20 border-primary/10">
                     <div className="aspect-video bg-gradient-to-br from-background to-muted rounded-lg border flex items-center justify-center">
-                      {index === 0 && (
-                        <div className="text-center space-y-4 p-6">
-                          <div className="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
-                            <Target className="w-8 h-8 text-primary" />
-                          </div>
-                          <div className="space-y-2">
-                            <div className="h-3 bg-muted rounded w-3/4 mx-auto"></div>
-                            <div className="h-3 bg-muted rounded w-1/2 mx-auto"></div>
-                          </div>
-                          <Button variant="default" size="sm" className="mt-4">
-                            Set Goal
-                          </Button>
-                        </div>
-                      )}
+                      {index === 0 && <GoalSelectionInterface />}
                       
-                      {index === 1 && (
-                        <div className="space-y-4 p-6 w-full">
-                          <div className="grid grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                              <div className="h-2 bg-muted rounded"></div>
-                              <div className="h-6 bg-primary/20 rounded"></div>
-                            </div>
-                            <div className="space-y-2">
-                              <div className="h-2 bg-muted rounded"></div>
-                              <div className="h-6 bg-primary/20 rounded"></div>
-                            </div>
-                          </div>
-                          <div className="flex space-x-2">
-                            <div className="w-4 h-4 rounded bg-primary"></div>
-                            <div className="w-4 h-4 rounded bg-muted"></div>
-                            <div className="w-4 h-4 rounded bg-primary"></div>
-                          </div>
-                        </div>
-                      )}
+                      {index === 1 && <ToolkitBuilder />}
                       
                       {index === 2 && <AnimatedGrowthChart />}
                     </div>

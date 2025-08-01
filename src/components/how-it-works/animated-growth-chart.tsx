@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
-import { Rocket } from 'lucide-react';
+import { Rocket, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const AnimatedGrowthChart = () => {
@@ -10,24 +10,62 @@ const AnimatedGrowthChart = () => {
   });
   
   const [animationPhase, setAnimationPhase] = useState(0);
+  const [decisionCount, setDecisionCount] = useState(0);
+  const [visibleInsights, setVisibleInsights] = useState<string[]>([]);
   
-  // Learning phase bars (small, erratic)
-  const learningBars = [8, 12, 6, 10, 7, 14, 9, 11];
-  // Growth phase bars (steady upward trend)
-  const growthBars = [16, 22, 28, 35, 42, 50, 58, 67, 75, 85];
+  const insights = [
+    'Personalized Offer Sent (Sarah J.)',
+    'Engagement Nudge Activated (David K.)',
+    'Psychographic Insight Learned (Emily L.)',
+    'Optimal Channel Selected (Michael B.)',
+    'Individual Goal Aligned (Jennifer S.)',
+    'Custom Journey Triggered (Robert P.)',
+    'Behavioral Pattern Detected (Lisa M.)',
+    'Revenue Opportunity Identified (Mark T.)',
+    'Timing Optimization Applied (Anna C.)',
+    'Message Personalized (James W.)'
+  ];
   
   useEffect(() => {
     if (!isIntersecting) return;
     
     const timeouts: NodeJS.Timeout[] = [];
     
-    // Phase 1: Learning bars animate in
-    timeouts.push(setTimeout(() => setAnimationPhase(1), 300));
+    // Phase 1: Start counter animation
+    timeouts.push(setTimeout(() => {
+      setAnimationPhase(1);
+      // Animate counter from 0 to target number
+      let count = 0;
+      const target = 42847;
+      const increment = target / 100;
+      const counterInterval = setInterval(() => {
+        count += increment;
+        if (count >= target) {
+          setDecisionCount(target);
+          clearInterval(counterInterval);
+        } else {
+          setDecisionCount(Math.floor(count));
+        }
+      }, 30);
+    }, 300));
     
-    // Phase 2: Growth bars animate in  
-    timeouts.push(setTimeout(() => setAnimationPhase(2), 1500));
+    // Phase 2: Start insights stream
+    timeouts.push(setTimeout(() => {
+      setAnimationPhase(2);
+      let currentIndex = 0;
+      const insightInterval = setInterval(() => {
+        setVisibleInsights(prev => {
+          const newInsights = [...prev, insights[currentIndex % insights.length]];
+          return newInsights.length > 4 ? newInsights.slice(-4) : newInsights;
+        });
+        currentIndex++;
+      }, 800);
+      
+      // Store interval to clear later
+      timeouts.push(setTimeout(() => clearInterval(insightInterval), 10000));
+    }, 1500));
     
-    // Phase 3: Highlight final bar and show growth label
+    // Phase 3: Show outcome metric
     timeouts.push(setTimeout(() => setAnimationPhase(3), 3000));
     
     return () => {
@@ -49,76 +87,46 @@ const AnimatedGrowthChart = () => {
         </div>
       </div>
       
-      {/* Chart container */}
-      <div className="relative">
-        {/* Chart bars */}
-        <div className="flex items-end justify-center space-x-1 h-24 mb-4">
-          {/* Learning phase bars */}
-          {learningBars.map((height, i) => (
-            <div
-              key={`learning-${i}`}
-              className={`bg-gray-400 rounded-t transition-all duration-500 ease-out ${
-                animationPhase >= 1 ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{
-                height: animationPhase >= 1 ? `${height}px` : '0px',
-                width: '6px',
-                transitionDelay: `${i * 100}ms`
-              }}
-            />
-          ))}
-          
-          {/* Growth phase bars */}
-          {growthBars.map((height, i) => (
-            <div
-              key={`growth-${i}`}
-              className={`rounded-t transition-all duration-600 ease-out ${
-                i === growthBars.length - 1 && animationPhase >= 3
-                  ? 'bg-[#D72660] shadow-lg shadow-[#D72660]/30' 
-                  : 'bg-primary'
-              } ${animationPhase >= 2 ? 'opacity-100' : 'opacity-0'}`}
-              style={{
-                height: animationPhase >= 2 ? `${height}px` : '0px',
-                width: '6px',
-                transitionDelay: `${i * 80}ms`
-              }}
-            />
-          ))}
+      {/* Real-time Decision Counter */}
+      <div className={`text-center mb-6 transition-all duration-700 ${
+        animationPhase >= 1 ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
+      }`}>
+        <div className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+          {decisionCount.toLocaleString()}
         </div>
-        
-        {/* Growth label */}
-        <div className={`flex items-center justify-center transition-all duration-500 ${
-          animationPhase >= 3 ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
-        }`}>
-          <div className="bg-[#D72660] text-white px-4 py-2 rounded-lg font-bold text-lg shadow-lg">
-            ↗ +127% Growth
-          </div>
-        </div>
-        
-        {/* X-axis labels */}
-        <div className="flex justify-between mt-4 text-xs text-muted-foreground">
-          <span>Week 1</span>
-          <span>Learning</span>
-          <span>Optimizing</span>
-          <span>Week 12</span>
+        <div className="text-sm text-muted-foreground font-medium">
+          1:1 Decisions Made This Week
         </div>
       </div>
       
-      {/* Performance indicators */}
-      <div className={`grid grid-cols-3 gap-4 mt-6 transition-all duration-700 ${
-        animationPhase >= 3 ? 'opacity-100' : 'opacity-0'
+      {/* Dynamic Insights Stream */}
+      <div className={`bg-muted/30 rounded-lg p-4 mb-6 h-24 overflow-hidden transition-all duration-700 ${
+        animationPhase >= 2 ? 'opacity-100' : 'opacity-0'
       }`}>
-        <div className="text-center">
-          <div className="text-sm font-semibold text-primary">A/B Tests</div>
-          <div className="text-xs text-muted-foreground">2,847 run</div>
+        <div className="space-y-1">
+          {visibleInsights.map((insight, index) => (
+            <div
+              key={`${insight}-${index}`}
+              className="text-sm text-muted-foreground animate-fade-in"
+              style={{
+                animationDelay: `${index * 100}ms`
+              }}
+            >
+              • {insight}
+            </div>
+          ))}
         </div>
-        <div className="text-center">
-          <div className="text-sm font-semibold text-primary">Conversion</div>
-          <div className="text-xs text-muted-foreground">+34.2%</div>
-        </div>
-        <div className="text-center">
-          <div className="text-sm font-semibold text-[#D72660]">Revenue</div>
-          <div className="text-xs text-muted-foreground">+127%</div>
+      </div>
+      
+      {/* Outcome Metric */}
+      <div className={`text-center transition-all duration-700 ${
+        animationPhase >= 3 ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
+      }`}>
+        <div className="bg-[#D72660] text-white px-6 py-3 rounded-lg inline-flex items-center space-x-2 shadow-lg">
+          <TrendingUp className="w-5 h-5" />
+          <div className="font-bold text-lg">
+            Autonomous Revenue Generated: +127%
+          </div>
         </div>
       </div>
     </div>

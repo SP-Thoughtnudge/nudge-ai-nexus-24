@@ -106,12 +106,12 @@ const ToolkitBuilder = () => {
             const isConnected = connectedTools.includes(toolkit.id);
             const isCurrentlyConnecting = animationPhase === 2 + index;
             
-            // Position modules in the four corners
+            // Position modules in the four corners with more space
             const positions = {
-              'top-right': { x: 120, y: -80 },
-              'top-left': { x: -120, y: -80 },
-              'bottom-right': { x: 120, y: 80 },
-              'bottom-left': { x: -120, y: 80 }
+              'top-right': { x: 140, y: -100 },
+              'top-left': { x: -140, y: -100 },
+              'bottom-right': { x: 140, y: 100 },
+              'bottom-left': { x: -140, y: 100 }
             };
             
             const pos = positions[toolkit.direction as keyof typeof positions];
@@ -130,40 +130,40 @@ const ToolkitBuilder = () => {
                   transform: `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px))`
                 }}
               >
-                {/* Module Card */}
-                <div className={`relative w-32 h-24 rounded-xl border-2 p-3 backdrop-blur-sm transition-all duration-700 ${
+                {/* Module Card - Increased size */}
+                <div className={`relative w-40 h-32 rounded-xl border-2 p-4 backdrop-blur-sm transition-all duration-700 ${
                   isConnected 
                     ? 'bg-white/95 border-primary shadow-xl shadow-primary/20' 
                     : 'bg-muted/40 border-muted/50'
                 } ${isCurrentlyConnecting ? 'scale-110' : 'scale-100'}`}>
                   
                   {/* Module Header */}
-                  <div className="flex items-center space-x-2 mb-2">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                  <div className="flex items-center space-x-2 mb-3">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
                       isConnected ? 'bg-primary/10' : 'bg-muted/50'
                     }`}>
                       <toolkit.icon className={`w-4 h-4 ${
                         isConnected ? 'text-primary' : 'text-muted-foreground'
                       }`} />
                     </div>
-                    <span className={`text-xs font-bold ${
+                    <span className={`text-xs font-bold leading-tight ${
                       isConnected ? 'text-foreground' : 'text-muted-foreground'
                     }`}>
                       {toolkit.label}
                     </span>
                   </div>
                   
-                  {/* Module Items */}
-                  <div className="space-y-1">
+                  {/* Module Items - Better spacing and sizing */}
+                  <div className="space-y-1.5">
                     {toolkit.items.slice(0, 2).map((item, itemIndex) => (
-                      <div key={itemIndex} className={`text-xs px-2 py-1 rounded ${
+                      <div key={itemIndex} className={`text-xs px-2 py-1 rounded leading-tight truncate ${
                         isConnected ? 'bg-primary/5 text-primary' : 'bg-muted/30 text-muted-foreground'
-                      }`}>
+                      }`} title={item}>
                         {item}
                       </div>
                     ))}
                     {toolkit.items.length > 2 && (
-                      <div className={`text-xs px-2 py-1 rounded ${
+                      <div className={`text-xs px-2 py-1 rounded leading-tight ${
                         isConnected ? 'bg-primary/5 text-primary' : 'bg-muted/30 text-muted-foreground'
                       }`}>
                         +{toolkit.items.length - 2} more

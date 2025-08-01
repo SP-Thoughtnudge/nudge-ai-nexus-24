@@ -17,28 +17,32 @@ const ToolkitBuilder = () => {
       label: 'Channels',
       icon: MessageSquare,
       items: ['Push', 'WhatsApp', 'In-App', 'Voice'],
-      color: 'bg-blue-500'
-    },
-    {
-      id: 'offers',
-      label: 'Offers',
-      icon: Percent,
-      items: ['10% Discount', 'Free Shipping', 'No Offer'],
-      color: 'bg-green-500'
-    },
-    {
-      id: 'messaging',
-      label: 'Message Styles',
-      icon: Tags,
-      items: ['FOMO', 'Social Proof', 'Trust'],
-      color: 'bg-purple-500'
+      direction: 'top-right',
+      slideFrom: 'translate-x-32 -translate-y-32'
     },
     {
       id: 'products',
       label: 'Product Options',
       icon: Package,
       items: ['Product A', 'Product B', 'Product N'],
-      color: 'bg-orange-500'
+      direction: 'top-left',
+      slideFrom: '-translate-x-32 -translate-y-32'
+    },
+    {
+      id: 'offers',
+      label: 'Offers',
+      icon: Percent,
+      items: ['10% Discount', 'Free Shipping', 'No Offer'],
+      direction: 'bottom-right',
+      slideFrom: 'translate-x-32 translate-y-32'
+    },
+    {
+      id: 'messaging',
+      label: 'Message Styles',
+      icon: Tags,
+      items: ['FOMO', 'Social Proof', 'Trust'],
+      direction: 'bottom-left',
+      slideFrom: '-translate-x-32 translate-y-32'
     }
   ];
   
@@ -47,19 +51,19 @@ const ToolkitBuilder = () => {
     
     const timeouts: NodeJS.Timeout[] = [];
     
-    // Phase 1: Show AI brain
-    timeouts.push(setTimeout(() => setAnimationPhase(1), 300));
+    // Phase 1: Show AI brain with grid background
+    timeouts.push(setTimeout(() => setAnimationPhase(1), 500));
     
-    // Phase 2-5: Connect each toolkit with delays
+    // Phase 2-5: Connect each toolkit sequentially with dramatic timing
     toolkits.forEach((toolkit, index) => {
       timeouts.push(setTimeout(() => {
         setConnectedTools(prev => [...prev, toolkit.id]);
         setAnimationPhase(2 + index);
-      }, 1000 + (index * 600)));
+      }, 1200 + (index * 800)));
     });
     
-    // Final phase: Show completion
-    timeouts.push(setTimeout(() => setAnimationPhase(6), 3800));
+    // Final phase: Show armed status
+    timeouts.push(setTimeout(() => setAnimationPhase(6), 4800));
     
     return () => {
       timeouts.forEach(timeout => clearTimeout(timeout));
@@ -67,68 +71,140 @@ const ToolkitBuilder = () => {
   }, [isIntersecting]);
 
   return (
-    <div ref={targetRef} className="p-6 w-full relative">
+    <div ref={targetRef} className="p-8 w-full relative overflow-hidden">
+      {/* Futuristic Grid Background */}
+      <div className={`absolute inset-0 opacity-10 transition-opacity duration-1000 ${
+        animationPhase >= 1 ? 'opacity-20' : 'opacity-0'
+      }`}>
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)
+          `,
+          backgroundSize: '20px 20px'
+        }} />
+      </div>
+      
       {/* Central AI Brain */}
-      <div className="relative flex items-center justify-center">
-        <div className={`w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center transition-all duration-700 ${
-          animationPhase >= 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-        } ${connectedTools.length > 0 ? 'shadow-lg shadow-primary/30' : ''}`}>
-          <Brain className="w-10 h-10 text-white" />
+      <div className="relative flex items-center justify-center min-h-[300px]">
+        <div className={`relative w-24 h-24 rounded-full bg-gradient-to-br from-primary via-primary/80 to-primary/60 flex items-center justify-center transition-all duration-1000 ${
+          animationPhase >= 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+        } ${connectedTools.length > 0 ? 'shadow-2xl shadow-primary/40' : 'shadow-lg shadow-primary/20'} ${
+          connectedTools.length === 4 ? 'animate-pulse' : ''
+        }`}>
+          <Brain className="w-12 h-12 text-white" />
+          
+          {/* Pulse rings when connecting */}
+          {connectedTools.length > 0 && (
+            <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping" />
+          )}
         </div>
         
-        {/* Toolkit Cards */}
+        {/* Toolkit Modules */}
         <div className="absolute inset-0">
           {toolkits.map((toolkit, index) => {
             const isConnected = connectedTools.includes(toolkit.id);
-            const angle = (index * 90) - 45; // Position cards around the brain
-            const radius = 80;
-            const x = Math.cos((angle * Math.PI) / 180) * radius;
-            const y = Math.sin((angle * Math.PI) / 180) * radius;
+            const isCurrentlyConnecting = animationPhase === 2 + index;
+            
+            // Position modules in the four corners
+            const positions = {
+              'top-right': { x: 120, y: -80 },
+              'top-left': { x: -120, y: -80 },
+              'bottom-right': { x: 120, y: 80 },
+              'bottom-left': { x: -120, y: 80 }
+            };
+            
+            const pos = positions[toolkit.direction as keyof typeof positions];
             
             return (
               <div
                 key={toolkit.id}
-                className={`absolute transition-all duration-700 ${
-                  animationPhase >= 2 + index ? 'opacity-100' : 'opacity-0'
+                className={`absolute transition-all duration-1000 ease-out ${
+                  animationPhase >= 2 + index 
+                    ? 'opacity-100 transform translate-x-0 translate-y-0' 
+                    : `opacity-0 ${toolkit.slideFrom}`
                 }`}
                 style={{
-                  transform: `translate(${x}px, ${y}px) ${isConnected ? 'scale(1)' : 'scale(0.8)'}`,
                   left: '50%',
                   top: '50%',
-                  marginLeft: '-40px',
-                  marginTop: '-32px'
+                  transform: `translate(calc(-50% + ${pos.x}px), calc(-50% + ${pos.y}px))`
                 }}
               >
-                <div className={`w-20 h-16 rounded-lg border-2 p-2 transition-all duration-500 ${
+                {/* Module Card */}
+                <div className={`relative w-32 h-24 rounded-xl border-2 p-3 backdrop-blur-sm transition-all duration-700 ${
                   isConnected 
-                    ? 'bg-white border-primary shadow-md' 
-                    : 'bg-muted/50 border-muted'
-                }`}>
-                  <div className="flex flex-col items-center text-center">
-                    <toolkit.icon className={`w-4 h-4 mb-1 ${
-                      isConnected ? 'text-primary' : 'text-muted-foreground'
-                    }`} />
-                    <span className={`text-xs font-medium ${
+                    ? 'bg-white/95 border-primary shadow-xl shadow-primary/20' 
+                    : 'bg-muted/40 border-muted/50'
+                } ${isCurrentlyConnecting ? 'scale-110' : 'scale-100'}`}>
+                  
+                  {/* Module Header */}
+                  <div className="flex items-center space-x-2 mb-2">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                      isConnected ? 'bg-primary/10' : 'bg-muted/50'
+                    }`}>
+                      <toolkit.icon className={`w-4 h-4 ${
+                        isConnected ? 'text-primary' : 'text-muted-foreground'
+                      }`} />
+                    </div>
+                    <span className={`text-xs font-bold ${
                       isConnected ? 'text-foreground' : 'text-muted-foreground'
                     }`}>
                       {toolkit.label}
                     </span>
                   </div>
+                  
+                  {/* Module Items */}
+                  <div className="space-y-1">
+                    {toolkit.items.slice(0, 2).map((item, itemIndex) => (
+                      <div key={itemIndex} className={`text-xs px-2 py-1 rounded ${
+                        isConnected ? 'bg-primary/5 text-primary' : 'bg-muted/30 text-muted-foreground'
+                      }`}>
+                        {item}
+                      </div>
+                    ))}
+                    {toolkit.items.length > 2 && (
+                      <div className={`text-xs px-2 py-1 rounded ${
+                        isConnected ? 'bg-primary/5 text-primary' : 'bg-muted/30 text-muted-foreground'
+                      }`}>
+                        +{toolkit.items.length - 2} more
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* Connection Status */}
+                  {isConnected && (
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full border-2 border-white animate-scale-in" />
+                  )}
                 </div>
                 
-                {/* Connection Line */}
+                {/* Glowing Connection Line */}
                 {isConnected && (
-                  <div 
-                    className="absolute w-px bg-primary/50 animate-fade-in"
-                    style={{
-                      height: `${radius - 30}px`,
-                      left: '50%',
-                      top: '100%',
-                      transformOrigin: 'top',
-                      transform: `rotate(${180 + angle}deg)`,
-                      marginLeft: '-0.5px'
-                    }}
-                  />
+                  <div className="absolute inset-0 pointer-events-none">
+                    <svg
+                      className="absolute top-1/2 left-1/2 w-full h-full"
+                      style={{ transform: 'translate(-50%, -50%)' }}
+                    >
+                      <line
+                        x1="50%"
+                        y1="50%"
+                        x2={`calc(50% - ${pos.x}px)`}
+                        y2={`calc(50% - ${pos.y}px)`}
+                        stroke="hsl(var(--primary))"
+                        strokeWidth="2"
+                        strokeOpacity="0.6"
+                        className="animate-fade-in"
+                        pathLength="1"
+                        strokeDasharray="5,5"
+                      >
+                        <animate
+                          attributeName="stroke-dashoffset"
+                          values="10;0"
+                          dur="2s"
+                          repeatCount="indefinite"
+                        />
+                      </line>
+                    </svg>
+                  </div>
                 )}
               </div>
             );
@@ -137,17 +213,17 @@ const ToolkitBuilder = () => {
       </div>
       
       {/* Status Indicator */}
-      <div className={`text-center mt-16 transition-all duration-700 ${
-        animationPhase >= 6 ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
+      <div className={`text-center mt-8 transition-all duration-1000 ${
+        animationPhase >= 6 ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
       }`}>
-        <div className="inline-flex items-center space-x-2 bg-primary/5 border border-primary/20 rounded-lg px-4 py-2">
-          <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-          <span className="text-sm font-medium text-primary">
-            AI Agent Armed & Ready
+        <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/30 rounded-full px-6 py-3 backdrop-blur-sm">
+          <div className="w-3 h-3 bg-primary rounded-full animate-pulse shadow-lg shadow-primary/50" />
+          <span className="text-sm font-bold text-primary">
+            ● AI Agent Armed & Ready
           </span>
         </div>
-        <p className="text-xs text-muted-foreground mt-2">
-          {connectedTools.length}/4 toolkits configured
+        <p className="text-xs text-muted-foreground mt-3 font-medium">
+          All {connectedTools.length}/4 toolkits successfully configured
         </p>
       </div>
     </div>

@@ -143,6 +143,40 @@ export default {
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'neural-pulse': {
+					'0%, 100%': { 
+						transform: 'scale(1)', 
+						boxShadow: '0 0 20px hsl(var(--primary) / 0.3)'
+					},
+					'50%': { 
+						transform: 'scale(1.05)', 
+						boxShadow: '0 0 30px hsl(var(--primary) / 0.5)'
+					}
+				},
+				'neural-node': {
+					'0%, 100%': { transform: 'scale(0.8)', opacity: '0.6' },
+					'50%': { transform: 'scale(1.2)', opacity: '1' }
+				},
+				'data-flow': {
+					'0%': { backgroundPosition: '0% 0%' },
+					'100%': { backgroundPosition: '100% 0%' }
+				},
+				'decision-branch': {
+					'0%': { opacity: '0', transform: 'translateX(-10px)' },
+					'100%': { opacity: '1', transform: 'translateX(0)' }
+				},
+				'connection-flow': {
+					'0%': { opacity: '0', transform: 'scaleX(0)' },
+					'100%': { opacity: '1', transform: 'scaleX(1)' }
+				},
+				'growth-bar': {
+					'0%': { transform: 'scaleY(0)', opacity: '0' },
+					'100%': { transform: 'scaleY(1)', opacity: '1' }
+				},
+				'final-flow': {
+					'0%': { opacity: '0', transform: 'scaleX(0)' },
+					'100%': { opacity: '1', transform: 'scaleX(1)' }
 				}
 			},
 			animation: {
@@ -156,7 +190,14 @@ export default {
 				'slide-out-right': 'slide-out-right 0.3s ease-out',
 				'enter': 'fade-in 0.5s ease-out, scale-in 0.3s ease-out',
 				'exit': 'fade-out 0.5s ease-out, scale-out 0.3s ease-out',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'neural-pulse': 'neural-pulse 2s ease-in-out infinite',
+				'neural-node': 'neural-node 1.5s ease-in-out infinite',
+				'data-flow': 'data-flow 2s ease-in-out forwards',
+				'decision-branch': 'decision-branch 0.8s ease-out forwards',
+				'connection-flow': 'connection-flow 1s ease-out forwards',
+				'growth-bar': 'growth-bar 0.6s ease-out forwards',
+				'final-flow': 'final-flow 1s ease-out forwards'
 			}
 		}
 	},

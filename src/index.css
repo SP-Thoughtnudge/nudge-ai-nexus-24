@@ -109,4 +109,89 @@
       opacity: 0; 
     }
   }
+
+  /* Product Hero Animations */
+  @keyframes neural-pulse {
+    0%, 100% { 
+      transform: scale(1); 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    50% { 
+      transform: scale(1.05); 
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+    }
+  }
+
+  @keyframes neural-node {
+    0%, 100% { 
+      transform: scale(0.8); 
+      opacity: 0.6;
+    }
+    50% { 
+      transform: scale(1.2); 
+      opacity: 1;
+    }
+  }
+
+  @keyframes data-flow {
+    0% { 
+      background: linear-gradient(90deg, hsl(var(--muted-foreground) / 0.4) 0%, hsl(var(--primary)) 0%);
+    }
+    100% { 
+      background: linear-gradient(90deg, hsl(var(--muted-foreground) / 0.4) 70%, hsl(var(--primary)) 100%);
+    }
+  }
+
+  @keyframes decision-branch {
+    0% { 
+      opacity: 0; 
+      transform: translateX(-10px);
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes connection-flow {
+    0% { 
+      opacity: 0; 
+      transform: scaleX(0);
+    }
+    100% { 
+      opacity: 1; 
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes growth-bar {
+    0% { 
+      transform: scaleY(0); 
+      opacity: 0;
+    }
+    100% { 
+      transform: scaleY(1); 
+      opacity: 1;
+    }
+  }
+
+  @keyframes final-flow {
+    0% { 
+      opacity: 0; 
+      transform: scaleX(0);
+    }
+    100% { 
+      opacity: 1; 
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px);
+    }
+    50% { 
+      transform: translateY(-8px);
+    }
+  }
 }

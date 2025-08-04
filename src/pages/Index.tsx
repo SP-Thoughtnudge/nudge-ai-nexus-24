@@ -2,17 +2,16 @@
 import { useEffect, lazy, Suspense } from "react";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
-import NewHeroSection from "@/components/home/new-hero-section";
+import { HeroSectionNew } from "@/components/home/hero-section-new";
+import { RazorSharpFocus } from "@/components/home/razor-sharp-focus";
+import { ParadigmShiftComparison } from "@/components/home/paradigm-shift-comparison";
+import { UnifiedIntelligence } from "@/components/home/unified-intelligence";
+import { ProofGrowthSection } from "@/components/home/proof-growth-section";
+import { MoreRevenueSection } from "@/components/home/more-revenue-section";
+import { FinalCtaNew } from "@/components/home/final-cta-new";
 import LogoCloud from "@/components/home/logo-cloud";
 import LazySection from "@/components/ui/lazy-section";
 import FadeInSection from "@/components/ui/fade-in-section";
-
-// Lazy load non-critical sections
-const OutcomesSection = lazy(() => import("@/components/home/outcomes-section"));
-const ProblemStatement = lazy(() => import("@/components/home/problem-statement"));
-const SolutionProcess = lazy(() => import("@/components/home/solution-process"));
-const TestimonialProof = lazy(() => import("@/components/home/testimonial-proof"));
-const FinalCta = lazy(() => import("@/components/home/final-cta"));
 import { updateSEOTags, addStructuredData, organizationSchema } from "@/lib/seo";
 
 const Index = () => {
@@ -34,51 +33,35 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-white font-inter">
       <Navbar />
       <main className="flex-grow">
-        <NewHeroSection />
+        <HeroSectionNew />
         
         <FadeInSection>
           <LogoCloud />
         </FadeInSection>
         
-        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
-          <LazySection>
-            <FadeInSection delay={100}>
-              <OutcomesSection />
-            </FadeInSection>
-          </LazySection>
-        </Suspense>
+        <FadeInSection delay={100}>
+          <RazorSharpFocus />
+        </FadeInSection>
         
-        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
-          <LazySection>
-            <FadeInSection delay={200}>
-              <ProblemStatement />
-            </FadeInSection>
-          </LazySection>
-        </Suspense>
+        <FadeInSection delay={200}>
+          <ParadigmShiftComparison />
+        </FadeInSection>
         
-        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
-          <LazySection>
-            <FadeInSection delay={300}>
-              <SolutionProcess />
-            </FadeInSection>
-          </LazySection>
-        </Suspense>
+        <FadeInSection delay={300}>
+          <UnifiedIntelligence />
+        </FadeInSection>
         
-        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
-          <LazySection>
-            <FadeInSection delay={400}>
-              <TestimonialProof />
-            </FadeInSection>
-          </LazySection>
-        </Suspense>
+        <FadeInSection delay={400}>
+          <ProofGrowthSection />
+        </FadeInSection>
         
-        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
-          <LazySection>
-            <FadeInSection delay={500}>
-              <FinalCta />
-            </FadeInSection>
-          </LazySection>
-        </Suspense>
+        <FadeInSection delay={500}>
+          <MoreRevenueSection />
+        </FadeInSection>
+        
+        <FadeInSection delay={600}>
+          <FinalCtaNew />
+        </FadeInSection>
       </main>
       <Footer />
     </div>

@@ -177,6 +177,22 @@ export default {
 				'final-flow': {
 					'0%': { opacity: '0', transform: 'scaleX(0)' },
 					'100%': { opacity: '1', transform: 'scaleX(1)' }
+				},
+				'orbit-1': {
+					'0%': { transform: 'rotate(0deg) translateX(80px) rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg) translateX(80px) rotate(-360deg)' }
+				},
+				'orbit-2': {
+					'0%': { transform: 'rotate(90deg) translateX(80px) rotate(-90deg)' },
+					'100%': { transform: 'rotate(450deg) translateX(80px) rotate(-450deg)' }
+				},
+				'orbit-3': {
+					'0%': { transform: 'rotate(180deg) translateX(80px) rotate(-180deg)' },
+					'100%': { transform: 'rotate(540deg) translateX(80px) rotate(-540deg)' }
+				},
+				'orbit-4': {
+					'0%': { transform: 'rotate(270deg) translateX(80px) rotate(-270deg)' },
+					'100%': { transform: 'rotate(630deg) translateX(80px) rotate(-630deg)' }
 				}
 			},
 			animation: {
@@ -197,7 +213,11 @@ export default {
 				'decision-branch': 'decision-branch 0.8s ease-out forwards',
 				'connection-flow': 'connection-flow 1s ease-out forwards',
 				'growth-bar': 'growth-bar 0.6s ease-out forwards',
-				'final-flow': 'final-flow 1s ease-out forwards'
+				'final-flow': 'final-flow 1s ease-out forwards',
+				'orbit-1': 'orbit-1 8s linear infinite',
+				'orbit-2': 'orbit-2 8s linear infinite',
+				'orbit-3': 'orbit-3 8s linear infinite',
+				'orbit-4': 'orbit-4 8s linear infinite'
 			}
 		}
 	},

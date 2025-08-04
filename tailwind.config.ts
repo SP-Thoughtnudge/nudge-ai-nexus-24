@@ -193,6 +193,10 @@ export default {
 				'orbit-4': {
 					'0%': { transform: 'rotate(270deg) translateX(80px) rotate(-270deg)' },
 					'100%': { transform: 'rotate(630deg) translateX(80px) rotate(-630deg)' }
+				},
+				'scroll-left': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' }
 				}
 			},
 			animation: {
@@ -217,7 +221,8 @@ export default {
 				'orbit-1': 'orbit-1 8s linear infinite',
 				'orbit-2': 'orbit-2 8s linear infinite',
 				'orbit-3': 'orbit-3 8s linear infinite',
-				'orbit-4': 'orbit-4 8s linear infinite'
+				'orbit-4': 'orbit-4 8s linear infinite',
+				'scroll-left': 'scroll-left 30s linear infinite'
 			}
 		}
 	},

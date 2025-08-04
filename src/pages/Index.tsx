@@ -3,11 +3,11 @@ import { useEffect, lazy, Suspense } from "react";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { HeroSectionNew } from "@/components/home/hero-section-new";
-import { RazorSharpFocus } from "@/components/home/razor-sharp-focus";
+import { SocialProofSection } from "@/components/home/social-proof-section";
 import { ParadigmShiftComparison } from "@/components/home/paradigm-shift-comparison";
 import { UnifiedIntelligence } from "@/components/home/unified-intelligence";
 import { ProofGrowthSection } from "@/components/home/proof-growth-section";
-import { MoreRevenueSection } from "@/components/home/more-revenue-section";
+import { AutonomousAdvantageSection } from "@/components/home/autonomous-advantage-section";
 import { FinalCtaNew } from "@/components/home/final-cta-new";
 import LogoCloud from "@/components/home/logo-cloud";
 import LazySection from "@/components/ui/lazy-section";
@@ -36,30 +36,26 @@ const Index = () => {
         <HeroSectionNew />
         
         <FadeInSection>
-          <LogoCloud />
+          <SocialProofSection />
         </FadeInSection>
         
         <FadeInSection delay={100}>
-          <RazorSharpFocus />
-        </FadeInSection>
-        
-        <FadeInSection delay={200}>
           <ParadigmShiftComparison />
         </FadeInSection>
         
-        <FadeInSection delay={300}>
+        <FadeInSection delay={200}>
           <UnifiedIntelligence />
         </FadeInSection>
         
-        <FadeInSection delay={400}>
+        <FadeInSection delay={300}>
           <ProofGrowthSection />
         </FadeInSection>
         
-        <FadeInSection delay={500}>
-          <MoreRevenueSection />
+        <FadeInSection delay={400}>
+          <AutonomousAdvantageSection />
         </FadeInSection>
         
-        <FadeInSection delay={600}>
+        <FadeInSection delay={500}>
           <FinalCtaNew />
         </FadeInSection>
       </main>

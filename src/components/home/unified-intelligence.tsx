@@ -9,19 +9,8 @@ export const UnifiedIntelligence = () => {
           </h2>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Central AI Brain Image */}
-            <div className="flex justify-center order-2 lg:order-1">
-              <div className="relative w-full max-w-lg">
-                <img 
-                  src="/lovable-uploads/b753f089-0a73-4cc1-8a49-d2746310a00c.png" 
-                  alt="Central AI brain orchestrating personalized customer interactions" 
-                  className="w-full h-auto rounded-2xl shadow-lg"
-                />
-              </div>
-            </div>
-            
             {/* Text Content */}
-            <div className="space-y-6 order-1 lg:order-2">
+            <div className="space-y-6 order-1 lg:order-1">
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Our Agentic AI is the central intelligence layer for your entire growth stack. It unifies cross-channel behavior and real-time user intent to make the single best decision for every customer. It <strong>continuously learns</strong> from every interaction, making each decision sharper and more <strong>adaptive</strong> than the last.
               </p>
@@ -48,6 +37,17 @@ export const UnifiedIntelligence = () => {
                   </div>
                   <span className="text-foreground font-medium">Continuous learning optimization</span>
                 </div>
+              </div>
+            </div>
+            
+            {/* Central AI Brain Image */}
+            <div className="flex justify-center order-2 lg:order-2">
+              <div className="relative w-full max-w-lg">
+                <img 
+                  src="/lovable-uploads/b753f089-0a73-4cc1-8a49-d2746310a00c.png" 
+                  alt="Central AI brain orchestrating personalized customer interactions" 
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                />
               </div>
             </div>
           </div>

@@ -10,12 +10,15 @@ export const PowerfulAiControl = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Goal Setting Image */}
             <div className="flex justify-center">
-              <div className="relative w-full max-w-lg">
-                <img 
-                  src="/lovable-uploads/89663867-ccab-49fc-9875-8353a0a78bf6.png" 
-                  alt="Strategic goal setting interface showing business objectives and AI configuration" 
-                  className="w-full h-auto rounded-2xl shadow-lg"
-                />
+              <div className="relative w-full max-w-sm">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg">
+                  <img 
+                    src="/lovable-uploads/89663867-ccab-49fc-9875-8353a0a78bf6.png" 
+                    alt="Strategic goal setting interface showing business objectives and AI configuration" 
+                    className="w-full h-auto transition-transform duration-1000 hover:scale-105 animate-pulse"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </div>
             </div>
             

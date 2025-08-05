@@ -8,13 +8,13 @@ export const SocialProofSection = () => {
             <div className="flex items-center space-x-8 animate-scroll-left">
               <div className="flex items-center space-x-8 min-w-max">
                 <span className="text-2xl font-bold text-muted-foreground">Cookd</span>
-                <span className="text-2xl font-bold text-muted-foreground">GrowthCo</span>
-                <span className="text-2xl font-bold text-muted-foreground">RetailMax</span>
-                <span className="text-2xl font-bold text-muted-foreground">EcomPro</span>
-                <span className="text-2xl font-bold text-muted-foreground">ShopSmart</span>
+                <span className="text-2xl font-bold text-muted-foreground">Conscious Chemist</span>
+                <span className="text-2xl font-bold text-muted-foreground">Charmacy Milano</span>
+                <span className="text-2xl font-bold text-muted-foreground">Sure</span>
                 <span className="text-2xl font-bold text-muted-foreground">Cookd</span>
-                <span className="text-2xl font-bold text-muted-foreground">GrowthCo</span>
-                <span className="text-2xl font-bold text-muted-foreground">RetailMax</span>
+                <span className="text-2xl font-bold text-muted-foreground">Conscious Chemist</span>
+                <span className="text-2xl font-bold text-muted-foreground">Charmacy Milano</span>
+                <span className="text-2xl font-bold text-muted-foreground">Sure</span>
               </div>
             </div>
           </div>

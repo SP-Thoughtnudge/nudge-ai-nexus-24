@@ -6,6 +6,8 @@ import { HeroSectionNew } from "@/components/home/hero-section-new";
 import { SocialProofSection } from "@/components/home/social-proof-section";
 import { ParadigmShiftComparison } from "@/components/home/paradigm-shift-comparison";
 import { UnifiedIntelligence } from "@/components/home/unified-intelligence";
+import { PowerfulAiControl } from "@/components/home/powerful-ai-control";
+import { LiveInDays } from "@/components/home/live-in-days";
 import { ProofGrowthSection } from "@/components/home/proof-growth-section";
 import { AutonomousAdvantageSection } from "@/components/home/autonomous-advantage-section";
 import { FinalCtaNew } from "@/components/home/final-cta-new";
@@ -48,14 +50,22 @@ const Index = () => {
         </FadeInSection>
         
         <FadeInSection delay={300}>
-          <ProofGrowthSection />
+          <PowerfulAiControl />
         </FadeInSection>
         
         <FadeInSection delay={400}>
-          <AutonomousAdvantageSection />
+          <LiveInDays />
         </FadeInSection>
         
         <FadeInSection delay={500}>
+          <ProofGrowthSection />
+        </FadeInSection>
+        
+        <FadeInSection delay={600}>
+          <AutonomousAdvantageSection />
+        </FadeInSection>
+        
+        <FadeInSection delay={700}>
           <FinalCtaNew />
         </FadeInSection>
       </main>

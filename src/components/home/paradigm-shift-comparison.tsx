@@ -20,91 +20,47 @@ export const ParadigmShiftComparison = () => {
               </div>
             </div>
             
-            {/* Right Column - Comparison Table */}
+            {/* Right Column - Visual Comparison Lists */}
             <div className="space-y-8">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-border">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="bg-gradient-to-r from-muted/50 to-secondary/30">
-                        <th className="px-6 py-4 text-left font-semibold text-foreground">The Old Way: The Manual Toolbox</th>
-                        <th className="px-6 py-4 text-left font-semibold text-foreground">The New Way: The Autonomous Engine</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-border">
-                      <tr>
-                        <td className="px-6 py-4">
-                          <div className="flex items-start space-x-3">
-                            <span className="text-lg">🧠</span>
-                            <div>
-                              <p className="font-medium text-foreground">Human-Led Guesswork:</p>
-                              <p className="text-sm text-muted-foreground">Relies on marketers building journeys based on assumptions.</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4">
-                          <div className="flex items-start space-x-3">
-                            <span className="text-lg">🎯</span>
-                            <div>
-                              <p className="font-medium text-primary">AI-Led Goal Achievement:</p>
-                              <p className="text-sm text-muted-foreground">Relies on an AI defining the optimal path based on a business goal.</p>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4">
-                          <div className="flex items-start space-x-3">
-                            <span className="text-lg">🧑‍💻</span>
-                            <div>
-                              <p className="font-medium text-foreground">The Human is the Operator:</p>
-                              <p className="text-sm text-muted-foreground">Your team spends its time building, testing, and tweaking campaigns.</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4">
-                          <div className="flex items-start space-x-3">
-                            <span className="text-lg">🤖</span>
-                            <div>
-                              <p className="font-medium text-primary">The Human is the Strategist:</p>
-                              <p className="text-sm text-muted-foreground">Your team is freed to focus on high-level strategy.</p>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4">
-                          <div className="flex items-start space-x-3">
-                            <span className="text-lg">❌</span>
-                            <div>
-                              <p className="font-medium text-foreground mb-2">The Manual Grind:</p>
-                              <div className="flex flex-wrap gap-2">
-                                <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">No Segments</span>
-                                <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">No Journeys</span>
-                                <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">No Static Rules</span>
-                                <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">No A/B Tests</span>
-                                <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">No Manual Analysis</span>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4">
-                          <div className="flex items-start space-x-3">
-                            <span className="text-lg">✅</span>
-                            <div>
-                              <p className="font-medium text-primary mb-2">The Autonomous Advantage:</p>
-                              <div className="flex flex-wrap gap-2">
-                                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded">AI-Discovered Micro-Cohorts</span>
-                                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded">Dynamic 1:1 Decisions</span>
-                                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded">Continuous Learning</span>
-                                <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded">Automated Insights</span>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+              {/* The Old Way */}
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-6">
+                  The Old Way: The Manual Toolbox
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <span className="text-destructive text-xl">❌</span>
+                    <span className="text-foreground font-medium">Endless Journey Building</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-destructive text-xl">❌</span>
+                    <span className="text-foreground font-medium">Manual A/B Testing</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-destructive text-xl">❌</span>
+                    <span className="text-foreground font-medium">Static, Rule-Based Segments</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* The New Way */}
+              <div>
+                <h3 className="text-2xl font-bold text-primary mb-6">
+                  The New Way: The Autonomous Engine
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <span className="text-primary text-xl">✅</span>
+                    <span className="text-foreground font-medium">Goal-Driven Outcomes</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-primary text-xl">✅</span>
+                    <span className="text-foreground font-medium">Continuous AI Optimization</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-primary text-xl">✅</span>
+                    <span className="text-foreground font-medium">Dynamic 1:1 Decisions</span>
+                  </div>
                 </div>
               </div>
             </div>

@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { contentfulService, BlogPost } from "@/lib/contentful";
 import { updateSEOTags, addStructuredData, blogSchema } from "@/lib/seo";
 import LazyImage from "@/components/ui/lazy-image";
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis } from "@/components/ui/pagination";
 
 const Blogs = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -18,6 +19,10 @@ const Blogs = () => {
   const [featuredPost, setFeaturedPost] = useState<BlogPost | null>(null);
   const [recentPosts, setRecentPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const perPage = 9;
+  const [totalPosts, setTotalPosts] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
 
   const categories = ["All", "Behavioral Science", "AI & Product", "Case Studies"];
 
@@ -35,16 +40,23 @@ const Blogs = () => {
     addStructuredData(blogSchema);
   }, []);
 
+useEffect(() => {
+    // Reset to first page when filters or search change
+    setCurrentPage(1);
+  }, [activeFilter, searchQuery]);
+
   useEffect(() => {
     const fetchBlogs = async () => {
       setLoading(true);
       try {
-        const [allBlogs, featured, recent] = await Promise.all([
-          contentfulService.getBlogPosts(activeFilter, searchQuery),
+        const [{ posts, total, totalPages: pages }, featured, recent] = await Promise.all([
+          contentfulService.getBlogPostsPage({ category: activeFilter, searchQuery, limit: perPage, page: currentPage }),
           contentfulService.getFeaturedBlogPost(),
           contentfulService.getFeaturedBlogPosts(3)
         ]);
-        setBlogs(allBlogs);
+        setBlogs(posts);
+        setTotalPosts(total);
+        setTotalPages(pages);
         setFeaturedPost(featured);
         setRecentPosts(recent);
       } catch (error) {
@@ -54,7 +66,7 @@ const Blogs = () => {
     };
 
     fetchBlogs();
-  }, [activeFilter, searchQuery]);
+  }, [activeFilter, searchQuery, currentPage]);
 
   const formatDate = (post: BlogPost) => {
     const dateToUse = post.fields.publishedAt || post.sys.publishedAt || post.sys.createdAt;
@@ -313,25 +325,69 @@ const Blogs = () => {
           </div>
 
           {/* Section 4: Pagination */}
-          <div className="flex justify-center">
-            <div className="flex items-center space-x-2">
-              <Button variant="outline" size="sm" disabled>
-                ← Previous
-              </Button>
-              <Button variant="pink" size="sm">
-                1
-              </Button>
-              <Button variant="outline" size="sm">
-                2
-              </Button>
-              <Button variant="outline" size="sm">
-                3
-              </Button>
-              <Button variant="outline" size="sm">
-                Next →
-              </Button>
-            </div>
-          </div>
+<Pagination className="mt-6">
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious
+        href="#"
+        onClick={(e) => {
+          e.preventDefault();
+          if (currentPage > 1) setCurrentPage(currentPage - 1);
+        }}
+        className={currentPage === 1 ? 'pointer-events-none opacity-50' : ''}
+      />
+    </PaginationItem>
+
+    {(() => {
+      const items: React.ReactNode[] = [];
+      const maxToShow = 5;
+      let start = Math.max(1, currentPage - 2);
+      let end = Math.min(totalPages, start + maxToShow - 1);
+      if (end - start < maxToShow - 1) {
+        start = Math.max(1, end - maxToShow + 1);
+      }
+
+      if (start > 1) {
+        items.push(
+          <PaginationItem key={1}>
+            <PaginationLink href="#" isActive={currentPage === 1} onClick={(e) => { e.preventDefault(); setCurrentPage(1); }}>1</PaginationLink>
+          </PaginationItem>
+        );
+        if (start > 2) items.push(<PaginationEllipsis key="start-ellipsis" />);
+      }
+
+      for (let p = start; p <= end; p++) {
+        items.push(
+          <PaginationItem key={p}>
+            <PaginationLink href="#" isActive={p === currentPage} onClick={(e) => { e.preventDefault(); setCurrentPage(p); }}>{p}</PaginationLink>
+          </PaginationItem>
+        );
+      }
+
+      if (end < totalPages) {
+        if (end < totalPages - 1) items.push(<PaginationEllipsis key="end-ellipsis" />);
+        items.push(
+          <PaginationItem key={totalPages}>
+            <PaginationLink href="#" isActive={currentPage === totalPages} onClick={(e) => { e.preventDefault(); setCurrentPage(totalPages); }}>{totalPages}</PaginationLink>
+          </PaginationItem>
+        );
+      }
+
+      return items;
+    })()}
+
+    <PaginationItem>
+      <PaginationNext
+        href="#"
+        onClick={(e) => {
+          e.preventDefault();
+          if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+        }}
+        className={currentPage === totalPages ? 'pointer-events-none opacity-50' : ''}
+      />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
           
         </div>
       </main>

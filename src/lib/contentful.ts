@@ -299,4 +299,51 @@ export const contentfulService = {
       return [];
     }
   },
+  async getBlogPostsPage({ category, searchQuery, limit = 9, page = 1 }: { category?: string; searchQuery?: string; limit?: number; page?: number; }): Promise<{ posts: BlogPost[]; total: number; totalPages: number; }> {
+    const skip = (page - 1) * limit;
+    const cacheKey = getCacheKey('getBlogPostsPage', { category, searchQuery, limit, page });
+    const cached = getFromCache(cacheKey);
+    if (cached) return cached;
+
+    try {
+      const query: any = {
+        content_type: 'blogPost',
+        include: 2,
+        order: ['-sys.createdAt'],
+        limit,
+        skip,
+      };
+
+      // Only exclude featured posts if the isFeatured field exists
+      try {
+        await client.getEntries({
+          content_type: 'blogPost',
+          'fields.isFeatured': true,
+          limit: 1,
+        });
+        query['fields.isFeatured[ne]'] = true;
+      } catch (error) {
+        console.log('isFeatured field not found, showing all posts');
+      }
+
+      if (category && category !== 'All') {
+        query['fields.category'] = category;
+      }
+
+      if (searchQuery) {
+        query.query = searchQuery;
+      }
+
+      const response = await client.getEntries(query);
+      const posts = response.items as unknown as BlogPost[];
+      const total = (response as any).total ?? posts.length;
+      const totalPages = Math.max(1, Math.ceil(total / limit));
+      const data = { posts, total, totalPages };
+      setCache(cacheKey, data);
+      return data;
+    } catch (error) {
+      console.error('Error fetching paginated blog posts:', error);
+      return { posts: [], total: 0, totalPages: 0 };
+    }
+  }
 };

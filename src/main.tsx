@@ -2,6 +2,7 @@
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import './styles/typography.css'
 import { initPerformanceOptimizations } from './lib/performance'
 
 // Initialize performance optimizations

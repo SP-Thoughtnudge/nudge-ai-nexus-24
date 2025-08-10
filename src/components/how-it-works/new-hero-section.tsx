@@ -57,14 +57,14 @@ const NewHeroSection = () => {
           
           {/* Hero Illustration */}
           <div className="mt-16">
-            <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-border bg-card/60 shadow-xl">
+            <div className="relative mx-auto max-w-5xl bg-transparent">
               <OptimizedImage
-                src="/lovable-uploads/b8b774a7-2b53-4e14-b261-883665ac9b57.png?v=20250810"
-                alt="Thoughtnudge How it works hero illustration showing AI brain turning goals into decisions and growth"
-                className="w-full h-auto"
-                lazy
-                priority={false}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+                src="/lovable-uploads/fce9ddf1-2dd2-47ee-9049-3b1af0692953.png?v=20250810"
+                alt="Thoughtnudge how it works hero showing AI turning goals into decisions and growth"
+                className="w-full h-[240px] md:h-[300px] object-contain"
+                lazy={false}
+                priority={true}
+                sizes="100vw"
               />
             </div>
           </div>

@@ -64,25 +64,26 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   return (
     <div ref={containerRef} className={cn('relative overflow-hidden', className)}>
       {!isLoaded && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+        <div className="absolute inset-0 bg-muted animate-pulse" />
       )}
       
       {isInView && (
         <picture>
-          {/* WebP sources for modern browsers */}
-          <source
-            srcSet={`
-              ${generateWebPSource(src, 400)} 400w,
-              ${generateWebPSource(src, 800)} 800w,
-              ${generateWebPSource(src, 1200)} 1200w
-            `}
-            sizes={imageSizes}
-            type="image/webp"
-          />
+          {/* WebP source only when src is a WebP asset */}
+          {src.toLowerCase().endsWith('.webp') && (
+            <source
+              srcSet={`
+                ${generateWebPSource(src, 400)} 400w,
+                ${generateWebPSource(src, 800)} 800w,
+                ${generateWebPSource(src, 1200)} 1200w
+              `}
+              sizes={imageSizes}
+              type="image/webp"
+            />
+          )}
           
           {/* Fallback to original format */}
           <img
-            
             src={src}
             alt={alt}
             className={cn(
@@ -91,7 +92,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
               className
             )}
             onLoad={handleLoad}
-            loading={lazy && !priority ? 'lazy' : 'eager'}
+            loading={priority ? 'eager' : 'lazy'}
+            fetchPriority={priority ? 'high' : 'auto'}
             decoding="async"
             {...props}
           />

@@ -17,14 +17,14 @@ export const ProductHero = () => {
           </p>
 
           <div className="relative max-w-6xl mx-auto mt-6">
-            <div className="overflow-hidden rounded-3xl border border-border bg-card/60 shadow-2xl">
+            <div className="relative bg-transparent">
               <OptimizedImage
                 src="/lovable-uploads/1d4a2046-adf3-4c69-a760-eb2737406da1.png?v=20250810"
-                alt="Thoughtnudge Product hero illustration showing data to decisions to growth"
-                className="w-full h-auto"
-                lazy
-                priority={false}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                alt="Thoughtnudge product hero illustrating data-to-decisions-to-growth"
+                className="w-full h-[280px] md:h-[340px] lg:h-[360px] object-contain"
+                lazy={false}
+                priority={true}
+                sizes="100vw"
               />
             </div>
           </div>

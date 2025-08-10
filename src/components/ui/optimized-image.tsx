@@ -21,7 +21,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(!lazy || priority);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!lazy || priority) return;
@@ -38,8 +38,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       }
     );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
     }
 
     return () => observer.disconnect();
@@ -62,7 +62,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const imageSizes = sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw';
 
   return (
-    <div className={cn('relative overflow-hidden', className)}>
+    <div ref={containerRef} className={cn('relative overflow-hidden', className)}>
       {!isLoaded && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse" />
       )}
@@ -82,7 +82,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
           
           {/* Fallback to original format */}
           <img
-            ref={imgRef}
+            
             src={src}
             alt={alt}
             className={cn(

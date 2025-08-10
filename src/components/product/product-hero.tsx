@@ -19,7 +19,7 @@ export const ProductHero = () => {
           <div className="relative max-w-6xl mx-auto mt-6">
             <div className="overflow-hidden rounded-3xl border border-border bg-card/60 shadow-2xl">
               <OptimizedImage
-                src="/lovable-uploads/1d4a2046-adf3-4c69-a760-eb2737406da1.png"
+                src="/lovable-uploads/1d4a2046-adf3-4c69-a760-eb2737406da1.png?v=20250810"
                 alt="Thoughtnudge Product hero illustration showing data to decisions to growth"
                 className="w-full h-auto"
                 lazy

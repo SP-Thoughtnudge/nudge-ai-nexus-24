@@ -59,7 +59,7 @@ const NewHeroSection = () => {
           <div className="mt-16">
             <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-border bg-card/60 shadow-xl">
               <OptimizedImage
-                src="/lovable-uploads/b8b774a7-2b53-4e14-b261-883665ac9b57.png"
+                src="/lovable-uploads/b8b774a7-2b53-4e14-b261-883665ac9b57.png?v=20250810"
                 alt="Thoughtnudge How it works hero illustration showing AI brain turning goals into decisions and growth"
                 className="w-full h-auto"
                 lazy

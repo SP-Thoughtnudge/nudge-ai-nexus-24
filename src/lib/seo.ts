@@ -15,6 +15,9 @@ export const updateSEOTags = (seo: SEOProps) => {
   // Update title
   document.title = seo.title;
 
+  // Default robots directive
+  updateOrCreateMeta('name', 'robots', 'index,follow');
+
   // Update or create meta description
   updateOrCreateMeta('name', 'description', seo.description);
 
@@ -25,10 +28,13 @@ export const updateSEOTags = (seo: SEOProps) => {
   
   if (seo.image) {
     updateOrCreateMeta('property', 'og:image', seo.image);
+    updateOrCreateMeta('name', 'twitter:image', seo.image);
   }
   
   if (seo.url) {
     updateOrCreateMeta('property', 'og:url', seo.url);
+    // Canonical link
+    updateOrCreateLink('canonical', seo.url);
   }
 
   // Update or create Twitter Card tags
@@ -36,10 +42,6 @@ export const updateSEOTags = (seo: SEOProps) => {
   updateOrCreateMeta('name', 'twitter:title', seo.title);
   updateOrCreateMeta('name', 'twitter:description', seo.description);
   
-  if (seo.image) {
-    updateOrCreateMeta('name', 'twitter:image', seo.image);
-  }
-
   // Article-specific tags
   if (seo.type === 'article') {
     if (seo.author) {
@@ -67,17 +69,36 @@ const updateOrCreateMeta = (attributeName: string, attributeValue: string, conte
   }
 };
 
+// Link tag upsert helper (e.g., canonical)
+const updateOrCreateLink = (rel: string, href: string) => {
+  let link = document.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+  if (link) {
+    link.setAttribute('href', href);
+  } else {
+    link = document.createElement('link');
+    link.setAttribute('rel', rel);
+    link.setAttribute('href', href);
+    document.head.appendChild(link);
+  }
+};
+
 // Structured Data (JSON-LD) utilities
-export const addStructuredData = (data: any) => {
-  // Remove existing structured data if present
-  const existingScript = document.querySelector('script[type="application/ld+json"]');
-  if (existingScript) {
-    existingScript.remove();
+export const addStructuredData = (data: any, key?: string) => {
+  // If a key is provided, upsert by ID to allow multiple schema blocks
+  const id = key ? `ldjson-${key}` : undefined;
+
+  if (id) {
+    const existingById = document.getElementById(id);
+    if (existingById) existingById.remove();
+  } else {
+    // If no key provided, remove only the first anonymous ld+json to avoid duplicates on re-mount
+    const existing = document.querySelector('script[type="application/ld+json"]:not([id])');
+    if (existing) existing.remove();
   }
 
-  // Add new structured data
   const script = document.createElement('script');
   script.type = 'application/ld+json';
+  if (id) script.id = id;
   script.textContent = JSON.stringify(data);
   document.head.appendChild(script);
 };

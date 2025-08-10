@@ -37,7 +37,7 @@ const Blogs = () => {
     });
 
     // Add Blog structured data
-    addStructuredData(blogSchema);
+    addStructuredData(blogSchema, 'blog');
   }, []);
 
 useEffect(() => {

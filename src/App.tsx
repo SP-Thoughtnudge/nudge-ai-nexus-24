@@ -4,12 +4,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import PerformanceMonitor from "@/components/ui/performance-monitor";
 import ImagePreloader from "@/components/ui/image-preloader";
 import ScrollToTop from "@/components/ui/scroll-to-top";
 import BackToTopButton from "@/components/ui/back-to-top-button";
 import { useWebVitals } from "@/hooks/use-web-vitals";
+import { addStructuredData, organizationSchema } from "@/lib/seo";
 // Lazy load components for better performance
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -50,6 +51,12 @@ const criticalImages = [
 const App = () => {
   // Initialize web vitals monitoring
   useWebVitals();
+
+  // Ensure global Organization schema is present on all pages
+  useEffect(() => {
+    addStructuredData(organizationSchema, 'org');
+  }, []);
+
 
   return (
     <QueryClientProvider client={queryClient}>

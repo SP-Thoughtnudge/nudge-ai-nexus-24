@@ -28,7 +28,7 @@ const Index = () => {
     });
 
     // Add Organization structured data
-    addStructuredData(organizationSchema);
+    addStructuredData(organizationSchema, 'org');
   }, []);
 
   return (

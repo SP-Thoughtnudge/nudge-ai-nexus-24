@@ -24,7 +24,7 @@ const Product = () => {
     });
 
     // Add Software Application structured data
-    addStructuredData(softwareApplicationSchema);
+    addStructuredData(softwareApplicationSchema, 'software');
   }, []);
 
   return (

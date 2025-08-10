@@ -55,7 +55,7 @@ const BlogPostPage = () => {
       });
 
       // Add Article structured data
-      addStructuredData(createArticleSchema(post));
+      addStructuredData(createArticleSchema(post), 'article');
     }
   }, [post]);
 

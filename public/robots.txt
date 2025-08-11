@@ -36,3 +36,7 @@ Allow: /
 
 User-agent: PerplexityBot
 Allow: /
+
+# Google Generative AI crawler
+User-agent: Google-Extended
+Allow: /

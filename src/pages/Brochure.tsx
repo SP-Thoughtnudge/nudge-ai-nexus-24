@@ -4,10 +4,18 @@ import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { Download, FileText, Mail, CheckCircle, Target, TrendingUp, Shield, Users, Clock, Zap } from "lucide-react";
 import jsPDF from 'jspdf';
+import { updateSEOTags } from "@/lib/seo";
 
 const Brochure = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    updateSEOTags({
+      title: "Insurance Renewal Agent Brochure | Thoughtnudge",
+      description: "Download the Thoughtnudge insurance renewal agent brochure to see how AI boosts renewals and CLTV.",
+      url: "https://www.thoughtnudge.com/brochure",
+      image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      type: "website"
+    });
   }, []);
 
   const handleDownloadPDF = async () => {

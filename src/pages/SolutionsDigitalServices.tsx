@@ -4,6 +4,8 @@ import { Smartphone, CheckCircle, XCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { updateSEOTags } from "@/lib/seo";
 
 const SolutionsDigitalServices = () => {
   const pains = [
@@ -36,6 +38,16 @@ const SolutionsDigitalServices = () => {
     "Increase Daily/Monthly Active Users (DAU/MAU)",
     "Win Back Lapsed Subscribers"
   ];
+
+  useEffect(() => {
+    updateSEOTags({
+      title: "Digital Services Solutions | Thoughtnudge Autonomous Growth",
+      description: "Autonomous AI for apps and digital services to reduce churn, increase activation, and grow subscriptions.",
+      url: "https://www.thoughtnudge.com/solutions/digital-services",
+      image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      type: "website"
+    });
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">

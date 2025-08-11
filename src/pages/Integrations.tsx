@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, ArrowRight, Brain, Mail, MessageCircle } from "lucide-react";
+import { updateSEOTags } from "@/lib/seo";
 
 const Integrations = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
+
+  useEffect(() => {
+    updateSEOTags({
+      title: "Integrations | Thoughtnudge Ecosystem & Connectors",
+      description: "Connect Thoughtnudge with Shopify, Segment, Braze, Zendesk and more. Turn your stack into an autonomous growth engine.",
+      url: "https://www.thoughtnudge.com/integrations",
+      image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      type: "website"
+    });
+  }, []);
 
   const integrations = [
     // E-commerce

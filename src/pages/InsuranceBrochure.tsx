@@ -5,11 +5,19 @@ import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, BrainCircuit, Infinity, Network, Clock, Users, Zap, MessageSquare, TrendingUp, Check } from "lucide-react";
+import { updateSEOTags } from "@/lib/seo";
 
 const InsuranceBrochure = () => {
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
+    updateSEOTags({
+      title: "Insurance Brochure | Thoughtnudge Renewal & CLTV AI",
+      description: "See how Thoughtnudge increases policy renewal, reduces churn, and drives cross-sell with agentic AI.",
+      url: "https://www.thoughtnudge.com/brochure/insurance",
+      image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      type: "website"
+    });
   }, []);
 
   return (

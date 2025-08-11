@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { 
@@ -15,8 +15,18 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { updateSEOTags } from "@/lib/seo";
 
 const UseCases = () => {
+  useEffect(() => {
+    updateSEOTags({
+      title: "Use Cases | Thoughtnudge AI for Revenue Outcomes",
+      description: "See real-world AI use cases: activation, upsell, retention, repeat purchase, winback, referrals and more.",
+      url: "https://www.thoughtnudge.com/use-cases",
+      image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      type: "website"
+    });
+  }, []);
   // Define all use cases
   const useCases = [
     {

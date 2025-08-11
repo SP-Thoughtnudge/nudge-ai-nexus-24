@@ -5,11 +5,19 @@ import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShoppingCart, Zap, BarChart3, Percent, Users, TrendingUp, Check, MessageSquare, BrainCircuit, Infinity, Network, Clock } from "lucide-react";
+import { updateSEOTags } from "@/lib/seo";
 
 const EcommerceBrochure = () => {
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
+    updateSEOTags({
+      title: "E-commerce Brochure | Thoughtnudge Agentic AI",
+      description: "See how Thoughtnudge drives cart recovery, AOV, and CLTV with agentic AI for e-commerce.",
+      url: "https://www.thoughtnudge.com/brochure/ecommerce",
+      image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      type: "website"
+    });
   }, []);
 
   return (

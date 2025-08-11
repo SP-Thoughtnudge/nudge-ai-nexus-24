@@ -4,6 +4,8 @@ import { ShoppingCart, CheckCircle, XCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { updateSEOTags } from "@/lib/seo";
 
 const SolutionsD2C = () => {
   const pains = [
@@ -36,6 +38,16 @@ const SolutionsD2C = () => {
     "Drive Upsells to Premium Products",
     "Win Back High-Value Dormant Customers"
   ];
+  useEffect(() => {
+    updateSEOTags({
+      title: "D2C Solutions | Thoughtnudge Autonomous Growth",
+      description: "Autonomous AI for D2C brands to boost repeat purchase, recover carts, and grow AOV and LTV.",
+      url: "https://www.thoughtnudge.com/solutions/d2c",
+      image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      type: "website"
+    });
+  }, []);
+
 
   return (
     <div className="min-h-screen bg-background">

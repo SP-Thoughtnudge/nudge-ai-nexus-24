@@ -5,11 +5,19 @@ import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, SignalHigh, Users, BarChart3, MessageSquare, ShieldCheck, Zap, Check, BrainCircuit, Infinity, Network, Clock } from "lucide-react";
+import { updateSEOTags } from "@/lib/seo";
 
 const TelecomBrochure = () => {
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
+    updateSEOTags({
+      title: "Telecom Brochure | Thoughtnudge Agentic AI",
+      description: "Discover how Thoughtnudge increases ARPU, reduces churn, and boosts renewals with autonomous AI for telecom.",
+      url: "https://www.thoughtnudge.com/brochure/telecom",
+      image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      type: "website"
+    });
   }, []);
 
   return (

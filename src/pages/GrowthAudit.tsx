@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import GrowthAuditHero from "@/components/growth-audit/growth-audit-hero";
 import GrowthAuditForm from "@/components/growth-audit/growth-audit-form";
+import { updateSEOTags } from "@/lib/seo";
 
 const GrowthAudit = () => {
+  useEffect(() => {
+    updateSEOTags({
+      title: "Free Growth Audit | Thoughtnudge AI Customer Insights",
+      description: "Request a personalized growth audit to uncover opportunities for AI-driven activation, retention, and LTV.",
+      url: "https://www.thoughtnudge.com/growth-audit",
+      image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
+      type: "website"
+    });
+  }, []);
   return (
     <div className="min-h-screen bg-white">
       {/* Logo in top-left corner */}

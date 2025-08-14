@@ -54,6 +54,32 @@ const BlogPostPage = () => {
         modifiedTime: post.sys.createdAt
       });
 
+      // Add Open Graph meta tags to HTML head for social media crawlers
+      const ogTags = [
+        { property: 'og:title', content: post.fields.title },
+        { property: 'og:description', content: post.fields.metaDescription || post.fields.excerpt },
+        { property: 'og:image', content: post.fields.featuredImage?.fields?.file?.url ? `https:${post.fields.featuredImage.fields.file.url}` : '' },
+        { property: 'og:url', content: `https://www.thoughtnudge.com/blog/${post.fields.slug || contentfulService.generateSlug(post.fields.title)}` },
+        { property: 'og:type', content: 'article' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: post.fields.title },
+        { name: 'twitter:description', content: post.fields.metaDescription || post.fields.excerpt },
+        { name: 'twitter:image', content: post.fields.featuredImage?.fields?.file?.url ? `https:${post.fields.featuredImage.fields.file.url}` : '' }
+      ];
+
+      // Remove existing OG tags
+      const existingOgTags = document.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]');
+      existingOgTags.forEach(tag => tag.remove());
+
+      // Add new OG tags to head
+      ogTags.forEach(tag => {
+        const meta = document.createElement('meta');
+        if (tag.property) meta.setAttribute('property', tag.property);
+        if (tag.name) meta.setAttribute('name', tag.name);
+        meta.setAttribute('content', tag.content);
+        document.head.appendChild(meta);
+      });
+
       // Add Article structured data
       addStructuredData(createArticleSchema(post), 'article');
     }

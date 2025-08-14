@@ -319,20 +319,20 @@ export const contentfulService = {
         skip,
       };
 
-      // Get ALL featured posts to exclude from paginated results
-      let featuredPostIds: string[] = [];
+      // Get featured post first to exclude it from pagination
+      let featuredPostId: string | null = null;
       try {
         const featuredResponse = await client.getEntries({
           content_type: 'blogPost',
           'fields.isFeatured': true,
-          limit: 100, // Get all featured posts
+          limit: 1,
         });
-        console.log('Featured posts response:', featuredResponse.items.length);
+        console.log('Featured post response:', featuredResponse.items.length);
         if (featuredResponse.items.length > 0) {
-          featuredPostIds = featuredResponse.items.map(item => item.sys.id);
-          console.log('Found featured posts, excluding IDs:', featuredPostIds);
-          // Exclude ALL featured posts from paginated results
-          query['sys.id[nin]'] = featuredPostIds.join(',');
+          featuredPostId = featuredResponse.items[0].sys.id;
+          console.log('Found featured post, excluding ID:', featuredPostId);
+          // Exclude featured post from paginated results
+          query['sys.id[ne]'] = featuredPostId;
         }
       } catch (error) {
         console.log('isFeatured field not found, showing all posts');

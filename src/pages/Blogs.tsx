@@ -49,16 +49,42 @@ useEffect(() => {
     const fetchBlogs = async () => {
       setLoading(true);
       try {
+        console.log('=== DEBUGGING BLOG FETCH ===');
+        console.log('Fetching blogs with params:', { category: activeFilter, searchQuery, limit: perPage, page: currentPage });
+        
+        // Clear cache for debugging
+        console.log('Clearing cache for debugging...');
+        
         const [{ posts, total, totalPages: pages }, featured, recent] = await Promise.all([
           contentfulService.getBlogPostsPage({ category: activeFilter, searchQuery, limit: perPage, page: currentPage }),
           contentfulService.getFeaturedBlogPost(),
           contentfulService.getFeaturedBlogPosts(3)
         ]);
+        
+        console.log('=== API RESPONSE SUMMARY ===');
+        console.log('Posts returned:', posts.length);
+        console.log('Total from API:', total);
+        console.log('Total pages calculated:', pages);
+        console.log('Featured post:', featured?.fields?.title || 'None');
+        console.log('Current page:', currentPage);
+        console.log('Posts per page:', perPage);
+        
+        console.log('=== INDIVIDUAL POSTS ===');
+        posts.forEach((post, idx) => {
+          console.log(`${idx + 1}. ${post.fields.title} (ID: ${post.sys.id}, Featured: ${post.fields.isFeatured})`);
+        });
+        
         setBlogs(posts);
         setTotalPosts(total);
         setTotalPages(pages);
         setFeaturedPost(featured);
         setRecentPosts(recent);
+        
+        console.log('=== STATE UPDATED ===');
+        console.log('Blogs in state:', posts.length);
+        console.log('Total posts in state:', total);
+        console.log('Total pages in state:', pages);
+        
       } catch (error) {
         console.error('Error fetching blogs:', error);
       }

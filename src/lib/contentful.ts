@@ -303,9 +303,14 @@ export const contentfulService = {
     const skip = (page - 1) * limit;
     const cacheKey = getCacheKey('getBlogPostsPage', { category, searchQuery, limit, page });
     const cached = getFromCache(cacheKey);
-    if (cached) return cached;
+    if (cached) {
+      console.log('Returning cached data for getBlogPostsPage:', cached);
+      return cached;
+    }
 
     try {
+      console.log('Making Contentful API call with params:', { category, searchQuery, limit, page, skip });
+      
       const query: any = {
         content_type: 'blogPost',
         include: 2,
@@ -322,8 +327,10 @@ export const contentfulService = {
           'fields.isFeatured': true,
           limit: 1,
         });
+        console.log('Featured post response:', featuredResponse.items.length);
         if (featuredResponse.items.length > 0) {
           featuredPostId = featuredResponse.items[0].sys.id;
+          console.log('Found featured post, excluding ID:', featuredPostId);
           // Exclude featured post from paginated results
           query['sys.id[ne]'] = featuredPostId;
         }
@@ -333,16 +340,29 @@ export const contentfulService = {
 
       if (category && category !== 'All') {
         query['fields.category'] = category;
+        console.log('Filtering by category:', category);
       }
 
       if (searchQuery) {
         query.query = searchQuery;
+        console.log('Searching for:', searchQuery);
       }
 
+      console.log('Final Contentful query:', query);
       const response = await client.getEntries(query);
+      console.log('Raw Contentful response:', { 
+        itemsCount: response.items.length, 
+        total: response.total, 
+        skip: response.skip, 
+        limit: response.limit 
+      });
+      
       const posts = response.items as unknown as BlogPost[];
       const total = response.total || posts.length;
       const totalPages = Math.max(1, Math.ceil(total / limit));
+      
+      console.log('Processed response:', { posts: posts.length, total, totalPages, page });
+      
       const data = { posts, total, totalPages };
       setCache(cacheKey, data);
       return data;

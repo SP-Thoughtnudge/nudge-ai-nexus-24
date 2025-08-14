@@ -314,14 +314,19 @@ export const contentfulService = {
         skip,
       };
 
-      // Only exclude featured posts if the isFeatured field exists
+      // Get featured post first to exclude it from pagination
+      let featuredPostId: string | null = null;
       try {
-        await client.getEntries({
+        const featuredResponse = await client.getEntries({
           content_type: 'blogPost',
           'fields.isFeatured': true,
           limit: 1,
         });
-        query['fields.isFeatured[ne]'] = true;
+        if (featuredResponse.items.length > 0) {
+          featuredPostId = featuredResponse.items[0].sys.id;
+          // Exclude featured post from paginated results
+          query['sys.id[ne]'] = featuredPostId;
+        }
       } catch (error) {
         console.log('isFeatured field not found, showing all posts');
       }
@@ -336,7 +341,7 @@ export const contentfulService = {
 
       const response = await client.getEntries(query);
       const posts = response.items as unknown as BlogPost[];
-      const total = (response as any).total ?? posts.length;
+      const total = response.total || posts.length;
       const totalPages = Math.max(1, Math.ceil(total / limit));
       const data = { posts, total, totalPages };
       setCache(cacheKey, data);

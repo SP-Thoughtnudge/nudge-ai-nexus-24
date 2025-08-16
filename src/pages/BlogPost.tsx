@@ -42,20 +42,34 @@ const BlogPostPage = () => {
 
   useEffect(() => {
     if (post) {
-      // Update SEO tags
+      // Generate proper slug
+      const slug = post.fields.slug || contentfulService.generateSlug(post.fields.title);
+      const postUrl = `https://www.thoughtnudge.com/blog/${slug}`;
+      const imageUrl = post.fields.featuredImage?.fields?.file?.url ? `https:${post.fields.featuredImage.fields.file.url}` : undefined;
+      
+      // Update SEO tags with proper Open Graph data
       updateSEOTags({
         title: `${post.fields.title} | Thoughtnudge Blog`,
-        description: post.fields.metaDescription || post.fields.excerpt,
-        url: `https://www.thoughtnudge.com/blog/${post.fields.slug || contentfulService.generateSlug(post.fields.title)}`,
-        image: post.fields.featuredImage?.fields?.file?.url ? `https:${post.fields.featuredImage.fields.file.url}` : undefined,
+        description: post.fields.metaDescription || post.fields.excerpt || `${post.fields.title} - Read the latest insights from Thoughtnudge on AI, behavioral science, and autonomous marketing.`,
+        url: postUrl,
+        image: imageUrl,
         type: "article",
-        author: post.fields.author?.fields?.name,
-        publishedTime: post.sys.createdAt,
+        author: post.fields.author?.fields?.name || 'Thoughtnudge Team',
+        publishedTime: post.fields.publishedAt || post.sys.publishedAt || post.sys.createdAt,
         modifiedTime: post.sys.createdAt
       });
 
       // Add Article structured data
       addStructuredData(createArticleSchema(post), 'article');
+      
+      // Debug: Log Open Graph data
+      console.log('Blog post Open Graph data:', {
+        title: `${post.fields.title} | Thoughtnudge Blog`,
+        description: post.fields.metaDescription || post.fields.excerpt,
+        url: postUrl,
+        image: imageUrl,
+        type: "article"
+      });
     }
   }, [post]);
 

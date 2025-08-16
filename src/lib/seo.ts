@@ -25,10 +25,17 @@ export const updateSEOTags = (seo: SEOProps) => {
   updateOrCreateMeta('property', 'og:title', seo.title);
   updateOrCreateMeta('property', 'og:description', seo.description);
   updateOrCreateMeta('property', 'og:type', seo.type || 'website');
+  updateOrCreateMeta('property', 'og:site_name', 'Thoughtnudge');
   
   if (seo.image) {
-    updateOrCreateMeta('property', 'og:image', seo.image);
-    updateOrCreateMeta('name', 'twitter:image', seo.image);
+    // Ensure the image URL is absolute and optimized for social sharing
+    const imageUrl = seo.image.startsWith('//') ? `https:${seo.image}` : seo.image;
+    const optimizedImageUrl = `${imageUrl}?w=1200&h=630&fit=fill&f=center`;
+    updateOrCreateMeta('property', 'og:image', optimizedImageUrl);
+    updateOrCreateMeta('property', 'og:image:width', '1200');
+    updateOrCreateMeta('property', 'og:image:height', '630');
+    updateOrCreateMeta('property', 'og:image:type', 'image/jpeg');
+    updateOrCreateMeta('name', 'twitter:image', optimizedImageUrl);
   }
   
   if (seo.url) {
@@ -41,11 +48,13 @@ export const updateSEOTags = (seo: SEOProps) => {
   updateOrCreateMeta('name', 'twitter:card', 'summary_large_image');
   updateOrCreateMeta('name', 'twitter:title', seo.title);
   updateOrCreateMeta('name', 'twitter:description', seo.description);
+  updateOrCreateMeta('name', 'twitter:site', '@thoughtnudge');
   
   // Article-specific tags
   if (seo.type === 'article') {
     if (seo.author) {
       updateOrCreateMeta('name', 'author', seo.author);
+      updateOrCreateMeta('property', 'article:author', seo.author);
     }
     if (seo.publishedTime) {
       updateOrCreateMeta('property', 'article:published_time', seo.publishedTime);
@@ -53,7 +62,12 @@ export const updateSEOTags = (seo: SEOProps) => {
     if (seo.modifiedTime) {
       updateOrCreateMeta('property', 'article:modified_time', seo.modifiedTime);
     }
+    updateOrCreateMeta('property', 'article:section', 'Blog');
+    updateOrCreateMeta('property', 'article:tag', 'AI, Marketing, Behavioral Science');
   }
+
+  // Remove any default homepage meta tags that might conflict
+  removeDefaultMetaTags();
 };
 
 const updateOrCreateMeta = (attributeName: string, attributeValue: string, content: string) => {
@@ -80,6 +94,19 @@ const updateOrCreateLink = (rel: string, href: string) => {
     link.setAttribute('href', href);
     document.head.appendChild(link);
   }
+};
+
+// Remove conflicting homepage meta tags for blog posts
+const removeDefaultMetaTags = () => {
+  // Remove homepage specific og tags that might conflict
+  const homeOgImage = document.querySelector('meta[property="og:image"][content*="lovable.dev"]');
+  if (homeOgImage) homeOgImage.remove();
+  
+  const twitterImage = document.querySelector('meta[name="twitter:image"][content*="lovable.dev"]');
+  if (twitterImage) twitterImage.remove();
+  
+  const twitterSite = document.querySelector('meta[name="twitter:site"][content="@lovable_dev"]');
+  if (twitterSite) twitterSite.remove();
 };
 
 // Structured Data (JSON-LD) utilities
@@ -197,7 +224,7 @@ export const createArticleSchema = (post: any) => ({
     }
   },
   "datePublished": post.sys.createdAt,
-  "dateModified": post.sys.updatedAt,
+  "dateModified": post.sys.createdAt,
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": `https://www.thoughtnudge.com/blog/${post.fields.slug || post.fields.title.toLowerCase().replace(/\s+/g, '-')}`

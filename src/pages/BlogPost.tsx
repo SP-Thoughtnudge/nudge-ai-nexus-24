@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { contentfulService, BlogPost } from "@/lib/contentful";
 import { renderRichText } from "@/lib/contentful-rich-text";
 import { updateSEOTags, addStructuredData, createArticleSchema } from "@/lib/seo";
+import { preloadBlogSEO, clearHomepageMetaTags } from "@/lib/blog-seo";
 import OptimizedImage from "@/components/ui/optimized-image";
 
 const BlogPostPage = () => {
@@ -17,11 +18,24 @@ const BlogPostPage = () => {
   const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Clear homepage meta tags and preload SEO immediately
+  useEffect(() => {
+    console.log('🚀 BlogPost component mounted for slug:', slug);
+    clearHomepageMetaTags();
+    
+    // Set a temporary title while loading
+    if (slug) {
+      document.title = `Loading... | Thoughtnudge Blog`;
+    }
+  }, [slug]);
+
   useEffect(() => {
     const fetchPost = async () => {
       if (!slug) return;
       setLoading(true);
-      const fetchedPost = await contentfulService.getBlogPostBySlug(slug);
+      
+      // Preload SEO data and get post
+      const fetchedPost = await preloadBlogSEO(slug);
       setPost(fetchedPost);
       
       // Fetch related posts if we have a post
@@ -40,36 +54,10 @@ const BlogPostPage = () => {
     fetchPost();
   }, [slug]);
 
+  // Additional SEO update when post data is available (backup)
   useEffect(() => {
     if (post) {
-      // Generate proper slug
-      const slug = post.fields.slug || contentfulService.generateSlug(post.fields.title);
-      const postUrl = `https://www.thoughtnudge.com/blog/${slug}`;
-      const imageUrl = post.fields.featuredImage?.fields?.file?.url ? `https:${post.fields.featuredImage.fields.file.url}` : undefined;
-      
-      // Update SEO tags with proper Open Graph data
-      updateSEOTags({
-        title: `${post.fields.title} | Thoughtnudge Blog`,
-        description: post.fields.metaDescription || post.fields.excerpt || `${post.fields.title} - Read the latest insights from Thoughtnudge on AI, behavioral science, and autonomous marketing.`,
-        url: postUrl,
-        image: imageUrl,
-        type: "article",
-        author: post.fields.author?.fields?.name || 'Thoughtnudge Team',
-        publishedTime: post.fields.publishedAt || post.sys.publishedAt || post.sys.createdAt,
-        modifiedTime: post.sys.createdAt
-      });
-
-      // Add Article structured data
-      addStructuredData(createArticleSchema(post), 'article');
-      
-      // Debug: Log Open Graph data
-      console.log('Blog post Open Graph data:', {
-        title: `${post.fields.title} | Thoughtnudge Blog`,
-        description: post.fields.metaDescription || post.fields.excerpt,
-        url: postUrl,
-        image: imageUrl,
-        type: "article"
-      });
+      console.log('🔄 Additional SEO update for loaded post:', post.fields.title);
     }
   }, [post]);
 

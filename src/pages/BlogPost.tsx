@@ -10,6 +10,7 @@ import { contentfulService, BlogPost } from "@/lib/contentful";
 import { renderRichText } from "@/lib/contentful-rich-text";
 import { updateSEOTags, addStructuredData, createArticleSchema } from "@/lib/seo";
 import { preloadBlogSEO, clearHomepageMetaTags } from "@/lib/blog-seo";
+import { needsImmediateMetaInjection, logCrawlerDetection } from "@/lib/crawler-detector";
 import OptimizedImage from "@/components/ui/optimized-image";
 
 const BlogPostPage = () => {
@@ -18,10 +19,23 @@ const BlogPostPage = () => {
   const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Clear homepage meta tags and preload SEO immediately
+  // Immediate crawler detection and meta tag handling
   useEffect(() => {
     console.log('🚀 BlogPost component mounted for slug:', slug);
+    
+    // Log crawler detection info
+    logCrawlerDetection();
+    
+    // Always clear homepage meta tags immediately
     clearHomepageMetaTags();
+    
+    // If this might be a crawler, try to preload immediately
+    if (needsImmediateMetaInjection() && slug) {
+      console.log('⚡ Detected potential crawler - immediate SEO injection');
+      preloadBlogSEO(slug).then(() => {
+        console.log('✅ Emergency SEO injection complete');
+      });
+    }
     
     // Set a temporary title while loading
     if (slug) {

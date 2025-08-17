@@ -44,9 +44,16 @@ const Blogs = () => {
         console.log('Fetching categories from Contentful...');
         const uniqueCategories = await contentfulService.getUniqueCategories();
         console.log('Raw categories from API:', uniqueCategories);
-        const finalCategories = ["All", ...uniqueCategories];
-        console.log('Final categories to render:', finalCategories);
-        setCategories(finalCategories);
+        const normalized = Array.from(new Set((uniqueCategories || []).filter(Boolean))).sort();
+        if (normalized.length === 0) {
+          const fallbackCategories = ["All", "Behavioral Science", "AI & Product", "Case Studies", "E-commerce Strategies"];
+          console.log('Using fallback categories:', fallbackCategories);
+          setCategories(fallbackCategories);
+        } else {
+          const finalCategories = ["All", ...normalized];
+          console.log('Final categories to render:', finalCategories);
+          setCategories(finalCategories);
+        }
       } catch (error) {
         console.error('Error fetching categories:', error);
         // Fallback to default categories

@@ -44,7 +44,7 @@ export interface BlogPost {
     excerpt: string;
     content: any; // Rich text content
     author: Author;
-    category: 'Behavioral Science' | 'AI & Product' | 'Case Studies';
+    category: 'Behavioral Science' | 'AI & Product' | 'Case Studies' | 'E-commerce Strategies';
     metaDescription?: string;
     isFeatured?: boolean;
     publishedAt?: string; // Optional field for explicit publish date
@@ -312,10 +312,23 @@ export const contentfulService = {
       let total = 0;
       const set = new Set<string>();
 
+      const pushCat = (val: any) => {
+        if (!val) return;
+        if (typeof val === 'string') {
+          const c = val.trim();
+          if (c) set.add(c);
+        } else if (Array.isArray(val)) {
+          val.forEach(pushCat);
+        } else if (typeof val === 'object') {
+          const name = val?.fields?.name || val?.fields?.title || val?.fields?.category || val?.fields?.label;
+          if (typeof name === 'string') pushCat(name);
+        }
+      };
+
       do {
         const response = await client.getEntries({
           content_type: 'blogPost',
-          select: ['fields.category'],
+          include: 2,
           limit,
           skip,
         });
@@ -324,13 +337,8 @@ export const contentfulService = {
         skip += response.items.length;
 
         response.items.forEach((item: any) => {
-          const cat = item?.fields?.category;
-          if (!cat) return;
-          if (Array.isArray(cat)) {
-            cat.filter(Boolean).forEach((c: string) => set.add(c));
-          } else if (typeof cat === 'string') {
-            set.add(cat);
-          }
+          pushCat(item?.fields?.category);
+          pushCat(item?.fields?.categories);
         });
       } while (skip < total);
 

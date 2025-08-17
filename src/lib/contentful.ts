@@ -300,25 +300,52 @@ export const contentfulService = {
     }
   },
 
-  // Get all unique categories from published blog posts
+  // Get all unique categories from published blog posts (handles pagination and arrays)
   async getUniqueCategories(): Promise<string[]> {
     const cacheKey = getCacheKey('getUniqueCategories', {});
     const cached = getFromCache(cacheKey);
     if (cached) return cached;
 
     try {
-      const response = await client.getEntries({
-        content_type: 'blogPost',
-        select: ['fields.category'],
-      });
+      const limit = 100;
+      let skip = 0;
+      let total = 0;
+      const set = new Set<string>();
 
-      const categories = response.items
-        .map((item: any) => item.fields.category)
-        .filter((category: any) => category) // Remove any undefined/null categories
-        .filter((category: any, index: number, self: any[]) => self.indexOf(category) === index) // Remove duplicates
-        .sort(); // Sort alphabetically
+      do {
+        const response = await client.getEntries({
+          content_type: 'blogPost',
+          select: ['fields.category'],
+          limit,
+          skip,
+        });
 
-      const data = categories as string[];
+        total = response.total || 0;
+        skip += response.items.length;
+
+        response.items.forEach((item: any) => {
+          const cat = item?.fields?.category;
+          if (!cat) return;
+          if (Array.isArray(cat)) {
+            cat.filter(Boolean).forEach((c: string) => set.add(c));
+          } else if (typeof cat === 'string') {
+            set.add(cat);
+          }
+        });
+      } while (skip < total);
+
+      const categories = Array.from(set).sort();
+
+      // Fallback: if still empty, derive from a basic posts fetch
+      if (categories.length === 0) {
+        const fallback = await client.getEntries({ content_type: 'blogPost' });
+        fallback.items.forEach((item: any) => {
+          const cat = item?.fields?.category;
+          if (cat) set.add(cat);
+        });
+      }
+
+      const data = Array.from(set).sort();
       setCache(cacheKey, data, 30 * 60 * 1000); // 30 minutes cache for categories
       return data;
     } catch (error) {
@@ -326,6 +353,7 @@ export const contentfulService = {
       return [];
     }
   },
+
 
   async getBlogPostsPage({ category, searchQuery, limit = 9, page = 1 }: { category?: string; searchQuery?: string; limit?: number; page?: number; }): Promise<{ posts: BlogPost[]; total: number; totalPages: number; }> {
     const skip = (page - 1) * limit;

@@ -23,8 +23,7 @@ const Blogs = () => {
   const perPage = 9;
   const [totalPosts, setTotalPosts] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
-
-  const categories = ["All", "Behavioral Science", "AI & Product", "Case Studies"];
+  const [categories, setCategories] = useState<string[]>(["All"]);
 
   useEffect(() => {
     // SEO optimization
@@ -38,6 +37,20 @@ const Blogs = () => {
 
     // Add Blog structured data
     addStructuredData(blogSchema, 'blog');
+
+    // Fetch dynamic categories
+    const fetchCategories = async () => {
+      try {
+        const uniqueCategories = await contentfulService.getUniqueCategories();
+        setCategories(["All", ...uniqueCategories]);
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+        // Fallback to default categories
+        setCategories(["All", "Behavioral Science", "AI & Product", "Case Studies"]);
+      }
+    };
+
+    fetchCategories();
   }, []);
 
 useEffect(() => {
@@ -248,17 +261,15 @@ useEffect(() => {
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                 <div className="flex flex-wrap gap-2">
                   {categories.map((category) => (
-                    <button
+                    <Button
                       key={category}
+                      variant={activeFilter === category ? "pink" : "outline"}
+                      size="sm"
                       onClick={() => setActiveFilter(category)}
-                      className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                        activeFilter === category
-                          ? 'bg-pink-600 text-white'
-                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                      }`}
+                      className="transition-all duration-200"
                     >
                       {category}
-                    </button>
+                    </Button>
                   ))}
                 </div>
                 <div className="relative">

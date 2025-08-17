@@ -299,6 +299,34 @@ export const contentfulService = {
       return [];
     }
   },
+
+  // Get all unique categories from published blog posts
+  async getUniqueCategories(): Promise<string[]> {
+    const cacheKey = getCacheKey('getUniqueCategories', {});
+    const cached = getFromCache(cacheKey);
+    if (cached) return cached;
+
+    try {
+      const response = await client.getEntries({
+        content_type: 'blogPost',
+        select: ['fields.category'],
+      });
+
+      const categories = response.items
+        .map((item: any) => item.fields.category)
+        .filter((category: any) => category) // Remove any undefined/null categories
+        .filter((category: any, index: number, self: any[]) => self.indexOf(category) === index) // Remove duplicates
+        .sort(); // Sort alphabetically
+
+      const data = categories as string[];
+      setCache(cacheKey, data, 30 * 60 * 1000); // 30 minutes cache for categories
+      return data;
+    } catch (error) {
+      console.error('Error fetching unique categories:', error);
+      return [];
+    }
+  },
+
   async getBlogPostsPage({ category, searchQuery, limit = 9, page = 1 }: { category?: string; searchQuery?: string; limit?: number; page?: number; }): Promise<{ posts: BlogPost[]; total: number; totalPages: number; }> {
     const skip = (page - 1) * limit;
     const cacheKey = getCacheKey('getBlogPostsPage', { category, searchQuery, limit, page });

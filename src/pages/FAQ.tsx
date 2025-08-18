@@ -15,24 +15,32 @@ import { updateSEOTags, addStructuredData } from "@/lib/seo";
 
 const FAQ = () => {
   useEffect(() => {
-    // SEO optimization
+    // Enhanced SEO optimization for search engines and LLMs
     updateSEOTags({
-      title: "Frequently Asked Questions | Thoughtnudge AI Platform",
-      description: "Get answers to common questions about Thoughtnudge's Autonomous Growth Agents, Agentic AI platform, reinforcement learning, and how we help businesses increase repeat purchases and customer lifetime value.",
+      title: "AI Growth Platform FAQ | Thoughtnudge Autonomous Agents - Behavioral Science & Reinforcement Learning",
+      description: "Comprehensive FAQ about Thoughtnudge's Agentic AI platform. Learn how autonomous growth agents use reinforcement learning, behavioral science, and contextual memory to increase repeat purchases, reduce churn, and maximize customer lifetime value for e-commerce and digital businesses.",
       url: window.location.href,
       type: "website"
     });
 
-    // Add FAQ page structured data
+    // Enhanced FAQ page structured data for better search indexing
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": faqs.map(faq => ({
+      "name": "Thoughtnudge AI Growth Platform - Frequently Asked Questions",
+      "description": "Comprehensive FAQ covering Thoughtnudge's Agentic AI platform, autonomous growth agents, reinforcement learning capabilities, and business outcomes for e-commerce and digital applications.",
+      "url": window.location.href,
+      "mainEntity": faqs.map((faq, index) => ({
         "@type": "Question",
+        "@id": `#faq-${index + 1}`,
         "name": faq.question,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": faq.answer
+          "text": faq.answer,
+          "author": {
+            "@type": "Organization",
+            "name": "Thoughtnudge"
+          }
         }
       }))
     };
@@ -41,73 +49,108 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What is Thoughtnudge?",
-      answer: "Thoughtnudge is an Agentic AI platform for growth that deploys autonomous AI agents to drive repeat purchases, win back dormant customers, and maximize customer lifetime value (CLTV) for e-commerce, D2C brands, and digital apps. Unlike rule-based automation tools, Thoughtnudge is powered by reinforcement learning (RL), long-term agentic memory, and behavioral science models, allowing it to continuously learn what works for each customer and act in real time to deliver measurable business outcomes."
+      question: "What is Thoughtnudge and how does Agentic AI work?",
+      answer: "Thoughtnudge is an Agentic AI platform that deploys autonomous growth agents to drive repeat purchases, win back dormant customers, and maximize customer lifetime value (CLTV) for e-commerce, D2C brands, and digital applications. Our platform combines reinforcement learning (RL), long-term agentic memory, and behavioral science models to create AI agents that continuously learn what works for each individual customer and act autonomously in real-time. Unlike rule-based automation tools, Thoughtnudge's AI agents make intelligent decisions without human intervention, delivering measurable business outcomes through personalized customer engagement strategies."
     },
     {
-      question: "How is Thoughtnudge different from marketing automation platforms like Clevertap, MoEngage, or Braze?",
-      answer: "Marketing automation platforms are toolkits for human teams—you design segments, build journeys, test rules, and optimize campaigns. The outcome is only as good as your team's time, skillset, and manual effort.\n\nThoughtnudge is outcome-driven AI:\n• You set the goal and guardrails, our agents do the rest autonomously.\n• The AI continuously learns, generates insights, and acts on them—removing the need for static journeys, rigid rules, and manual A/B tests.\n• Unlike channel-centric tools, Thoughtnudge agents operate customer-first and goal-first, coordinating across channels with persistent, contextual intelligence."
+      question: "How do Autonomous Growth Agents differ from traditional marketing automation?",
+      answer: "Autonomous Growth Agents represent a paradigm shift from traditional marketing automation. While conventional tools require humans to design segments, build customer journeys, create rules, and manually optimize campaigns, Thoughtnudge's agents operate autonomously. You simply set business goals and guardrails, and our AI agents handle the rest. They continuously learn from customer interactions, generate actionable insights, and execute personalized strategies in real-time. This eliminates the need for static customer journeys, rigid segmentation rules, and manual A/B testing, while operating with a customer-first and goal-first approach across all channels with persistent, contextual intelligence."
     },
     {
-      question: "What exactly are Autonomous Growth Agents?",
-      answer: "Think of them as virtual growth managers for each customer. Each agent continuously learns about an individual's behavior, preferences, and intent, then makes 1:1 decisions in real time:\n• What message to send\n• Which tone to use\n• What offer to give\n• When to engage\n• On which channel\n\nThey're not reactive bots or channel-specific assistants. They are long-term, memory-based agents that evolve with every interaction—driving continuous engagement, retention, and repeat revenue."
+      question: "What exactly are Autonomous Growth Agents and how do they work?",
+      answer: "Think of Autonomous Growth Agents as dedicated virtual growth managers for each individual customer. Each agent continuously learns about a customer's behavior patterns, preferences, purchase history, and engagement intent, then makes personalized 1:1 decisions in real-time including: what message to send, which communication tone to use, what offers or incentives to provide, optimal timing for engagement, and which channel to use for maximum impact. These aren't reactive chatbots or channel-specific assistants. They are sophisticated, long-term, memory-based AI agents that evolve and improve with every customer interaction, driving continuous engagement, retention, and repeat revenue through intelligent behavioral adaptation."
     },
     {
-      question: "How does Thoughtnudge learn about customers?",
-      answer: "Our platform blends reinforcement learning models, long-term contextual memory, and behavioral science principles.\n• Reinforcement learning ensures agents test, learn, and optimize actions at scale.\n• Contextual memory allows them to remember past actions, preferences, and outcomes, avoiding robotic, repetitive experiences.\n• Behavioral science enriches this with psychographic insights, so every nudge feels natural, persuasive, and context-aware."
+      question: "How does Thoughtnudge's AI learn and adapt to customer behavior?",
+      answer: "Our platform employs a sophisticated blend of reinforcement learning models, long-term contextual memory systems, and behavioral science principles. Reinforcement learning enables our agents to continuously test, learn, and optimize actions at scale across thousands of customer interactions simultaneously. Our contextual memory system allows agents to remember past actions, customer preferences, purchase history, and interaction outcomes, ensuring every engagement feels natural and personalized rather than robotic or repetitive. Behavioral science frameworks enrich this data with psychographic insights and persuasion principles, so every customer nudge feels contextually appropriate, persuasive, and aligned with individual customer psychology and motivation patterns."
     },
     {
-      question: "What outcomes does Thoughtnudge deliver?",
-      answer: "Unlike platforms that measure success in terms of campaign execution, Thoughtnudge delivers direct business outcomes:\n• Higher conversions through personalized, real-time nudges.\n• Increased repeat purchases by adapting to customer behavior over time.\n• Lower churn via intelligent win-back strategies for dormant users.\n• Greater operational efficiency by automating the entire decision-to-execution loop."
+      question: "What specific business outcomes does Thoughtnudge deliver?",
+      answer: "Unlike platforms that measure success through campaign execution metrics, Thoughtnudge delivers direct, measurable business outcomes: Increased conversion rates through personalized, real-time customer nudges and behavioral triggers. Higher repeat purchase rates by continuously adapting to evolving customer behavior patterns and preferences. Reduced customer churn via intelligent win-back strategies that re-engage dormant users with personalized incentives. Improved customer lifetime value (CLTV) through optimized retention and upselling strategies. Enhanced operational efficiency by automating the entire decision-to-execution loop, freeing up human resources for strategic initiatives. Most clients see double-digit improvements in these key metrics within weeks of deployment."
     },
     {
-      question: "Why are existing approaches (segmentation, A/B testing, static journeys) insufficient?",
-      answer: "Because they're built for humans, not machines. Segments, static workflows, and one-off A/B tests only scratch the surface of personalization. They:\n• Don't adapt in real time.\n• Fail to capture individual intent.\n• Require constant manual analysis and intervention.\n\nThoughtnudge eliminates this inefficiency. Its AI agents learn continuously at the individual level, enabling context-driven personalization that scales far beyond what static human-led processes can achieve."
+      question: "Why are traditional segmentation and A/B testing approaches insufficient for modern growth?",
+      answer: "Traditional approaches like customer segmentation, static workflows, and one-off A/B tests were designed for human-led marketing teams, not AI-powered systems. These methods have critical limitations: they don't adapt in real-time to changing customer behavior, fail to capture individual intent and micro-moments, require constant manual analysis and intervention, and only scratch the surface of true personalization possibilities. Thoughtnudge eliminates these inefficiencies through AI agents that learn continuously at the individual customer level, enabling context-driven personalization that scales far beyond what static, human-led processes can achieve. Our approach moves from broad segments to true 1:1 personalization, from periodic testing to continuous optimization, and from reactive responses to proactive customer engagement."
     },
     {
-      question: "Does Thoughtnudge replace existing tools?",
-      answer: "No. Thoughtnudge is not a replacement—it's an AI brain layer that makes your stack smarter. We integrate seamlessly with systems like Shopify, Klaviyo, SendGrid, WhatsApp BSPs, Firebase, Snowflake, and Mixpanel. Your existing infrastructure continues working; our agents sit on top, adding decision intelligence, context, and autonomous execution."
+      question: "Does Thoughtnudge replace existing marketing tools and technology stack?",
+      answer: "No, Thoughtnudge is designed as an intelligent AI brain layer that enhances your existing technology stack rather than replacing it. We integrate seamlessly with popular e-commerce and marketing platforms including Shopify, Klaviyo, SendGrid, WhatsApp Business APIs, Firebase, Snowflake, Mixpanel, Google Analytics, and 50+ other systems through pre-built connectors. Your existing infrastructure continues to function normally while our autonomous agents sit on top, adding decision intelligence, contextual understanding, and automated execution capabilities. This approach maximizes your current technology investments while dramatically improving their effectiveness through AI-powered optimization."
     },
     {
-      question: "Is Thoughtnudge just another LLM-based chatbot or virtual assistant?",
-      answer: "No. While many new tools rely on LLMs, most are reactive and channel-bound. They answer questions but don't guide users toward business outcomes.\n\nThoughtnudge is built on:\n• Reinforcement learning for continuous optimization.\n• Agentic contextual memory for persistent intelligence across channels.\n• Outcome-first design that focuses on growth goals, not message delivery.\n\nThis makes our agents proactive, adaptive, and goal-driven—fundamentally different from reactive chatbots."
+      question: "How is Thoughtnudge different from LLM-based chatbots and virtual assistants?",
+      answer: "While many new AI tools rely primarily on Large Language Models (LLMs), most are reactive and channel-bound, designed to answer customer questions but not proactively guide users toward specific business outcomes. Thoughtnudge is fundamentally different, built on three core technologies: Reinforcement learning for continuous optimization and autonomous decision-making, Agentic contextual memory for persistent intelligence that spans across all customer touchpoints and channels, and Outcome-first design that focuses specifically on achieving growth goals rather than just message delivery or customer service. This makes our agents proactive rather than reactive, adaptive rather than static, and goal-driven rather than conversational, representing a fundamentally different approach to AI-powered customer engagement."
     },
     {
-      question: "How fast can Thoughtnudge start delivering results?",
-      answer: "Integration typically takes days, not months, thanks to our pre-built connectors for e-commerce and digital platforms. Most brands begin seeing measurable uplift in 2–3 weeks of deployment."
+      question: "How quickly can businesses start seeing results with Thoughtnudge?",
+      answer: "Integration with Thoughtnudge typically takes days rather than months, thanks to our extensive library of pre-built connectors for popular e-commerce platforms, marketing tools, and digital systems. Our streamlined onboarding process includes data integration, agent configuration, and goal setting. Most brands begin seeing measurable improvements in key metrics within 2–3 weeks of deployment, as our AI agents start learning from customer interactions immediately. The system's performance continues to improve over time as agents accumulate more interaction data and refine their understanding of individual customer preferences and behaviors."
     },
     {
-      question: "Is Thoughtnudge secure?",
-      answer: "Yes. Security and trust are non-negotiable:\n• AES-256 encryption for data at rest and in motion.\n• Two-factor authentication for account security.\n• Advanced firewalls to prevent external threats.\n• Privacy by design—we work with your first-party data, ensuring compliance with GDPR, CCPA, and other standards."
+      question: "How secure is Thoughtnudge and what about data privacy compliance?",
+      answer: "Security and data privacy are fundamental to our platform design. We implement enterprise-grade security measures including: AES-256 encryption for all data at rest and in motion, Two-factor authentication and role-based access controls for account security, Advanced firewall protection and intrusion detection to prevent external threats, Privacy by design architecture ensuring we work exclusively with your first-party customer data. We maintain full compliance with GDPR, CCPA, and other major data protection regulations. Our platform is designed to enhance your customer relationships while maintaining the highest standards of data security and privacy protection."
     },
     {
-      question: "What industries can Thoughtnudge serve best?",
-      answer: "Our current focus is E-commerce and D2C brands where repeat purchase and retention are critical. We are also extending use cases for digital apps (subscriptions, loyalty, gaming, and travel)."
+      question: "Which industries and business types benefit most from Thoughtnudge?",
+      answer: "Thoughtnudge is particularly effective for businesses where repeat purchases and customer retention are critical to success. Our primary focus areas include: E-commerce and D2C brands looking to increase repeat purchase rates, reduce cart abandonment, and maximize customer lifetime value. Digital applications including subscription services, loyalty programs, gaming platforms, and travel companies seeking to improve user engagement and retention. SaaS businesses wanting to reduce churn and increase product adoption. Any business model that depends on driving specific, measurable customer actions and long-term customer relationships can benefit from our autonomous growth agents."
     },
     {
-      question: "What kind of ROI can brands expect?",
-      answer: "Our AI agents continuously optimize for higher conversions, improved retention, and reduced manual effort. Brands typically see double-digit uplift in repeat purchase rates and win-back conversions, along with significant savings in operational hours."
+      question: "What ROI and performance improvements can businesses expect?",
+      answer: "Our autonomous AI agents continuously optimize for measurable business outcomes, with most clients experiencing significant improvements across key metrics. Typical results include: Double-digit increases in repeat purchase rates and customer retention, Substantial improvements in win-back conversion rates for dormant customers, Enhanced customer lifetime value through optimized engagement strategies, Significant reduction in manual marketing operations and associated labor costs. The exact ROI varies based on your baseline performance, industry, and specific business goals, but our outcome-focused approach ensures that improvements are directly tied to revenue growth and operational efficiency gains."
     },
     {
-      question: "How does pricing work?",
-      answer: "We offer flexible pricing models, typically based on customer scale and outcomes. Options include pilots, usage-based pricing, and performance-linked contracts—aligning our success with yours."
+      question: "How does Thoughtnudge pricing work and what are the investment options?",
+      answer: "We offer flexible pricing models designed to align our success with yours. Options include: Pilot programs for testing and validation, Usage-based pricing that scales with your business growth, Performance-linked contracts where our fees are tied to achieved outcomes and ROI. Pricing is typically based on customer scale, desired outcomes, and level of integration complexity. We believe in transparent, value-based pricing with no hidden fees, and all costs are clearly outlined in your custom proposal following our comprehensive growth audit and strategy session."
     },
     {
-      question: "Why is Thoughtnudge the future of growth?",
-      answer: "Because growth can no longer rely on human-built rules, segments, and static journeys. Customer behavior evolves every moment. Systems must evolve too.\n\nThoughtnudge represents a new paradigm—Autonomous Growth Agents:\n• Customer-first.\n• Goal-first.\n• Intelligence-first.\n• Always learning, always optimizing, always delivering outcomes."
+      question: "Why does Thoughtnudge represent the future of customer growth and engagement?",
+      answer: "Modern customer growth can no longer rely on human-built rules, static customer segments, and predetermined journeys. Customer behavior, preferences, and market conditions evolve continuously, requiring systems that can adapt in real-time. Thoughtnudge represents a new paradigm of Autonomous Growth Agents that are: Customer-first in their approach, focusing on individual needs and preferences rather than broad segments, Goal-first in their execution, optimizing directly for business outcomes rather than activity metrics, Intelligence-first in their operation, using advanced AI to make decisions that humans simply cannot make at scale. Our agents are always learning from new data, always optimizing their strategies, and always delivering measurable outcomes, representing the evolution from reactive marketing to proactive, autonomous growth."
     }
   ];
 
   return (
     <>
       <Helmet>
-        <title>Frequently Asked Questions | Thoughtnudge AI Platform</title>
+        <title>AI Growth Platform FAQ | Thoughtnudge Autonomous Agents - Behavioral Science & Reinforcement Learning</title>
         <meta 
           name="description" 
-          content="Get answers to common questions about Thoughtnudge's Autonomous Growth Agents, Agentic AI platform, reinforcement learning, and how we help businesses increase repeat purchases and customer lifetime value." 
+          content="Comprehensive FAQ about Thoughtnudge's Agentic AI platform. Learn how autonomous growth agents use reinforcement learning, behavioral science, and contextual memory to increase repeat purchases, reduce churn, and maximize customer lifetime value for e-commerce and digital businesses." 
         />
-        <meta name="keywords" content="thoughtnudge faq, agentic ai questions, autonomous growth agents, reinforcement learning marketing, customer lifetime value optimization" />
+        <meta name="keywords" content="agentic ai faq, autonomous growth agents, reinforcement learning marketing, behavioral science ai, customer lifetime value optimization, ai personalization platform, contextual memory ai, intelligent customer engagement, ai growth platform, autonomous ai agents, machine learning customer retention" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="og:title" content="AI Growth Platform FAQ | Thoughtnudge Autonomous Agents" />
+        <meta property="og:description" content="Comprehensive FAQ about Thoughtnudge's Agentic AI platform. Learn how autonomous growth agents use reinforcement learning and behavioral science to maximize customer lifetime value." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Growth Platform FAQ | Thoughtnudge Autonomous Agents" />
+        <meta name="twitter:description" content="Learn how autonomous growth agents use reinforcement learning and behavioral science to increase repeat purchases and maximize CLTV." />
         <link rel="canonical" href={`${window.location.origin}/faq`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "name": "Thoughtnudge AI Growth Platform - Frequently Asked Questions",
+            "description": "Comprehensive FAQ covering Thoughtnudge's Agentic AI platform, autonomous growth agents, reinforcement learning capabilities, and business outcomes.",
+            "url": window.location.href,
+            "publisher": {
+              "@type": "Organization",
+              "name": "Thoughtnudge",
+              "url": "https://thoughtnudge.com"
+            },
+            "mainEntity": faqs.map((faq, index) => ({
+              "@type": "Question",
+              "@id": `#faq-${index + 1}`,
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer,
+                "author": {
+                  "@type": "Organization",
+                  "name": "Thoughtnudge"
+                }
+              }
+            }))
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-white">
@@ -119,11 +162,13 @@ const FAQ = () => {
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                  Frequently Asked Questions
+                  AI Growth Platform FAQ: Autonomous Agents & Behavioral Science
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   Everything you need to know about Thoughtnudge's Autonomous Growth Agents, 
-                  Agentic AI platform, and how we help businesses maximize customer lifetime value.
+                  Agentic AI platform, reinforcement learning capabilities, and how we help businesses 
+                  increase repeat purchases, reduce churn, and maximize customer lifetime value through 
+                  behavioral science and contextual intelligence.
                 </p>
               </div>
             </div>
@@ -142,10 +187,10 @@ const FAQ = () => {
                         className="bg-white rounded-lg border border-gray-200 px-6"
                       >
                         <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:no-underline hover:text-brand-pink transition-colors py-6">
-                          <h2>{faq.question}</h2>
+                          <h3 id={`faq-${index + 1}`}>{faq.question}</h3>
                         </AccordionTrigger>
                         <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
-                          <div className="whitespace-pre-line">
+                          <div className="whitespace-pre-line prose prose-gray max-w-none">
                             {faq.answer}
                           </div>
                         </AccordionContent>

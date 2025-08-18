@@ -31,6 +31,7 @@ const EcommerceBrochure = lazy(() => import("./pages/EcommerceBrochure"));
 const TelecomBrochure = lazy(() => import("./pages/TelecomBrochure"));
 const InsuranceBrochure = lazy(() => import("./pages/InsuranceBrochure"));
 const Pricing = lazy(() => import("./pages/Pricing"));
+const FAQ = lazy(() => import("./pages/FAQ"));
 
 // Create a new QueryClient instance
 const queryClient = new QueryClient({
@@ -90,6 +91,7 @@ const App = () => {
             <Route path="/brochure/telecom" element={<TelecomBrochure />} />
             <Route path="/brochure/insurance" element={<InsuranceBrochure />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/growth-audit" element={<GrowthAudit />} />
             <Route path="/audit-thank-you" element={<AuditThankYou />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

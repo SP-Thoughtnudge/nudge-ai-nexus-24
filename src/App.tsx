@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { Suspense, lazy, useEffect } from "react";
 import PerformanceMonitor from "@/components/ui/performance-monitor";
@@ -61,8 +62,9 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <PerformanceMonitor />
+      <HelmetProvider>
+        <TooltipProvider>
+          <PerformanceMonitor />
         <ImagePreloader images={criticalImages} priority />
         <Toaster />
         <Sonner />
@@ -99,7 +101,8 @@ const App = () => {
           </Routes>
           </Suspense>
         </BrowserRouter>
-      </TooltipProvider>
+        </TooltipProvider>
+      </HelmetProvider>
     </QueryClientProvider>
   );
 };

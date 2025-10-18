@@ -7,12 +7,15 @@ export const HeroSectionNew = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
-            Stop Building Journeys.{" "}
-            <span className="text-primary">Start Driving Outcomes.</span>
+            One AI Agent for Every Customer
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
-            Enterprise AI decisioning for hyper-personalized CX. Our <strong>Agentic AI</strong> deploys a <strong>dedicated intelligence layer for every customer</strong>, autonomously activating your 1st party data to deliver <strong>true segment-of-1 experiences</strong> across every touchpoint and <strong>maximize customer lifetime value.</strong>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-6 leading-tight">
+            Autonomous AI that learns and decides for each customer in real time dynamically shaping every experience to drive revenue, loyalty, and lifetime value with Amazon-like intelligence, deployed securely inside your enterprise.
+          </h2>
+          
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
+            It understands each customer's intent and context continuously and acts instantly to move them toward the next best action.
           </p>
 
           <div className="flex justify-center">

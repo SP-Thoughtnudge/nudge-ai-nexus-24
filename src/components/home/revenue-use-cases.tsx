@@ -65,24 +65,24 @@ const RevenueUseCases = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           <UseCaseCard 
             icon={TrendingUp}
-            title="Increase Revenue from Existing Customers"
-            description="Transform your current customers into bigger spenders with intelligent upselling, cross-selling, and free-to-paid conversions."
+            title="Maximize Customer Lifetime Value"
+            description="Activate your 1st party data to deliver segment-of-1 experiences across every customer touchpoint, driving engagement, retention, and long-term value."
             examples={[
-              "Upsell premium plans at optimal moments",
-              "Cross-sell complementary products based on behavior",
-              "Convert free users with personalized nudges",
-              "Upgrade subscriptions with minimal friction"
+              "Next-best-action recommendations across channels",
+              "Contextual engagement at optimal moments",
+              "Lifecycle orchestration that evolves with each customer",
+              "Hyper-personalized experiences based on behavioral intelligence"
             ]}
           />
           <UseCaseCard 
             icon={Users}
-            title="Reactivate Dormant Customers"
-            description="Win back lost customers and prevent churn with behavioral science-driven campaigns that address the real reasons they left."
+            title="Optimize Customer Lifecycle Journeys"
+            description="Autonomously orchestrate personalized experiences across every touchpoint—from onboarding to retention—ensuring consistent, context-aware engagement."
             examples={[
-              "Winback campaigns with emotional triggers",
-              "Churn prevention before it happens",
-              "Reactivate inactive app users",
-              "Bring back lapsed subscribers"
+              "Intelligent re-engagement across all channels",
+              "Proactive retention strategies",
+              "Cross-channel journey optimization",
+              "Real-time decisioning that adapts to customer context"
             ]}
           />
         </div>
@@ -90,36 +90,36 @@ const RevenueUseCases = () => {
         {/* Target Verticals Section */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
-            Built for High-Growth Digital Businesses
+            Built for Enterprise-Scale Organizations
           </h2>
           <p className="text-xl text-gray-600">
-            We specialize in businesses where customer relationships and data-driven growth matter most.
+            We specialize in enterprises where 1st party data activation and hyper-personalized customer experiences drive competitive advantage.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <VerticalCard 
             icon={ShoppingCart}
-            title="E-commerce D2C Brands"
-            description="Maximize customer lifetime value with AI that understands purchase patterns, seasonal behavior, and product affinity to drive repeat purchases and bigger basket sizes."
+            title="BFSI & Financial Services"
+            description="Activate 1st party data to deliver hyper-personalized financial experiences across every customer touchpoint, driving product adoption, engagement, and lifetime value."
             metrics={[
-              "Fashion and lifestyle brands",
-              "Consumer electronics and gadgets", 
-              "Health and beauty products",
-              "Home and lifestyle goods",
-              "Subscription box services"
+              "Retail banking and digital banking",
+              "Wealth management and investment platforms", 
+              "Insurance providers and InsurTech",
+              "Credit card and lending services",
+              "Payment platforms and FinTech"
             ]}
           />
           <VerticalCard 
             icon={Smartphone}
-            title="Digital App-Based Services"
-            description="Increase user engagement and monetization with behavioral insights that drive in-app purchases, subscription upgrades, and feature adoption."
+            title="Consumer Technology & SaaS"
+            description="Deliver segment-of-1 experiences across web, mobile, and all communication channels to drive activation, feature adoption, and long-term customer retention."
             metrics={[
-              "HealthTech (HealthifyMe, Practo)",
-              "EdTech platforms and learning apps",
-              "FinTech and investment apps", 
-              "Fitness apps (CureFit, Cult.fit)",
-              "Mobility and transport (Chalo, Ola)"
+              "Enterprise SaaS and B2B platforms",
+              "Consumer apps and digital services",
+              "Telecom and connectivity services", 
+              "Media streaming and entertainment",
+              "Travel, hospitality, and mobility"
             ]}
           />
         </div>
@@ -128,13 +128,13 @@ const RevenueUseCases = () => {
         <div className="mt-20 text-center">
           <div className="bg-gradient-to-r from-brand-orange/10 to-brand-yellow/10 rounded-2xl p-8 md:p-12">
             <h3 className="text-2xl md:text-3xl font-bold text-brand-black mb-6">
-              We Guarantee Better Results Than Your Current Setup
+              Enterprise-Grade Intelligence, Measurable Outcomes
             </h3>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Our AI agents work as autonomous growth managers - one for each customer - continuously learning and optimizing to achieve your revenue goals. No manual work required.
+              We <span className="font-semibold text-brand-black">guarantee</span> measurable CLTV improvements. Our autonomous AI agents activate your 1st party data to deliver enterprise-grade personalization at scale, driving outcomes faster than traditional customer engagement platforms.
             </p>
             <div className="text-sm text-gray-500 italic">
-              "Think of it as having a dedicated, AI-powered growth manager for every single customer, working 24/7 to maximize their value to your business."
+              "Think of it as having an intelligent AI decisioning layer that continuously optimizes every customer interaction across every touchpoint—24/7, autonomously."
             </div>
           </div>
         </div>

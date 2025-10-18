@@ -13,7 +13,7 @@ export const ProductHero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto">
-            Thoughtnudge isn't just a tool; it's your new strategic partner. Explore the features that combine behavioral science and artificial intelligence to turn every customer interaction into a revenue opportunity.
+            Thoughtnudge is your enterprise AI decisioning platform. We activate your 1st party data and behavioral intelligence to deliver hyper-personalized experiences across every customer touchpoint, maximizing lifetime value at scale.
           </p>
 
           <div className="relative max-w-6xl mx-auto mt-6">

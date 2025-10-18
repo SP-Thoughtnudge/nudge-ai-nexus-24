@@ -5,20 +5,22 @@ import { Link } from "react-router-dom";
 const CaseStudyPreview = () => {
   const caseStudies = [
     {
-      industry: "E-Commerce",
-      title: "How Brand X Increased Repeat Purchase Rate by 40%",
+      industry: "Financial Services",
+      title: "How Enterprise Leader Increased Customer Lifetime Value by 45%",
+      description: "See how our AI decisioning platform transformed fragmented customer experiences into a unified, personalized engagement strategy.",
       metrics: [
-        { label: "Increase in repeat purchases", value: "40%" },
-        { label: "Reduction in campaign setup time", value: "70%" }
+        { label: "Increase in customer lifetime value", value: "45%" },
+        { label: "Improvement in cross-sell conversion", value: "62%" }
       ],
       image: "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&q=80&w=900"
     },
     {
-      industry: "Travel",
-      title: "Airline Boosts Ancillary Revenue with Personalized Recommendations",
+      industry: "Consumer Technology",
+      title: "SaaS Platform Drives Product Adoption with Personalized Experiences",
+      description: "Delivering segment-of-1 experiences across every touchpoint to drive engagement and reduce churn.",
       metrics: [
-        { label: "Increase in ancillary bookings", value: "32%" },
-        { label: "Higher customer satisfaction score", value: "+27 pts" }
+        { label: "Increase in feature adoption", value: "38%" },
+        { label: "Reduction in customer churn", value: "28%" }
       ],
       image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=900"
     }
@@ -56,6 +58,9 @@ const CaseStudyPreview = () => {
                 <h3 className="text-xl font-bold text-brand-black mt-2 mb-4">
                   {casestudy.title}
                 </h3>
+                {casestudy.description && (
+                  <p className="text-sm text-gray-600 mb-4">{casestudy.description}</p>
+                )}
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   {casestudy.metrics.map((metric, mIndex) => (
                     <div key={mIndex}>

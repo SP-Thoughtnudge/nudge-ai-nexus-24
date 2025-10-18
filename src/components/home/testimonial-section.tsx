@@ -31,7 +31,7 @@ const TestimonialSection = () => {
                 <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
                 <div>
                   <p className="font-medium text-brand-black">Sarah Johnson</p>
-                  <p className="text-gray-600 text-sm">VP of Marketing, E-commerce Leader</p>
+                  <p className="text-gray-600 text-sm">VP of Digital Transformation, Enterprise Leader</p>
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t border-gray-100">

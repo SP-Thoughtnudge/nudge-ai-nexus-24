@@ -8,14 +8,14 @@ const IntegrationsCloud = () => {
     { name: "Braze", category: "Marketing" },
     { name: "Segment", category: "CDP" },
     { name: "Twilio", category: "Messaging" },
-    { name: "HubSpot", category: "Marketing" },
-    { name: "Klaviyo", category: "Email" },
-    { name: "Shopify", category: "E-commerce" },
+    { name: "HubSpot", category: "CRM" },
+    { name: "Klaviyo", category: "Marketing Cloud" },
+    { name: "Microsoft Dynamics", category: "CRM" },
     { name: "Iterable", category: "Marketing" },
     { name: "Customer.io", category: "Marketing" },
-    { name: "SendGrid", category: "Email" },
+    { name: "SendGrid", category: "Email Platform" },
     { name: "OneSignal", category: "Push" },
-    { name: "BigCommerce", category: "E-commerce" },
+    { name: "Oracle CX", category: "Enterprise" },
     { name: "Mailchimp", category: "Email" },
     { name: "Zendesk", category: "Support" },
     { name: "Stripe", category: "Payments" },
@@ -26,10 +26,10 @@ const IntegrationsCloud = () => {
   
   // Group integrations by category
   const categories = {
-    "CRM & Data": ["Salesforce", "Segment", "Snowflake", "AWS"],
-    "Marketing & Engagement": ["Braze", "HubSpot", "Iterable", "Customer.io", "Klaviyo", "Mailchimp"],
+    "CRM & Data": ["Salesforce", "HubSpot", "Microsoft Dynamics", "Segment", "Snowflake", "AWS"],
+    "Marketing & Engagement": ["Braze", "Iterable", "Customer.io", "Klaviyo", "Mailchimp"],
     "Channels": ["Twilio", "SendGrid", "OneSignal"],
-    "Commerce & Payments": ["Shopify", "BigCommerce", "Stripe"],
+    "Enterprise & Payments": ["Oracle CX", "Stripe"],
     "Analytics & Support": ["Mixpanel", "Zendesk"]
   };
   

@@ -5,7 +5,7 @@ const SolutionProcess = () => {
     {
       icon: Target,
       title: "Define Your Goal",
-      description: "Simply tell our AI your business objective—like \"increase renewals\" or \"win back dormant users.\""
+      description: "Simply tell our AI your business objective—like \"maximize CLTV\" or \"optimize customer lifecycle engagement.\""
     },
     {
       icon: Brain,

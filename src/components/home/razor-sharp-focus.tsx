@@ -4,12 +4,12 @@ export const RazorSharpFocus = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-            Our Razor-Sharp Focus: Your Path to{" "}
-            <span className="text-primary">Predictable ROI</span>
+            Enterprise-Grade Intelligence: Your Path to{" "}
+            <span className="text-primary">Predictable CLTV Growth</span>
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            We are experts in solving the two most critical revenue challenges in the customer lifecycle. We solve these problems first to prove undeniable ROI and build your trust. From there, our engine expands to autonomously optimize the entire customer journey—from activation and upsell to loyalty and advocacy.
+            We activate your 1st party data to deliver hyper-personalized experiences at scale. Our AI learns each customer's unique profile and autonomously optimizes every touchpoint across channels—from activation and engagement to retention and advocacy—driving measurable customer lifetime value across your enterprise.
           </p>
         </div>
       </div>

@@ -18,7 +18,7 @@ const IntegrationSection = () => {
       platforms: ["Twilio", "OneSignal", "Sendbird", "Firebase"]
     },
     {
-      title: "E-Commerce",
+      title: "CRM & Engagement",
       platforms: ["Shopify", "BigCommerce", "Magento", "WooCommerce"]
     }
   ];

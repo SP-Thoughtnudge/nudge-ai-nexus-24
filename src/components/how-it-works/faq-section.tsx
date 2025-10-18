@@ -47,7 +47,7 @@ const FaqSection = () => {
     },
     {
       question: "How much control do I have over what the AI decides?",
-      answer: "You maintain full control through goal-setting and guardrails. You define what success looks like (e.g., increase repeat purchases, boost retention) and set parameters for the AI to work within. You can also override decisions or adjust the balance between exploration and exploitation at any time."
+      answer: "You maintain full control through goal-setting and guardrails. You define what success looks like (e.g., maximize CLTV, optimize lifecycle engagement, improve retention) and set parameters for the AI to work within. You can also override decisions or adjust the balance between exploration and exploitation at any time."
     },
     {
       question: "Is Thoughtnudge a 'black box' AI system?",

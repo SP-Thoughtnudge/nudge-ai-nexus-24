@@ -76,7 +76,7 @@ const TechnologyCore = () => {
                 Seamlessly Connects with Your Existing Stack
               </h3>
               <p className="text-muted-foreground mb-8">
-                No rip-and-replace. Thoughtnudge acts as an intelligence layer that makes your current tools more profitable. From e-commerce platforms to CDPs, we handle the heavy lifting of integration.
+                No rip-and-replace. Thoughtnudge acts as an intelligence layer that makes your enterprise stack smarter. From CRM systems to CDPs and marketing clouds, we handle the heavy lifting of integration.
               </p>
               
               {/* Partner Logos Row */}

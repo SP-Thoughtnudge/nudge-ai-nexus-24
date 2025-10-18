@@ -71,7 +71,7 @@ const BenefitsSection = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-lg font-medium text-brand-black mb-6">Trusted by innovative brands across e-commerce, travel, and loyalty</p>
+          <p className="text-lg font-medium text-brand-black mb-6">Trusted by enterprise leaders across BFSI, consumer technology, and digital services</p>
           <div className="flex flex-wrap justify-center gap-8 opacity-70">
             {/* Placeholder for customer logos */}
             {Array.from({ length: 5 }).map((_, index) => (

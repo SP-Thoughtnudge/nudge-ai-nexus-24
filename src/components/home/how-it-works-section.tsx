@@ -52,7 +52,7 @@ const HowItWorksSection = () => {
     {
       number: "4",
       title: "Outcomes Optimized",
-      description: "The system continuously learns and improves, optimizing for your business goals—whether that's repeat purchases, upsells, cross-sells, or improved retention.",
+      description: "The system continuously learns and improves, optimizing for your business goals—whether that's maximizing CLTV, improving lifecycle engagement, driving product adoption, or enhancing retention.",
       imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=900",
       isReversed: true
     }

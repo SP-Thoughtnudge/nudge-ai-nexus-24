@@ -7,8 +7,8 @@ const ProblemSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
             Your Biggest Revenue Opportunity is Right Under Your Nose
           </h2>
-          <p className="text-xl text-gray-600">
-            E-commerce D2C and Digital App Services are losing millions in untapped revenue from existing and dormant customers. Here's why your current approach is failing.
+          <p className="text-xl md:text-2xl text-gray-600 mb-16 max-w-3xl mx-auto">
+            Enterprise organizations are losing millions in untapped value from existing customers. Your 1st party data sits underutilized while customer experiences remain fragmented. Here's why your current approach is failing.
           </p>
         </div>
 
@@ -29,9 +29,9 @@ const ProblemSection = () => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-brand-black mb-3">Dormant Customers Stay Dormant</h3>
+              <h3 className="text-xl font-bold text-brand-black mb-3">Lifecycle Value Erodes Over Time</h3>
               <p className="text-gray-600">
-                Your winback campaigns are generic blasts that feel spammy. You lack the behavioral science to understand why customers left and what emotional triggers will bring them back.
+                Your re-engagement campaigns use static rules and broad segments. You lack the intelligence to understand individual customer context and deliver the right message at the right moment across the right channel.
               </p>
             </div>
           </div>
@@ -43,7 +43,7 @@ const ProblemSection = () => {
                 What if AI could maximize revenue from every customer relationship?
               </h3>
               <p className="text-gray-600 mb-6">
-                ThoughtNudge deploys autonomous growth agents that marry AI with behavioral science to understand each customer's psychographic profile, then delivers the perfect nudge (emotion, tone, copy, offer) at the perfect moment to drive upsells, cross-sells, and winbacks.
+                ThoughtNudge deploys autonomous AI agents that activate your 1st party data to understand each customer's unique profile, then delivers hyper-personalized experiences across every touchpoint—web, mobile, email, SMS, and more—to maximize customer lifetime value and drive measurable business outcomes.
               </p>
               <div className="flex justify-center">
                 <img

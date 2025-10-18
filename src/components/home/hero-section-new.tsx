@@ -12,7 +12,7 @@ export const HeroSectionNew = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
-            The future of E-commerce growth is here. Our <strong>Agentic AI</strong> deploys a <strong>dedicated growth manager for every customer</strong>, autonomously solving your most profitable challenges: <strong>increasing repeat purchases</strong> and <strong>winning back dormant customers.</strong>
+            Enterprise AI decisioning for hyper-personalized CX. Our <strong>Agentic AI</strong> deploys a <strong>dedicated intelligence layer for every customer</strong>, autonomously activating your 1st party data to deliver <strong>true segment-of-1 experiences</strong> across every touchpoint and <strong>maximize customer lifetime value.</strong>
           </p>
 
           <div className="flex justify-center">

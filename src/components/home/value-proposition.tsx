@@ -50,7 +50,7 @@ const ValueProposition = () => {
                     </div>
                     <div className="flex items-center bg-white p-3 rounded shadow-sm">
                       <div className="w-3 h-3 bg-red-400 rounded-full mr-3"></div>
-                      <p className="text-gray-600">Dormant customers stay dormant</p>
+                      <p className="text-gray-600">Lifecycle value erodes over time</p>
                     </div>
                   </div>
                 </div>

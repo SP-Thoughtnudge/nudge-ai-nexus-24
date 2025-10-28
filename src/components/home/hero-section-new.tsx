@@ -6,17 +6,13 @@ export const HeroSectionNew = () => {
     <section className="pt-32 pb-20 md:pt-40 md:pb-24 bg-gradient-to-br from-background via-secondary/20 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-8 leading-tight">
             One AI Agent for Every Customer
           </h1>
           
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-6 leading-tight">
-            Autonomous AI that learns and decides for each customer in real time dynamically shaping every experience to drive revenue, loyalty, and lifetime value with Amazon-like intelligence, deployed securely inside your enterprise.
+          <h2 className="text-lg md:text-xl lg:text-2xl font-normal text-muted-foreground mb-12 leading-relaxed max-w-5xl mx-auto">
+            AI learning infrastructure for true 1:1 personalization — no rules, segments, A/B tests or manual analysis. Autonomous agents learn from every interaction and adapt experiences across messaging and in-app touchpoints in real time.
           </h2>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
-            It understands each customer's intent and context continuously and acts instantly to move them toward the next best action.
-          </p>
 
           <div className="flex justify-center">
             <Button 

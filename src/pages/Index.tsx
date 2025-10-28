@@ -11,7 +11,7 @@ import { LiveInDays } from "@/components/home/live-in-days";
 import { ProofGrowthSection } from "@/components/home/proof-growth-section";
 import { AutonomousAdvantageSection } from "@/components/home/autonomous-advantage-section";
 import { FinalCtaNew } from "@/components/home/final-cta-new";
-import LogoCloud from "@/components/home/logo-cloud";
+
 import LazySection from "@/components/ui/lazy-section";
 import FadeInSection from "@/components/ui/fade-in-section";
 import { updateSEOTags, addStructuredData, organizationSchema } from "@/lib/seo";

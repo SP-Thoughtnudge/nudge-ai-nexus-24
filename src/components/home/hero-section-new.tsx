@@ -7,11 +7,11 @@ export const HeroSectionNew = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-8 leading-tight">
-            One AI Agent for Every Customer
+            AI Decisioning for 1:1 Lifecycle Marketing
           </h1>
           
           <h2 className="text-lg md:text-xl lg:text-2xl font-normal text-muted-foreground mb-12 leading-relaxed max-w-5xl mx-auto">
-            AI learning infrastructure for true 1:1 personalization — no rules, segments, A/B tests or manual analysis. Autonomous agents learn from every interaction and adapt experiences across messaging and in-app touchpoints in real time.
+            Agentic learning infrastructure that activates your first-party data to autonomously learn, decide and act - replacing static rules, A/B tests and manual analysis. Our AI agents run millions of micro-experiments, infer individual intent, and adapt every customer touchpoint in real-time to maximise LTV.
           </h2>
 
           <div className="flex justify-center">

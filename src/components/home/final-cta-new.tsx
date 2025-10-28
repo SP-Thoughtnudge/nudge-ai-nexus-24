@@ -22,7 +22,7 @@ export const FinalCtaNew = () => {
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Link to="/growth-audit">
-                Request a Free Growth Audit
+                Book a Demo
               </Link>
             </Button>
           </div>

@@ -107,7 +107,7 @@ const Footer = () => {
               to="/growth-audit" 
               className="inline-flex bg-brand-pink hover:bg-brand-pink/90 text-white py-2 px-4 rounded-md font-medium transition-colors"
             >
-              Request a Growth Audit
+              Book a Demo
             </Link>
           </div>
         </div>

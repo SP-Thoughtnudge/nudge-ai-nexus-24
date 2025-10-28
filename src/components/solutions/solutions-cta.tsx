@@ -15,7 +15,7 @@ const SolutionsCta = () => {
           </p>
           <Link to="/growth-audit">
             <Button size="lg" className="px-8">
-              Request a Growth Audit
+              Book a Demo
             </Button>
           </Link>
         </div>

@@ -175,7 +175,7 @@ const SolutionsD2C = () => {
             </h2>
             <Link to="/growth-audit">
               <Button size="lg" className="px-8">
-                Request Your Free Growth Audit
+                Book a Demo
               </Button>
             </Link>
           </div>

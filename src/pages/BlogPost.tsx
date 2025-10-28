@@ -284,7 +284,7 @@ const BlogPostPage = () => {
                     </p>
                     <Link to="/growth-audit">
                       <Button variant="pink" size="sm" className="w-full">
-                        Request Growth Audit
+                        Book a Demo
                       </Button>
                     </Link>
                   </CardContent>

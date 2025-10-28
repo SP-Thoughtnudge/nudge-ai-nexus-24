@@ -3,7 +3,7 @@ import { useEffect, lazy, Suspense } from "react";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { HeroSectionNew } from "@/components/home/hero-section-new";
-import { SocialProofSection } from "@/components/home/social-proof-section";
+
 import { ParadigmShiftComparison } from "@/components/home/paradigm-shift-comparison";
 import { UnifiedIntelligence } from "@/components/home/unified-intelligence";
 import { PowerfulAiControl } from "@/components/home/powerful-ai-control";
@@ -36,10 +36,6 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <HeroSectionNew />
-        
-        <FadeInSection>
-          <SocialProofSection />
-        </FadeInSection>
         
         <FadeInSection delay={100}>
           <ParadigmShiftComparison />

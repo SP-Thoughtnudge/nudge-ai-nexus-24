@@ -7,7 +7,7 @@ export const HeroSectionNew = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-8 leading-tight">
-            AI Decisioning for 1:1 Lifecycle Marketing
+            AI Decisioning for 1:1 Personalized CX
           </h1>
           
           <h2 className="text-lg md:text-xl lg:text-2xl font-normal text-muted-foreground mb-12 leading-relaxed max-w-5xl mx-auto">

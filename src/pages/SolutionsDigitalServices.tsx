@@ -61,11 +61,15 @@ const SolutionsDigitalServices = () => {
               <Smartphone className="w-12 h-12 text-primary" />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Autonomous Growth for Digital Services & Apps
+              Activate Growth Through Adaptive, 1:1 Personalization
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Your app's success depends on engagement and retention. Our AI drives users to key 
-              activation events, converts free trials to paid plans, and reduces customer churn.
+              For data-mature consumer apps — in Healthtech, Mobility, Edtech, or Lifestyle — that collect rich behavior data but still struggle to act on it in real time.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              You track 50+ variables per customer — engagement, drop-offs, session time, and click patterns — but most journeys still run on 4–5 static rules.
+              Teams spend weeks building segments and A/B tests that barely move outcomes.
+              It's time to replace manual guesswork with adaptive, real-time intelligence that learns from every customer interaction.
             </p>
           </div>
         </div>

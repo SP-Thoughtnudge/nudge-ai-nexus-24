@@ -12,11 +12,10 @@ const SolutionsHero = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Solutions Built for Your Growth Model
+              Your Data Knows Each Customer. Your Tools Don't.
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Whether you're a high-growth D2C brand or a category-defining digital app/service, 
-              our autonomous platform is designed to solve your most critical revenue challenges.
+              You've invested millions in 1st-party data, but your tools still rely on static rules, A/B tests, and manual guesswork. Thoughtnudge activates your data to autonomously learn, decide, and act for every individual—driving measurable revenue, loyalty, and LTV.
             </p>
           </div>
 

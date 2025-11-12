@@ -10,8 +10,7 @@ const SolutionsCta = () => {
             Don't See Your Industry?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Our goal-driven AI is versatile. If your business depends on driving specific 
-            customer actions, we can help. Let's explore your unique growth challenges together.
+            Our AI decisioning layer is goal-driven and industry-agnostic. If your business depends on activating data to drive customer behavior — we can help.
           </p>
           <Link to="/growth-audit">
             <Button size="lg" className="px-8">

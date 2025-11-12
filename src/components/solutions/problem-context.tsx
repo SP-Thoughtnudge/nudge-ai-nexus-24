@@ -55,7 +55,7 @@ const ProblemContext = () => {
             </div>
             
             {/* Right Side - Visual Infographic */}
-            <div className="relative h-[500px] flex items-center justify-center">
+            <div className="relative h-[500px] flex items-start justify-center pt-0">
               <div className="relative w-full max-w-md">
                 {/* Data Warehouse */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-card border-2 border-border rounded-lg p-6 shadow-lg w-48 animate-fade-in">

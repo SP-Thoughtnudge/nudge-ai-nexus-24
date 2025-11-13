@@ -21,7 +21,7 @@ const IndustrySolutions = () => {
     {
       icon: Activity,
       title: "Health & Wellness Engagement",
-      subtitle: "Drive repeat purchase/renewals and higher lifetime value through intelligent, 1:1 personalized experiences.",
+      subtitle: "Drive repeat purchase, renewals and higher CLTV through 1:1 personalization.",
       description: "For health, wellness, and diagnostics platforms where long-term adherence and repeat interactions define growth.",
       outcomes: [
         "40% higher repeat purchase & winback",

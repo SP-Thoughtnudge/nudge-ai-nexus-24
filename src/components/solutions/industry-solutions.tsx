@@ -20,16 +20,16 @@ const IndustrySolutions = () => {
     },
     {
       icon: Activity,
-      title: "Healthtech & Adherence",
-      subtitle: "Drive Adherence Through Intelligent, Personalized Engagement",
-      description: "For healthtech platforms where adherence defines lifetime value.",
+      title: "Health & Wellness Engagement",
+      subtitle: "Drive repeat purchase/renewals and higher lifetime value through intelligent, 1:1 personalized experiences.",
+      description: "For health, wellness, and diagnostics platforms where long-term adherence and repeat interactions define growth.",
       outcomes: [
-        "40% better adherence",
-        "25% higher repeat rate",
-        "Continuous insights"
+        "40% higher repeat purchase & winback",
+        "25% higher dormant user activation",
+        "Continuous insights into user motivation and behavior"
       ],
       link: "/solutions/healthtech",
-      ctaText: "Explore Healthtech Solutions"
+      ctaText: "See How It Works"
     },
     {
       icon: TrendingUp,

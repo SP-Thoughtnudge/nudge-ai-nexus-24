@@ -7,10 +7,11 @@ import LazySection from "@/components/ui/lazy-section";
 import { updateSEOTags } from "@/lib/seo";
 
 // Lazy load non-critical sections
-const EvolutionComparison = lazy(() => import("@/components/how-it-works/evolution-comparison"));
-const JourneyDivergence = lazy(() => import("@/components/how-it-works/journey-divergence"));
-const ThreeStepProcess = lazy(() => import("@/components/how-it-works/three-step-process"));
-const TechnologyCore = lazy(() => import("@/components/how-it-works/technology-core"));
+const WhyGrowthPlateaus = lazy(() => import("@/components/how-it-works/why-growth-plateaus"));
+const ThoughtnudgeEngine = lazy(() => import("@/components/how-it-works/thoughtnudge-engine"));
+const BehavioralInsights = lazy(() => import("@/components/how-it-works/behavioral-insights"));
+const AgenticLoop = lazy(() => import("@/components/how-it-works/agentic-loop"));
+const EnterpriseValue = lazy(() => import("@/components/how-it-works/enterprise-value"));
 const FinalCta = lazy(() => import("@/components/home/final-cta"));
 
 const HowItWorks = () => {
@@ -35,22 +36,27 @@ const HowItWorks = () => {
         <NewHeroSection />
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <EvolutionComparison />
+            <WhyGrowthPlateaus />
           </LazySection>
         </Suspense>
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <JourneyDivergence />
+            <ThoughtnudgeEngine />
           </LazySection>
         </Suspense>
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <ThreeStepProcess />
+            <BehavioralInsights />
           </LazySection>
         </Suspense>
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
-            <TechnologyCore />
+            <AgenticLoop />
+          </LazySection>
+        </Suspense>
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <EnterpriseValue />
           </LazySection>
         </Suspense>
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>

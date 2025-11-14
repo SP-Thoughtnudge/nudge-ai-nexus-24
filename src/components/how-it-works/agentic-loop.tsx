@@ -52,6 +52,19 @@ const AgenticLoop = () => {
             </div>
           </div>
         </div>
+
+        {/* Your Role Section */}
+        <div className="max-w-4xl mx-auto mt-16 p-8 bg-card border border-border rounded-lg">
+          <h3 className="text-2xl font-bold text-foreground mb-4">
+            Your Role: From Machine Operator → Strategic Growth Leader
+          </h3>
+          <p className="text-lg text-muted-foreground mb-6">
+            "With agents running micro-experiments autonomously, your team focuses on setting goals, defining guardrails, exposing key experimentation variables, and reviewing new behavioral insights the AI surfaces."
+          </p>
+          <p className="text-lg text-foreground">
+            Agents continuously return emerging patterns — shifts in motivations, timing windows, channel affinity — enriching your strategy each cycle.
+          </p>
+        </div>
       </div>
     </section>
   );

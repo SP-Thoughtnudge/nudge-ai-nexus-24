@@ -1,4 +1,4 @@
-import { TrendingUp, Target, Users } from "lucide-react";
+import { TrendingUp, Target, Users, Lightbulb } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const BehavioralInsights = () => {
@@ -34,72 +34,95 @@ const BehavioralInsights = () => {
   ];
 
   const insightTypes = [
-    "trust-building content sequences",
-    "risk appetite profiles",
-    "motivational drivers (curiosity, reassurance, urgency, FOMO)",
-    "high-LTV micro-cohorts",
-    "winback-specific triggers",
-    "channel-timing affinity clusters"
+    "Trust-building content sequences",
+    "Risk appetite profiles",
+    "Motivational drivers (curiosity, reassurance, urgency, FOMO)",
+    "High-LTV micro-cohorts",
+    "Winback-specific triggers",
+    "Channel-timing affinity clusters"
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-12">
+        {/* Header */}
+        <div className="max-w-4xl mx-auto text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Deep Behavioral Insights (Automatically Discovered)
+            Deep Behavioral Insights
           </h2>
-          <p className="text-xl text-muted-foreground mb-6">
+          <p className="text-xl text-muted-foreground mb-4 leading-relaxed">
             Insights You Can't Get From Segments, Rule-Based Journeys, or A/B Tests
           </p>
-          <p className="text-lg text-muted-foreground italic">
+          <p className="text-base text-muted-foreground italic">
             These are illustrative examples of the types of deep patterns agents uncover automatically from your 1st-party data.
           </p>
         </div>
 
         {/* Main Insight Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-          {insights.map((insight, index) => (
-            <Card key={index} className="p-8 bg-card hover:shadow-lg transition-shadow">
-              <insight.icon className="w-12 h-12 text-primary mb-4" strokeWidth={1.5} />
-              <h3 className="text-xl font-bold text-foreground mb-2">{insight.title}</h3>
-              <p className="text-sm text-muted-foreground mb-4">{insight.description}</p>
-              {insight.stat && <div className="text-4xl font-bold text-primary mb-2">{insight.stat}</div>}
-              <p className="text-sm text-muted-foreground mb-2">{insight.detail}</p>
-              {insight.example && <p className="text-xs text-muted-foreground italic mt-2">{insight.example}</p>}
-            </Card>
-          ))}
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="grid md:grid-cols-3 gap-8">
+            {insights.map((insight, index) => (
+              <Card key={index} className="p-8 bg-card border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <insight.icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">{insight.title}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{insight.description}</p>
+                {insight.stat && (
+                  <div className="text-4xl font-bold text-primary mb-3">{insight.stat}</div>
+                )}
+                <p className="text-sm text-muted-foreground leading-relaxed">{insight.detail}</p>
+                {insight.example && (
+                  <p className="text-xs text-muted-foreground italic mt-4 pt-4 border-t border-border">
+                    {insight.example}
+                  </p>
+                )}
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Fintech Examples */}
-        <div className="max-w-4xl mx-auto mb-12 p-6 bg-muted/30 rounded-lg border border-border">
-          <h3 className="text-xl font-bold text-foreground mb-4">Fintech Examples:</h3>
-          <ul className="space-y-3">
-            {fintechExamples.map((example, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <span className="text-primary mt-1">•</span>
-                <span className="text-foreground">{example}</span>
-              </li>
-            ))}
-          </ul>
+        <div className="max-w-5xl mx-auto mb-16">
+          <Card className="p-10 bg-gradient-to-br from-muted/50 to-background border-border">
+            <div className="flex items-center gap-3 mb-6">
+              <Lightbulb className="w-7 h-7 text-primary" />
+              <h3 className="text-2xl font-bold text-foreground">Fintech Examples</h3>
+            </div>
+            <div className="space-y-4">
+              {fintechExamples.map((example, index) => (
+                <div key={index} className="flex items-start gap-4">
+                  <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-foreground leading-relaxed">{example}</p>
+                </div>
+              ))}
+            </div>
+          </Card>
         </div>
 
-        {/* Additional Insights Footer */}
-        <div className="max-w-4xl mx-auto">
-          <p className="text-lg text-foreground mb-4">
-            Agents surface dozens of such insights — including:
-          </p>
-          <div className="grid md:grid-cols-2 gap-4 mb-6">
-            {insightTypes.map((type, index) => (
-              <div key={index} className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
-                <span className="text-primary mt-1">•</span>
-                <span className="text-foreground">{type}</span>
-              </div>
-            ))}
+        {/* Additional Insights */}
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-8">
+            <p className="text-lg text-foreground font-semibold text-center mb-8">
+              Agents surface dozens of such insights — including:
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {insightTypes.map((type, index) => (
+                <Card key={index} className="p-5 bg-card border-border hover:bg-muted/30 transition-colors">
+                  <div className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    <p className="text-foreground">{type}</p>
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
-          <p className="text-lg text-muted-foreground italic text-center">
-            Most of these patterns are not visible in dashboards, SQL reports, or manual analyses.
-          </p>
+          
+          <div className="text-center p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg">
+            <p className="text-lg text-foreground italic">
+              Most of these patterns are not visible in dashboards, SQL reports, or manual analyses.
+            </p>
+          </div>
         </div>
       </div>
     </section>

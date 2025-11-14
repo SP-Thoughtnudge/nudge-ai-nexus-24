@@ -82,7 +82,7 @@ const ThoughtnudgeEngine = () => {
             Layer 2 — Intelligence Layer: Agentic Decisioning Engine
           </h3>
           <p className="text-2xl font-semibold text-primary mb-8">
-            "One agent per customer — learning continuously."
+            "One agent per customer — continuously learning from context, behavior, and outcomes."
           </p>
           
           <div className="mb-8">
@@ -90,25 +90,63 @@ const ThoughtnudgeEngine = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <span className="text-primary mt-1">•</span>
-                <span className="text-foreground">Runs micro-experiments in parallel</span>
+                <span className="text-foreground">Runs micro-experiments in parallel across timing, channels, tone, offers, and content</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary mt-1">•</span>
-                <span className="text-foreground">Tests hundreds of hypotheses on timing, content, channel</span>
+                <span className="text-foreground">Tests hundreds of hypotheses for each user — discovering what works for that specific individual</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary mt-1">•</span>
-                <span className="text-foreground">Builds a growing "Psychographic DNA" for each user</span>
+                <div className="text-foreground">
+                  <span className="font-semibold">Learns from rich context variables, not just events:</span>
+                  <ul className="mt-2 ml-4 space-y-1">
+                    <li>• recency & frequency</li>
+                    <li>• depth of engagement</li>
+                    <li>• product affinity</li>
+                    <li>• risk/motivation signals</li>
+                    <li>• timing patterns</li>
+                    <li>• historical response behavior</li>
+                    <li>• profile attributes from the data warehouse</li>
+                  </ul>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary mt-1">•</span>
-                <span className="text-foreground">Learns from each action and outcome</span>
+                <div className="text-foreground">
+                  <span>Uses these signals to reason in permutations like:</span>
+                  <p className="mt-2 ml-4 italic text-muted-foreground">"If context = X, Y, Z → the best action = A, B, C."</p>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary mt-1">•</span>
-                <span className="text-foreground">Optimizes toward the business goal autonomously</span>
+                <span className="text-foreground">Builds a growing "Psychographic DNA" profile per user that evolves after every interaction</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary mt-1">•</span>
+                <span className="text-foreground">Optimizes autonomously toward the business goal using continuous reinforcement learning</span>
               </li>
             </ul>
+          </div>
+
+          <p className="text-lg text-foreground mb-8 italic">
+            "This is what enables adaptive, 1:1 personalized journeys — no rules, no static segments, no guessing."
+          </p>
+
+          {/* 3-Layer Architecture Visual */}
+          <div className="grid md:grid-cols-3 gap-4 mb-8 p-6 bg-muted/30 rounded-lg border border-border">
+            <div className="text-center">
+              <Database className="w-10 h-10 mx-auto mb-2 text-muted-foreground" />
+              <p className="text-sm font-semibold text-foreground">Context Signals</p>
+            </div>
+            <div className="text-center">
+              <Brain className="w-10 h-10 mx-auto mb-2 text-primary" />
+              <p className="text-sm font-semibold text-foreground">Agentic Decision Engine</p>
+            </div>
+            <div className="text-center">
+              <Zap className="w-10 h-10 mx-auto mb-2 text-muted-foreground" />
+              <p className="text-sm font-semibold text-foreground">Personalized Actions</p>
+            </div>
           </div>
 
           {/* User Intelligence Card */}
@@ -158,8 +196,11 @@ const ThoughtnudgeEngine = () => {
           <h3 className="text-3xl font-bold text-foreground mb-4">
             Layer 3 — Experience Layer: Autonomous 1:1 Actions
           </h3>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-lg text-muted-foreground mb-6">
             Executes best action across channels: WhatsApp, Push, Email, SMS, In-App, and future channels. Every action feeds back into the learning loop.
+          </p>
+          <p className="text-lg text-foreground mb-8">
+            Each agent builds a hyper-personalized, adaptive journey for every customer based on all variables in your data warehouse — not just CRM attributes. <span className="font-semibold">No two customer journeys look the same.</span>
           </p>
 
           {/* Channel Icons */}

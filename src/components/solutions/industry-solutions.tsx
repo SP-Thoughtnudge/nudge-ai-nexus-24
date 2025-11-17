@@ -6,43 +6,30 @@ import { Link } from "react-router-dom";
 const IndustrySolutions = () => {
   const solutions = [
     {
-      icon: Smartphone,
-      title: "Consumer Internet & Digital Natives",
-      subtitle: "Activate Growth Through Adaptive, 1:1 Personalization",
-      description: "For Edtech, Mobility, Travel, or Lifestyle platforms that collect rich behavior but struggle to act on it in real time.",
+      icon: TrendingUp,
+      title: "Financial Services & Fintech",
+      subtitle: "Adaptive AI that activates, engages, and retains users across trading, banking, credit, and payments.",
+      description: "Modern fintech apps capture rich behavioral and transactional data — but most flows still rely on static journeys. We help you turn your 1st-party data into real-time, 1:1 personalized experiences that increase activation, repeat transactions, and long-term loyalty.",
       outcomes: [
-        "Higher retention",
-        "Lower churn",
-        "Continuous intelligence"
+        "Higher activation",
+        "More repeat interactions",
+        "Lower cost per engaged user"
       ],
-      link: "/solutions/digital-services",
-      ctaText: "See How It Works"
+      link: "/solutions/financial-services",
+      ctaText: "Explore Financial Services"
     },
     {
       icon: Activity,
-      title: "Health & Wellness Engagement",
-      subtitle: "Drive repeat purchase, renewals and higher CLTV through 1:1 personalization.",
-      description: "For health, wellness, and diagnostics platforms where long-term adherence and repeat interactions define growth.",
+      title: "Health, Wellness & Consumer Platforms",
+      subtitle: "Personalized, context-aware engagement that drives renewals, repeat use, and long-term habit formation.",
+      description: "Healthtech, wellness, personal care, edtech, and lifestyle apps depend on sustained user action. Our AI learns individual patterns, motivations, and timing to deliver adaptive, 1:1 nudges that boost repeat behavior and retention.",
       outcomes: [
-        "40% higher repeat purchase & winback",
-        "25% higher dormant user activation",
-        "Continuous insights into user motivation and behavior"
+        "Higher repeat purchase/renewal",
+        "Higher dormant activation",
+        "Deeper behavioral insights"
       ],
-      link: "/solutions/healthtech",
-      ctaText: "See How It Works"
-    },
-    {
-      icon: TrendingUp,
-      title: "Financial Services & Stock Broking",
-      subtitle: "Activate and Retain Investors Through Real-Time Personalization",
-      description: "For stock broking and investment platforms where millions open accounts — but never trade.",
-      outcomes: [
-        "2–3x activation",
-        "22% lower cost",
-        "40% more repeat trades"
-      ],
-      link: "/solutions/financial-services",
-      ctaText: "Explore BFSI Solutions"
+      link: "/solutions/use-cases",
+      ctaText: "Explore Use Cases"
     }
   ];
 
@@ -61,7 +48,7 @@ const IndustrySolutions = () => {
           </div>
           
           {/* Solution Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {solutions.map((solution, index) => {
               const Icon = solution.icon;
               return (

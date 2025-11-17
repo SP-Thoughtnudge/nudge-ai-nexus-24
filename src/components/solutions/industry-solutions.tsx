@@ -15,7 +15,7 @@ const IndustrySolutions = () => {
         "More repeat interactions",
         "Lower cost per engaged user"
       ],
-      link: "/solutions/financial-services",
+      link: "/solutions/bfsi",
       ctaText: "Explore Financial Services"
     },
     {

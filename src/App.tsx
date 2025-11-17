@@ -19,6 +19,7 @@ const UseCases = lazy(() => import("./pages/UseCases"));
 const Solutions = lazy(() => import("./pages/Solutions"));
 const SolutionsD2C = lazy(() => import("./pages/SolutionsD2C"));
 const SolutionsDigitalServices = lazy(() => import("./pages/SolutionsDigitalServices"));
+const SolutionsBFSI = lazy(() => import("./pages/SolutionsBFSI"));
 const Product = lazy(() => import("./pages/Product"));
 const HowItWorks = lazy(() => import("./pages/HowItWorks"));
 const Integrations = lazy(() => import("./pages/Integrations"));
@@ -82,6 +83,7 @@ const App = () => {
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/solutions/d2c" element={<SolutionsD2C />} />
             <Route path="/solutions/digital-services" element={<SolutionsDigitalServices />} />
+            <Route path="/solutions/bfsi" element={<SolutionsBFSI />} />
             <Route path="/product" element={<Product />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/integrations" element={<Integrations />} />

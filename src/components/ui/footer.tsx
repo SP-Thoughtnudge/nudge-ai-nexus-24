@@ -68,13 +68,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gray-900">Solutions</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/solutions/d2c" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  For E-commerce & D2C
+                <Link to="/solutions/bfsi" className="text-gray-600 hover:text-brand-pink transition-colors">
+                  Financial Services & Fintech
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/digital-services" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  For Digital Services & Apps
+                <Link to="/solutions/health-wellness" className="text-gray-600 hover:text-brand-pink transition-colors">
+                  Health, Wellness & Consumer Platforms
                 </Link>
               </li>
             </ul>

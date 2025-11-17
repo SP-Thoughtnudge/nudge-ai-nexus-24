@@ -144,12 +144,9 @@ const ThoughtnudgeEngine = () => {
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <div className="flex-1">
-                  <p className="text-foreground mb-2">Uses these signals to reason in permutations like:</p>
-                  <Card className="p-4 bg-muted/50 border-border">
-                    <p className="text-foreground italic">"If context = X, Y, Z → the best action = A, B, C."</p>
-                  </Card>
-                </div>
+                <p className="text-foreground">
+                  Uses these signals to predict the most effective action for each user — what to send, when to send it, and on which channel
+                </p>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -160,7 +157,7 @@ const ThoughtnudgeEngine = () => {
               <div className="flex items-start gap-4">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <p className="text-foreground">
-                  Optimizes autonomously toward the business goal using <span className="font-semibold">continuous reinforcement learning</span>
+                  Optimizes autonomously toward the business goal using <span className="font-semibold">advanced deep-learning models that improve continuously</span>
                 </p>
               </div>
             </div>

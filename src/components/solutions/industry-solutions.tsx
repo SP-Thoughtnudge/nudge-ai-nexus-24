@@ -28,7 +28,7 @@ const IndustrySolutions = () => {
         "Higher dormant activation",
         "Deeper behavioral insights"
       ],
-      link: "/solutions/use-cases",
+      link: "/solutions/digital-services",
       ctaText: "Explore Use Cases"
     }
   ];

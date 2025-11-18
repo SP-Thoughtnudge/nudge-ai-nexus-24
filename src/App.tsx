@@ -26,9 +26,6 @@ const GrowthAudit = lazy(() => import("./pages/GrowthAudit"));
 const AuditThankYou = lazy(() => import("./pages/AuditThankYou"));
 const Blogs = lazy(() => import("./pages/Blogs"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
-const EcommerceBrochure = lazy(() => import("./pages/EcommerceBrochure"));
-const TelecomBrochure = lazy(() => import("./pages/TelecomBrochure"));
-const InsuranceBrochure = lazy(() => import("./pages/InsuranceBrochure"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 
@@ -85,9 +82,6 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/brochure/ecommerce" element={<EcommerceBrochure />} />
-            <Route path="/brochure/telecom" element={<TelecomBrochure />} />
-            <Route path="/brochure/insurance" element={<InsuranceBrochure />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/growth-audit" element={<GrowthAudit />} />

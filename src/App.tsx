@@ -15,9 +15,7 @@ import { addStructuredData, organizationSchema } from "@/lib/seo";
 // Lazy load components for better performance
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const UseCases = lazy(() => import("./pages/UseCases"));
 const Solutions = lazy(() => import("./pages/Solutions"));
-const SolutionsD2C = lazy(() => import("./pages/SolutionsD2C"));
 const SolutionsDigitalServices = lazy(() => import("./pages/SolutionsDigitalServices"));
 const SolutionsBFSI = lazy(() => import("./pages/SolutionsBFSI"));
 const Product = lazy(() => import("./pages/Product"));
@@ -28,7 +26,6 @@ const GrowthAudit = lazy(() => import("./pages/GrowthAudit"));
 const AuditThankYou = lazy(() => import("./pages/AuditThankYou"));
 const Blogs = lazy(() => import("./pages/Blogs"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
-const Brochure = lazy(() => import("./pages/Brochure"));
 const EcommerceBrochure = lazy(() => import("./pages/EcommerceBrochure"));
 const TelecomBrochure = lazy(() => import("./pages/TelecomBrochure"));
 const InsuranceBrochure = lazy(() => import("./pages/InsuranceBrochure"));
@@ -79,9 +76,7 @@ const App = () => {
           }>
             <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/use-cases" element={<UseCases />} />
             <Route path="/solutions" element={<Solutions />} />
-            <Route path="/solutions/d2c" element={<SolutionsD2C />} />
             <Route path="/solutions/digital-services" element={<SolutionsDigitalServices />} />
             <Route path="/solutions/bfsi" element={<SolutionsBFSI />} />
             <Route path="/product" element={<Product />} />
@@ -90,7 +85,6 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/brochure" element={<Brochure />} />
             <Route path="/brochure/ecommerce" element={<EcommerceBrochure />} />
             <Route path="/brochure/telecom" element={<TelecomBrochure />} />
             <Route path="/brochure/insurance" element={<InsuranceBrochure />} />

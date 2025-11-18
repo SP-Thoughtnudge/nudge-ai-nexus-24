@@ -38,6 +38,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.thoughtnudge.com/solutions/bfsi</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.thoughtnudge.com/integrations</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>monthly</changefreq>

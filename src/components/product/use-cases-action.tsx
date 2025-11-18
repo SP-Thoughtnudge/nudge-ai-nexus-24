@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { TrendingUp, RotateCcw, ShoppingBag, Smartphone } from "lucide-react";
+import { TrendingUp, RotateCcw } from "lucide-react";
 
 const useCases = [
   {
@@ -11,19 +11,19 @@ const useCases = [
     description: "The AI identifies upsell/cross-sell opportunities and converts free users by demonstrating value.",
     examples: [
       {
-        industry: "D2C E-commerce",
-        icon: <ShoppingBag className="h-5 w-5" />,
-        scenario: "Fashion Brand",
-        challenge: "Generic discount campaigns are eroding margins",
-        solution: "For a fashion brand, the AI learns which users are \"quality-seekers\" and nudges them towards a premium collection instead of offering a discount.",
-        result: "Higher AOV with maintained margins"
+        industry: "Financial Services",
+        icon: <TrendingUp className="h-5 w-5" />,
+        scenario: "Neobank",
+        challenge: "Low adoption of premium accounts and credit products",
+        solution: "For a neobank, the AI identifies users with consistent high-value transactions and nudges them toward premium accounts with personalized benefits like higher cashback on their top spending categories.",
+        result: "3.5x higher premium account conversion"
       },
       {
-        industry: "Digital Services",
-        icon: <Smartphone className="h-5 w-5" />,
-        scenario: "Healthtech App",
-        challenge: "Low free-to-paid conversion rates",
-        solution: "For a Healthtech app, the AI identifies users tracking macros consistently and presents a personalized offer to upgrade to a premium plan with a nutritionist.",
+        industry: "Financial Services",
+        icon: <TrendingUp className="h-5 w-5" />,
+        scenario: "Investment Platform",
+        challenge: "Low conversion to managed portfolio services",
+        solution: "For an investment platform, the AI identifies users with growing portfolios and presents personalized recommendations for managed funds based on their risk profile and investment patterns.",
         result: "3x higher conversion from personalized timing"
       }
     ]
@@ -35,20 +35,20 @@ const useCases = [
     description: "The AI analyzes past behavior to find the most effective re-engagement strategy, far beyond a generic \"we miss you\" campaign.",
     examples: [
       {
-        industry: "D2C E-commerce",
-        icon: <ShoppingBag className="h-5 w-5" />,
-        scenario: "Beauty Brand",
-        challenge: "Standard win-back emails have low open rates",
-        solution: "For a beauty brand, the AI might re-engage a user with a message about a new product for their specific skin type, coupled with a small, time-sensitive \"welcome back\" offer.",
-        result: "60% higher reactivation vs generic campaigns"
+        industry: "Financial Services",
+        icon: <TrendingUp className="h-5 w-5" />,
+        scenario: "Payment App",
+        challenge: "Dormant users rarely reactivate after stopping usage",
+        solution: "For a payment app, the AI identifies users who stopped transacting and re-engages them with personalized cashback offers on merchants they previously used, timed with their typical shopping patterns.",
+        result: "62% higher reactivation vs generic campaigns"
       },
       {
-        industry: "Digital Services",
-        icon: <Smartphone className="h-5 w-5" />,
-        scenario: "Travel App",
-        challenge: "Users who stop using the service rarely return",
-        solution: "For a Travel company, the AI identifies a user whose pass expired 60 days ago and nudges them with a message about new AC buses on their old route right before their typical commute time.",
-        result: "40% of dormant users reactivate within 30 days"
+        industry: "Financial Services",
+        icon: <TrendingUp className="h-5 w-5" />,
+        scenario: "Trading Platform",
+        challenge: "Inactive traders rarely return after market volatility",
+        solution: "For a trading platform, the AI detects when dormant traders' previously watched stocks hit significant price movements and sends personalized alerts with relevant market insights to re-engage them.",
+        result: "45% of dormant traders reactivate within 30 days"
       }
     ]
   }

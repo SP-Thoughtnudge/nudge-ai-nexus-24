@@ -1,2 +1,7 @@
+# Redirect removed pages to appropriate alternatives
+/use-cases           /solutions        301
+/solutions/d2c       /solutions        301
+/brochure            /solutions/bfsi   301
+
 # Redirect all routes to index.html for React Router SPA
 /*    /index.html   200

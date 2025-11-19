@@ -7,22 +7,7 @@ export const PowerfulAiControl = () => {
             Powerful AI, Human Control
           </h2>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Goal Setting Image */}
-            <div className="flex justify-center">
-              <div className="relative w-full max-w-sm">
-                <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                  <img 
-                    src="/lovable-uploads/89663867-ccab-49fc-9875-8353a0a78bf6.png" 
-                    alt="Strategic goal setting interface showing business objectives and AI configuration" 
-                    className="w-full h-auto transition-transform duration-1000 hover:scale-105 animate-pulse"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Right Column - Three Control Points */}
+          <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center mt-1">

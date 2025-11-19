@@ -4,15 +4,15 @@ export const UnifiedIntelligence = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-16 text-center">
-            The Brain Behind the Growth:{" "}
-            <span className="text-primary">Continuous Learning & Adaptive Intelligence</span>
+            Your Data Intelligence Layer:{" "}
+            <span className="text-primary">Agentic Learning at Enterprise Scale</span>
           </h2>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
             <div className="space-y-6 order-1 lg:order-1">
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Our Agentic AI is the central intelligence layer for your entire growth stack. It unifies cross-channel behavior and real-time user intent to make the single best decision for every customer. It <strong>continuously learns</strong> from every interaction, making each decision sharper and more <strong>adaptive</strong> than the last.
+                Thoughtnudge sits on top of your existing data infrastructure and becomes the <strong>agentic decisioning layer</strong> that activates your first-party data. Every customer gets a dedicated AI agent that continuously learns their behavioral patterns, psychographic profile, and optimal engagement windows—then autonomously acts across all touchpoints to maximize lifetime value.
               </p>
               
               {/* Key Features */}
@@ -21,21 +21,28 @@ export const UnifiedIntelligence = () => {
                   <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                     <div className="w-3 h-3 bg-primary rounded-full"></div>
                   </div>
-                  <span className="text-foreground font-medium">Cross-channel behavior unification</span>
+                  <span className="text-foreground font-medium">Activates dormant first-party data</span>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                     <div className="w-3 h-3 bg-primary rounded-full"></div>
                   </div>
-                  <span className="text-foreground font-medium">Real-time user intent analysis</span>
+                  <span className="text-foreground font-medium">One learning agent per customer</span>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                     <div className="w-3 h-3 bg-primary rounded-full"></div>
                   </div>
-                  <span className="text-foreground font-medium">Continuous learning optimization</span>
+                  <span className="text-foreground font-medium">Autonomous optimization across channels</span>
+                </div>
+                
+                <div className="flex items-center space-x-4">
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                    <div className="w-3 h-3 bg-primary rounded-full"></div>
+                  </div>
+                  <span className="text-foreground font-medium">Real-time decisioning at scale</span>
                 </div>
               </div>
             </div>

@@ -12,16 +12,16 @@ export const ProofGrowthSection = () => {
           <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 mb-8 border border-border shadow-lg">
             <div className="max-w-3xl mx-auto text-center">
               <blockquote className="text-lg md:text-xl font-medium leading-relaxed mb-4 text-foreground">
-                "Thoughtnudge didn't just lift our conversions by 80%; it fundamentally changed how we approach growth. We're more strategic, efficient, and profitable."
+                "Thoughtnudge transformed how we activate our customer data. The autonomous learning layer sits perfectly between our data warehouse and engagement channels—it's like having a team of data scientists running experiments 24/7."
               </blockquote>
               
               <div className="flex items-center justify-center space-x-3">
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">H</span>
+                  <span className="text-white font-bold text-sm">V</span>
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-foreground text-sm">Head of Growth</div>
-                  <div className="text-muted-foreground text-sm">Cookd</div>
+                  <div className="font-semibold text-foreground text-sm">VP of Growth</div>
+                  <div className="text-muted-foreground text-sm">Leading Fintech Platform</div>
                 </div>
               </div>
             </div>
@@ -31,28 +31,28 @@ export const ProofGrowthSection = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border text-center hover:shadow-lg transition-all duration-300">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-3">
-                +210%
+                3.2x
               </div>
               <div className="text-base font-medium text-foreground">
-                Dormant User Reactivation
+                Deposit Activation Rate
               </div>
             </div>
             
             <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border text-center hover:shadow-lg transition-all duration-300">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-3">
-                -45%
+                38%
               </div>
               <div className="text-base font-medium text-foreground">
-                Offer Cost
+                Lift in Repeat Transactions
               </div>
             </div>
             
             <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border text-center hover:shadow-lg transition-all duration-300">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-3">
-                +180%
+                2.4x
               </div>
               <div className="text-base font-medium text-foreground">
-                Revenue per Customer
+                Customer Lifetime Value
               </div>
             </div>
           </div>

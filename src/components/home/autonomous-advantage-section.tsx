@@ -25,28 +25,28 @@ export const AutonomousAdvantageSection = () => {
             <div className="order-1 lg:order-2 space-y-8">
               <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-8 border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-4 text-primary">
-                  Outcome-Focused Intelligence
+                  Built for Enterprise Scale
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our AI agents are obsessed with your topline business goals—from conversion and retention to lifetime value.
+                  Process millions of decisions per day across your entire customer base. Our infrastructure scales with your growth without performance degradation.
                 </p>
               </div>
               
               <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-8 border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-4 text-primary">
-                  No Guesswork, Just Results
+                  Full Transparency & Control
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We replace manual A/B tests with continuous optimization, ensuring every decision is based on data, not assumptions.
+                  Every AI decision is explainable and auditable. Set brand guardrails, approve strategies, and monitor performance in real-time—complete visibility into autonomous operations.
                 </p>
               </div>
               
               <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-8 border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-4 text-primary">
-                  True 1:1 Personalization
+                  Activate Your Data Investment
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our engine treats every customer as an individual, delivering the right decision at the right time, every time.
+                  Your enterprise has invested in data infrastructure—warehouses, CDPs, analytics tools. Thoughtnudge finally activates that investment by turning passive data into autonomous, revenue-driving actions.
                 </p>
               </div>
             </div>

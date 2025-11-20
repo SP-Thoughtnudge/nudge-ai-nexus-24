@@ -3,10 +3,15 @@ export const ParadigmShiftComparison = () => {
     <section className="py-20 bg-secondary/10">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-16 text-center">
-            From Data Warehouse to{" "}
-            <span className="text-primary">Intelligent Action</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-center">
+            Maximize Value From Your{" "}
+            <span className="text-primary">First-Party Data</span>
           </h2>
+          
+          <p className="text-lg md:text-xl text-muted-foreground text-center mb-16 max-w-4xl mx-auto leading-relaxed">
+            Enterprises capture hundreds of behavioural and transactional signals, but this data never turns into real decisions for real customers. 
+            Thoughtnudge turns your first-party data into real-time, hyper-personalised customer decisions that drive measurable business outcomes.
+          </p>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Visual */}
@@ -30,19 +35,19 @@ export const ParadigmShiftComparison = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <span className="text-destructive text-xl">❌</span>
-                    <span className="text-foreground font-medium">Data sits unused in warehouses</span>
+                    <span className="text-foreground font-medium">Data sits unused inside warehouse tables</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-destructive text-xl">❌</span>
-                    <span className="text-foreground font-medium">Static rule engines and segments</span>
+                    <span className="text-foreground font-medium">Segments freeze dynamic customer behaviour</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-destructive text-xl">❌</span>
-                    <span className="text-foreground font-medium">Slow A/B tests, manual analysis</span>
+                    <span className="text-foreground font-medium">Slow A/B tests limit experimentation</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-destructive text-xl">❌</span>
-                    <span className="text-foreground font-medium">Weeks to launch new strategies</span>
+                    <span className="text-foreground font-medium">Manual workflows take weeks to update</span>
                   </div>
                 </div>
               </div>
@@ -55,21 +60,32 @@ export const ParadigmShiftComparison = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <span className="text-primary text-xl">✅</span>
-                    <span className="text-foreground font-medium">First-party data activated in real-time</span>
+                    <span className="text-foreground font-medium">First-party data activated in real time</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-primary text-xl">✅</span>
-                    <span className="text-foreground font-medium">Autonomous learning per customer</span>
+                    <span className="text-foreground font-medium">One autonomous learning agent per customer</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-primary text-xl">✅</span>
-                    <span className="text-foreground font-medium">Millions of micro-experiments daily</span>
+                    <span className="text-foreground font-medium">Thousands of micro-experiments every day</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-primary text-xl">✅</span>
-                    <span className="text-foreground font-medium">Live in days with measurable ROI</span>
+                    <span className="text-foreground font-medium">Hyper-personalized decisions for every touchpoint</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="text-primary text-xl">✅</span>
+                    <span className="text-foreground font-medium">Measurable lift in weeks, not months</span>
                   </div>
                 </div>
+              </div>
+              
+              {/* Outcome Statement */}
+              <div className="lg:col-span-2 mt-8 text-center">
+                <p className="text-lg md:text-xl text-foreground font-medium">
+                  True 1:1 personalization that adapts automatically — without journeys, rules, or manual decisioning.
+                </p>
               </div>
             </div>
           </div>

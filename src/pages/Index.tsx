@@ -3,13 +3,14 @@ import { useEffect, lazy, Suspense } from "react";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { HeroSectionNew } from "@/components/home/hero-section-new";
-
 import { ParadigmShiftComparison } from "@/components/home/paradigm-shift-comparison";
 import { UnifiedIntelligence } from "@/components/home/unified-intelligence";
+import { IndustryFocusSection } from "@/components/home/industry-focus-section";
 import { PowerfulAiControl } from "@/components/home/powerful-ai-control";
 import { LiveInDays } from "@/components/home/live-in-days";
-import { ProofGrowthSection } from "@/components/home/proof-growth-section";
+import { ProofCredibilitySection } from "@/components/home/proof-credibility-section";
 import { AutonomousAdvantageSection } from "@/components/home/autonomous-advantage-section";
+import { SecurityComplianceSection } from "@/components/home/security-compliance-section";
 import { FinalCtaNew } from "@/components/home/final-cta-new";
 
 import LazySection from "@/components/ui/lazy-section";
@@ -46,22 +47,30 @@ const Index = () => {
         </FadeInSection>
         
         <FadeInSection delay={300}>
-          <PowerfulAiControl />
+          <IndustryFocusSection />
         </FadeInSection>
         
         <FadeInSection delay={400}>
-          <LiveInDays />
+          <PowerfulAiControl />
         </FadeInSection>
         
         <FadeInSection delay={500}>
-          <ProofGrowthSection />
+          <LiveInDays />
         </FadeInSection>
         
         <FadeInSection delay={600}>
-          <AutonomousAdvantageSection />
+          <ProofCredibilitySection />
         </FadeInSection>
         
         <FadeInSection delay={700}>
+          <AutonomousAdvantageSection />
+        </FadeInSection>
+        
+        <FadeInSection delay={800}>
+          <SecurityComplianceSection />
+        </FadeInSection>
+        
+        <FadeInSection delay={900}>
           <FinalCtaNew />
         </FadeInSection>
       </main>

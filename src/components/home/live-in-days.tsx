@@ -8,28 +8,34 @@ export const LiveInDays = () => {
             <span className="text-primary">Days, Not Months</span>
           </h2>
           
-          {/* 3-Step Timeline */}
+          {/* 4-Step Timeline */}
           <div className="relative">
-            <div className="grid md:grid-cols-3 gap-8 relative">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
               {/* Step 1 */}
               <div className="text-center relative">
-...
-                <h3 className="text-xl font-bold text-foreground mb-4">
-                  Connect Your Data Infrastructure
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground font-bold text-xl mx-auto mb-6 relative z-10 shadow-lg transform transition-transform hover:scale-110">
+                  1
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-4">
+                  Connect Your Existing Stack
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Plug into your CDP, data warehouse, and activation channels. Native connectors for Segment, Snowflake, Braze, and more.
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  Thoughtnudge integrates with your warehouse, CDP, and engagement channels through a simple, one-time setup. 
+                  No migration. No workflow rebuilding. No engineering-heavy effort.
                 </p>
               </div>
               
               {/* Step 2 */}
               <div className="text-center relative">
-...
-                <h3 className="text-xl font-bold text-foreground mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground font-bold text-xl mx-auto mb-6 relative z-10 shadow-lg transform transition-transform hover:scale-110">
+                  2
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-4">
                   Define Your Business Goal
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Set your target outcome—deposit activation, portfolio growth, subscription renewal—and our AI agents autonomously optimize toward it.
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  Activation, deposit, EMI conversion, subscription renewal, portfolio growth, or retention — you choose the outcome. 
+                  Agents begin learning immediately.
                 </p>
               </div>
               
@@ -38,11 +44,27 @@ export const LiveInDays = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground font-bold text-xl mx-auto mb-6 relative z-10 shadow-lg transform transition-transform hover:scale-110">
                   3
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-4">
+                <h3 className="text-lg font-bold text-foreground mb-4">
+                  Define Your Strategies
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  You're no longer limited to one strategy for everyone. 
+                  You define the strategic levers; the system provides insights: what's working/failing, emerging behavioural patterns, micro-segment dynamics, new strategy angles. 
+                  Your role shifts from operating tools → shaping strategy.
+                </p>
+              </div>
+              
+              {/* Step 4 */}
+              <div className="text-center relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-primary-foreground font-bold text-xl mx-auto mb-6 relative z-10 shadow-lg transform transition-transform hover:scale-110">
+                  4
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-4">
                   See Measurable Lift in Weeks
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Track real-time impact on CLTV, activation rates, and engagement—with full transparency into every AI decision.
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  Track real-time improvements in activation, retention, repeat transactions, and LTV. 
+                  Most enterprises see measurable lift within 3–6 weeks.
                 </p>
               </div>
             </div>

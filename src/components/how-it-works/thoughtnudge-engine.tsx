@@ -108,7 +108,7 @@ const ThoughtnudgeEngine = () => {
               Layer 2 — Intelligence Layer
             </h3>
             <p className="text-2xl font-semibold text-primary mb-6">
-              "One agent per customer — continuously learning from context, behavior, and outcomes."
+              The Agentic Decision Engine: One Continuous Learning Policy per Customer.
             </p>
           </div>
 
@@ -151,13 +151,13 @@ const ThoughtnudgeEngine = () => {
               <div className="flex items-start gap-4">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <p className="text-foreground">
-                  Builds a growing <span className="font-semibold">"Psychographic DNA"</span> profile per user that evolves after every interaction
+                  Builds a dynamically evolving <span className="font-semibold">Contextual Profile</span> per user, updated after every interaction
                 </p>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <p className="text-foreground">
-                  Optimizes autonomously toward the business goal using <span className="font-semibold">advanced deep-learning models that improve continuously</span>
+                  Optimizes autonomously toward the <span className="font-semibold">defined business goal</span> using <span className="font-semibold">advanced deep-learning models that improve continuously</span>
                 </p>
               </div>
             </div>
@@ -204,7 +204,7 @@ const ThoughtnudgeEngine = () => {
               Executes best action across channels. Every action feeds back into the learning loop.
             </p>
             <p className="text-lg text-foreground leading-relaxed">
-              Each agent builds a <span className="font-semibold">hyper-personalized, adaptive journey</span> for every customer based on all variables in your data warehouse — not just CRM attributes. <span className="font-semibold text-primary">No two customer journeys look the same.</span>
+              Each agent builds a <span className="font-semibold">hyper-personalized, adaptive journey</span> for every customer based on all variables in your data warehouse. <strong>No two customer journeys look the same.</strong>
             </p>
           </div>
 

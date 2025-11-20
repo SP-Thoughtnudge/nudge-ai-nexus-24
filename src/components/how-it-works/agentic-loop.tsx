@@ -8,7 +8,7 @@ const AgenticLoop = () => {
     { icon: Zap, label: "Chooses best action", number: 3 },
     { icon: Play, label: "Executes instantly", number: 4 },
     { icon: BarChart3, label: "Measures outcome", number: 5 },
-    { icon: Database, label: "Updates DNA profile", number: 6 },
+    { icon: Database, label: "Policy Refined", number: 6 },
     { icon: RefreshCw, label: "Repeats continuously", number: 7 }
   ];
 
@@ -61,11 +61,7 @@ const AgenticLoop = () => {
         <div className="max-w-5xl mx-auto">
           <Card className="p-10 md:p-12 bg-gradient-to-br from-card to-muted/30 border-border">
             <p className="text-lg md:text-xl text-foreground mb-6 leading-relaxed">
-              With agents running micro-experiments autonomously, your team focuses on <span className="font-semibold">setting goals, defining guardrails, exposing key experimentation variables,</span> and reviewing behavioral insights the AI surfaces.
-            </p>
-            <div className="h-px bg-border mb-6" />
-            <p className="text-lg text-muted-foreground italic leading-relaxed">
-              Agents continuously return emerging patterns — shifts in motivations, timing windows, channel affinity — enriching your strategy each cycle.
+              With agents running micro-experiments autonomously, your team focuses on <span className="font-semibold">setting high-value goals, defining regulatory guardrails, and exposing key experimentation variables.</span> Agents continuously return emerging patterns — shifts in motivations, timing windows, channel affinity — enriching your strategy each cycle.
             </p>
           </Card>
         </div>

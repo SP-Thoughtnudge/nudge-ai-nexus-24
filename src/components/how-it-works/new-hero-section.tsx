@@ -49,7 +49,7 @@ const NewHeroSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-            From Complex Data to Effortless Growth
+            From Complex Data to Autonomous Growth.
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 animate-fade-in [animation-delay:200ms] max-w-3xl mx-auto leading-relaxed">
             See how one simple goal triggers autonomous AI decisions, personalized customer actions, continuous learning, and measurable growth.
@@ -72,7 +72,7 @@ const NewHeroSection = () => {
           {/* Description text */}
           <div className="mt-12 animate-fade-in">
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              <span className="font-semibold text-foreground">One simple goal</span> triggers autonomous AI decisions for each customer, learns from their responses, and continuously optimizes to drive measurable growth.
+              Defining one single objective activates an autonomous policy for each customer. Our 3-layer architecture converts high-fidelity customer signals into real-time, per-user actions, initiating continuous optimization toward measurable business outcomes.
             </p>
           </div>
           

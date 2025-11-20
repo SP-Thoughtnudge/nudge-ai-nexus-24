@@ -48,7 +48,7 @@ const BehavioralInsights = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Deep Behavioral Insights
+            Actionable Intelligence: Discovering Patterns Invisible to Legacy Systems
           </h2>
           <p className="text-xl text-muted-foreground mb-4 leading-relaxed">
             Insights You Can't Get From Segments, Rule-Based Journeys, or A/B Tests

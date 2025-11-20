@@ -5,7 +5,7 @@ const WhyGrowthPlateaus = () => {
   const blockers = [
     { icon: Users, label: "Static Segments", description: "Oversimplify behavior" },
     { icon: Clock, label: "Manual Journeys", description: "Cannot adapt in real-time" },
-    { icon: TestTube, label: "Slow A/B Tests", description: "Learn too slowly" },
+    { icon: TestTube, label: "Slow A/B Tests", description: "Fail to Achieve Velocity" },
     { icon: TrendingDown, label: "Stagnant Growth", description: "Insights lag behind actions" }
   ];
 
@@ -36,11 +36,11 @@ const WhyGrowthPlateaus = () => {
         <div className="max-w-5xl mx-auto mb-16">
           <Card className="p-8 md:p-12 bg-gradient-to-br from-muted/50 to-background border-border">
             <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
-              Enterprises collect <span className="font-semibold text-primary">thousands of signals</span> — {signals.join(", ")} — yet use only a few because traditional systems can't keep up.
+              Enterprises collect <span className="font-semibold text-primary">thousands of signals</span> — {signals.join(", ")} — yet use only a fraction because traditional systems are designed to manage rules, not learn.
             </p>
             <div className="h-px bg-border mb-6" />
             <p className="text-base text-muted-foreground italic">
-              The gap between data available and data utilized continues to widen.
+              The gap between data available and data actioned continues to widen.
             </p>
           </Card>
         </div>

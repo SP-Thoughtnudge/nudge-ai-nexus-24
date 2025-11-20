@@ -61,11 +61,11 @@ export const IndustryFocusSection = () => {
               </div>
               
               <p className="text-sm md:text-base text-primary font-semibold mb-4 uppercase tracking-wide">
-                Repeat Purchase • Subscription Conversion • Habit Formation • Adherence
+                Activation • Repeat Purchase • Subscription Renewals • Retention • Upsell/Cross-Sell
               </p>
               
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
-                Turn first-party behavioural signals into adaptive, per-user experiences that increase retention, subscriptions, and repeat purchase — while keeping privacy and consent front-and-center.
+                Boost adherence, grow repeat usage, and drive long-term retention across healthtech, wellness, personal care, and education. Every user gets adaptive, hyper-personalized nudges that evolve with behaviour, context, and motivation.
               </p>
               
               <Button 

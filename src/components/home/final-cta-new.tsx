@@ -12,17 +12,28 @@ export const FinalCtaNew = () => {
           </h2>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed">
-            See how leading Fintech and consumer platforms use Thoughtnudge to turn dormant data into autonomous, revenue-driving actions.
+            See how leading fintech and consumer platforms use Thoughtnudge to drive activation, retention, and lifetime value through autonomous, per-customer decisioning.
           </p>
           
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button 
               asChild 
               size="xl" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <Link to="/growth-audit">
+              <a href="https://calendly.com/himanshu_chauhan/30min?month=2025-11" target="_blank" rel="noopener noreferrer">
                 Book a Demo
+              </a>
+            </Button>
+            
+            <Button 
+              asChild 
+              size="xl" 
+              variant="outline"
+              className="border-2 border-primary text-primary hover:bg-primary/10 px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
+            >
+              <Link to="/solutions">
+                Explore Solutions →
               </Link>
             </Button>
           </div>

@@ -3,59 +3,88 @@ export const UnifiedIntelligence = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-16 text-center">
-            Your Data Intelligence Layer:{" "}
-            <span className="text-primary">Agentic Learning at Enterprise Scale</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 text-center">
+            Your Always-On{" "}
+            <span className="text-primary">Intelligence Layer</span>
           </h2>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Text Content */}
-            <div className="space-y-6 order-1 lg:order-1">
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Thoughtnudge sits on top of your existing data infrastructure and becomes the <strong>agentic decisioning layer</strong> that activates your first-party data. Every customer gets a dedicated AI agent that continuously learns their behavioral patterns, psychographic profile, and optimal engagement windows—then autonomously acts across all touchpoints to maximize lifetime value.
-              </p>
-              
-              {/* Key Features */}
-              <div className="space-y-4 mt-8">
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <div className="w-3 h-3 bg-primary rounded-full"></div>
-                  </div>
-                  <span className="text-foreground font-medium">Activates dormant first-party data</span>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <div className="w-3 h-3 bg-primary rounded-full"></div>
-                  </div>
-                  <span className="text-foreground font-medium">One learning agent per customer</span>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <div className="w-3 h-3 bg-primary rounded-full"></div>
-                  </div>
-                  <span className="text-foreground font-medium">Autonomous optimization across channels</span>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <div className="w-3 h-3 bg-primary rounded-full"></div>
-                  </div>
-                  <span className="text-foreground font-medium">Real-time decisioning at scale</span>
-                </div>
+          <p className="text-lg md:text-xl text-muted-foreground text-center mb-16 max-w-4xl mx-auto leading-relaxed">
+            Thoughtnudge sits on top of your data systems and creates a dedicated learning agent for every customer. 
+            Each agent continuously experiments, learns, and evolves — building a deep contextual memory of that individual's behaviour, preferences, emotional triggers, and engagement patterns. It then selects the most effective next action: what to send, when to send it, how to frame it, and through which channel. 
+            Instead of predicting, it discovers in real time what works for each customer and adapts every interaction accordingly.
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Feature 1 */}
+            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-8 border border-border hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-6 h-6 bg-primary rounded-md"></div>
               </div>
+              <h3 className="text-xl font-bold text-foreground mb-4">
+                Activates dormant first-party data instantly
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Uses behavioural, transactional, emotional, and contextual signals from your data systems as inputs for continuous learning.
+              </p>
             </div>
             
-            {/* Central AI Brain Image */}
-            <div className="flex justify-center order-2 lg:order-2">
-              <div className="relative w-full max-w-lg">
-                <img 
-                  src="/lovable-uploads/b753f089-0a73-4cc1-8a49-d2746310a00c.png" 
-                  alt="Central AI brain orchestrating personalized customer interactions" 
-                  className="w-full h-auto rounded-2xl shadow-lg"
-                />
+            {/* Feature 2 */}
+            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-8 border border-border hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-6 h-6 bg-primary rounded-md"></div>
               </div>
+              <h3 className="text-xl font-bold text-foreground mb-4">
+                One autonomous learning agent per customer
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Runs ongoing micro-experiments for every individual, updating its understanding after every action, inaction, and context shift.
+              </p>
+            </div>
+            
+            {/* Feature 3 */}
+            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-8 border border-border hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-6 h-6 bg-primary rounded-md"></div>
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-4">
+                Discovers the most effective action through experimentation
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Tests thousands of hypotheses across offer, product, content, timing, channel, tone, emotion, and value proposition — to find what actually drives the outcome for that customer.
+              </p>
+            </div>
+            
+            {/* Feature 4 */}
+            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-8 border border-border hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-6 h-6 bg-primary rounded-md"></div>
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-4">
+                Builds evolving agentic memory
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Creates a continuously updated "psychographic profile" unique to each individual, powering deeply personalised and context-aware engagement.
+              </p>
+            </div>
+            
+            {/* Feature 5 */}
+            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-8 border border-border hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-6 h-6 bg-primary rounded-md"></div>
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-4">
+                Real-time decisioning at enterprise scale
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Executes millions of adaptive decisions per day — without journeys, segments, rules, or A/B tests.
+              </p>
+            </div>
+            
+            {/* Result Block - spans remaining space */}
+            <div className="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm rounded-xl p-8 border border-primary/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center">
+              <p className="text-lg font-semibold text-foreground text-center leading-relaxed">
+                A self-improving, hyper-personalised journey for every customer — continuously evolving, outcome-driven, and fully autonomous.
+              </p>
             </div>
           </div>
         </div>

@@ -1,0 +1,113 @@
+export const ProofCredibilitySection = () => {
+  return (
+    <section className="py-20 bg-gradient-to-br from-background via-secondary/5 to-background">
+      <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-center">
+            Proof. Credibility.{" "}
+            <span className="text-primary">Outcomes.</span>
+          </h2>
+          
+          <p className="text-lg md:text-xl text-muted-foreground text-center mb-16 max-w-4xl mx-auto leading-relaxed">
+            Your data and channels stay the same — the outcomes change. 
+            Thoughtnudge delivers measurable, compounding improvement across activation, engagement, retention, and lifetime value.
+          </p>
+          
+          {/* Testimonial Cards */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {/* Testimonial 1 - Fintech EMI */}
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl border border-border shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              {/* Metric Header */}
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-8 border-b border-border">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-4">
+                  27% Increase in EMI Conversions
+                </div>
+                <p className="text-sm text-muted-foreground uppercase tracking-wide font-semibold mb-4">
+                  In 6 Weeks
+                </p>
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-2xl font-bold text-foreground">27%</div>
+                    <div className="text-xs text-muted-foreground">More EMI Conversions</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-foreground">22%</div>
+                    <div className="text-xs text-muted-foreground">Incentive Cost Reduction</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-foreground">24-48h</div>
+                    <div className="text-xs text-muted-foreground">Faster Decisions</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Quote Section */}
+              <div className="p-8">
+                <blockquote className="text-base md:text-lg text-foreground leading-relaxed mb-6">
+                  "Thoughtnudge didn't just improve our EMI click-throughs — it learned each customer's repayment behaviour, timing preferences, and reassurance needs. 
+                  Within six weeks, EMI conversions increased by 27% while our incentive spend dropped. This is the first time we've seen personalization actually drive measurable financial impact."
+                </blockquote>
+                
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold">V</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">VP, Cards & Payments</div>
+                    <div className="text-sm text-muted-foreground">Leading Fintech</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Testimonial 2 - Consumer Platform */}
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl border border-border shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              {/* Metric Header */}
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-8 border-b border-border">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-4">
+                  33% Lift in Repeat Purchases
+                </div>
+                <p className="text-sm text-muted-foreground uppercase tracking-wide font-semibold mb-4">
+                  In 8 Weeks
+                </p>
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-2xl font-bold text-foreground">33%</div>
+                    <div className="text-xs text-muted-foreground">Repeat Purchase Increase</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-foreground">18%</div>
+                    <div className="text-xs text-muted-foreground">Churn Reduction</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-foreground">2.1×</div>
+                    <div className="text-xs text-muted-foreground">Adherence Improvement</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Quote Section */}
+              <div className="p-8">
+                <blockquote className="text-base md:text-lg text-foreground leading-relaxed mb-6">
+                  "We assumed users weren't coming back because of price. 
+                  Thoughtnudge revealed deeper patterns — timing, confidence, motivation. 
+                  Its autonomous agents personalized nudges for each user, and repeat purchases grew by 33% in just eight weeks without any increase in marketing spend."
+                </blockquote>
+                
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold">H</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">Head of Growth</div>
+                    <div className="text-sm text-muted-foreground">Digital Health & Wellness Platform</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

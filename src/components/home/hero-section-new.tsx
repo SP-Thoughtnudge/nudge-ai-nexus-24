@@ -6,14 +6,17 @@ export const HeroSectionNew = () => {
     <section className="pt-32 pb-20 md:pt-40 md:pb-24 bg-gradient-to-br from-background via-secondary/20 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-8 leading-tight">
-            AI Decisioning for 1:1 Personalized CX
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-6 leading-tight">
+            AI Decisioning for FinTech Activation
           </h1>
           
-          <h2 className="text-lg md:text-xl lg:text-2xl font-normal text-muted-foreground mb-12 leading-relaxed max-w-5xl mx-auto">
-            Your data already knows your customers — Thoughtnudge activates it.<br />
-            Our agentic learning infrastructure runs thousands of micro-experiments, learns each individual's preferences, and delivers adaptive, hyper-personalized decisions in real time to drive activation, retention, and lifetime value.
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-foreground/90 mb-4 leading-relaxed max-w-4xl mx-auto">
+            AI that learns what it takes to activate each user — and executes it automatically.
           </h2>
+          
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+            Replaces segments, A/B tests, and static journeys with real-time decisions for every user.
+          </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button 

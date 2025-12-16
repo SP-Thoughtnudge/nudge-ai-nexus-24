@@ -1,84 +1,68 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { TrendingUp, Heart } from "lucide-react";
+import { TrendingUp, Wallet, CreditCard, PiggyBank, LineChart } from "lucide-react";
 
 export const IndustryFocusSection = () => {
+  const useCases = [
+    { icon: Wallet, label: "Payments" },
+    { icon: CreditCard, label: "Cards" },
+    { icon: PiggyBank, label: "Lending & BNPL" },
+    { icon: LineChart, label: "Trading & Investments" },
+  ];
+
   return (
     <section className="py-20 bg-secondary/10">
       <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-center">
             Purpose-Built for{" "}
-            <span className="text-primary">Data-Rich, High-Engagement Businesses</span>
+            <span className="text-primary">FinTech Activation</span>
           </h2>
           
-          <p className="text-lg md:text-xl text-muted-foreground text-center mb-16 max-w-4xl mx-auto leading-relaxed">
-            Thoughtnudge delivers the highest ROI in industries where customers generate continuous behavioural signals — and where real-time decisions directly influence revenue, loyalty, and lifetime value.
+          <p className="text-lg md:text-xl text-muted-foreground text-center mb-12 max-w-4xl mx-auto leading-relaxed">
+            Where rich user signals meet high-frequency decisioning — Thoughtnudge delivers measurable activation lift across cards, payments, lending, and trading products.
           </p>
           
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Card 1 - Financial Services */}
-            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-border shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
-                  <TrendingUp className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
-                  Financial Services & Fintech
-                </h3>
+          {/* Single FinTech Card */}
+          <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-border shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
+                <TrendingUp className="w-7 h-7 text-primary" />
               </div>
-              
-              <p className="text-sm md:text-base text-primary font-semibold mb-4 uppercase tracking-wide">
-                Activation • Engagement • Conversion • Cross-Sell • Retention
-              </p>
-              
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
-                Drive activation, increase product usage, and grow lifetime value across Cards, Payments, Lending, BNPL, Insurance, and Investing. 
-                Thoughtnudge creates adaptive, hyper-personalized journeys that learn what drives trust, action, and long-term engagement — autonomously.
-              </p>
-              
-              <Button 
-                asChild 
-                variant="default"
-                size="lg"
-                className="w-full sm:w-auto"
-              >
-                <Link to="/solutions/bfsi">
-                  Explore Financial Services →
-                </Link>
-              </Button>
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                FinTech & Financial Services
+              </h3>
             </div>
             
-            {/* Card 2 - Consumer Platforms */}
-            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-border shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
-                  <Heart className="w-7 h-7 text-primary" />
+            <p className="text-sm md:text-base text-primary font-semibold mb-4 uppercase tracking-wide">
+              Activation • First Transaction • Product Adoption • Cross-Sell • Retention
+            </p>
+            
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
+              Drive activation, increase product usage, and grow lifetime value across your FinTech product portfolio. 
+              Thoughtnudge creates adaptive, hyper-personalized journeys that learn what drives trust, action, and long-term engagement — autonomously.
+            </p>
+            
+            {/* Use Case Icons */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              {useCases.map((useCase, index) => (
+                <div key={index} className="flex items-center space-x-2 bg-secondary/30 rounded-lg px-4 py-3">
+                  <useCase.icon className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium text-foreground">{useCase.label}</span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
-                  Consumer Platforms
-                </h3>
-              </div>
-              
-              <p className="text-sm md:text-base text-primary font-semibold mb-4 uppercase tracking-wide">
-                Activation • Repeat Purchase • Subscription Renewals • Retention • Upsell/Cross-Sell
-              </p>
-              
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
-                Boost adherence, grow repeat usage, and drive long-term retention across healthtech, wellness, personal care, and education. Every user gets adaptive, hyper-personalized nudges that evolve with behaviour, context, and motivation.
-              </p>
-              
-              <Button 
-                asChild 
-                variant="default"
-                size="lg"
-                className="w-full sm:w-auto"
-              >
-                <Link to="/solutions/digital-services">
-                  Explore Consumer Platforms →
-                </Link>
-              </Button>
+              ))}
             </div>
+            
+            <Button 
+              asChild 
+              variant="default"
+              size="lg"
+              className="w-full sm:w-auto"
+            >
+              <Link to="/solutions/bfsi">
+                Explore FinTech Solutions →
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

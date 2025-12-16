@@ -21,8 +21,8 @@ const Index = () => {
   useEffect(() => {
     // SEO optimization
     updateSEOTags({
-      title: "Thoughtnudge | Autonomous AI Decisioning Platform",
-      description: "AI-powered autonomous decisioning platform that makes 1:1 marketing decisions in real time across every channel and customer, at scale.",
+      title: "Thoughtnudge | AI Decisioning for FinTech Activation",
+      description: "AI-powered autonomous decisioning platform that drives FinTech activation, first transaction, and lifetime value through per-user learning and real-time decisions.",
       url: "https://www.thoughtnudge.com",
       image: "https://www.thoughtnudge.com/lovable-uploads/e1f8cc14-e19f-4b94-9a66-947868364f9c.png",
       type: "website"

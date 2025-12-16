@@ -7,12 +7,12 @@ export const FinalCtaNew = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-            Ready to Activate Your{" "}
-            <span className="text-primary">First-Party Data?</span>
+            Ready to Fix Your{" "}
+            <span className="text-primary">Activation Problem?</span>
           </h2>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed">
-            See how leading fintech and consumer platforms use Thoughtnudge to drive activation, retention, and lifetime value through autonomous, per-customer decisioning.
+            See how leading FinTechs use Thoughtnudge to drive first transaction, product adoption, and lifetime value through autonomous, per-user decisioning.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">

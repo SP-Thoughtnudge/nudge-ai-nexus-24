@@ -60,28 +60,28 @@ export const ProofCredibilitySection = () => {
               </div>
             </div>
             
-            {/* Testimonial 2 - Consumer Platform */}
+            {/* Testimonial 2 - Trading Platform */}
             <div className="bg-card/80 backdrop-blur-sm rounded-2xl border border-border shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
               {/* Metric Header */}
               <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-8 border-b border-border">
                 <div className="text-4xl md:text-5xl font-bold text-primary mb-4">
-                  33% Lift in Repeat Purchases
+                  41% Increase in First Trade
                 </div>
                 <p className="text-sm text-muted-foreground uppercase tracking-wide font-semibold mb-4">
-                  In 8 Weeks
+                  In 5 Weeks
                 </p>
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-foreground">33%</div>
-                    <div className="text-xs text-muted-foreground">Repeat Purchase Increase</div>
+                    <div className="text-2xl font-bold text-foreground">41%</div>
+                    <div className="text-xs text-muted-foreground">First Trade Activation</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-foreground">18%</div>
-                    <div className="text-xs text-muted-foreground">Churn Reduction</div>
+                    <div className="text-2xl font-bold text-foreground">2.3×</div>
+                    <div className="text-xs text-muted-foreground">Deposit Completion</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-foreground">2.1×</div>
-                    <div className="text-xs text-muted-foreground">Adherence Improvement</div>
+                    <div className="text-2xl font-bold text-foreground">19%</div>
+                    <div className="text-xs text-muted-foreground">Dormant Reactivation</div>
                   </div>
                 </div>
               </div>
@@ -89,18 +89,18 @@ export const ProofCredibilitySection = () => {
               {/* Quote Section */}
               <div className="p-8">
                 <blockquote className="text-base md:text-lg text-foreground leading-relaxed mb-6">
-                  "We assumed users weren't coming back because of price. 
-                  Thoughtnudge revealed deeper patterns — timing, confidence, motivation. 
-                  Its autonomous agents personalized nudges for each user, and repeat purchases grew by 33% in just eight weeks without any increase in marketing spend."
+                  "Our activation funnels were stuck — same drop-offs, same segments, same strategies. 
+                  Thoughtnudge learned what each user needed to complete their first trade: timing, product framing, reassurance. 
+                  First-trade activation jumped 41% without changing our product."
                 </blockquote>
                 
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">H</span>
+                    <span className="text-white font-bold">P</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground">Head of Growth</div>
-                    <div className="text-sm text-muted-foreground">Digital Health & Wellness Platform</div>
+                    <div className="font-semibold text-foreground">Product Lead</div>
+                    <div className="text-sm text-muted-foreground">Trading Platform</div>
                   </div>
                 </div>
               </div>

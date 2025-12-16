@@ -5,13 +5,13 @@ export const UnifiedIntelligence = () => {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 text-center">
             Your Always-On{" "}
-            <span className="text-primary">Intelligence Layer</span>
+            <span className="text-primary">Activation Engine</span>
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground text-center mb-16 max-w-4xl mx-auto leading-relaxed">
-            Thoughtnudge sits on top of your data systems and creates a dedicated learning agent for every customer. 
-            Each agent continuously experiments, learns, and evolves — building a deep contextual memory of that individual's behaviour, preferences, emotional triggers, and engagement patterns. It then selects the most effective next action: what to send, when to send it, how to frame it, and through which channel. 
-            Instead of predicting, it discovers in real time what works for each customer and adapts every interaction accordingly.
+            Thoughtnudge sits on top of your data systems and creates a dedicated learning agent for every user. 
+            Each agent continuously experiments, learns, and evolves — building a deep contextual memory of that individual's behavior, intent signals, and activation blockers. It then selects the most effective next action: what to send, when to send it, how to frame it, and through which channel. 
+            Instead of predicting, it discovers in real time what activates each user and adapts every interaction accordingly.
           </p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">

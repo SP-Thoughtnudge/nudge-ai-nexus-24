@@ -42,9 +42,6 @@ const Navbar = () => {
           <Link to="/blogs" className="text-brand-gray hover:text-brand-orange transition-colors">
             Blog
           </Link>
-          <Link to="/about" className="text-brand-gray hover:text-brand-orange transition-colors">
-            About Us
-          </Link>
           <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
             <Button variant="pink" className="ml-4">
               Book a Demo
@@ -92,13 +89,6 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Blog
-            </Link>
-            <Link 
-              to="/about" 
-              className="text-brand-gray hover:text-brand-orange py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About Us
             </Link>
             <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
               <Button variant="pink" className="mt-2">

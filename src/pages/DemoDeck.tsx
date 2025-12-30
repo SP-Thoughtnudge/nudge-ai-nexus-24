@@ -1023,7 +1023,7 @@ const DemoDeck = () => {
                             <div className="bg-white p-4 rounded-lg shadow-sm">
                               <h3 className="font-medium mb-2">Product Demo</h3>
                               <p className="text-sm text-gray-600 mb-4">See ThoughtNudge in action with your data</p>
-                              <Button variant="orange" size="sm" className="w-full">
+                              <Button variant="default" size="sm" className="w-full">
                                 Book Demo
                               </Button>
                             </div>
@@ -1044,7 +1044,7 @@ const DemoDeck = () => {
                           </div>
                           
                           <div className="pt-4">
-                            <Button variant="orange" size="lg" className="mx-auto">
+                            <Button variant="default" size="lg" className="mx-auto">
                               Start Your ThoughtNudge Journey Today
                             </Button>
                           </div>

@@ -16,7 +16,7 @@ const PricingCta = () => {
               Our team is here to understand your unique challenges and create a custom solution that delivers results.
             </p>
             <Link to="/growth-audit">
-              <Button variant="orange" size="xl">
+              <Button variant="default" size="xl">
                 Book a Demo
               </Button>
             </Link>

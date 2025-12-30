@@ -22,7 +22,7 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in [animation-delay:400ms]">
-            <Button variant="orange" size="xl" asChild>
+            <Button variant="default" size="xl" asChild>
               <Link to="/demo">
                 Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
               </Link>

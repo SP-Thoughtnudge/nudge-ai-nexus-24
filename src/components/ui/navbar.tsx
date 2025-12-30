@@ -30,20 +30,20 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/product" className="text-brand-gray hover:text-brand-orange transition-colors">
+          <Link to="/product" className="text-brand-gray hover:text-primary transition-colors">
             Product
           </Link>
-          <Link to="/how-it-works" className="text-brand-gray hover:text-brand-orange transition-colors">
+          <Link to="/how-it-works" className="text-brand-gray hover:text-primary transition-colors">
             How It Works
           </Link>
-          <Link to="/solutions" className="text-brand-gray hover:text-brand-orange transition-colors">
+          <Link to="/solutions" className="text-brand-gray hover:text-primary transition-colors">
             Solutions
           </Link>
-          <Link to="/blogs" className="text-brand-gray hover:text-brand-orange transition-colors">
+          <Link to="/blogs" className="text-brand-gray hover:text-primary transition-colors">
             Blog
           </Link>
           <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
-            <Button variant="pink" className="ml-4">
+            <Button variant="default" className="ml-4">
               Book a Demo
             </Button>
           </a>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation Toggle */}
         <button
-          className="md:hidden text-brand-gray hover:text-brand-orange"
+          className="md:hidden text-brand-gray hover:text-primary"
           onClick={toggleMenu}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -64,34 +64,34 @@ const Navbar = () => {
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <Link 
               to="/product" 
-              className="text-brand-gray hover:text-brand-orange py-2 transition-colors"
+              className="text-brand-gray hover:text-primary py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Product
             </Link>
             <Link 
               to="/how-it-works" 
-              className="text-brand-gray hover:text-brand-orange py-2 transition-colors"
+              className="text-brand-gray hover:text-primary py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               How It Works
             </Link>
             <Link 
               to="/solutions" 
-              className="text-brand-gray hover:text-brand-orange py-2 transition-colors"
+              className="text-brand-gray hover:text-primary py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Solutions
             </Link>
             <Link 
               to="/blogs" 
-              className="text-brand-gray hover:text-brand-orange py-2 transition-colors"
+              className="text-brand-gray hover:text-primary py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Blog
             </Link>
             <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
-              <Button variant="pink" className="mt-2">
+              <Button variant="default" className="mt-2">
                 Book a Demo
               </Button>
             </a>

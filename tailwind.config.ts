@@ -70,9 +70,9 @@ export default {
 				// Brand colors
 				brand: {
 					black: '#000000',
-					pink: '#D72660',
-					orange: '#F97316',
-					yellow: '#F6C343',
+					blue: '#1F3C88',
+					'blue-light': '#2563EB',
+					green: '#22C55E',
 					gray: '#5A5A5A'
 				}
 			},

@@ -15,26 +15,26 @@ const FinalCta = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Main Heading */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
             Ready to Unlock the Next Stage of{" "}
             <span className="text-primary">BFSI Growth</span>?
           </h2>
 
           {/* Subheader */}
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto px-2">
             See how Thoughtnudge turns your first-party data into intelligent, adaptive 1:1 journeys — and delivers measurable outcomes in weeks.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button size="lg" asChild className="text-base">
-              <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
                 Book a Demo
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
                 <Phone className="mr-2 w-5 h-5" />
                 Talk to Sales
               </a>

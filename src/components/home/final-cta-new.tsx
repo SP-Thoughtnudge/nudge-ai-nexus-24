@@ -21,7 +21,7 @@ export const FinalCtaNew = () => {
               size="xl" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <a href="https://calendly.com/himanshu_chauhan/30min?month=2025-11" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
                 Book a Demo
               </a>
             </Button>

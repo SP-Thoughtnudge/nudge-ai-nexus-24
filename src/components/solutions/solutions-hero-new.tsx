@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Brain, Network } from "lucide-react";
 
 const SolutionsHeroNew = () => {
@@ -37,7 +38,7 @@ const SolutionsHeroNew = () => {
               className="px-8 min-w-[200px]"
               asChild
             >
-              <a href="#industry-solutions">Explore Industry Solutions</a>
+              <Link to="/solutions/bfsi">Explore Industry Solutions</Link>
             </Button>
             <Button 
               size="lg" 
@@ -45,7 +46,7 @@ const SolutionsHeroNew = () => {
               className="px-8 min-w-[200px]"
               asChild
             >
-              <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+              <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
           </div>
           

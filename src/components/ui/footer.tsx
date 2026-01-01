@@ -4,9 +4,9 @@ import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: '#F8F9FA' }} className="py-16">
+    <footer className="bg-muted/50 py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
           {/* Column 1 - Brand & Social */}
           <div className="space-y-4">
             <Link to="/" className="flex items-start">
@@ -78,13 +78,13 @@ const Footer = () => {
           </div>
 
           {/* Column 5 - CTA Block */}
-          <div className="space-y-4 p-6 border border-gray-300 rounded-lg bg-white">
+          <div className="col-span-2 lg:col-span-1 space-y-4 p-6 border border-border rounded-lg bg-background">
             <h4 className="text-lg font-semibold text-gray-900">Ready to Grow?</h4>
             <p className="text-gray-600 text-sm">
               Get a free, data-driven audit of your growth strategy and see your untapped revenue potential.
             </p>
             <a 
-              href="https://calendly.com/aditya-thoughtnudge/30min" 
+              href="https://calendly.com/himanshu_chauhan/30min" 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-md font-medium transition-colors"
@@ -95,15 +95,15 @@ const Footer = () => {
         </div>
 
         {/* Full-Width Bottom Bar */}
-        <div className="border-t border-gray-300 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
+        <div className="border-t border-border mt-10 md:mt-12 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-muted-foreground text-sm text-center md:text-left">
             © 2025 Thoughtnudge. All Rights Reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy-policy" className="text-gray-500 text-sm hover:text-primary transition-colors">
+          <div className="flex space-x-6">
+            <Link to="/privacy-policy" className="text-muted-foreground text-sm hover:text-primary transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms-of-service" className="text-gray-500 text-sm hover:text-primary transition-colors">
+            <Link to="/terms-of-service" className="text-muted-foreground text-sm hover:text-primary transition-colors">
               Terms of Service
             </Link>
           </div>

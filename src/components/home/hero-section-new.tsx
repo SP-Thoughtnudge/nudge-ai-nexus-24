@@ -10,7 +10,7 @@ export const HeroSectionNew = () => {
             <span className="text-sm font-medium text-primary">Built for BFSI</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-6 leading-tight px-2">
             AI Decisioning for FinTech Activation
           </h1>
           
@@ -28,7 +28,7 @@ export const HeroSectionNew = () => {
               size="xl" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <a href="https://calendly.com/himanshu_chauhan/30min?month=2025-11" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
                 Book a Demo
               </a>
             </Button>

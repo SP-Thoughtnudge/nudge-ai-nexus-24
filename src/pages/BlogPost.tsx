@@ -282,7 +282,7 @@ const BlogPostPage = () => {
                     <p className="text-gray-600 mb-4 text-sm">
                       Get a personalized growth audit and discover how our AI can accelerate your customer engagement.
                     </p>
-                    <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">
+                    <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
                       <Button variant="default" size="sm" className="w-full">
                         Book a Demo
                       </Button>

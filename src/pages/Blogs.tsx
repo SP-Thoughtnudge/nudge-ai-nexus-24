@@ -161,12 +161,18 @@ useEffect(() => {
                   <Card className="overflow-hidden h-full group cursor-pointer">
                     <Link to={`/blog/${featuredPost.fields.slug || contentfulService.generateSlug(featuredPost.fields.title)}`}>
                       <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
-                         <LazyImage 
-                           src={`https:${featuredPost.fields.featuredImage.fields.file.url}?w=800&h=600&fit=fill&f=center`}
-                           alt={featuredPost.fields.featuredImage.fields.title || featuredPost.fields.title}
-                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                           priority
-                         />
+                         {featuredPost.fields.featuredImage?.fields?.file?.url ? (
+                           <LazyImage 
+                             src={`https:${featuredPost.fields.featuredImage.fields.file.url}?w=800&h=600&fit=fill&f=center`}
+                             alt={featuredPost.fields.featuredImage?.fields?.title || featuredPost.fields.title}
+                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             priority
+                           />
+                         ) : (
+                           <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                             <span className="text-gray-400 text-sm">No image available</span>
+                           </div>
+                         )}
                         <div className="absolute top-4 left-4">
                           <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full text-sm font-medium">
                             Featured
@@ -186,15 +192,15 @@ useEffect(() => {
                           {featuredPost.fields.excerpt}
                         </p>
                         <div className="flex items-center">
-                          {featuredPost.fields.author.fields.photo && (
+                          {featuredPost.fields.author?.fields?.photo?.fields?.file?.url && (
                              <LazyImage 
                                src={`https:${featuredPost.fields.author.fields.photo.fields.file.url}?w=80&h=80&fit=fill&f=face`}
-                               alt={featuredPost.fields.author.fields.name}
+                               alt={featuredPost.fields.author?.fields?.name || 'Author'}
                                className="w-10 h-10 rounded-full bg-gray-200 mr-3"
                              />
                           )}
                            <div className="text-sm">
-                             <p className="font-medium text-gray-900">by {featuredPost.fields.author.fields.name} • {formatDate(featuredPost)}</p>
+                             <p className="font-medium text-gray-900">by {featuredPost.fields.author?.fields?.name || 'Unknown'} • {formatDate(featuredPost)}</p>
                            </div>
                         </div>
                       </CardContent>
@@ -231,7 +237,7 @@ useEffect(() => {
                               {post.fields.title}
                             </h3>
                              <div className="flex items-center text-xs text-gray-500">
-                               <span>by {post.fields.author.fields.name} • {formatDate(post)}</span>
+                               <span>by {post.fields.author?.fields?.name || 'Unknown'} • {formatDate(post)}</span>
                                <span className="mx-2">•</span>
                                <span>{calculateReadTime(post.fields.content)}</span>
                              </div>
@@ -367,15 +373,15 @@ useEffect(() => {
                         </p>
                         <div className="flex items-center justify-between mt-auto">
                           <div className="flex items-center">
-                            {blog.fields.author.fields.photo && (
+                            {blog.fields.author?.fields?.photo?.fields?.file?.url && (
                                <LazyImage 
                                  src={`https:${blog.fields.author.fields.photo.fields.file.url}?w=64&h=64&fit=fill&f=face`}
-                                 alt={blog.fields.author.fields.name}
+                                 alt={blog.fields.author?.fields?.name || 'Author'}
                                  className="w-8 h-8 rounded-full bg-gray-200 mr-3"
                                />
                             )}
                              <div className="text-sm">
-                               <p className="font-medium text-gray-900">by {blog.fields.author.fields.name} • {formatDate(blog)}</p>
+                               <p className="font-medium text-gray-900">by {blog.fields.author?.fields?.name || 'Unknown'} • {formatDate(blog)}</p>
                              </div>
                           </div>
                           <div className="text-sm text-gray-500">

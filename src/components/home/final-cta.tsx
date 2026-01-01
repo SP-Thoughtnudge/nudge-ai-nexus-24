@@ -26,10 +26,10 @@ const FinalCta = () => {
           </p>
           
           <div className="space-y-4">
-            <Button size="xl" className="bg-primary hover:bg-primary/90 text-white px-10 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <Link to="/growth-audit" className="flex items-center">
+            <Button size="xl" className="bg-primary hover:bg-primary/90 text-white px-10 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" asChild>
+              <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </Button>
             
             <p className="text-sm text-gray-500 font-inter">

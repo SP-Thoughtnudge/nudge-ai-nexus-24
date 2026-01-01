@@ -279,7 +279,7 @@ const FAQ = () => {
                   See how Thoughtnudge can help you activate more users, faster.
                 </p>
                 <Button size="lg" className="text-lg px-8" asChild>
-                  <a href="https://calendly.com/thoughtnudge/30min" target="_blank" rel="noopener noreferrer">
+                  <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
                     Book a Demo
                   </a>
                 </Button>

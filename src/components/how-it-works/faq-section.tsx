@@ -82,9 +82,14 @@ const FaqSection = () => {
             <p className="text-gray-600 mb-4">
               Have more questions? We're here to help.
             </p>
-            <button className="text-brand-orange font-medium hover:underline">
-              Contact our team
-            </button>
+            <a 
+              href="https://calendly.com/himanshu_chauhan/30min" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary font-medium hover:underline"
+            >
+              Book a call with our team
+            </a>
           </div>
         </div>
       </div>

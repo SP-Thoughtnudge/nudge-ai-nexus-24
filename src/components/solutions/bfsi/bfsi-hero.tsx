@@ -4,7 +4,7 @@ import { ArrowRight, PlayCircle } from "lucide-react";
 
 const BfsiHero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+    <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-20 md:pt-0">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0" style={{
@@ -29,35 +29,35 @@ const BfsiHero = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Hyper-Personalized 1:1 Journeys That Drive{" "}
               <span className="text-primary">BFSI Growth</span>
             </h1>
 
             {/* Subheader */}
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl">
               Your first-party data already knows your customer. Thoughtnudge uses it to autonomously learn, decide, and act — creating adaptive journeys for every individual, in real time.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild className="text-base">
-                <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
                   Book a Demo
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link to="/use-cases">
+                <Link to="/how-it-works">
                   <PlayCircle className="mr-2 w-5 h-5" />
-                  See BFSI Use Cases
+                  See How It Works
                 </Link>
               </Button>
             </div>
           </div>
 
-          {/* Right Visual */}
-          <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          {/* Right Visual - Hidden on mobile */}
+          <div className="hidden lg:block relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="relative aspect-square max-w-lg mx-auto">
               {/* Central Hub */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary rounded-full flex items-center justify-center shadow-2xl shadow-primary/50 z-10">

@@ -67,7 +67,10 @@ const FaqSection = () => {
 
         <div className="mt-12 text-center">
           <p className="text-gray-600">
-            Still have questions? <a href="/contact" className="text-brand-orange hover:underline">Contact our team</a> for more information.
+            Still have questions?{" "}
+            <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+              Book a call with our team
+            </a>
           </p>
         </div>
       </div>

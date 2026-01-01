@@ -18,13 +18,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 py-4 border-b border-gray-100">
+    <nav className="fixed w-full bg-background/95 backdrop-blur-md z-50 py-3 md:py-4 border-b border-border/50 shadow-sm">
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img 
             src="/lovable-uploads/db57410a-d435-45cc-afcb-4ae995c8b5e0.png" 
             alt="Thoughtnudge Logo" 
-            className="h-16 w-auto py-2"
+            className="h-12 md:h-16 w-auto py-1 md:py-2"
           />
         </Link>
 
@@ -60,41 +60,49 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-100 animate-fade-in">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md shadow-lg border-t border-border/50 animate-fade-in">
+          <div className="container mx-auto px-4 py-6 flex flex-col space-y-1">
             <Link 
               to="/product" 
-              className="text-brand-gray hover:text-primary py-2 transition-colors"
+              className="text-foreground hover:text-primary hover:bg-muted/50 py-3 px-4 rounded-lg transition-colors text-lg font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Product
             </Link>
             <Link 
               to="/how-it-works" 
-              className="text-brand-gray hover:text-primary py-2 transition-colors"
+              className="text-foreground hover:text-primary hover:bg-muted/50 py-3 px-4 rounded-lg transition-colors text-lg font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               How It Works
             </Link>
             <Link 
               to="/solutions" 
-              className="text-brand-gray hover:text-primary py-2 transition-colors"
+              className="text-foreground hover:text-primary hover:bg-muted/50 py-3 px-4 rounded-lg transition-colors text-lg font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Solutions
             </Link>
             <Link 
               to="/blogs" 
-              className="text-brand-gray hover:text-primary py-2 transition-colors"
+              className="text-foreground hover:text-primary hover:bg-muted/50 py-3 px-4 rounded-lg transition-colors text-lg font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Blog
             </Link>
-            <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
-              <Button variant="default" className="mt-2">
-                Book a Demo
-              </Button>
-            </a>
+            <div className="pt-4 px-4">
+              <a 
+                href="https://calendly.com/himanshu_chauhan/30min" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Button variant="default" className="w-full py-6 text-lg">
+                  Book a Demo
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       )}

@@ -44,7 +44,7 @@ const FinalIndustryCta = () => {
               className="px-8 min-w-[180px]"
               asChild
             >
-              <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+              <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
             <Button 
               size="lg" 
@@ -52,7 +52,7 @@ const FinalIndustryCta = () => {
               className="px-8 min-w-[180px]"
               asChild
             >
-              <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">Talk to Our AI Experts</a>
+              <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">Talk to Our AI Experts</a>
             </Button>
           </div>
           

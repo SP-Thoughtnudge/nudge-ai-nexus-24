@@ -24,7 +24,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/thoughtnudge" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-600 hover:text-brand-pink transition-colors"
+                className="text-gray-600 hover:text-primary transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
@@ -36,27 +36,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gray-900">Platform</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/product" className="text-gray-600 hover:text-brand-pink transition-colors">
+                <Link to="/product" className="text-gray-600 hover:text-primary transition-colors">
                   Product
                 </Link>
               </li>
               <li>
-                <Link to="/how-it-works" className="text-gray-600 hover:text-brand-pink transition-colors">
+                <Link to="/how-it-works" className="text-gray-600 hover:text-primary transition-colors">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link to="/integrations" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  Integrations
-                </Link>
-              </li>
-              <li>
-                <Link to="/pricing" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="text-gray-600 hover:text-brand-pink transition-colors">
+                <Link to="/faq" className="text-gray-600 hover:text-primary transition-colors">
                   FAQ
                 </Link>
               </li>
@@ -68,13 +58,8 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gray-900">Solutions</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/solutions/bfsi" className="text-gray-600 hover:text-brand-pink transition-colors">
+                <Link to="/solutions/bfsi" className="text-gray-600 hover:text-primary transition-colors">
                   Financial Services & Fintech
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/health-wellness" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  Health, Wellness & Consumer Platforms
                 </Link>
               </li>
             </ul>
@@ -85,12 +70,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gray-900">Company</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/about-us" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-gray-600 hover:text-brand-pink transition-colors">
+                <Link to="/blogs" className="text-gray-600 hover:text-primary transition-colors">
                   Blog
                 </Link>
               </li>
@@ -105,7 +85,7 @@ const Footer = () => {
             </p>
             <Link 
               to="/growth-audit" 
-              className="inline-flex bg-brand-pink hover:bg-brand-pink/90 text-white py-2 px-4 rounded-md font-medium transition-colors"
+              className="inline-flex bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-md font-medium transition-colors"
             >
               Book a Demo
             </Link>
@@ -118,10 +98,10 @@ const Footer = () => {
             © 2025 Thoughtnudge. All Rights Reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy-policy" className="text-gray-500 text-sm hover:text-brand-pink transition-colors">
+            <Link to="/privacy-policy" className="text-gray-500 text-sm hover:text-primary transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms-of-service" className="text-gray-500 text-sm hover:text-brand-pink transition-colors">
+            <Link to="/terms-of-service" className="text-gray-500 text-sm hover:text-primary transition-colors">
               Terms of Service
             </Link>
           </div>

@@ -83,12 +83,14 @@ const Footer = () => {
             <p className="text-gray-600 text-sm">
               Get a free, data-driven audit of your growth strategy and see your untapped revenue potential.
             </p>
-            <Link 
-              to="/growth-audit" 
+            <a 
+              href="https://calendly.com/aditya-thoughtnudge/30min" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-md font-medium transition-colors"
             >
               Book a Demo
-            </Link>
+            </a>
           </div>
         </div>
 

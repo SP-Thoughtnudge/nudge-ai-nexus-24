@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Brain, Network } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const SolutionsHeroNew = () => {
   return (
@@ -46,7 +45,7 @@ const SolutionsHeroNew = () => {
               className="px-8 min-w-[200px]"
               asChild
             >
-              <Link to="/growth-audit">Book a Demo</Link>
+              <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
           </div>
           

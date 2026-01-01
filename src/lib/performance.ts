@@ -84,7 +84,6 @@ export const preloadRouteComponents = () => {
     () => import('../pages/Product'),
     () => import('../pages/HowItWorks'),
     () => import('../pages/Solutions'),
-    () => import('../pages/Pricing'),
   ];
 
   // Preload route components when browser is idle

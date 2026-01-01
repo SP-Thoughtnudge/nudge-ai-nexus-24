@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { Brain, Sparkles } from "lucide-react";
 
 const FinalIndustryCta = () => {
@@ -45,7 +44,7 @@ const FinalIndustryCta = () => {
               className="px-8 min-w-[180px]"
               asChild
             >
-              <Link to="/growth-audit">Book a Demo</Link>
+              <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
             </Button>
             <Button 
               size="lg" 
@@ -53,7 +52,7 @@ const FinalIndustryCta = () => {
               className="px-8 min-w-[180px]"
               asChild
             >
-              <Link to="/growth-audit">Talk to Our AI Experts</Link>
+              <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">Talk to Our AI Experts</a>
             </Button>
           </div>
           

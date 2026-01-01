@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 
 const FinalCta = () => {
@@ -29,16 +28,16 @@ const FinalCta = () => {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button size="lg" asChild className="text-base">
-              <Link to="/growth-audit">
+              <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">
                 Book a Demo
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
+              </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to="/growth-audit">
+              <a href="https://calendly.com/aditya-thoughtnudge/30min" target="_blank" rel="noopener noreferrer">
                 <Phone className="mr-2 w-5 h-5" />
                 Talk to Sales
-              </Link>
+              </a>
             </Button>
           </div>
 

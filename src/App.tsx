@@ -20,7 +20,7 @@ const SolutionsDigitalServices = lazy(() => import("./pages/SolutionsDigitalServ
 const SolutionsBFSI = lazy(() => import("./pages/SolutionsBFSI"));
 const Product = lazy(() => import("./pages/Product"));
 const HowItWorks = lazy(() => import("./pages/HowItWorks"));
-const Integrations = lazy(() => import("./pages/Integrations"));
+
 const About = lazy(() => import("./pages/About"));
 const GrowthAudit = lazy(() => import("./pages/GrowthAudit"));
 const AuditThankYou = lazy(() => import("./pages/AuditThankYou"));
@@ -78,7 +78,7 @@ const App = () => {
             <Route path="/solutions/bfsi" element={<SolutionsBFSI />} />
             <Route path="/product" element={<Product />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
-            <Route path="/integrations" element={<Integrations />} />
+            
             <Route path="/about" element={<About />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

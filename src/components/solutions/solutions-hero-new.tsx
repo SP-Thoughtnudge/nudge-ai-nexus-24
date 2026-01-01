@@ -23,12 +23,12 @@ const SolutionsHeroNew = () => {
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Header */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-            Solutions Built for the Modern Data-Driven Enterprise
+            AI Decisioning for Fintech Activation & Growth
           </h1>
           
           {/* Subheader */}
           <h3 className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-4xl mx-auto leading-relaxed animate-fade-in [animation-delay:200ms]">
-            Whether you're driving engagement in Healthtech, boosting activation in Financial Services, or scaling retention for Digital Apps — your data holds the answers. Thoughtnudge transforms your first-party data into adaptive intelligence that learns, decides, and acts for every customer in real time.
+            Turn your first-party data into real-time, 1:1 personalized experiences that drive activation, retention, and lifetime value across banking, trading, payments, and lending.
           </h3>
           
           {/* CTA Buttons */}

@@ -1,4 +1,4 @@
-import React, { lazy, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
@@ -9,26 +9,154 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import LazySection from "@/components/ui/lazy-section";
 import { updateSEOTags, addStructuredData } from "@/lib/seo";
 
 const FAQ = () => {
+  const faqs = [
+    {
+      question: "What is Thoughtnudge?",
+      answer: "Thoughtnudge is an AI decisioning system for FinTech activation. It learns what it takes to activate each individual user — based on their behavior, context, and responses — and then decides and executes the right next action automatically in real time. Instead of segments, static journeys, or A/B tests, Thoughtnudge operates at a 1:1 decision level, continuously learning from every user interaction."
+    },
+    {
+      question: "What problem does Thoughtnudge solve?",
+      answer: "Modern FinTechs have excellent data infrastructure — warehouses, events, dashboards — but data rarely turns into timely, individualized decisions. The real bottleneck is decisioning: What should we do for this user? Right now? To move them toward activation or revenue? Human teams cannot make these decisions in real time, at scale. So decisions get reduced to segments, rules, static onboarding flows, and delayed campaigns. Thoughtnudge closes this gap by turning data infrastructure into decision infrastructure."
+    },
+    {
+      question: "What problems does Thoughtnudge solve for Fintech and BFSI companies?",
+      answer: "Thoughtnudge addresses problems such as: low activation after onboarding or KYC, drop-offs across user journeys, ineffective personalization despite rich data, slow experimentation cycles, difficulty explaining or governing AI decisions, and fragmented experiences across channels. It turns fragmented signals into continuous, goal-driven decisioning."
+    },
+    {
+      question: "Who is Thoughtnudge built for?",
+      answer: "Thoughtnudge is built for FinTech product, growth, and lifecycle teams operating in high-stakes, digital-first environments, including: stock broking & trading platforms, neobanks & digital wallets, lending & credit platforms, wealth, mutual funds & investment apps, and insurance & embedded finance products. We focus on companies where users are identifiable, journeys are digital, feedback loops are fast, and activation and early engagement directly impact CLTV."
+    },
+    {
+      question: "What does 'agentic AI' mean in Thoughtnudge's context?",
+      answer: "Agentic AI means: the system has a goal, it can observe context and events, it can choose from approved actions, it can learn from outcomes, and it can explain its decisions. Thoughtnudge agents are goal-first, customer-first, and governance-aware."
+    },
+    {
+      question: "What do you mean by 'Activation' in FinTech?",
+      answer: "Activation means a user reaching a meaningful, value-creating milestone — not just signing up. Examples include: first trade placed, first card transaction, first investment, first loan application completed, or first meaningful feature usage. In FinTech, signup ≠ activation. 60–75% of users never reach this milestone — and once missed, lifetime value is permanently capped."
+    },
+    {
+      question: "What business goals can Thoughtnudge optimize?",
+      answer: "Initially, Thoughtnudge focuses on Fintech activation, such as: first meaningful transaction, feature adoption, and completion of onboarding steps. Over time, it expands across the full growth lifecycle, including: upsell and cross-sell, retention and engagement, reactivation, and in-app conversion optimization."
+    },
+    {
+      question: "Does Thoughtnudge work across different Fintech sub-verticals?",
+      answer: "Yes. Thoughtnudge is platform-level but supports deep vertical intelligence across: stock broking and trading, lending and BNPL, neobanks, insurance, and payments and wallets. Vertical depth is embedded in goal templates, behavioral signals, value proposition frameworks, and decision logic — not hard-coded workflows."
+    },
+    {
+      question: "How is Thoughtnudge different from marketing automation tools?",
+      answer: "Marketing automation tools execute human-defined rules, operate at segment level, depend on static journeys, and learn slowly through A/B tests. Thoughtnudge learns autonomously, decides at individual level, runs continuous micro-experiments, and adapts after every action or inaction. In simple terms: Marketing tools execute decisions. Thoughtnudge makes the decisions."
+    },
+    {
+      question: "How is Thoughtnudge different from marketing automation or CRM platforms?",
+      answer: "Traditional platforms execute predefined campaigns or rules, optimize at cohort or segment level, and require manual experimentation. Thoughtnudge optimizes explicit business goals, makes per-user decisions (not cohort rules), learns continuously using reinforcement learning, separates human approvals from AI decisions, and is built with governance and explainability by design. In short: They send messages. Thoughtnudge drives outcomes."
+    },
+    {
+      question: "Is Thoughtnudge a CDP?",
+      answer: "No. Thoughtnudge does not replace your CDP or data warehouse. We sit on top of your existing data stack (Snowflake, Databricks, event tools, CEPs) and use that data to learn and decide. CDPs answer: 'What happened?' Thoughtnudge answers: 'What should we do next — for this user?'"
+    },
+    {
+      question: "What exactly does the AI learn?",
+      answer: "Thoughtnudge learns what works for each individual, including: motivation (value-seeker, risk-averse, urgency-driven), behavioral patterns, sensitivity to incentives, response to timing and framing, channel preference, and emotional and contextual signals. This learning is continuous — every interaction, non-interaction, or context shift updates the model."
+    },
+    {
+      question: "What decisions does Thoughtnudge make?",
+      answer: "For each user and each moment, Thoughtnudge decides: what message or content to send, which value proposition to emphasize, whether to use an incentive (and how much), which channel to use (Push, Email, WhatsApp, In-app), when to act, how frequently to engage, and when not to engage. All decisions are made in service of a defined business goal (e.g., activation)."
+    },
+    {
+      question: "Does Thoughtnudge execute actions or just recommend?",
+      answer: "Thoughtnudge does both. It decides autonomously, executes via your existing channels, and learns from outcomes automatically. No dashboards to interpret. No manual journey updates. No weekly optimization cycles."
+    },
+    {
+      question: "How does Thoughtnudge avoid hallucination or brand risk?",
+      answer: "Thoughtnudge operates within explicit human-defined guardrails: approved message templates, approved offers and incentives, frequency caps, compliance constraints, and risk controls. Humans define the space of allowed strategies. The AI learns which combination works for which user. Think of it as a highly intelligent execution layer — not a free-running LLM."
+    },
+    {
+      question: "Is the decisioning explainable?",
+      answer: "Yes. Every decision can be traced back to: available options, user context and past behavior, and observed outcomes of similar decisions. Explainability dashboards are part of our roadmap, and underlying data is already available."
+    },
+    {
+      question: "How fast does a customer see value?",
+      answer: "Most customers see measurable impact within 2–4 weeks of going live. Because Thoughtnudge starts learning immediately, does not require long training cycles, and improves continuously from day one."
+    },
+    {
+      question: "What kind of results have you seen so far?",
+      answer: "Across pilots and production use cases: 32% to 120% uplift in core metrics, double-digit improvement vs rule-based systems, and faster activation and stronger early cohorts. Results depend on data quality, scale, and use case."
+    },
+    {
+      question: "What data is required to get started?",
+      answer: "Minimum requirements: ~20–25k identified users, behavioral or transactional signals, and a clear activation or growth goal. The more signals available, the faster learning improves."
+    },
+    {
+      question: "Which tools and platforms do you integrate with?",
+      answer: "Data & Events: Snowflake, Databricks, BigQuery, Redshift, Mixpanel, Appsflyer, and internal event pipelines. Execution: Braze, Clevertap, MoEngage, WhatsApp (Meta), Email, Push, and in-app surfaces."
+    },
+    {
+      question: "Does Thoughtnudge support in-app personalization?",
+      answer: "Yes. Thoughtnudge supports secure, real-time in-app experiences using: pre-approved UI surfaces (banners, cards, modals, widgets), client-side rendering for security, and parameterized content selection. The AI decides which surface to trigger, when, and for whom — never the UI itself."
+    },
+    {
+      question: "How does learning happen inside Thoughtnudge?",
+      answer: "Thoughtnudge uses deep reinforcement learning: each user interaction is a learning opportunity, the agent balances exploration and exploitation, learning happens at the individual level, and models adapt continuously as behavior changes. Learning is observable, explainable, and governed."
+    },
+    {
+      question: "How is data handled?",
+      answer: "Zero-copy integration with warehouses where possible. Encrypted data in transit and at rest. LGPD/GDPR compliant. Data residency aligned with cloud region (AWS)."
+    },
+    {
+      question: "How does Thoughtnudge explain AI decisions?",
+      answer: "Thoughtnudge provides multi-layer explainability: system-level observability (agent health), individual-level explainability showing what the AI learned about a user, why a specific action was chosen, and what alternatives were considered. Full decision timelines showing AI and user actions. This is designed for business teams, compliance teams, and regulators."
+    },
+    {
+      question: "Is Thoughtnudge only for FinTech?",
+      answer: "Today, yes — intentionally. FinTech is where decision quality matters most, margins are sensitive, and trust, risk, and timing are critical. The same decisioning system can extend to other regulated, digital-first industries — but our focus is depth, not breadth."
+    },
+    {
+      question: "How is Thoughtnudge priced?",
+      answer: "Typically priced on MAU / scale, aligned with value delivered. We also explore: pilot pricing, co-funded pilots, and outcome-aligned commercial models."
+    },
+    {
+      question: "Is Thoughtnudge replacing human teams?",
+      answer: "No. Thoughtnudge elevates human teams: Humans define strategy, constraints, and goals. AI handles continuous, real-time decision execution. Teams move from operators to strategists."
+    },
+    {
+      question: "How is success measured?",
+      answer: "Thoughtnudge measures: incremental uplift vs control, time-to-impact, risk-adjusted ROI, and outcome stability over time. Outcomes are shown separately from learning and decision logic to avoid metric pollution."
+    },
+    {
+      question: "Why does this matter now?",
+      answer: "Because: FinTech products are converging, acquisition costs are rising, margins are compressing, and personalization expectations are increasing. Decisioning — not data or channels — is now the competitive moat."
+    },
+    {
+      question: "How does Thoughtnudge scale across multiple goals and products?",
+      answer: "Thoughtnudge supports: multiple goals per organization, multiple agents per goal, shared learning surfaces, and expansion across products and journeys. The platform is designed to become the central growth intelligence layer."
+    },
+    {
+      question: "What is Thoughtnudge's long-term vision?",
+      answer: "Thoughtnudge aims to become the autonomous growth engine for BFSI — a system that understands customers deeply, makes better decisions than static rules, learns continuously, operates safely and transparently, and drives measurable business outcomes."
+    },
+    {
+      question: "How does Thoughtnudge ensure privacy and compliance?",
+      answer: "Thoughtnudge is built for regulated environments: explicit approval of learning variables, no autonomous content generation without approval, full audit trails of human and AI actions, individual-level decision explainability, and kill switches and guardrails at multiple layers. The AI operates within human-defined boundaries at all times."
+    }
+  ];
+
   useEffect(() => {
-    // Enhanced SEO optimization for search engines and LLMs
     updateSEOTags({
-      title: "AI Decisioning Platform FAQ | Thoughtnudge Enterprise CX - BFSI, SaaS & Consumer Tech",
-      description: "Comprehensive FAQ about Thoughtnudge's enterprise AI decisioning platform. Learn how autonomous agents activate 1st party data to deliver segment-of-1 experiences across every touchpoint, maximize CLTV, and drive measurable business outcomes for BFSI, consumer technology, and digital-first enterprises.",
+      title: "AI Decisioning for FinTech Activation FAQ | Thoughtnudge",
+      description: "Comprehensive FAQ about Thoughtnudge's AI decisioning platform for FinTech activation. Learn how we help neobanks, trading platforms, lending apps, and BFSI enterprises activate users, drive engagement, and maximize lifetime value.",
       url: window.location.href,
       type: "website"
     });
 
-    // Enhanced FAQ page structured data for better search indexing
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "name": "Thoughtnudge AI Growth Platform - Frequently Asked Questions",
-      "description": "Comprehensive FAQ covering Thoughtnudge's enterprise AI decisioning platform, autonomous agents, reinforcement learning capabilities, and business outcomes for BFSI, consumer technology, and digital-first organizations.",
+      "name": "Thoughtnudge AI Decisioning for FinTech - Frequently Asked Questions",
+      "description": "Comprehensive FAQ covering Thoughtnudge's AI decisioning platform for FinTech activation, agentic AI, reinforcement learning, and business outcomes for BFSI enterprises.",
       "url": window.location.href,
       "mainEntity": faqs.map((faq, index) => ({
         "@type": "Question",
@@ -47,89 +175,30 @@ const FAQ = () => {
     addStructuredData(faqSchema, 'faq');
   }, []);
 
-  const faqs = [
-    {
-      question: "What is Thoughtnudge?",
-      answer: "Thoughtnudge is an enterprise AI decisioning platform that delivers hyper-personalized customer experiences at scale. We activate your 1st party data to deploy autonomous AI agents that understand each customer's unique profile and deliver segment-of-1 experiences across every touchpoint—web, mobile, email, SMS, and more. Unlike rule-based automation tools, Thoughtnudge is powered by reinforcement learning (RL), long-term agentic memory, and behavioral science models, allowing it to continuously learn what works for each customer and act in real time to maximize customer lifetime value (CLTV). Built for BFSI, consumer technology, and digital-first enterprises, our platform autonomously optimizes engagement strategies across the entire customer lifecycle to drive measurable business outcomes."
-    },
-    {
-      question: "How do Autonomous Growth Agents differ from traditional marketing automation?",
-      answer: "Autonomous Growth Agents represent a paradigm shift from traditional marketing automation. While conventional tools require humans to design segments, build customer journeys, create rules, and manually optimize campaigns, Thoughtnudge's agents operate autonomously. You simply set business goals and guardrails, and our AI agents handle the rest. They continuously learn from customer interactions, generate actionable insights, and execute personalized strategies in real-time. This eliminates the need for static customer journeys, rigid segmentation rules, and manual A/B testing, while operating with a customer-first and goal-first approach across all channels with persistent, contextual intelligence."
-    },
-    {
-      question: "What exactly are Autonomous AI Agents for Customer Experience?",
-      answer: "Think of them as virtual intelligence layers for each customer. Each agent continuously learns about an individual's behavior, preferences, intent, and contextual profile, then makes 1:1 decisions in real time across every customer touchpoint—delivering true segment-of-1 experiences. They determine what message to send, which tone to use, what action to recommend, when to engage, and on which channel—all autonomously. They're not reactive bots or channel-specific assistants. They are long-term, memory-based agents that evolve with every interaction, coordinating seamlessly across web, mobile app, email, SMS, push notifications, and other channels to drive continuous engagement, retention, and lifetime value. Our agents activate your 1st party data with reinforcement learning and behavioral intelligence to test, learn, and optimize strategies autonomously—making them fundamentally different from static segmentation or rule-based automation systems used in traditional customer engagement platforms."
-    },
-    {
-      question: "How does Thoughtnudge's AI learn and adapt to customer behavior?",
-      answer: "Our platform employs a sophisticated blend of reinforcement learning models, long-term contextual memory systems, and behavioral science principles. Reinforcement learning enables our agents to continuously test, learn, and optimize actions at scale across thousands of customer interactions simultaneously. Our contextual memory system allows agents to remember past actions, customer preferences, purchase history, and interaction outcomes, ensuring every engagement feels natural and personalized rather than robotic or repetitive. Behavioral science frameworks enrich this data with psychographic insights and persuasion principles, so every customer nudge feels contextually appropriate, persuasive, and aligned with individual customer psychology and motivation patterns."
-    },
-    {
-      question: "What outcomes does Thoughtnudge deliver for enterprises?",
-      answer: "Unlike platforms that measure success in terms of campaign execution or message delivery, Thoughtnudge delivers direct business outcomes that matter to enterprise growth and profitability. Our autonomous AI decisioning platform drives higher conversions through hyper-personalized experiences delivered in real-time across every customer touchpoint. We maximize customer lifetime value (CLTV) by activating your 1st party data to create true segment-of-1 experiences that adapt intelligently to individual behavior and context. We optimize the entire customer lifecycle—from onboarding and activation to engagement and retention—through intelligent, context-aware decisioning across web, mobile, and all communication channels. We also deliver greater operational efficiency by automating the entire intelligence-to-execution loop, freeing your teams from manual segmentation, static rules, and endless A/B testing. For enterprises, this translates to measurable ROI improvements in CLTV, product adoption rates, cross-sell success, and significant reductions in customer acquisition costs through better utilization of existing customer value across your entire base."
-    },
-    {
-      question: "Why are traditional segmentation and A/B testing approaches insufficient for modern growth?",
-      answer: "Traditional approaches like customer segmentation, static workflows, and one-off A/B tests were designed for human-led marketing teams, not AI-powered systems. These methods have critical limitations: they don't adapt in real-time to changing customer behavior, fail to capture individual intent and micro-moments, require constant manual analysis and intervention, and only scratch the surface of true personalization possibilities. Thoughtnudge eliminates these inefficiencies through AI agents that learn continuously at the individual customer level, enabling context-driven personalization that scales far beyond what static, human-led processes can achieve. Our approach moves from broad segments to true 1:1 personalization, from periodic testing to continuous optimization, and from reactive responses to proactive customer engagement."
-    },
-    {
-      question: "Does Thoughtnudge replace existing enterprise technology stacks?",
-      answer: "No, Thoughtnudge is designed as an intelligent AI decisioning layer that enhances your existing enterprise technology stack rather than replacing it. We integrate seamlessly with CRM systems like Salesforce and Microsoft Dynamics, marketing clouds, CDPs like Segment and Snowflake, communication platforms like Twilio and SendGrid, and 50+ other enterprise systems through pre-built connectors. Your existing infrastructure continues to function normally while our autonomous agents sit on top, adding decision intelligence, contextual understanding, and automated execution capabilities. This approach maximizes your current technology investments while dramatically improving their effectiveness through AI-powered optimization and 1st party data activation."
-    },
-    {
-      question: "How is Thoughtnudge different from LLM-based chatbots and virtual assistants?",
-      answer: "While many new AI tools rely primarily on Large Language Models (LLMs), most are reactive and channel-bound, designed to answer customer questions but not proactively guide users toward specific business outcomes. Thoughtnudge is fundamentally different, built on three core technologies: Reinforcement learning for continuous optimization and autonomous decision-making, Agentic contextual memory for persistent intelligence that spans across all customer touchpoints and channels, and Outcome-first design that focuses specifically on achieving growth goals rather than just message delivery or customer service. This makes our agents proactive rather than reactive, adaptive rather than static, and goal-driven rather than conversational, representing a fundamentally different approach to AI-powered customer engagement."
-    },
-    {
-      question: "How quickly can businesses start seeing results with Thoughtnudge?",
-      answer: "Integration with Thoughtnudge typically takes days rather than months, thanks to our extensive library of pre-built connectors for popular e-commerce platforms, marketing tools, and digital systems. Our streamlined onboarding process includes data integration, agent configuration, and goal setting. Most brands begin seeing measurable improvements in key metrics within 2–3 weeks of deployment, as our AI agents start learning from customer interactions immediately. The system's performance continues to improve over time as agents accumulate more interaction data and refine their understanding of individual customer preferences and behaviors."
-    },
-    {
-      question: "How secure is Thoughtnudge and what about data privacy compliance?",
-      answer: "Security and data privacy are fundamental to our platform design. We implement enterprise-grade security measures including: AES-256 encryption for all data at rest and in motion, Two-factor authentication and role-based access controls for account security, Advanced firewall protection and intrusion detection to prevent external threats, Privacy by design architecture ensuring we work exclusively with your first-party customer data. We maintain full compliance with GDPR, CCPA, and other major data protection regulations. Our platform is designed to enhance your customer relationships while maintaining the highest standards of data security and privacy protection."
-    },
-    {
-      question: "Which industries can Thoughtnudge serve best?",
-      answer: "Our platform is purpose-built for enterprise organizations where customer lifetime value (CLTV), personalized experiences across every touchpoint, and 1st party data activation are critical to business success. This includes BFSI (Banking, Financial Services, Insurance) where customer onboarding, product cross-sell, lifecycle engagement, and retention strategies drive long-term value. Consumer Technology and SaaS enterprises benefit from our platform for user activation, feature adoption, and lifecycle optimization across web, mobile, and communication channels. Digital services companies—including telecom, media, entertainment, and subscription-based businesses—leverage Thoughtnudge to deliver segment-of-1 experiences that drive engagement, reduce churn, and maximize customer lifetime value. Our AI decisioning platform excels in any industry where activating 1st party data to deliver hyper-personalized, context-aware experiences across all customer touchpoints is essential to competitive advantage and revenue growth."
-    },
-    {
-      question: "What ROI and performance improvements can businesses expect?",
-      answer: "Our autonomous AI agents continuously optimize for measurable business outcomes, with most clients experiencing significant improvements across key metrics. Typical results include: Double-digit increases in repeat purchase rates and customer retention, Substantial improvements in win-back conversion rates for dormant customers, Enhanced customer lifetime value through optimized engagement strategies, Significant reduction in manual marketing operations and associated labor costs. The exact ROI varies based on your baseline performance, industry, and specific business goals, but our outcome-focused approach ensures that improvements are directly tied to revenue growth and operational efficiency gains."
-    },
-    {
-      question: "How does Thoughtnudge pricing work and what are the investment options?",
-      answer: "We offer flexible pricing models designed to align our success with yours. Options include: Pilot programs for testing and validation, Usage-based pricing that scales with your business growth, Performance-linked contracts where our fees are tied to achieved outcomes and ROI. Pricing is typically based on customer scale, desired outcomes, and level of integration complexity. We believe in transparent, value-based pricing with no hidden fees, and all costs are clearly outlined in your custom proposal following our comprehensive growth audit and strategy session."
-    },
-    {
-      question: "Why does Thoughtnudge represent the future of customer growth and engagement?",
-      answer: "Modern customer growth can no longer rely on human-built rules, static customer segments, and predetermined journeys. Customer behavior, preferences, and market conditions evolve continuously, requiring systems that can adapt in real-time. Thoughtnudge represents a new paradigm of Autonomous Growth Agents that are: Customer-first in their approach, focusing on individual needs and preferences rather than broad segments, Goal-first in their execution, optimizing directly for business outcomes rather than activity metrics, Intelligence-first in their operation, using advanced AI to make decisions that humans simply cannot make at scale. Our agents are always learning from new data, always optimizing their strategies, and always delivering measurable outcomes, representing the evolution from reactive marketing to proactive, autonomous growth."
-    }
-  ];
-
   return (
     <>
       <Helmet>
-        <title>AI Growth Platform FAQ | Thoughtnudge Autonomous Agents - Behavioral Science & Reinforcement Learning</title>
+        <title>AI Decisioning for FinTech Activation FAQ | Thoughtnudge</title>
         <meta 
           name="description" 
-          content="Comprehensive FAQ about Thoughtnudge's Agentic AI platform. Learn how autonomous growth agents use reinforcement learning, behavioral science, and contextual memory to increase repeat purchases, reduce churn, and maximize customer lifetime value for e-commerce and digital businesses." 
+          content="Comprehensive FAQ about Thoughtnudge's AI decisioning platform for FinTech activation. Learn how we help neobanks, trading platforms, lending apps, and BFSI enterprises activate users and maximize lifetime value." 
         />
-        <meta name="keywords" content="agentic ai faq, autonomous growth agents, reinforcement learning marketing, behavioral science ai, customer lifetime value optimization, ai personalization platform, contextual memory ai, intelligent customer engagement, ai growth platform, autonomous ai agents, machine learning customer retention" />
+        <meta name="keywords" content="fintech activation, ai decisioning, bfsi ai, neobank activation, trading platform engagement, reinforcement learning fintech, agentic ai, fintech personalization, user activation fintech, growth automation bfsi" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <meta property="og:title" content="AI Growth Platform FAQ | Thoughtnudge Autonomous Agents" />
-        <meta property="og:description" content="Comprehensive FAQ about Thoughtnudge's Agentic AI platform. Learn how autonomous growth agents use reinforcement learning and behavioral science to maximize customer lifetime value." />
+        <meta property="og:title" content="AI Decisioning for FinTech Activation FAQ | Thoughtnudge" />
+        <meta property="og:description" content="Learn how Thoughtnudge's AI decisioning platform helps FinTech and BFSI enterprises activate users, drive engagement, and maximize lifetime value." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={window.location.href} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Growth Platform FAQ | Thoughtnudge Autonomous Agents" />
-        <meta name="twitter:description" content="Learn how autonomous growth agents use reinforcement learning and behavioral science to increase repeat purchases and maximize CLTV." />
+        <meta name="twitter:title" content="AI Decisioning for FinTech Activation FAQ | Thoughtnudge" />
+        <meta name="twitter:description" content="Learn how Thoughtnudge's AI decisioning platform helps FinTech and BFSI enterprises activate users and maximize lifetime value." />
         <link rel="canonical" href={`${window.location.origin}/faq`} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "name": "Thoughtnudge AI Growth Platform - Frequently Asked Questions",
-            "description": "Comprehensive FAQ covering Thoughtnudge's Agentic AI platform, autonomous growth agents, reinforcement learning capabilities, and business outcomes.",
+            "name": "Thoughtnudge AI Decisioning for FinTech - Frequently Asked Questions",
+            "description": "Comprehensive FAQ covering Thoughtnudge's AI decisioning platform for FinTech activation and BFSI enterprises.",
             "url": window.location.href,
             "publisher": {
               "@type": "Organization",
@@ -153,22 +222,21 @@ const FAQ = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-background">
         <Navbar />
         
         <main>
           {/* Hero Section */}
-          <section className="py-20 bg-white">
+          <section className="py-20 bg-background">
             <div className="container mx-auto px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                  AI Growth Platform FAQ: Autonomous Agents & Behavioral Science
+                  AI Decisioning for FinTech Activation
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Everything you need to know about Thoughtnudge's Autonomous Growth Agents, 
-                  Agentic AI platform, reinforcement learning capabilities, and how we help businesses 
-                  increase repeat purchases, reduce churn, and maximize customer lifetime value through 
-                  behavioral science and contextual intelligence.
+                  Everything you need to know about how Thoughtnudge helps FinTech and BFSI 
+                  enterprises activate users, drive engagement, and maximize lifetime value 
+                  through autonomous AI decisioning.
                 </p>
               </div>
             </div>
@@ -176,7 +244,7 @@ const FAQ = () => {
 
           {/* FAQ Section */}
           <LazySection>
-            <section className="py-16 bg-gray-50/50">
+            <section className="py-16 bg-muted/30">
               <div className="container mx-auto px-4 md:px-6">
                 <div className="max-w-4xl mx-auto">
                   <Accordion type="single" collapsible className="space-y-4">
@@ -184,15 +252,13 @@ const FAQ = () => {
                       <AccordionItem 
                         key={index} 
                         value={`item-${index}`}
-                        className="bg-white rounded-lg border border-gray-200 px-6"
+                        className="bg-background rounded-xl border border-border px-6 shadow-sm"
                       >
-                        <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:no-underline hover:text-brand-pink transition-colors py-6">
-                          <h3 id={`faq-${index + 1}`}>{faq.question}</h3>
+                        <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:no-underline py-6">
+                          <h3 className="pr-4">{faq.question}</h3>
                         </AccordionTrigger>
                         <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
-                          <div className="whitespace-pre-line prose prose-gray max-w-none">
-                            {faq.answer}
-                          </div>
+                          {faq.answer}
                         </AccordionContent>
                       </AccordionItem>
                     ))}
@@ -203,26 +269,23 @@ const FAQ = () => {
           </LazySection>
 
           {/* CTA Section */}
-          <LazySection>
-            <section className="py-20 bg-gradient-to-br from-brand-pink/5 to-brand-orange/5">
-              <div className="container mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mx-auto text-center">
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                    Ready to Experience Autonomous Growth?
-                  </h2>
-                  <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                    See how Thoughtnudge's AI Growth Agents can increase repeat purchases, 
-                    win back dormant customers, and maximize CLTV.
-                  </p>
-                  <Link to="/demo">
-                    <Button size="lg" className="px-8 py-3 text-lg">
-                      Request a Demo
-                    </Button>
-                  </Link>
-                </div>
+          <section className="py-20 bg-background">
+            <div className="container mx-auto px-4 md:px-6">
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                  Ready to Transform Your FinTech Activation?
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  See how Thoughtnudge can help you activate more users, faster.
+                </p>
+                <Button size="lg" className="text-lg px-8" asChild>
+                  <a href="https://calendly.com/thoughtnudge/30min" target="_blank" rel="noopener noreferrer">
+                    Book a Demo
+                  </a>
+                </Button>
               </div>
-            </section>
-          </LazySection>
+            </div>
+          </section>
         </main>
 
         <Footer />

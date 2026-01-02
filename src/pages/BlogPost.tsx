@@ -164,17 +164,17 @@ const BlogPostPage = () => {
                   {/* Author & Meta */}
                   <div className="flex items-center space-x-6 mb-8">
                     <div className="flex items-center">
-                      {post.fields.author.fields.photo && (
+                      {post.fields.author?.fields?.photo && (
                         <OptimizedImage
                           src={`https:${post.fields.author.fields.photo.fields.file.url}`}
-                          alt={post.fields.author.fields.name}
+                          alt={post.fields.author?.fields?.name || 'Author'}
                           className="w-12 h-12 rounded-full mr-3"
                           priority
                         />
                       )}
                        <div>
-                         <p className="font-semibold text-gray-900">by {post.fields.author.fields.name} • {formatDate(post)}</p>
-                         {post.fields.author.fields.linkedinUrl && (
+                         <p className="font-semibold text-gray-900">by {post.fields.author?.fields?.name || 'Thoughtnudge Team'} • {formatDate(post)}</p>
+                         {post.fields.author?.fields?.linkedinUrl && (
                            <a
                              href={post.fields.author.fields.linkedinUrl}
                              target="_blank"
@@ -189,14 +189,16 @@ const BlogPostPage = () => {
                   </div>
                   
                   {/* Featured Image */}
-                  <div className="mb-8">
-                    <OptimizedImage
-                      src={`https:${post.fields.featuredImage.fields.file.url}`}
-                      alt={post.fields.featuredImage.fields.title || post.fields.title}
-                      className="w-full rounded-lg shadow-lg"
-                      priority
-                    />
-                  </div>
+                  {post.fields.featuredImage?.fields?.file?.url && (
+                    <div className="mb-8">
+                      <OptimizedImage
+                        src={`https:${post.fields.featuredImage.fields.file.url}`}
+                        alt={post.fields.featuredImage?.fields?.title || post.fields.title}
+                        className="w-full rounded-lg shadow-lg"
+                        priority
+                      />
+                    </div>
+                  )}
                 </header>
 
                 {/* Content */}
@@ -250,17 +252,17 @@ const BlogPostPage = () => {
                   <CardContent className="p-6">
                     <h3 className="font-bold mb-4 text-gray-900">About the Author</h3>
                     <div className="flex items-center mb-4">
-                      {post.fields.author.fields.photo && (
+                      {post.fields.author?.fields?.photo && (
                         <OptimizedImage
                           src={`https:${post.fields.author.fields.photo.fields.file.url}`}
-                          alt={post.fields.author.fields.name}
+                          alt={post.fields.author?.fields?.name || 'Author'}
                           className="w-16 h-16 rounded-full mr-4"
                           lazy
                         />
                       )}
                       <div>
-                        <p className="font-semibold text-gray-900">{post.fields.author.fields.name}</p>
-                        {post.fields.author.fields.linkedinUrl && (
+                        <p className="font-semibold text-gray-900">{post.fields.author?.fields?.name || 'Thoughtnudge Team'}</p>
+                        {post.fields.author?.fields?.linkedinUrl && (
                           <a
                             href={post.fields.author.fields.linkedinUrl}
                             target="_blank"
@@ -304,13 +306,15 @@ const BlogPostPage = () => {
                   {relatedPosts.map((relatedPost) => (
                     <Card key={relatedPost.sys.id} className="overflow-hidden h-full flex flex-col group cursor-pointer">
                       <Link to={`/blog/${relatedPost.fields.slug || contentfulService.generateSlug(relatedPost.fields.title)}`} className="h-full flex flex-col">
-                        <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
-                          <LazyImage 
-                            src={`https:${relatedPost.fields.featuredImage.fields.file.url}?w=400&h=300&fit=fill&f=center`}
-                            alt={relatedPost.fields.featuredImage.fields.title || relatedPost.fields.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          />
-                        </div>
+                        {relatedPost.fields.featuredImage?.fields?.file?.url && (
+                          <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                            <LazyImage 
+                              src={`https:${relatedPost.fields.featuredImage.fields.file.url}?w=400&h=300&fit=fill&f=center`}
+                              alt={relatedPost.fields.featuredImage?.fields?.title || relatedPost.fields.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                          </div>
+                        )}
                         <CardContent className="p-6 flex-grow flex flex-col">
                           <div className="mb-3">
                             <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">
@@ -321,16 +325,16 @@ const BlogPostPage = () => {
                             {relatedPost.fields.title}
                           </h4>
                           <div className="flex items-center mt-auto">
-                            {relatedPost.fields.author.fields.photo && (
+                            {relatedPost.fields.author?.fields?.photo && (
                               <LazyImage 
                                 src={`https:${relatedPost.fields.author.fields.photo.fields.file.url}?w=64&h=64&fit=fill&f=face`}
-                                alt={relatedPost.fields.author.fields.name}
+                                alt={relatedPost.fields.author?.fields?.name || 'Author'}
                                 className="w-8 h-8 rounded-full bg-gray-200 mr-3"
                               />
                             )}
                             <div className="text-sm">
                               <p className="font-medium text-gray-900">
-                                by {relatedPost.fields.author.fields.name} • {formatDate(relatedPost)}
+                                by {relatedPost.fields.author?.fields?.name || 'Thoughtnudge Team'} • {formatDate(relatedPost)}
                               </p>
                             </div>
                           </div>

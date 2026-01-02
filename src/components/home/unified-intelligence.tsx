@@ -1,3 +1,5 @@
+import agentDecisions from "@/assets/product/agent-decisions.png";
+
 export const UnifiedIntelligence = () => {
   return (
     <section className="py-20 bg-background">
@@ -13,6 +15,33 @@ export const UnifiedIntelligence = () => {
             Each agent continuously experiments, learns, and evolves — building a deep contextual memory of that individual's behavior, intent signals, and activation blockers. It then selects the most effective next action: what to send, when to send it, how to frame it, and through which channel. 
             Instead of predicting, it discovers in real time what activates each user and adapts every interaction accordingly.
           </p>
+          
+          {/* Agent Decisions Screenshot */}
+          <div className="relative max-w-5xl mx-auto mb-16">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 rounded-2xl blur-xl opacity-40"></div>
+            <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-xl bg-card">
+              <img 
+                src={agentDecisions} 
+                alt="Activation Agent decision queue showing AI reasoning, expected impact with +34% completion probability, signals observed, and alternatives considered"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+            <div className="mt-6 grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">+34%</div>
+                <div className="text-xs text-muted-foreground">Completion Probability</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground">Real-time</div>
+                <div className="text-xs text-muted-foreground">Decision Making</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground">1:1</div>
+                <div className="text-xs text-muted-foreground">Per-User Actions</div>
+              </div>
+            </div>
+          </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {/* Feature 1 */}

@@ -1,3 +1,5 @@
+import outcomesDashboard from "@/assets/product/outcomes-dashboard.png";
+
 export const ProofCredibilitySection = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-background via-secondary/5 to-background">
@@ -12,6 +14,37 @@ export const ProofCredibilitySection = () => {
             Your data and channels stay the same — the outcomes change. 
             Thoughtnudge delivers measurable, compounding improvement across activation, engagement, retention, and lifetime value.
           </p>
+
+          {/* Outcomes Dashboard Screenshot */}
+          <div className="relative max-w-5xl mx-auto mb-16">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-50"></div>
+            <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-2xl bg-card">
+              <img 
+                src={outcomesDashboard} 
+                alt="Outcomes dashboard showing +24.3% net uplift, 94% confidence, Agent vs Control comparison with 30.1% vs 24.2% conversion rate, and outcome over time chart"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+            <div className="mt-6 grid grid-cols-4 gap-4 max-w-3xl mx-auto">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">+24.3%</div>
+                <div className="text-xs text-muted-foreground">Net Uplift</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground">94%</div>
+                <div className="text-xs text-muted-foreground">Confidence</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-foreground">4.2 days</div>
+                <div className="text-xs text-muted-foreground">Time to Impact</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">+42%</div>
+                <div className="text-xs text-muted-foreground">Faster Activation</div>
+              </div>
+            </div>
+          </div>
           
           {/* Testimonial Cards */}
           <div className="grid lg:grid-cols-2 gap-8 mb-12">

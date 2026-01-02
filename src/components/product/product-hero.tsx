@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import OptimizedImage from "@/components/ui/optimized-image";
+import goalsDashboard from "@/assets/product/goals-dashboard.png";
 
 export const ProductHero = () => {
   return (
@@ -16,15 +16,14 @@ export const ProductHero = () => {
             Thoughtnudge is your enterprise AI decisioning platform. We activate your 1st party data and behavioral intelligence to deliver hyper-personalized experiences across every customer touchpoint, maximizing lifetime value at scale.
           </p>
 
-          <div className="relative max-w-6xl mx-auto mt-6">
-            <div className="relative bg-transparent">
-              <OptimizedImage
-                src="/lovable-uploads/1d4a2046-adf3-4c69-a760-eb2737406da1.png?v=20250810"
-                alt="Thoughtnudge product hero illustrating data-to-decisions-to-growth"
-                className="w-full h-[280px] md:h-[340px] lg:h-[360px] object-contain"
-                lazy={false}
-                priority={true}
-                sizes="100vw"
+          <div className="relative max-w-5xl mx-auto mt-6">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-60"></div>
+            <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-2xl bg-card">
+              <img 
+                src={goalsDashboard} 
+                alt="Thoughtnudge Goals Dashboard - Define business outcomes with active goals, user activation tracking, KYC completion, and goal achievement metrics"
+                className="w-full h-auto"
+                loading="eager"
               />
             </div>
           </div>

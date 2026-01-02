@@ -1,7 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import goalsDashboard from "@/assets/product/goals-dashboard.png";
-
 export const ProductHero = () => {
   return (
     <section className="pt-32 pb-20 md:pt-40 md:pb-24 bg-gradient-to-br from-background via-secondary/20 to-background">
@@ -20,7 +16,7 @@ export const ProductHero = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-60"></div>
             <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-2xl bg-card">
               <img 
-                src={goalsDashboard} 
+                src="/lovable-uploads/goals-dashboard.png" 
                 alt="Thoughtnudge Goals Dashboard - Define business outcomes with active goals, user activation tracking, KYC completion, and goal achievement metrics"
                 className="w-full h-auto"
                 loading="eager"

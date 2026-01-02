@@ -66,20 +66,6 @@ export const DecisionExplainability = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="mt-4 flex justify-center gap-6">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-primary">78%</div>
-                  <div className="text-xs text-muted-foreground">Confidence</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-lg font-bold text-foreground">Full</div>
-                  <div className="text-xs text-muted-foreground">Audit Trail</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-lg font-bold text-foreground">Real-time</div>
-                  <div className="text-xs text-muted-foreground">Tracking</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

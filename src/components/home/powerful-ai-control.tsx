@@ -19,7 +19,7 @@ export const PowerfulAiControl = () => {
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 rounded-2xl blur-xl opacity-40"></div>
               <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-xl bg-card">
                 <img 
-                  src="/product/goal-success-criteria.png" 
+                  src="/lovable-uploads/goal-success-criteria.png" 
                   alt="Goal configuration showing success event selection with AI suggestions, exit criteria including maximum messages and negative signals"
                   className="w-full h-auto"
                   loading="lazy"

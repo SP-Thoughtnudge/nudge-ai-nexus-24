@@ -18,7 +18,7 @@ export const ProofCredibilitySection = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-50"></div>
             <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-2xl bg-card">
               <img 
-                src="/product/outcomes-dashboard.png" 
+                src="/lovable-uploads/outcomes-dashboard.png" 
                 alt="Outcomes dashboard showing +24.3% net uplift, 94% confidence, Agent vs Control comparison with 30.1% vs 24.2% conversion rate, and outcome over time chart"
                 className="w-full h-auto"
                 loading="lazy"

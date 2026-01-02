@@ -50,7 +50,7 @@ export const HeroSectionNew = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-60"></div>
             <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-2xl bg-card">
               <img 
-                src="/product/goals-dashboard.png" 
+                src="/lovable-uploads/goals-dashboard.png" 
                 alt="Thoughtnudge Goals Dashboard - Define business outcomes and let AI optimize the path with active goals, user tracking, and goal achievement metrics"
                 className="w-full h-auto"
                 loading="eager"

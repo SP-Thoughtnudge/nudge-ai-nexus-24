@@ -1,5 +1,3 @@
-import explainabilityTimeline from "@/assets/product/explainability-timeline.png";
-
 export const DecisionExplainability = () => {
   return (
     <section className="py-20 bg-background">
@@ -62,7 +60,7 @@ export const DecisionExplainability = () => {
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 rounded-2xl blur-xl opacity-40"></div>
               <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-xl bg-card">
                 <img 
-                  src={explainabilityTimeline} 
+                  src="/product/explainability-timeline.png" 
                   alt="Decision Timeline showing AI decisions with full context, actions considered with confidence scores, reasoning explanations, and user response tracking"
                   className="w-full h-auto"
                   loading="lazy"

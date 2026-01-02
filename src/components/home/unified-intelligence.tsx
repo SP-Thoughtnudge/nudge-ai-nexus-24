@@ -1,5 +1,3 @@
-import agentDecisions from "@/assets/product/agent-decisions.png";
-
 export const UnifiedIntelligence = () => {
   return (
     <section className="py-20 bg-background">
@@ -21,7 +19,7 @@ export const UnifiedIntelligence = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 rounded-2xl blur-xl opacity-40"></div>
             <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-xl bg-card">
               <img 
-                src={agentDecisions} 
+                src="/product/agent-decisions.png" 
                 alt="Activation Agent decision queue showing AI reasoning, expected impact with +34% completion probability, signals observed, and alternatives considered"
                 className="w-full h-auto"
                 loading="lazy"

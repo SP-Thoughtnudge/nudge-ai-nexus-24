@@ -1,5 +1,3 @@
-import intelligenceSignals from "@/assets/product/intelligence-signals.png";
-
 const PsychographicDna = () => {
   return (
     <section className="py-20 bg-muted/30">
@@ -21,7 +19,7 @@ const PsychographicDna = () => {
           <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 rounded-2xl blur-xl opacity-40"></div>
           <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-xl bg-card">
             <img 
-              src={intelligenceSignals} 
+              src="/product/intelligence-signals.png" 
               alt="Intelligence dashboard showing what the agent is learning, context variables like user tenure and transaction history, event signals, and variable correlations"
               className="w-full h-auto"
               loading="lazy"

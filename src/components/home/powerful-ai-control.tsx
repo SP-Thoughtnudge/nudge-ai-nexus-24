@@ -1,3 +1,5 @@
+import goalSuccessCriteria from "@/assets/product/goal-success-criteria.png";
+
 export const PowerfulAiControl = () => {
   return (
     <section className="py-20 bg-background">
@@ -13,60 +15,89 @@ export const PowerfulAiControl = () => {
             Thoughtnudge's autonomous agents execute it — with full transparency, guardrails, and audit trails.
           </p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Point 1 */}
-            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border hover:shadow-lg transition-all duration-300 text-center">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary font-bold text-xl">1</span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Left side - Screenshot */}
+            <div className="relative order-2 lg:order-1">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 rounded-2xl blur-xl opacity-40"></div>
+              <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-xl bg-card">
+                <img 
+                  src={goalSuccessCriteria} 
+                  alt="Goal configuration showing success event selection with AI suggestions, exit criteria including maximum messages and negative signals"
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">
-                You Define the Goal
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-sm">
-                Activation, engagement, cross-sell, retention — you set a single business objective, and the AI optimizes toward it.
-              </p>
             </div>
             
-            {/* Point 2 */}
-            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border hover:shadow-lg transition-all duration-300 text-center">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary font-bold text-xl">2</span>
+            {/* Right side - 4 Points */}
+            <div className="space-y-6 order-1 lg:order-2">
+              {/* Point 1 */}
+              <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border hover:shadow-lg transition-all duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-primary font-bold">1</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground mb-2">
+                      You Define the Goal
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      Activation, engagement, cross-sell, retention — you set a single business objective, and the AI optimizes toward it.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">
-                You Set the Guardrails
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-sm">
-                Choose what the AI can test: offers, tones, channels, timing windows, product categories, incentive thresholds, compliance boundaries. 
-                All actions stay within your brand and regulatory guidelines.
-              </p>
-            </div>
-            
-            {/* Point 3 */}
-            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border hover:shadow-lg transition-all duration-300 text-center">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary font-bold text-xl">3</span>
+              
+              {/* Point 2 */}
+              <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border hover:shadow-lg transition-all duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-primary font-bold">2</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground mb-2">
+                      You Set the Guardrails
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      Choose what the AI can test: offers, tones, channels, timing windows, product categories, incentive thresholds, compliance boundaries.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">
-                You Approve the Strategy
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-sm">
-                Your team selects the strategic levers. 
-                The AI generates hypotheses, runs experiments, and learns — but never creates strategy.
-              </p>
-            </div>
-            
-            {/* Point 4 */}
-            <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border hover:shadow-lg transition-all duration-300 text-center">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary font-bold text-xl">4</span>
+              
+              {/* Point 3 */}
+              <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border hover:shadow-lg transition-all duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-primary font-bold">3</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground mb-2">
+                      You Approve the Strategy
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      Your team selects the strategic levers. The AI generates hypotheses, runs experiments, and learns — but never creates strategy.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">
-                You See Every Decision
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-sm">
-                Every action has a reason code: 
-                why it was chosen, what signals influenced it, and which options were rejected.
-              </p>
+              
+              {/* Point 4 */}
+              <div className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border hover:shadow-lg transition-all duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-primary font-bold">4</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground mb-2">
+                      You See Every Decision
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      Every action has a reason code: why it was chosen, what signals influenced it, and which options were rejected.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

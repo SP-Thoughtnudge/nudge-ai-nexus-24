@@ -9,6 +9,7 @@ import { updateSEOTags, addStructuredData, softwareApplicationSchema } from "@/l
 // Lazy load non-critical sections
 const PlatformPillars = lazy(() => import("@/components/product/platform-pillars"));
 const PsychographicDna = lazy(() => import("@/components/product/psychographic-dna"));
+const DecisionExplainability = lazy(() => import("@/components/product/decision-explainability"));
 const UseCasesAction = lazy(() => import("@/components/product/use-cases-action"));
 const FinalCta = lazy(() => import("@/components/home/final-cta"));
 
@@ -53,6 +54,14 @@ const Product = () => {
         <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
           <LazySection>
             <FadeInSection delay={300}>
+              <DecisionExplainability />
+            </FadeInSection>
+          </LazySection>
+        </Suspense>
+        
+        <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+          <LazySection>
+            <FadeInSection delay={400}>
               <UseCasesAction />
             </FadeInSection>
           </LazySection>

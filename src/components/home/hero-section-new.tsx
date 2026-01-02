@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import goalsDashboard from "@/assets/product/goals-dashboard.png";
 
 export const HeroSectionNew = () => {
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-24 bg-gradient-to-br from-background via-secondary/20 to-background">
+    <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-background via-secondary/20 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-primary/10 border border-primary/20">
@@ -22,7 +23,7 @@ export const HeroSectionNew = () => {
             Replaces segments, A/B tests, and static journeys with real-time decisions for every user.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
             <Button 
               asChild 
               size="xl" 
@@ -43,6 +44,22 @@ export const HeroSectionNew = () => {
                 Explore How It Works →
               </Link>
             </Button>
+          </div>
+
+          {/* Goals Dashboard Screenshot */}
+          <div className="relative max-w-5xl mx-auto">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-2xl blur-xl opacity-60"></div>
+            <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-2xl bg-card">
+              <img 
+                src={goalsDashboard} 
+                alt="Thoughtnudge Goals Dashboard - Define business outcomes and let AI optimize the path with active goals, user tracking, and goal achievement metrics"
+                className="w-full h-auto"
+                loading="eager"
+              />
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Define business outcomes. Let AI optimize the path.
+            </p>
           </div>
         </div>
       </div>

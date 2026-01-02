@@ -24,24 +24,6 @@ export const ProofCredibilitySection = () => {
                 loading="lazy"
               />
             </div>
-            <div className="mt-6 grid grid-cols-4 gap-4 max-w-3xl mx-auto">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">+24.3%</div>
-                <div className="text-xs text-muted-foreground">Net Uplift</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">94%</div>
-                <div className="text-xs text-muted-foreground">Confidence</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">4.2 days</div>
-                <div className="text-xs text-muted-foreground">Time to Impact</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">+42%</div>
-                <div className="text-xs text-muted-foreground">Faster Activation</div>
-              </div>
-            </div>
           </div>
           
           {/* Testimonial Cards */}

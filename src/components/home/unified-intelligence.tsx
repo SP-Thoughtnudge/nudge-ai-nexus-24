@@ -25,20 +25,6 @@ export const UnifiedIntelligence = () => {
                 loading="lazy"
               />
             </div>
-            <div className="mt-6 grid grid-cols-3 gap-4 max-w-2xl mx-auto">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">+34%</div>
-                <div className="text-xs text-muted-foreground">Completion Probability</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">Real-time</div>
-                <div className="text-xs text-muted-foreground">Decision Making</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-foreground">1:1</div>
-                <div className="text-xs text-muted-foreground">Per-User Actions</div>
-              </div>
-            </div>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">

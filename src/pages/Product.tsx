@@ -9,7 +9,7 @@ import { updateSEOTags, addStructuredData, softwareApplicationSchema } from "@/l
 // Lazy load non-critical sections
 const PlatformPillars = lazy(() => import("@/components/product/platform-pillars"));
 const PsychographicDna = lazy(() => import("@/components/product/psychographic-dna"));
-const DecisionExplainability = lazy(() => import("@/components/product/decision-explainability"));
+const DecisionExplainability = lazy(() => import("@/components/product/decision-explainability").then(m => ({ default: m.DecisionExplainability })));
 const UseCasesAction = lazy(() => import("@/components/product/use-cases-action"));
 const FinalCta = lazy(() => import("@/components/home/final-cta"));
 

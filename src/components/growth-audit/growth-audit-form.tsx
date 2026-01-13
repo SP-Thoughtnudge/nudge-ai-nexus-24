@@ -45,7 +45,7 @@ const GrowthAuditForm = () => {
       >
         <h3 className="text-2xl font-semibold text-gray-900 mb-6">Get Your Free Growth Audit</h3>
         <iframe
-          data-tally-src="https://tally.so/embed/mOMq2M?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
+          data-tally-src="https://tally.so/embed/mOMq2M?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
           loading="lazy"
           width="100%"
           height="600"
@@ -54,6 +54,7 @@ const GrowthAuditForm = () => {
           marginWidth={0}
           title="Growth Audit Form"
           className="rounded-lg"
+          sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
         ></iframe>
       </div>
     </div>

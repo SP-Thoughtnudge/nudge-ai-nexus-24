@@ -1,6 +1,7 @@
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
+import { isValidURL } from '@/lib/security';
 
 // Custom renderer options for Contentful rich text
 export const renderOptions = {
@@ -64,16 +65,25 @@ export const renderOptions = {
         </div>
       );
     },
-    [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => (
-      <a
-        href={node.data.uri}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-pink-600 hover:text-pink-700 underline"
-      >
-        {children}
-      </a>
-    ),
+    [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => {
+      const uri = node.data.uri;
+      
+      // Only allow http/https URLs to prevent javascript: and data: URL attacks
+      if (!isValidURL(uri)) {
+        return <span className="text-gray-600">{children}</span>;
+      }
+      
+      return (
+        <a
+          href={uri}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-pink-600 hover:text-pink-700 underline"
+        >
+          {children}
+        </a>
+      );
+    },
   },
 };
 

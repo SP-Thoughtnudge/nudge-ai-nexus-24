@@ -11,15 +11,19 @@ export const HeroSectionNew = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-6 leading-tight px-2">
-            AI Decisioning for FinTech Activation
+            AI Decisioning for Revenue Growth
           </h1>
           
           <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-foreground/90 mb-4 leading-relaxed max-w-4xl mx-auto">
-            AI that learns what it takes to activate each user — and executes it automatically.
+            AI that learns what revenue action works for each user and executes it automatically.
           </h2>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Replaces segments, A/B tests, and static journeys with real-time decisions for every user.
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            Replaces manual segments, A/B tests, and static journeys with a learning system that decides the optimal action for every individual in real time.
+          </p>
+          
+          <p className="text-sm font-medium text-primary mb-12">
+            Proven 25%–40% uplift in revenue-critical outcomes across production deployments.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">

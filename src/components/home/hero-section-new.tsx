@@ -5,11 +5,7 @@ export const HeroSectionNew = () => {
   return (
     <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-background via-secondary/20 to-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-sm font-medium text-primary">Built for BFSI</span>
-          </div>
-          
+      <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-6 leading-tight px-2">
             AI Decisioning for Revenue Growth
           </h1>

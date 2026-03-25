@@ -1,262 +1,91 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --background: 220 20% 97%;
+    --foreground: 220 25% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
- 
-    --primary: 222 63% 33%;
-    --primary-foreground: 0 0% 100%;
- 
-    --secondary: 217 91% 53%;
-    --secondary-foreground: 0 0% 100%;
- 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 35.3%;
- 
-    --accent: 142 71% 45%;
-    --accent-foreground: 0 0% 100%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --card-foreground: 220 25% 10%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 0 0% 0%;
- 
-    --radius: 0.5rem;
-  }
- 
-  .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 98%;
- 
-    --card: 0 0% 0%;
-    --card-foreground: 0 0% 98%;
- 
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 98%;
- 
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
     --primary: 222 63% 33%;
     --primary-foreground: 0 0% 100%;
- 
-    --secondary: 217 91% 53%;
-    --secondary-foreground: 0 0% 100%;
- 
-    --muted: 0 0% 17.5%;
-    --muted-foreground: 0 0% 65.1%;
- 
+
+    --secondary: 220 16% 93%;
+    --secondary-foreground: 220 25% 10%;
+
+    --muted: 220 16% 93%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 142 71% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 222 63% 33%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 222 63% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.3% 26.1%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 222 63% 33%;
+  }
+
+  .dark {
+    --background: 220 20% 6%;
+    --foreground: 220 10% 94%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 220 10% 94%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 220 10% 94%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 220 10% 94%;
+
+    --muted: 220 16% 16%;
+    --muted-foreground: 220 10% 56%;
+
     --accent: 142 71% 45%;
     --accent-foreground: 0 0% 100%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
- 
-    --border: 0 0% 17.5%;
-    --input: 0 0% 17.5%;
-    --ring: 0 0% 83.9%;
+
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --ring: 217 91% 60%;
   }
 }
- 
+
 @layer base {
-  /* Global Typography */
-  h1 {
-    @apply font-extrabold text-4xl md:text-5xl lg:text-6xl text-foreground;
-  }
-  h2 {
-    @apply font-bold text-3xl md:text-4xl text-foreground;
-  }
-  h3 {
-    @apply font-semibold text-xl text-foreground;
-  }
-  p.lead {
-    @apply text-lg text-muted-foreground;
-  }
-  p {
-    @apply text-base font-normal text-muted-foreground;
-  }
-  
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans;
-  }
-}
-
-@layer components {
-  .text-2xs {
-    font-size: 0.7rem;
-  }
-  
-  /* Global class for pages with fixed navbar */
-  .page-with-navbar {
-    @apply pt-24 md:pt-28;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 }
 
 @layer utilities {
-  /* Scrolling Animation for Logo Ticker */
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  
-  /* Moving dot animation for hero section */
-  @keyframes moveToCustomer {
-    0% { 
-      transform: translateX(-50%) translateY(0); 
-      opacity: 1;
-    }
-    100% { 
-      transform: translateX(-50%) translateY(60px); 
-      opacity: 0; 
-    }
-  }
-
-  /* Product Hero Animations */
-  @keyframes neural-pulse {
-    0%, 100% { 
-      transform: scale(1); 
-      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
-    }
-    50% { 
-      transform: scale(1.05); 
-      box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
-    }
-  }
-
-  @keyframes neural-node {
-    0%, 100% { 
-      transform: scale(0.8); 
-      opacity: 0.6;
-    }
-    50% { 
-      transform: scale(1.2); 
-      opacity: 1;
-    }
-  }
-
-  @keyframes data-flow {
-    0% { 
-      background: linear-gradient(90deg, hsl(var(--muted-foreground) / 0.4) 0%, hsl(var(--primary)) 0%);
-    }
-    100% { 
-      background: linear-gradient(90deg, hsl(var(--muted-foreground) / 0.4) 70%, hsl(var(--primary)) 100%);
-    }
-  }
-
-  /* Scroll animation for logo ticker */
-  @keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  
-  @keyframes decision-branch {
-    0% { 
-      opacity: 0; 
-      transform: translateX(-10px);
-    }
-    100% { 
-      opacity: 1; 
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes connection-flow {
-    0% { 
-      opacity: 0; 
-      transform: scaleX(0);
-    }
-    100% { 
-      opacity: 1; 
-      transform: scaleX(1);
-    }
-  }
-
-  @keyframes growth-bar {
-    0% { 
-      transform: scaleY(0); 
-      opacity: 0;
-    }
-    100% { 
-      transform: scaleY(1); 
-      opacity: 1;
-    }
-  }
-
-  @keyframes final-flow {
-    0% { 
-      opacity: 0; 
-      transform: scaleX(0);
-    }
-    100% { 
-      opacity: 1; 
-      transform: scaleX(1);
-    }
-  }
-
-  @keyframes float {
-    0%, 100% { 
-      transform: translateY(0px);
-    }
-    50% { 
-      transform: translateY(-8px);
-    }
-  }
-
-  /* Orbit Animations for Unified Intelligence */
-  @keyframes orbit-1 {
-    0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
-    100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
-  }
-
-  @keyframes orbit-2 {
-    0% { transform: rotate(90deg) translateX(80px) rotate(-90deg); }
-    100% { transform: rotate(450deg) translateX(80px) rotate(-450deg); }
-  }
-
-  @keyframes orbit-3 {
-    0% { transform: rotate(180deg) translateX(80px) rotate(-180deg); }
-    100% { transform: rotate(540deg) translateX(80px) rotate(-540deg); }
-  }
-
-  @keyframes orbit-4 {
-    0% { transform: rotate(270deg) translateX(80px) rotate(-270deg); }
-    100% { transform: rotate(630deg) translateX(80px) rotate(-630deg); }
-  }
-
-  /* Animation Classes */
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .animate-neural-pulse {
-    animation: neural-pulse 2s ease-in-out infinite;
-  }
-
-  .animate-orbit-1 {
-    animation: orbit-1 8s linear infinite;
-  }
-  .animate-orbit-2 {
-    animation: orbit-2 8s linear infinite;
-  }
-  .animate-orbit-3 {
-    animation: orbit-3 8s linear infinite;
-  }
-  .animate-orbit-4 {
-    animation: orbit-4 8s linear infinite;
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
 }

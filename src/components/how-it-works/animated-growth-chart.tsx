@@ -29,7 +29,7 @@ const AnimatedGrowthChart = () => {
   useEffect(() => {
     if (!isIntersecting) return;
     
-    const timeouts: NodeJS.Timeout[] = [];
+    const timeouts: ReturnType<typeof setTimeout>[] = [];
     
     // Phase 1: Start counter animation
     timeouts.push(setTimeout(() => {

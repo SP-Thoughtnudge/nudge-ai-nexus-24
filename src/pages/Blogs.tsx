@@ -276,7 +276,7 @@ useEffect(() => {
                   {categories.map((category) => (
                     <Button
                       key={category}
-                      variant={activeFilter === category ? "pink" : "outline"}
+                      variant={activeFilter === category ? "default" : "outline"}
                       size="sm"
                       onClick={() => setActiveFilter(category)}
                       className="transition-all duration-200"

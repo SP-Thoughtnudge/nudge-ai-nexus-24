@@ -5,60 +5,58 @@ const BehavioralInsights = () => {
   const insights = [
     {
       icon: TrendingUp,
-      title: "Optimal Timing Windows",
-      description: "4–7 PM spike in conversions",
-      stat: "+320%",
-      detail: "lift discovered through per-user timing experiments"
+      title: "Churn Timing Patterns",
+      description: "Day 7–14 is the critical window",
+      stat: "+45%",
+      detail: "retention lift when agents intervene during the disengagement window — before users hit the point of no return"
     },
     {
       icon: Target,
-      title: "Motivational Drivers",
-      description: "FOMO vs. Reassurance",
-      stat: "2.1× variance",
-      detail: "in response across user micro-segments",
-      example: "(Example: reassurance messaging outperforms urgency for users who browse frequently but act slowly)"
+      title: "Renewal Motivators",
+      description: "Value reminder vs. discount offer",
+      stat: "2.3× variance",
+      detail: "in renewal conversion across user micro-cohorts",
+      example: "(Example: power users renew faster with feature unlock messages, while light users respond to social proof)"
     },
     {
       icon: Users,
-      title: "High LTV Micro-Cohorts",
-      description: "15% of users → 60% of revenue",
+      title: "High-CLTV Micro-Cohorts",
+      description: "12% of users → 55% of subscription revenue",
       stat: "",
-      detail: "Agents surface micro-cohorts defined by behavioral patterns, not demographic fields."
+      detail: "Agents surface retention-critical cohorts defined by behavioral engagement, not demographics."
     }
   ];
 
-  const fintechExamples = [
-    "High-browse/no-KYC users convert with reassurance-based nudges rather than offers",
-    "Market-event-sensitive users show 3× higher trade activity with educational insights",
-    "Long-term holders respond best to \"portfolio health\" messages, not transactional notifications"
+  const retentionExamples = [
+    "Users who skip 3+ sessions convert with 'progress reminder' nudges, not discounts",
+    "Subscription renewals spike 40% when timed 5 days before expiry with personalized value summaries",
+    "Dormant users reactivate 3× more with 'new feature' messages than 'we miss you' campaigns"
   ];
 
   const insightTypes = [
-    "Trust-building content sequences",
-    "Risk appetite profiles",
-    "Motivational drivers (curiosity, reassurance, urgency, FOMO)",
-    "High-LTV micro-cohorts",
-    "Winback-specific triggers",
-    "Channel-timing affinity clusters"
+    "Engagement decay patterns",
+    "Feature adoption sequences that predict retention",
+    "Optimal renewal timing per user",
+    "Channel-timing affinity for re-engagement",
+    "Winback-specific behavioral triggers",
+    "Subscription lifecycle risk signals"
   ];
 
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Deep Behavioral Insights
+            Retention Insights You Can't See Today
           </h2>
           <p className="text-xl text-muted-foreground mb-4 leading-relaxed">
-            Insights You Can't Get From Segments, Rule-Based Journeys, or A/B Tests
+            Patterns That Segments, Dashboards, and A/B Tests Miss
           </p>
           <p className="text-base text-muted-foreground italic">
-            These are illustrative examples of the types of deep patterns agents uncover automatically from your 1st-party data.
+            These are examples of deep retention patterns agents uncover automatically from your behavioral data.
           </p>
         </div>
 
-        {/* Main Insight Cards */}
         <div className="max-w-6xl mx-auto mb-16">
           <div className="grid md:grid-cols-3 gap-8">
             {insights.map((insight, index) => (
@@ -82,15 +80,15 @@ const BehavioralInsights = () => {
           </div>
         </div>
 
-        {/* Fintech Examples */}
+        {/* Retention Examples */}
         <div className="max-w-5xl mx-auto mb-16">
           <Card className="p-10 bg-gradient-to-br from-muted/50 to-background border-border">
             <div className="flex items-center gap-3 mb-6">
               <Lightbulb className="w-7 h-7 text-primary" />
-              <h3 className="text-2xl font-bold text-foreground">Fintech Examples</h3>
+              <h3 className="text-2xl font-bold text-foreground">Real Retention Patterns</h3>
             </div>
             <div className="space-y-4">
-              {fintechExamples.map((example, index) => (
+              {retentionExamples.map((example, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                   <p className="text-foreground leading-relaxed">{example}</p>
@@ -100,11 +98,10 @@ const BehavioralInsights = () => {
           </Card>
         </div>
 
-        {/* Additional Insights */}
         <div className="max-w-5xl mx-auto">
           <div className="mb-8">
             <p className="text-lg text-foreground font-semibold text-center mb-8">
-              Agents surface dozens of such insights — including:
+              Agents surface dozens of retention insights — including:
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {insightTypes.map((type, index) => (
@@ -120,7 +117,7 @@ const BehavioralInsights = () => {
           
           <div className="text-center p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg">
             <p className="text-lg text-foreground italic">
-              Most of these patterns are not visible in dashboards, SQL reports, or manual analyses.
+              Most of these retention patterns are invisible in dashboards, cohort reports, or manual analyses.
             </p>
           </div>
         </div>

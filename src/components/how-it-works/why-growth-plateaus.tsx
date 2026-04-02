@@ -3,49 +3,46 @@ import { Card } from "@/components/ui/card";
 
 const WhyGrowthPlateaus = () => {
   const blockers = [
-    { icon: Users, label: "Static Segments", description: "Oversimplify behavior" },
-    { icon: Clock, label: "Manual Journeys", description: "Cannot adapt in real-time" },
-    { icon: TestTube, label: "Slow A/B Tests", description: "Learn too slowly" },
-    { icon: TrendingDown, label: "Stagnant Growth", description: "Insights lag behind actions" }
+    { icon: Users, label: "Static Segments", description: "Treat all 'at-risk' users the same" },
+    { icon: Clock, label: "Delayed Interventions", description: "Win-back triggers fire too late" },
+    { icon: TestTube, label: "Slow A/B Tests", description: "Weeks to learn what works" },
+    { icon: TrendingDown, label: "Rising Churn", description: "Retention efforts can't keep up" }
   ];
 
   const signals = [
-    "Customer context",
-    "App events",
-    "Purchases & transactions",
-    "Timing patterns",
-    "Content consumption",
-    "Engagement history",
-    "App journeys"
+    "Session frequency decay",
+    "Feature abandonment patterns",
+    "Subscription lifecycle stage",
+    "Purchase recency & frequency",
+    "In-app engagement depth",
+    "Support interaction history",
+    "Channel response patterns"
   ];
 
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Why Growth Plateaus — Even With More Data
+            Why Retention Plateaus — Even With More Data
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Stacks have evolved. Customer behaviour has evolved. But growth engines still rely on static journeys and slow, manual decisions.
+            B2C apps collect rich behavioral data. But retention programs still rely on static flows and manual segmentation that can't adapt at per-user speed.
           </p>
         </div>
 
-        {/* The Problem Statement */}
         <div className="max-w-5xl mx-auto mb-16">
           <Card className="p-8 md:p-12 bg-gradient-to-br from-muted/50 to-background border-border">
             <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
-              Enterprises collect <span className="font-semibold text-primary">thousands of signals</span> — {signals.join(", ")} — yet use only a few because traditional systems can't keep up.
+              Your app tracks <span className="font-semibold text-primary">dozens of behavioral signals</span> — {signals.join(", ")} — but your retention stack uses only a fraction of this data to make decisions.
             </p>
             <div className="h-px bg-border mb-6" />
             <p className="text-base text-muted-foreground italic">
-              The gap between data available and data utilized continues to widen.
+              The gap between data collected and data acted on is where subscribers are lost.
             </p>
           </Card>
         </div>
 
-        {/* Blockers Grid */}
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-6">
             {blockers.map((blocker, index) => (
@@ -69,10 +66,9 @@ const WhyGrowthPlateaus = () => {
           </div>
         </div>
 
-        {/* Bottom Insight */}
         <div className="max-w-4xl mx-auto mt-16 text-center">
           <p className="text-lg text-muted-foreground">
-            This is the plateau most enterprises hit — not from lack of data, but from <span className="font-semibold text-foreground">systems that can't learn at per-user level</span>.
+            This is the retention plateau — not from lack of data, but from <span className="font-semibold text-foreground">tools that can't learn what keeps each user engaged</span>.
           </p>
         </div>
       </div>

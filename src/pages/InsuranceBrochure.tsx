@@ -147,8 +147,8 @@ const InsuranceBrochure = () => {
                     </div>
                     <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
                       <div className="flex items-center gap-3 mb-3">
-                        <div className="w-10 h-10 bg-brand-pink/10 rounded-full flex items-center justify-center">
-                          <Clock className="h-5 w-5 text-brand-pink" />
+                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                          <Clock className="h-5 w-5 text-primary" />
                         </div>
                         <h3 className="font-semibold">Persistent Memory</h3>
                       </div>
@@ -219,8 +219,8 @@ const InsuranceBrochure = () => {
                 <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden">
                   <div className="p-5">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-brand-pink/10 rounded-full flex items-center justify-center shrink-0">
-                        <MessageSquare className="w-5 h-5 text-brand-pink" />
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                        <MessageSquare className="w-5 h-5 text-primary" />
                       </div>
                       <h3 className="text-base font-semibold text-brand-black">Convert Leads with Real-Time Engagement</h3>
                     </div>
@@ -228,7 +228,7 @@ const InsuranceBrochure = () => {
                       Maximize lead conversion by adapting approach in real-time—product pitch, tone, follow-up timing, and incentive.
                     </p>
                     <div className="bg-gray-50 px-3 py-2 rounded-md">
-                      <p className="text-sm font-medium">Impact: <span className="text-brand-pink">+43% lead-to-policy rate</span></p>
+                      <p className="text-sm font-medium">Impact: <span className="text-primary">+43% lead-to-policy rate</span></p>
                     </div>
                   </div>
                 </div>
@@ -326,8 +326,8 @@ const InsuranceBrochure = () => {
                         </div>
                       </div>
                       <div className="flex items-start">
-                        <div className="mt-1 mr-3 w-8 h-8 bg-brand-pink/20 rounded-full flex items-center justify-center">
-                          <Network className="h-5 w-5 text-brand-pink" />
+                        <div className="mt-1 mr-3 w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                          <Network className="h-5 w-5 text-primary" />
                         </div>
                         <div>
                           <h4 className="font-bold">Cross-Channel Intelligence</h4>

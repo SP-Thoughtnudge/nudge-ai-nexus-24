@@ -173,7 +173,7 @@ const UseCases = () => {
             <Card className="bg-gray-50 border-none">
               <CardContent className="pt-6">
                 <div className="flex items-center mb-4">
-                  <div className="h-12 w-12 rounded-full bg-brand-pink flex items-center justify-center">
+                  <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center">
                     <Rocket className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold ml-4">Autonomous Execution</h3>

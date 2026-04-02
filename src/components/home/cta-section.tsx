@@ -10,7 +10,7 @@ const CtaSection = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-brand-black to-gray-900 rounded-2xl"></div>
           <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-orange rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-pink rounded-full -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary rounded-full -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
           </div>
           
           <div className="relative z-10 p-12 md:p-16 flex flex-col items-center text-center">
@@ -39,7 +39,7 @@ const CtaSection = () => {
                 <p className="text-gray-400">Less manual work</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-brand-pink">93%</p>
+                <p className="text-3xl font-bold text-primary">93%</p>
                 <p className="text-gray-400">Customer satisfaction</p>
               </div>
             </div>

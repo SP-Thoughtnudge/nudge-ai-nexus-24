@@ -47,13 +47,13 @@ const TeamSection = () => {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-2xl font-bold mb-1 text-brand-black">{founder.name}</h3>
-                  <p className="text-brand-pink font-medium mb-4">{founder.role}</p>
+                  <p className="text-primary font-medium mb-4">{founder.role}</p>
                   <p className="text-gray-600 mb-4">{founder.bio}</p>
                   <a 
                     href={founder.linkedin} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-gray-700 hover:text-brand-pink transition-colors"
+                    className="inline-flex items-center text-gray-700 hover:text-primary transition-colors"
                   >
                     <LinkedinIcon className="h-5 w-5 mr-2" />
                     <span>LinkedIn Profile</span>

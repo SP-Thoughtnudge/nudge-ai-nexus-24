@@ -31,15 +31,15 @@ const WhyItMattersSection = () => {
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-            <div className="h-10 w-10 bg-brand-pink/10 rounded-lg flex items-center justify-center mb-4">
-              <TrendingUp className="h-5 w-5 text-brand-pink" />
+            <div className="h-10 w-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <TrendingUp className="h-5 w-5 text-primary" />
             </div>
             <h3 className="text-xl font-bold mb-3 text-brand-black">For Growth Leaders</h3>
             <p className="text-gray-600">
               Measurable ROI with faster experimentation. Move beyond segments to true 1:1 experiences driving higher conversion rates.
             </p>
             <div className="mt-4 pt-4 border-t border-gray-100">
-              <p className="text-sm font-medium text-brand-pink">15-25% increase in customer lifetime value</p>
+              <p className="text-sm font-medium text-primary">15-25% increase in customer lifetime value</p>
             </div>
           </div>
           

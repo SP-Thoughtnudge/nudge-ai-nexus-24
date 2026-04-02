@@ -21,32 +21,32 @@ const GrowthAuditHero = () => {
         </h3>
         <div className="space-y-4">
           <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-brand-pink/10 rounded-full flex items-center justify-center">
-              <BarChart3 className="w-4 h-4 text-brand-pink" />
+            <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+              <BarChart3 className="w-4 h-4 text-primary" />
             </div>
             <p className="text-brand-gray">
               A data-driven analysis of your key engagement and retention gaps.
             </p>
           </div>
           <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-brand-pink/10 rounded-full flex items-center justify-center">
-              <DollarSign className="w-4 h-4 text-brand-pink" />
+            <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+              <DollarSign className="w-4 h-4 text-primary" />
             </div>
             <p className="text-brand-gray">
               An estimate of the potential revenue lift and offer cost savings you could achieve.
             </p>
           </div>
           <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-brand-pink/10 rounded-full flex items-center justify-center">
-              <Cpu className="w-4 h-4 text-brand-pink" />
+            <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+              <Cpu className="w-4 h-4 text-primary" />
             </div>
             <p className="text-brand-gray">
               A clear introduction to how our autonomous AI can solve your specific challenges.
             </p>
           </div>
           <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-brand-pink/10 rounded-full flex items-center justify-center">
-              <Map className="w-4 h-4 text-brand-pink" />
+            <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+              <Map className="w-4 h-4 text-primary" />
             </div>
             <p className="text-brand-gray">
               A high-level roadmap for transitioning from manual journeys to autonomous growth.

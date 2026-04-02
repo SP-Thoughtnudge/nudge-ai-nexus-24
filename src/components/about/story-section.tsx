@@ -28,19 +28,19 @@ const StorySection = () => {
             
             <div className="pl-6 space-y-4">
               <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-brand-pink rounded-full mt-3 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
                 <p>
                   An evolving <strong className="text-brand-black">customer contextual memory</strong> that gets smarter with every interaction.
                 </p>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-brand-pink rounded-full mt-3 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
                 <p>
                   A <strong className="text-brand-black">continuous and adaptive intelligence</strong> that makes real-time decisions.
                 </p>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-brand-pink rounded-full mt-3 flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
                 <p>
                   An AI that <strong className="text-brand-black">learns from data, generates powerful insights, and then acts on them</strong> to deliver real business outcomes.
                 </p>

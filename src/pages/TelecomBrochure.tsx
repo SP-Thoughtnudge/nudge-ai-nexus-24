@@ -25,17 +25,17 @@ const TelecomBrochure = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section - Business Outcome Focused */}
-        <section className="py-16 md:py-20 bg-gradient-to-br from-white to-brand-pink/5">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-white to-primary/5">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-5xl mx-auto">
               <div className="flex flex-col-reverse md:flex-row gap-8 items-center">
                 <div className="w-full md:w-3/5 space-y-5">
                   <div className="flex space-x-3 items-center">
-                    <span className="bg-brand-pink/10 text-brand-pink text-sm font-medium px-3 py-1 rounded-full">Telecom</span>
+                    <span className="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">Telecom</span>
                     <span className="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Agentic AI Solution</span>
                   </div>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-black animate-fade-in">
-                    <span className="text-brand-pink">Unlock Higher ARPU. Win Back Lost Users. Retain At-Risk Customers.</span>
+                    <span className="text-primary">Unlock Higher ARPU. Win Back Lost Users. Retain At-Risk Customers.</span>
                   </h1>
                   <p className="text-xl text-gray-700">
                     The agentic AI system that knows what to say, when to say it, and how to grow your revenue — autonomously.
@@ -49,11 +49,11 @@ const TelecomBrochure = () => {
                   </div>
                 </div>
                 <div className="w-full md:w-2/5 relative">
-                  <div className="absolute -z-10 inset-0 bg-gradient-to-br from-brand-pink/30 to-brand-yellow/20 rounded-full blur-3xl"></div>
+                  <div className="absolute -z-10 inset-0 bg-gradient-to-br from-primary/30 to-brand-yellow/20 rounded-full blur-3xl"></div>
                   <div className="bg-white rounded-xl shadow-lg p-4 animate-scale-in">
                     <div className="bg-gray-100 h-64 rounded-lg flex items-center justify-center p-4">
                       <div className="text-center">
-                        <SignalHigh className="h-12 w-12 text-brand-pink mx-auto mb-4" />
+                        <SignalHigh className="h-12 w-12 text-primary mx-auto mb-4" />
                         <p className="text-gray-500 font-medium">
                           From subscription customers to lifetime advocates
                         </p>
@@ -83,25 +83,25 @@ const TelecomBrochure = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                     <div className="flex items-start gap-3">
                       <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-1">
-                        <span className="text-brand-pink font-bold">·</span>
+                        <span className="text-primary font-bold">·</span>
                       </div>
                       <p className="text-gray-600">Despite automating Voice, Email, WhatsApp, SMS and deploying virtual assistants, growth has plateaued</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-1">
-                        <span className="text-brand-pink font-bold">·</span>
+                        <span className="text-primary font-bold">·</span>
                       </div>
                       <p className="text-gray-600">Most platforms automate tasks, not intelligence</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-1">
-                        <span className="text-brand-pink font-bold">·</span>
+                        <span className="text-primary font-bold">·</span>
                       </div>
                       <p className="text-gray-600">The result: flat ARPU, rising churn, and missed upsell potential</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-1">
-                        <span className="text-brand-pink font-bold">·</span>
+                        <span className="text-primary font-bold">·</span>
                       </div>
                       <p className="text-gray-600">Customers expect contextual relevance, not static rules based one-size-fits-all messaging</p>
                     </div>
@@ -132,8 +132,8 @@ const TelecomBrochure = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                     <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
                       <div className="flex items-center gap-3 mb-3">
-                        <div className="w-10 h-10 bg-brand-pink/10 rounded-full flex items-center justify-center">
-                          <BrainCircuit className="h-5 w-5 text-brand-pink" />
+                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                          <BrainCircuit className="h-5 w-5 text-primary" />
                         </div>
                         <h3 className="font-semibold">Goal-First Intelligence</h3>
                       </div>
@@ -201,8 +201,8 @@ const TelecomBrochure = () => {
                 <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden">
                   <div className="p-5">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-brand-pink/10 rounded-full flex items-center justify-center shrink-0">
-                        <Users className="w-5 h-5 text-brand-pink" />
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                        <Users className="w-5 h-5 text-primary" />
                       </div>
                       <h3 className="text-base font-semibold text-brand-black">Increase ARPU via Upsell & Cross-Sell</h3>
                     </div>
@@ -210,7 +210,7 @@ const TelecomBrochure = () => {
                       Offer the right add-on services personalized to each customer's needs. Agents decide the best product, message, and incentive based on real-time learning.
                     </p>
                     <div className="bg-gray-50 px-3 py-2 rounded-md">
-                      <p className="text-sm font-medium">Impact: <span className="text-brand-pink">+32% ARPU growth</span></p>
+                      <p className="text-sm font-medium">Impact: <span className="text-primary">+32% ARPU growth</span></p>
                     </div>
                   </div>
                 </div>
@@ -288,18 +288,18 @@ const TelecomBrochure = () => {
                 </div>
                 
                 {/* Integration Note */}
-                <div className="bg-gradient-to-br from-brand-pink/5 to-brand-orange/5 rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div className="bg-gradient-to-br from-primary/5 to-brand-orange/5 rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                   <div className="p-5">
                     <h3 className="text-base font-semibold text-brand-black mb-3">Easy Integration</h3>
                     <p className="text-sm text-gray-700">Making your existing systems intelligent — no rip and replace</p>
                     <div className="mt-3">
                       <ul className="space-y-2">
                         <li className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-brand-pink mt-0.5" />
+                          <Check className="w-4 h-4 text-primary mt-0.5" />
                           <span className="text-sm">Connects to your existing CRM, marketing, and data platforms</span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-brand-pink mt-0.5" />
+                          <Check className="w-4 h-4 text-primary mt-0.5" />
                           <span className="text-sm">Enhances your current tech stack with AI-driven intelligence</span>
                         </li>
                       </ul>
@@ -328,8 +328,8 @@ const TelecomBrochure = () => {
                     </p>
                     <div className="space-y-3">
                       <div className="flex items-start">
-                        <div className="mt-1 mr-3 w-8 h-8 bg-brand-pink/20 rounded-full flex items-center justify-center">
-                          <BrainCircuit className="h-5 w-5 text-brand-pink" />
+                        <div className="mt-1 mr-3 w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                          <BrainCircuit className="h-5 w-5 text-primary" />
                         </div>
                         <div>
                           <h4 className="font-bold">Goal-Driven Intelligence</h4>
@@ -360,9 +360,9 @@ const TelecomBrochure = () => {
                     <div className="bg-gray-50 p-4 rounded-lg h-full flex items-center justify-center">
                       <div className="text-center">
                         <div className="relative inline-block">
-                          <div className="w-16 h-16 bg-brand-pink/20 rounded-full absolute -top-3 -left-3 animate-pulse"></div>
+                          <div className="w-16 h-16 bg-primary/20 rounded-full absolute -top-3 -left-3 animate-pulse"></div>
                           <div className="w-16 h-16 bg-brand-orange/20 rounded-full absolute -bottom-3 -right-3 animate-pulse delay-500"></div>
-                          <BrainCircuit className="h-20 w-20 text-brand-pink relative z-10" />
+                          <BrainCircuit className="h-20 w-20 text-primary relative z-10" />
                         </div>
                         <p className="mt-4 font-medium">Reinforcement Learning + Behavioral Science</p>
                         <p className="text-sm text-gray-600 mt-2">Continuous optimization for every individual customer</p>
@@ -386,8 +386,8 @@ const TelecomBrochure = () => {
                   </h2>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-brand-pink/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="h-4 w-4 text-brand-pink" />
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="h-4 w-4 text-primary" />
                       </div>
                       <div>
                         <p className="font-medium">Autonomous Operation</p>
@@ -395,8 +395,8 @@ const TelecomBrochure = () => {
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-brand-pink/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="h-4 w-4 text-brand-pink" />
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="h-4 w-4 text-primary" />
                       </div>
                       <div>
                         <p className="font-medium">Fast Implementation</p>
@@ -404,8 +404,8 @@ const TelecomBrochure = () => {
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-brand-pink/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="h-4 w-4 text-brand-pink" />
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="h-4 w-4 text-primary" />
                       </div>
                       <div>
                         <p className="font-medium">Continuous Improvement</p>
@@ -413,8 +413,8 @@ const TelecomBrochure = () => {
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-brand-pink/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="h-4 w-4 text-brand-pink" />
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="h-4 w-4 text-primary" />
                       </div>
                       <div>
                         <p className="font-medium">Measurable ROI</p>

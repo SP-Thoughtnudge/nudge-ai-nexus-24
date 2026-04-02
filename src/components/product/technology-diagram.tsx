@@ -55,9 +55,9 @@ const TechnologyDiagram = () => {
         </div>
         
         {/* Execution Layer */}
-        <div className="bg-brand-pink/10 p-6 rounded-xl">
+        <div className="bg-primary/10 p-6 rounded-xl">
           <div className="flex items-center mb-4">
-            <Layers className="h-6 w-6 text-brand-pink mr-2" />
+            <Layers className="h-6 w-6 text-primary mr-2" />
             <h4 className="text-lg font-semibold">Execution Layer</h4>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-5 gap-4">

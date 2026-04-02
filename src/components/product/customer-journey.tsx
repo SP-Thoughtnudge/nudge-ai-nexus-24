@@ -74,12 +74,12 @@ const CustomerJourney = () => {
                 </Card>
               </div>
               
-              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-brand-pink absolute left-1/2 transform -translate-x-1/2"></div>
+              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-primary absolute left-1/2 transform -translate-x-1/2"></div>
               
               <div className="md:w-1/2 pl-0 md:pl-8">
                 <h4 className="text-lg font-semibold text-brand-black">AI personalizes recovery approach</h4>
                 <p className="text-gray-600">Chooses email with free shipping offer, timed for 5:30 PM when customer is likely to be available</p>
-                <p className="text-sm text-brand-pink mt-2">Day 1, 5:30 PM</p>
+                <p className="text-sm text-primary mt-2">Day 1, 5:30 PM</p>
               </div>
             </div>
             
@@ -127,12 +127,12 @@ const CustomerJourney = () => {
                 </Card>
               </div>
               
-              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-brand-pink absolute left-1/2 transform -translate-x-1/2"></div>
+              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-primary absolute left-1/2 transform -translate-x-1/2"></div>
               
               <div className="md:w-1/2 pl-0 md:pl-8">
                 <h4 className="text-lg font-semibold text-brand-black">AI adjusts strategy with SMS</h4>
                 <p className="text-gray-600">Sends limited-time 10% discount via SMS next morning, with personalized product mention</p>
-                <p className="text-sm text-brand-pink mt-2">Day 2, 10:15 AM</p>
+                <p className="text-sm text-primary mt-2">Day 2, 10:15 AM</p>
               </div>
             </div>
             
@@ -224,12 +224,12 @@ const CustomerJourney = () => {
                 </Card>
               </div>
               
-              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-brand-pink absolute left-1/2 transform -translate-x-1/2"></div>
+              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-primary absolute left-1/2 transform -translate-x-1/2"></div>
               
               <div className="md:w-1/2 pl-0 md:pl-8">
                 <h4 className="text-lg font-semibold text-brand-black">Customer receives upgrade email</h4>
                 <p className="text-gray-600">Email highlighting room upgrade with balcony view at a special rate sent to the customer</p>
-                <p className="text-sm text-brand-pink mt-2">Day 2</p>
+                <p className="text-sm text-primary mt-2">Day 2</p>
               </div>
             </div>
             
@@ -277,12 +277,12 @@ const CustomerJourney = () => {
                 </Card>
               </div>
               
-              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-brand-pink absolute left-1/2 transform -translate-x-1/2"></div>
+              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-primary absolute left-1/2 transform -translate-x-1/2"></div>
               
               <div className="md:w-1/2 pl-0 md:pl-8">
                 <h4 className="text-lg font-semibold text-brand-black">AI sends experience package</h4>
                 <p className="text-gray-600">SMS with exclusive sunset cruise & dinner experience sent with limited availability messaging</p>
-                <p className="text-sm text-brand-pink mt-2">Day 4</p>
+                <p className="text-sm text-primary mt-2">Day 4</p>
               </div>
             </div>
             
@@ -374,12 +374,12 @@ const CustomerJourney = () => {
                 </Card>
               </div>
               
-              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-brand-pink absolute left-1/2 transform -translate-x-1/2"></div>
+              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-primary absolute left-1/2 transform -translate-x-1/2"></div>
               
               <div className="md:w-1/2 pl-0 md:pl-8">
                 <h4 className="text-lg font-semibold text-brand-black">In-app message delivered</h4>
                 <p className="text-gray-600">Feature-focused upgrade message appears when customer reaches usage limit</p>
-                <p className="text-sm text-brand-pink mt-2">Day 8</p>
+                <p className="text-sm text-primary mt-2">Day 8</p>
               </div>
             </div>
             
@@ -427,12 +427,12 @@ const CustomerJourney = () => {
                 </Card>
               </div>
               
-              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-brand-pink absolute left-1/2 transform -translate-x-1/2"></div>
+              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-primary absolute left-1/2 transform -translate-x-1/2"></div>
               
               <div className="md:w-1/2 pl-0 md:pl-8">
                 <h4 className="text-lg font-semibold text-brand-black">Email with special offer</h4>
                 <p className="text-gray-600">Value-comparison email with 20% first-month discount and ROI calculator sent</p>
-                <p className="text-sm text-brand-pink mt-2">Day 14</p>
+                <p className="text-sm text-primary mt-2">Day 14</p>
               </div>
             </div>
             
@@ -444,7 +444,7 @@ const CustomerJourney = () => {
                 <p className="text-sm text-brand-orange mt-2">Day 15</p>
               </div>
               
-              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-brand-pink absolute left-1/2 transform -translate-x-1/2"></div>
+              <div className="hidden md:flex items-center justify-center z-10 bg-white rounded-full h-10 w-10 border-2 border-primary absolute left-1/2 transform -translate-x-1/2"></div>
               
               <div className="md:w-1/2 pl-0 md:pl-8">
                 <Card>

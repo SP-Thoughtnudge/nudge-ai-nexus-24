@@ -10,7 +10,7 @@ const HeroSection = () => {
         {/* Decorative elements */}
         <div className="absolute -top-24 -right-24 w-64 h-64 bg-brand-orange/20 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-brand-yellow/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 right-1/4 w-40 h-40 bg-brand-pink/10 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/3 right-1/4 w-40 h-40 bg-primary/10 rounded-full blur-2xl"></div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-black leading-tight mb-6 animate-fade-in">

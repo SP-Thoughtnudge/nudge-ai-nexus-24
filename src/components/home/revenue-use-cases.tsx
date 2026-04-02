@@ -49,7 +49,7 @@ const RevenueUseCases = () => {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-brand-pink/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 md:px-6">
         {/* Use Cases Section */}

@@ -30,7 +30,7 @@ const BenefitsSection = () => {
       title: "Autonomous Customer Decisioning",
       description: "The platform makes real-time decisions on what to send, when to send it, and which channel to use—all autonomously.",
       icon: BrainCircuit,
-      className: "border-l-4 border-l-brand-pink"
+      className: "border-l-4 border-l-primary"
     },
     {
       title: "Explains Every Decision It Makes",

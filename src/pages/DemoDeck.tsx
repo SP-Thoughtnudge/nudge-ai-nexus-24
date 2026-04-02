@@ -87,7 +87,7 @@ const DemoDeck = () => {
                               <span>CDP Dashboard</span>
                             </div>
                             <div className="bg-white rounded shadow-sm p-2 text-xs text-center flex flex-col items-center justify-center">
-                              <MessageCircle className="h-6 w-6 text-brand-pink mb-1" />
+                              <MessageCircle className="h-6 w-6 text-primary mb-1" />
                               <span>ESP Campaign</span>
                             </div>
                             <div className="bg-white rounded shadow-sm p-2 text-xs text-center flex flex-col items-center justify-center">
@@ -127,7 +127,7 @@ const DemoDeck = () => {
               <div className="p-10 md:p-16 h-full">
                 <div className="flex flex-col h-full">
                   <div className="mb-8 space-y-4 text-center max-w-3xl mx-auto">
-                    <div className="bg-brand-pink/10 text-brand-pink text-sm font-medium px-3 py-1 rounded-full w-fit mx-auto">
+                    <div className="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full w-fit mx-auto">
                       How It's Done Today
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-brand-black">
@@ -265,7 +265,7 @@ const DemoDeck = () => {
                       <div className="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden">
                         {/* Brain in center */}
                         <div className="flex justify-center mb-8 relative">
-                          <div className="w-32 h-32 rounded-full bg-gradient-to-br from-brand-orange/20 to-brand-pink/20 flex items-center justify-center z-10">
+                          <div className="w-32 h-32 rounded-full bg-gradient-to-br from-brand-orange/20 to-primary/20 flex items-center justify-center z-10">
                             <BrainCircuit className="h-16 w-16 text-brand-orange" />
                           </div>
                           {/* Glowing effect */}
@@ -290,7 +290,7 @@ const DemoDeck = () => {
                               <span className="text-sm font-medium">CRMs</span>
                             </div>
                             <div className="h-20 flex items-center justify-center">
-                              <div className="w-full h-0.5 bg-brand-pink"></div>
+                              <div className="w-full h-0.5 bg-primary"></div>
                             </div>
                           </div>
                           
@@ -314,7 +314,7 @@ const DemoDeck = () => {
                             </div>
                           </div>
                           <div className="flex flex-col items-center">
-                            <ArrowRight className="h-5 w-5 text-brand-pink mb-1" />
+                            <ArrowRight className="h-5 w-5 text-primary mb-1" />
                             <div className="bg-white rounded-lg w-full p-2 shadow-sm">
                               <span className="text-xs block text-center">SMS</span>
                             </div>
@@ -328,7 +328,7 @@ const DemoDeck = () => {
                         </div>
                         
                         {/* Personalized actions output */}
-                        <div className="mt-6 bg-gradient-to-r from-brand-orange/10 to-brand-pink/10 p-4 rounded-lg">
+                        <div className="mt-6 bg-gradient-to-r from-brand-orange/10 to-primary/10 p-4 rounded-lg">
                           <h3 className="text-center font-medium mb-2">Personalized Actions</h3>
                           <div className="grid grid-cols-3 gap-3 text-sm">
                             <div className="bg-white p-2 rounded shadow-sm text-center">
@@ -432,7 +432,7 @@ const DemoDeck = () => {
                             </div>
                             <div className="h-20 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center p-4">
                               <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                                <div className="bg-gradient-to-r from-brand-orange to-brand-pink h-full rounded-full animate-[progress_3s_ease-in-out_infinite]" style={{width: '60%'}}></div>
+                                <div className="bg-gradient-to-r from-brand-orange to-primary h-full rounded-full animate-[progress_3s_ease-in-out_infinite]" style={{width: '60%'}}></div>
                               </div>
                             </div>
                             <p className="text-xs text-gray-500 mt-2">
@@ -928,7 +928,7 @@ const DemoDeck = () => {
                                   </div>
                                 </div>
                               </div>
-                              <div className="bg-brand-pink/5 p-3 rounded border border-brand-pink/20">
+                              <div className="bg-primary/5 p-3 rounded border border-primary/20">
                                 <h4 className="text-sm font-medium mb-2">Real-time Performance</h4>
                                 <div className="space-y-2">
                                   <div className="bg-white p-2 rounded text-sm flex justify-between">
@@ -1004,7 +1004,7 @@ const DemoDeck = () => {
                   
                   <div className="flex-grow flex items-center justify-center">
                     <div className="max-w-2xl w-full">
-                      <div className="bg-gradient-to-br from-brand-orange/5 to-brand-pink/5 rounded-xl shadow-lg p-8 text-center">
+                      <div className="bg-gradient-to-br from-brand-orange/5 to-primary/5 rounded-xl shadow-lg p-8 text-center">
                         {/* Team image placeholder */}
                         <div className="bg-white rounded-lg mb-6 p-8">
                           <div className="flex justify-center gap-4">

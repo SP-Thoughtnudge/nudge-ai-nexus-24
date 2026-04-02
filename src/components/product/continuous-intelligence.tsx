@@ -41,7 +41,7 @@ const ContinuousIntelligence = () => {
           </div>
           
           <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-            <div className="h-14 w-14 flex items-center justify-center bg-brand-pink/20 text-brand-pink rounded-full mb-6">
+            <div className="h-14 w-14 flex items-center justify-center bg-primary/20 text-primary rounded-full mb-6">
               <RefreshCw className="h-7 w-7" />
             </div>
             <h3 className="text-2xl font-bold text-brand-black mb-4">Perpetual Learning System</h3>
@@ -50,15 +50,15 @@ const ContinuousIntelligence = () => {
             </p>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <span className="h-6 w-6 rounded-full bg-brand-pink/20 text-brand-pink flex items-center justify-center mr-2 flex-shrink-0 text-sm font-semibold">✓</span>
+                <span className="h-6 w-6 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-2 flex-shrink-0 text-sm font-semibold">✓</span>
                 <span>Real-time learning from customer responses</span>
               </li>
               <li className="flex items-start">
-                <span className="h-6 w-6 rounded-full bg-brand-pink/20 text-brand-pink flex items-center justify-center mr-2 flex-shrink-0 text-sm font-semibold">✓</span>
+                <span className="h-6 w-6 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-2 flex-shrink-0 text-sm font-semibold">✓</span>
                 <span>Evolving customer models that adapt to changing behaviors</span>
               </li>
               <li className="flex items-start">
-                <span className="h-6 w-6 rounded-full bg-brand-pink/20 text-brand-pink flex items-center justify-center mr-2 flex-shrink-0 text-sm font-semibold">✓</span>
+                <span className="h-6 w-6 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-2 flex-shrink-0 text-sm font-semibold">✓</span>
                 <span>No data decay or outdated personas</span>
               </li>
             </ul>

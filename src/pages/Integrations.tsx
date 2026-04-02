@@ -167,7 +167,7 @@ const Integrations = () => {
 
                   {/* Center - AI Brain */}
                   <div className="text-center">
-                    <div className="bg-gradient-to-br from-brand-orange to-brand-pink p-8 rounded-full mx-auto w-32 h-32 flex items-center justify-center mb-4">
+                    <div className="bg-gradient-to-br from-brand-orange to-primary p-8 rounded-full mx-auto w-32 h-32 flex items-center justify-center mb-4">
                       <Brain className="h-12 w-12 text-white" />
                     </div>
                     <h3 className="text-lg font-semibold text-brand-black">Thoughtnudge AI Brain</h3>

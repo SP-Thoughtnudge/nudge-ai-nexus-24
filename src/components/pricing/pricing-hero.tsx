@@ -13,10 +13,10 @@ const PricingHero = () => {
             with a structure that ensures we only win when you win.
           </p>
           <div className="flex justify-center">
-            <div className="w-64 h-32 bg-gradient-to-r from-brand-orange/20 to-brand-pink/20 rounded-xl flex items-center justify-center">
+            <div className="w-64 h-32 bg-gradient-to-r from-brand-orange/20 to-primary/20 rounded-xl flex items-center justify-center">
               <div className="flex space-x-4">
                 <div className="w-8 h-8 bg-brand-orange rounded-full"></div>
-                <div className="w-8 h-8 bg-brand-pink rounded-full"></div>
+                <div className="w-8 h-8 bg-primary rounded-full"></div>
               </div>
             </div>
           </div>

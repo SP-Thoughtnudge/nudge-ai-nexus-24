@@ -50,7 +50,7 @@ const TestimonialSection = () => {
           </Card>
           
           <Card className="overflow-hidden shadow-lg border-0 transition-all duration-300 hover:shadow-xl">
-            <div className="h-2 bg-brand-pink"></div>
+            <div className="h-2 bg-primary"></div>
             <CardContent className="p-8">
               <div className="mb-6">
                 {/* Placeholder for company logo */}
@@ -70,11 +70,11 @@ const TestimonialSection = () => {
               <div className="mt-6 pt-6 border-t border-gray-100">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-3xl font-bold text-brand-pink">45%</p>
+                    <p className="text-3xl font-bold text-primary">45%</p>
                     <p className="text-sm text-gray-600">Retention increase</p>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-brand-pink">3.2x</p>
+                    <p className="text-3xl font-bold text-primary">3.2x</p>
                     <p className="text-sm text-gray-600">ROI improvement</p>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ const TestimonialSection = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <a href="/case-studies" className="inline-flex items-center text-brand-orange hover:text-brand-orange/90 font-medium group">
+          <a href="/case-studies" className="inline-flex items-center text-brand-orange hover:text-primary/90 font-medium group">
             <span>See all customer stories</span>
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>

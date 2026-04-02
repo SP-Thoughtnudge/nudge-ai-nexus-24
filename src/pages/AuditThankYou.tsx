@@ -144,7 +144,7 @@ const AuditThankYou = () => {
                   </h3>
                   <Link 
                     to={`/blog/${post.fields?.slug || contentfulService.generateSlug(post.fields?.title || post.title) || post.slug}`}
-                    className="inline-flex items-center text-brand-pink hover:text-brand-pink/80 font-medium transition-colors"
+                    className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
                   >
                     Read More 
                     <ArrowRight className="w-4 h-4 ml-1" />

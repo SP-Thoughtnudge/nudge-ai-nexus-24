@@ -1,0 +1,35 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import OptimizedImage from "@/components/ui/optimized-image";
+
+export const ProductHero = () => {
+  return (
+    <section className="pt-32 pb-20 md:pt-40 md:pb-24 bg-gradient-to-br from-background via-secondary/20 to-background">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+            The Autonomous Platform to{" "}
+            <span className="text-primary">Maximize Customer Lifetime Value</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-3xl mx-auto">
+            Thoughtnudge is your enterprise AI decisioning platform. We activate your 1st party data and behavioral intelligence to deliver hyper-personalized experiences across every customer touchpoint, maximizing lifetime value at scale.
+          </p>
+
+          <div className="relative max-w-6xl mx-auto mt-6">
+            <div className="relative bg-transparent">
+              <OptimizedImage
+                src="/lovable-uploads/1d4a2046-adf3-4c69-a760-eb2737406da1.png?v=20250810"
+                alt="Thoughtnudge product hero illustrating data-to-decisions-to-growth"
+                className="w-full h-[280px] md:h-[340px] lg:h-[360px] object-contain"
+                lazy={false}
+                priority={true}
+                sizes="100vw"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

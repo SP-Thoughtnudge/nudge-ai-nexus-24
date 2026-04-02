@@ -9,13 +9,13 @@ const CoreInsight = () => {
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-5 gap-12 items-center">
             <div className="md:col-span-3">
-              <div className="mb-6 inline-flex items-center justify-center h-12 w-12 rounded-md bg-brand-pink/10">
-                <Lightbulb className="h-6 w-6 text-brand-pink" />
+              <div className="mb-6 inline-flex items-center justify-center h-12 w-12 rounded-md bg-primary/10">
+                <Lightbulb className="h-6 w-6 text-primary" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
                 One Core Insight Changed Everything
               </h2>
-              <div className="h-1 w-20 bg-brand-pink mb-6"></div>
+              <div className="h-1 w-20 bg-primary mb-6"></div>
               
               <p className="text-brand-gray mb-6 text-lg">
                 Customers leave signals everywhere — what they click, what they ignore, how they feel, what they need.

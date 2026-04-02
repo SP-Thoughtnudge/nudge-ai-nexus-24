@@ -41,7 +41,7 @@ const InsuranceBrochure = () => {
                     The agentic AI system that autonomously builds customer loyalty and drives growth across the entire insurance journey.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button variant="yellow" size="lg" asChild>
+                    <Button variant="default" size="lg" asChild>
                       <Link to="/demo">
                         Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
                       </Link>
@@ -411,7 +411,7 @@ const InsuranceBrochure = () => {
                       Join forward-thinking insurers using Thoughtnudge's autonomous growth agents to build deeper relationships with policyholders and drive measurable business outcomes.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <Button variant="yellow" size="lg" className="group" asChild>
+                      <Button variant="default" size="lg" className="group" asChild>
                         <Link to="/demo">
                           Book a Demo
                           <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

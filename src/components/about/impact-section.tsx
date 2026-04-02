@@ -28,8 +28,8 @@ const ImpactSection = () => {
             </div>
             
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="h-12 w-12 bg-brand-pink/10 rounded-lg flex items-center justify-center mb-6">
-                <TrendingUp className="h-6 w-6 text-brand-pink" />
+              <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                <TrendingUp className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-brand-black">For Growth Leaders</h3>
               <p className="text-gray-600">

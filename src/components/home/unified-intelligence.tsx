@@ -1,55 +1,47 @@
+import { Brain, TrendingDown, Clock, RefreshCw } from "lucide-react";
+import { Card } from "@/components/ui/card";
+
 export const UnifiedIntelligence = () => {
+  const capabilities = [
+    {
+      icon: TrendingDown,
+      title: "Predict Churn Before It Happens",
+      description: "Agents detect disengagement signals — session drop-offs, skipped content, declining frequency — and intervene proactively."
+    },
+    {
+      icon: Clock,
+      title: "Optimal Timing for Every User",
+      description: "Discover each user's engagement window. Reach them when they're most likely to act — not when your calendar says to."
+    },
+    {
+      icon: RefreshCw,
+      title: "Adaptive Re-engagement",
+      description: "Every interaction teaches the agent. Messaging, offers, and channels evolve per-user to maximize retention outcomes."
+    }
+  ];
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-16 text-center">
-            The Brain Behind the Growth:{" "}
-            <span className="text-primary">Continuous Learning & Adaptive Intelligence</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-center">
+            Retention Intelligence That{" "}
+            <span className="text-primary">Learns Per User</span>
           </h2>
+          <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+            One AI agent per customer. Continuously learning what keeps them subscribed, engaged, and coming back.
+          </p>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Text Content */}
-            <div className="space-y-6 order-1 lg:order-1">
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Our Agentic AI is the central intelligence layer for your entire growth stack. It unifies cross-channel behavior and real-time user intent to make the single best decision for every customer. It <strong>continuously learns</strong> from every interaction, making each decision sharper and more <strong>adaptive</strong> than the last.
-              </p>
-              
-              {/* Key Features */}
-              <div className="space-y-4 mt-8">
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <div className="w-3 h-3 bg-primary rounded-full"></div>
-                  </div>
-                  <span className="text-foreground font-medium">Cross-channel behavior unification</span>
+          <div className="grid md:grid-cols-3 gap-8">
+            {capabilities.map((cap, index) => (
+              <Card key={index} className="p-8 bg-card border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                  <cap.icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
                 </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <div className="w-3 h-3 bg-primary rounded-full"></div>
-                  </div>
-                  <span className="text-foreground font-medium">Real-time user intent analysis</span>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <div className="w-3 h-3 bg-primary rounded-full"></div>
-                  </div>
-                  <span className="text-foreground font-medium">Continuous learning optimization</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* Central AI Brain Image */}
-            <div className="flex justify-center order-2 lg:order-2">
-              <div className="relative w-full max-w-lg">
-                <img 
-                  src="/lovable-uploads/b753f089-0a73-4cc1-8a49-d2746310a00c.png" 
-                  alt="Central AI brain orchestrating personalized customer interactions" 
-                  className="w-full h-auto rounded-2xl shadow-lg"
-                />
-              </div>
-            </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">{cap.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{cap.description}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

@@ -49,7 +49,7 @@ const EcommerceBrochure = () => {
                   </div>
                 </div>
                 <div className="w-full md:w-2/5 relative">
-                  <div className="absolute -z-10 inset-0 bg-gradient-to-br from-brand-orange/30 to-brand-pink/20 rounded-full blur-3xl"></div>
+                  <div className="absolute -z-10 inset-0 bg-gradient-to-br from-brand-orange/30 to-primary/20 rounded-full blur-3xl"></div>
                   <div className="bg-white rounded-xl shadow-lg p-4 animate-scale-in">
                     <div className="bg-gray-100 h-64 rounded-lg flex items-center justify-center p-4">
                       <div className="text-center">
@@ -138,8 +138,8 @@ const EcommerceBrochure = () => {
                     </div>
                     <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
                       <div className="flex items-center gap-3 mb-3">
-                        <div className="w-10 h-10 bg-brand-pink/10 rounded-full flex items-center justify-center">
-                          <Network className="h-5 w-5 text-brand-pink" />
+                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                          <Network className="h-5 w-5 text-primary" />
                         </div>
                         <h3 className="font-semibold">Cross-Channel Learning</h3>
                       </div>
@@ -201,8 +201,8 @@ const EcommerceBrochure = () => {
                 <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden">
                   <div className="p-5">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-brand-pink/10 rounded-full flex items-center justify-center shrink-0">
-                        <TrendingUp className="w-5 h-5 text-brand-pink" />
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                        <TrendingUp className="w-5 h-5 text-primary" />
                       </div>
                       <h3 className="text-base font-semibold text-brand-black">Optimize Paid Media Retargeting</h3>
                     </div>
@@ -210,7 +210,7 @@ const EcommerceBrochure = () => {
                       Improve ROAS by dynamically selecting message, channel, offer, and timing for each visitor.
                     </p>
                     <div className="bg-gray-50 px-3 py-2 rounded-md">
-                      <p className="text-sm font-medium">Impact: <span className="text-brand-pink">+58% ROAS</span></p>
+                      <p className="text-sm font-medium">Impact: <span className="text-primary">+58% ROAS</span></p>
                     </div>
                   </div>
                 </div>
@@ -270,7 +270,7 @@ const EcommerceBrochure = () => {
                 </div>
                 
                 {/* Business Impact Summary */}
-                <div className="bg-gradient-to-br from-brand-orange/5 to-brand-pink/5 rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div className="bg-gradient-to-br from-brand-orange/5 to-primary/5 rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                   <div className="p-5">
                     <h3 className="text-base font-semibold text-brand-black mb-3">Business Outcomes</h3>
                     <ul className="space-y-2">
@@ -320,8 +320,8 @@ const EcommerceBrochure = () => {
                         </div>
                       </div>
                       <div className="flex items-start">
-                        <div className="mt-1 mr-3 w-8 h-8 bg-brand-pink/20 rounded-full flex items-center justify-center">
-                          <Infinity className="h-5 w-5 text-brand-pink" />
+                        <div className="mt-1 mr-3 w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                          <Infinity className="h-5 w-5 text-primary" />
                         </div>
                         <div>
                           <h4 className="font-bold">Autonomous Execution</h4>
@@ -344,7 +344,7 @@ const EcommerceBrochure = () => {
                       <div className="text-center">
                         <div className="relative inline-block">
                           <div className="w-16 h-16 bg-brand-orange/20 rounded-full absolute -top-3 -left-3 animate-pulse"></div>
-                          <div className="w-16 h-16 bg-brand-pink/20 rounded-full absolute -bottom-3 -right-3 animate-pulse delay-500"></div>
+                          <div className="w-16 h-16 bg-primary/20 rounded-full absolute -bottom-3 -right-3 animate-pulse delay-500"></div>
                           <BrainCircuit className="h-20 w-20 text-brand-orange relative z-10" />
                         </div>
                         <p className="mt-4 font-medium">Reinforcement Learning + Behavioral Science</p>

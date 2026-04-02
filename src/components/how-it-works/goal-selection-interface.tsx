@@ -21,7 +21,7 @@ const GoalSelectionInterface = () => {
   useEffect(() => {
     if (!isIntersecting) return;
     
-    const timeouts: NodeJS.Timeout[] = [];
+    const timeouts: ReturnType<typeof setTimeout>[] = [];
     
     // Phase 1: Show interface
     timeouts.push(setTimeout(() => setAnimationPhase(1), 300));

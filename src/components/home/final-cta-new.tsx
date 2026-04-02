@@ -7,22 +7,32 @@ export const FinalCtaNew = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-            Ready to Unlock Your{" "}
-            <span className="text-primary">True Growth Potential?</span>
+            Ready to Fix{" "}
+            <span className="text-primary">Your Retention Problem?</span>
           </h2>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed">
-            See how Thoughtnudge can transform your customer engagement and deliver measurable results in weeks, not months.
+            Get a free retention audit. We'll analyze your churn patterns and show you exactly where AI can recover lost revenue.
           </p>
           
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               asChild 
               size="xl" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Link to="/growth-audit">
-                Book a Demo
+                Get a Retention Audit
+              </Link>
+            </Button>
+            <Button 
+              asChild 
+              size="xl" 
+              variant="outline"
+              className="px-8 py-4 text-lg font-semibold rounded-lg"
+            >
+              <Link to="/product">
+                Explore the Platform
               </Link>
             </Button>
           </div>
@@ -30,23 +40,15 @@ export const FinalCtaNew = () => {
           {/* Trust Signals */}
           <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground">
             <div className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
               <span>SOC 2 Compliant</span>
             </div>
-            
             <div className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
               <span>GDPR Ready</span>
             </div>
-            
             <div className="flex items-center space-x-2">
-              <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
               <span>Enterprise Security</span>
             </div>
           </div>

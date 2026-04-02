@@ -31,10 +31,10 @@ const MissionSection = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-t-4 border-t-brand-pink">
+          <Card className="border-t-4 border-t-primary">
             <CardContent className="p-6 md:p-8">
-              <div className="h-12 w-12 bg-brand-pink/10 rounded-lg flex items-center justify-center mb-6">
-                <Lightbulb className="h-6 w-6 text-brand-pink" />
+              <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                <Lightbulb className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-brand-black">Vision</h3>
               <p className="text-gray-600">

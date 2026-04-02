@@ -100,7 +100,7 @@ const PsychographicProfiles = () => {
         <CardHeader className="pb-2">
           <div className="flex justify-between items-center">
             <CardTitle className="text-lg">Customer B</CardTitle>
-            <span className="text-xs bg-brand-pink/20 text-brand-pink px-2 py-1 rounded-full">Frequent Buyer</span>
+            <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">Frequent Buyer</span>
           </div>
         </CardHeader>
         <CardContent>
@@ -117,7 +117,7 @@ const PsychographicProfiles = () => {
                     <span className="text-xs font-medium">30%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-brand-pink h-2 rounded-full" style={{ width: '30%' }}></div>
+                    <div className="bg-primary h-2 rounded-full" style={{ width: '30%' }}></div>
                   </div>
                   
                   <div className="flex justify-between mb-1 mt-2">
@@ -125,7 +125,7 @@ const PsychographicProfiles = () => {
                     <span className="text-xs font-medium">85%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-brand-pink h-2 rounded-full" style={{ width: '85%' }}></div>
+                    <div className="bg-primary h-2 rounded-full" style={{ width: '85%' }}></div>
                   </div>
                   
                   <div className="flex justify-between mb-1 mt-2">
@@ -133,7 +133,7 @@ const PsychographicProfiles = () => {
                     <span className="text-xs font-medium">55%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-brand-pink h-2 rounded-full" style={{ width: '55%' }}></div>
+                    <div className="bg-primary h-2 rounded-full" style={{ width: '55%' }}></div>
                   </div>
                 </div>
               </div>
@@ -143,9 +143,9 @@ const PsychographicProfiles = () => {
             <div>
               <h5 className="text-sm font-medium mb-2">Channel Performance</h5>
               <div className="grid grid-cols-2 gap-2 text-xs">
-                <div className="bg-brand-pink/10 p-2 rounded flex items-center justify-between">
+                <div className="bg-primary/10 p-2 rounded flex items-center justify-between">
                   <span>Email</span>
-                  <span className="font-medium text-brand-pink">+42%</span>
+                  <span className="font-medium text-primary">+42%</span>
                 </div>
                 <div className="bg-gray-50 p-2 rounded flex items-center justify-between">
                   <span>SMS</span>
@@ -166,15 +166,15 @@ const PsychographicProfiles = () => {
               <h5 className="text-sm font-medium mb-2">AI Insights</h5>
               <ul className="text-xs space-y-1">
                 <li className="flex items-start">
-                  <span className="text-brand-pink mr-1">•</span>
+                  <span className="text-primary mr-1">•</span>
                   <span>Prefers premium product recommendations</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-brand-pink mr-1">•</span>
+                  <span className="text-primary mr-1">•</span>
                   <span>Most active in mornings (6-8am)</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-brand-pink mr-1">•</span>
+                  <span className="text-primary mr-1">•</span>
                   <span>Responds to exclusivity messaging</span>
                 </li>
               </ul>

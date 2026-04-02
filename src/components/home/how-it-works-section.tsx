@@ -14,7 +14,7 @@ const Step = ({ number, title, description, imageUrl, isReversed = false }) => {
       </div>
       <div className="w-full md:w-1/2">
         <div className="rounded-xl overflow-hidden shadow-lg relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-brand-pink/10 mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-primary/10 mix-blend-overlay"></div>
           <img 
             src={imageUrl} 
             alt={title} 
@@ -86,7 +86,7 @@ const HowItWorksSection = () => {
         <div className="mt-16 text-center flex justify-center space-x-8">
           <Link 
             to="/how-it-works" 
-            className="inline-flex items-center text-brand-orange hover:text-brand-orange/80 font-medium"
+            className="inline-flex items-center text-brand-orange hover:text-primary/80 font-medium"
           >
             <span>See how it works in detail</span>
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -94,7 +94,7 @@ const HowItWorksSection = () => {
           
           <Link 
             to="/product" 
-            className="inline-flex items-center text-brand-pink hover:text-brand-pink/80 font-medium"
+            className="inline-flex items-center text-primary hover:text-primary/80 font-medium"
           >
             <span>Explore our product features</span>
             <ArrowRight className="ml-2 h-5 w-5" />

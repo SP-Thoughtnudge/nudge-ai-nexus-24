@@ -69,11 +69,11 @@ export default {
 				},
 				// Brand colors
 				brand: {
-					black: '#000000',
-					pink: '#D72660',
+					black: '#0F172A',
+					teal: 'hsl(168, 55%, 32%)',
+					'teal-light': 'hsl(168, 45%, 45%)',
 					orange: '#F97316',
-					yellow: '#F6C343',
-					gray: '#5A5A5A'
+					gray: '#475569'
 				}
 			},
 			borderRadius: {

@@ -33,8 +33,8 @@ const ProcessSection = () => {
 
               {/* Step 2 */}
               <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-brand-pink/10 rounded-full flex items-center justify-center mb-4">
-                  <span className="text-xl font-bold text-brand-pink">2</span>
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  <span className="text-xl font-bold text-primary">2</span>
                 </div>
                 <h3 className="text-lg font-semibold text-brand-black mb-2">Experimentation</h3>
                 <p className="text-sm text-gray-600">Conducts micro-tests to learn preferences</p>
@@ -60,8 +60,8 @@ const ProcessSection = () => {
 
               {/* Step 5 */}
               <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-brand-pink/10 rounded-full flex items-center justify-center mb-4">
-                  <span className="text-xl font-bold text-brand-pink">5</span>
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  <span className="text-xl font-bold text-primary">5</span>
                 </div>
                 <h3 className="text-lg font-semibold text-brand-black mb-2">Optimization</h3>
                 <p className="text-sm text-gray-600">Continuously learns and improves from results</p>

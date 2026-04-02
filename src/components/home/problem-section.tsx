@@ -37,7 +37,7 @@ const ProblemSection = () => {
           </div>
 
           <div className="relative">
-            <div className="absolute -z-10 inset-0 bg-gradient-to-br from-brand-yellow/30 to-brand-pink/20 rounded-full blur-3xl"></div>
+            <div className="absolute -z-10 inset-0 bg-gradient-to-br from-brand-yellow/30 to-primary/20 rounded-full blur-3xl"></div>
             <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
               <h3 className="text-2xl font-bold text-brand-black mb-6">
                 What if AI could maximize revenue from every customer relationship?

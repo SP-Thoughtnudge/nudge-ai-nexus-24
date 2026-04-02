@@ -115,7 +115,7 @@ const BlogPostPage = () => {
             <h1 className="text-4xl font-bold mb-4 text-gray-900">Blog Post Not Found</h1>
             <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
             <Link to="/blogs">
-              <Button variant="pink">
+              <Button variant="default">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Blog
               </Button>
@@ -283,7 +283,7 @@ const BlogPostPage = () => {
                       Get a personalized growth audit and discover how our AI can accelerate your customer engagement.
                     </p>
                     <Link to="/growth-audit">
-                      <Button variant="pink" size="sm" className="w-full">
+                      <Button variant="default" size="sm" className="w-full">
                         Book a Demo
                       </Button>
                     </Link>

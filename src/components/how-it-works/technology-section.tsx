@@ -26,7 +26,7 @@ const TechnologySection = () => {
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md">
-            <Zap className="w-12 h-12 text-brand-pink mb-6" />
+            <Zap className="w-12 h-12 text-primary mb-6" />
             <h3 className="text-xl font-bold text-brand-black mb-4">
               Neuronudge Framework
             </h3>
@@ -48,7 +48,7 @@ const TechnologySection = () => {
         
         <div className="mt-20 bg-gray-50 p-8 md:p-12 rounded-xl relative overflow-hidden">
           <div className="absolute top-0 right-0 -mt-8 -mr-8 w-40 h-40 bg-brand-yellow/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 -mb-8 -ml-8 w-40 h-40 bg-brand-pink/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 -mb-8 -ml-8 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
           
           <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
             <div className="w-full md:w-1/2 space-y-6">

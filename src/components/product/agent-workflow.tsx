@@ -60,7 +60,7 @@ const AgentWorkflow = () => {
         
         <div className="flex flex-col md:flex-row items-start justify-between gap-4 md:gap-0">
           <div className="flex-1 flex flex-col items-center text-center">
-            <div className="h-12 w-12 rounded-full bg-brand-pink/20 text-brand-pink flex items-center justify-center mb-3">
+            <div className="h-12 w-12 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-3">
               <span className="font-bold">1</span>
             </div>
             <h5 className="font-medium mb-2">Analyzes Signals</h5>
@@ -72,7 +72,7 @@ const AgentWorkflow = () => {
           </div>
           
           <div className="flex-1 flex flex-col items-center text-center">
-            <div className="h-12 w-12 rounded-full bg-brand-pink/20 text-brand-pink flex items-center justify-center mb-3">
+            <div className="h-12 w-12 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-3">
               <span className="font-bold">2</span>
             </div>
             <h5 className="font-medium mb-2">Experiments</h5>
@@ -84,7 +84,7 @@ const AgentWorkflow = () => {
           </div>
           
           <div className="flex-1 flex flex-col items-center text-center">
-            <div className="h-12 w-12 rounded-full bg-brand-pink/20 text-brand-pink flex items-center justify-center mb-3">
+            <div className="h-12 w-12 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-3">
               <span className="font-bold">3</span>
             </div>
             <h5 className="font-medium mb-2">Makes Decisions</h5>
@@ -96,7 +96,7 @@ const AgentWorkflow = () => {
           </div>
           
           <div className="flex-1 flex flex-col items-center text-center">
-            <div className="h-12 w-12 rounded-full bg-brand-pink/20 text-brand-pink flex items-center justify-center mb-3">
+            <div className="h-12 w-12 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-3">
               <span className="font-bold">4</span>
             </div>
             <h5 className="font-medium mb-2">Executes Actions</h5>
@@ -108,7 +108,7 @@ const AgentWorkflow = () => {
           </div>
           
           <div className="flex-1 flex flex-col items-center text-center">
-            <div className="h-12 w-12 rounded-full bg-brand-pink/20 text-brand-pink flex items-center justify-center mb-3">
+            <div className="h-12 w-12 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-3">
               <span className="font-bold">5</span>
             </div>
             <h5 className="font-medium mb-2">Learns & Adapts</h5>

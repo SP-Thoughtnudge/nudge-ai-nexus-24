@@ -35,8 +35,8 @@ const HowItWorksSimple = () => {
 
               {/* Step 2 */}
               <div className="flex flex-col items-center mb-8 md:mb-0">
-                <div className="w-16 h-16 bg-brand-pink/10 rounded-full flex items-center justify-center mb-3">
-                  <span className="text-xl font-bold text-brand-pink">2</span>
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                  <span className="text-xl font-bold text-primary">2</span>
                 </div>
                 <h3 className="text-lg font-semibold text-brand-black mb-2">AI Decision</h3>
                 <p className="text-sm text-gray-600 text-center max-w-[150px]">
@@ -85,7 +85,7 @@ const HowItWorksSimple = () => {
           <div className="mt-8 text-center">
             <Link 
               to="/how-it-works" 
-              className="inline-flex items-center text-brand-orange hover:text-brand-orange/80 font-medium"
+              className="inline-flex items-center text-brand-orange hover:text-primary/80 font-medium"
             >
               <span>Learn more about how it works</span>
               <ArrowRight className="ml-2 h-5 w-5" />

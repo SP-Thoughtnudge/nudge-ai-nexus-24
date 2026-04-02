@@ -4,10 +4,10 @@ import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: '#F8F9FA' }} className="py-16">
+    <footer className="bg-muted py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Column 1 - Brand & Social */}
+          {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-start">
               <img 
@@ -16,114 +16,68 @@ const Footer = () => {
                 className="h-10 w-auto"
               />
             </Link>
-            <p className="text-gray-700 font-medium">
-              The Autonomous Growth Engine
+            <p className="text-foreground font-medium">
+              AI-Powered Retention for B2C Apps
             </p>
             <div className="flex space-x-4 mt-4">
-              <a 
-                href="https://www.linkedin.com/company/thoughtnudge" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-gray-600 hover:text-brand-pink transition-colors"
-              >
+              <a href="https://www.linkedin.com/company/thoughtnudge" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
             </div>
           </div>
 
-          {/* Column 2 - Platform */}
+          {/* Platform */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900">Platform</h3>
+            <h3 className="text-lg font-semibold text-foreground">Platform</h3>
             <ul className="space-y-3">
-              <li>
-                <Link to="/product" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  Product
-                </Link>
-              </li>
-              <li>
-                <Link to="/how-it-works" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  How It Works
-                </Link>
-              </li>
-              <li>
-                <Link to="/integrations" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  Integrations
-                </Link>
-              </li>
-              <li>
-                <Link to="/pricing" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  FAQ
-                </Link>
-              </li>
+              <li><Link to="/product" className="text-muted-foreground hover:text-primary transition-colors">Product</Link></li>
+              <li><Link to="/how-it-works" className="text-muted-foreground hover:text-primary transition-colors">How It Works</Link></li>
+              <li><Link to="/integrations" className="text-muted-foreground hover:text-primary transition-colors">Integrations</Link></li>
+              <li><Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors">FAQ</Link></li>
             </ul>
           </div>
 
-          {/* Column 3 - Solutions */}
+          {/* Solutions */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900">Solutions</h3>
+            <h3 className="text-lg font-semibold text-foreground">Solutions</h3>
             <ul className="space-y-3">
-              <li>
-                <Link to="/solutions/d2c" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  For E-commerce & D2C
-                </Link>
-              </li>
-              <li>
-                <Link to="/solutions/digital-services" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  For Digital Services & Apps
-                </Link>
-              </li>
+              <li><Link to="/solutions" className="text-muted-foreground hover:text-primary transition-colors">Industry Solutions</Link></li>
+              <li><Link to="/solutions/d2c" className="text-muted-foreground hover:text-primary transition-colors">E-commerce & D2C</Link></li>
+              <li><Link to="/solutions/digital-services" className="text-muted-foreground hover:text-primary transition-colors">Digital Apps & Services</Link></li>
             </ul>
           </div>
 
-          {/* Column 4 - Company */}
+          {/* Company */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900">Company</h3>
+            <h3 className="text-lg font-semibold text-foreground">Company</h3>
             <ul className="space-y-3">
-              <li>
-                <Link to="/about-us" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-gray-600 hover:text-brand-pink transition-colors">
-                  Blog
-                </Link>
-              </li>
+              <li><Link to="/about-us" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
             </ul>
           </div>
 
-          {/* Column 5 - CTA Block */}
-          <div className="space-y-4 p-6 border border-gray-300 rounded-lg bg-white">
-            <h4 className="text-lg font-semibold text-gray-900">Ready to Grow?</h4>
-            <p className="text-gray-600 text-sm">
-              Get a free, data-driven audit of your growth strategy and see your untapped revenue potential.
+          {/* CTA */}
+          <div className="space-y-4 p-6 border border-border rounded-lg bg-card">
+            <h4 className="text-lg font-semibold text-foreground">Fix Your Retention</h4>
+            <p className="text-muted-foreground text-sm">
+              Get a free AI-powered audit of your retention strategy. See exactly where you're losing subscribers.
             </p>
             <Link 
               to="/growth-audit" 
-              className="inline-flex bg-brand-pink hover:bg-brand-pink/90 text-white py-2 px-4 rounded-md font-medium transition-colors"
+              className="inline-flex bg-primary hover:bg-primary/90 text-primary-foreground py-2 px-4 rounded-md font-medium transition-colors"
             >
-              Book a Demo
+              Get a Retention Audit
             </Link>
           </div>
         </div>
 
-        {/* Full-Width Bottom Bar */}
-        <div className="border-t border-gray-300 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
+        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-muted-foreground text-sm">
             © 2025 Thoughtnudge. All Rights Reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy-policy" className="text-gray-500 text-sm hover:text-brand-pink transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms-of-service" className="text-gray-500 text-sm hover:text-brand-pink transition-colors">
-              Terms of Service
-            </Link>
+            <Link to="/privacy-policy" className="text-muted-foreground text-sm hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="text-muted-foreground text-sm hover:text-primary transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

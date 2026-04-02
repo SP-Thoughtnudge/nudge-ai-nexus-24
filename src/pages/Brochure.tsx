@@ -217,7 +217,7 @@ const Brochure = () => {
               <div className="flex flex-col lg:flex-row gap-8 items-center">
                 <div className="w-full lg:w-2/3 space-y-6">
                   <div className="flex items-center gap-4">
-                    <span className="bg-brand-pink/10 text-brand-pink text-sm font-medium px-3 py-1 rounded-full">Insurance</span>
+                    <span className="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">Insurance</span>
                     <div className="flex gap-3">
                       <Button onClick={handleDownloadPDF} variant="outline" size="sm">
                         <Download className="h-4 w-4 mr-2" />
@@ -230,7 +230,7 @@ const Brochure = () => {
                     </div>
                   </div>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-black">
-                    <span className="text-brand-pink">Drive Renewal. Maximize Lifetime Value. Convert the Hesitants.</span>
+                    <span className="text-primary">Drive Renewal. Maximize Lifetime Value. Convert the Hesitants.</span>
                   </h1>
                   <h2 className="text-2xl md:text-3xl font-bold text-brand-black">
                     AI RENEWAL AGENT FOR INSURANCE
@@ -305,7 +305,7 @@ const Brochure = () => {
             <div className="max-w-6xl mx-auto">
               <div className="bg-white rounded-xl p-8 shadow-sm">
                 <h2 className="text-2xl md:text-3xl font-bold text-brand-black mb-6 flex items-center">
-                  <Zap className="h-8 w-8 text-brand-pink mr-3" />
+                  <Zap className="h-8 w-8 text-primary mr-3" />
                   The ThoughtNudge Solution
                 </h2>
                 <p className="text-lg text-gray-700 mb-6">
@@ -316,34 +316,34 @@ const Brochure = () => {
                 </p>
                 
                 {/* Agent Capabilities */}
-                <div className="bg-brand-pink/5 rounded-lg p-6 mb-8">
+                <div className="bg-primary/5 rounded-lg p-6 mb-8">
                   <h3 className="text-xl font-bold text-brand-black mb-4 flex items-center">
                     <span className="text-2xl mr-2">🔍</span>
                     What the Agent Does:
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-brand-pink mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                       <span>Learns from behavioral and policy data</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-brand-pink mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                       <span>Optimizes what to say, when, and how — in real time</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-brand-pink mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                       <span>Continuously experiments, learns, and improves</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-brand-pink mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                       <span>Works across email, WhatsApp, SMS, and voice</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-brand-pink mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                       <span>Requires no manual workflows or campaign setup</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-brand-pink mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                       <span>Seamlessly integrates with your CRM and communication stack</span>
                     </div>
                   </div>
@@ -397,7 +397,7 @@ const Brochure = () => {
                   </div>
                   <div className="px-6 py-4 grid grid-cols-2 gap-4">
                     <div>Bonus</div>
-                    <div className="font-bold text-brand-pink">Insights to boost CLTV across lifecycle</div>
+                    <div className="font-bold text-primary">Insights to boost CLTV across lifecycle</div>
                   </div>
                 </div>
               </div>
@@ -415,27 +415,27 @@ const Brochure = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <CheckCircle className="h-8 w-8 text-brand-pink mb-3" />
+                  <CheckCircle className="h-8 w-8 text-primary mb-3" />
                   <h3 className="font-bold mb-2">AI that doesn't just analyze — it acts</h3>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <CheckCircle className="h-8 w-8 text-brand-pink mb-3" />
+                  <CheckCircle className="h-8 w-8 text-primary mb-3" />
                   <h3 className="font-bold mb-2">Outcome-first, not tool-first</h3>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <CheckCircle className="h-8 w-8 text-brand-pink mb-3" />
+                  <CheckCircle className="h-8 w-8 text-primary mb-3" />
                   <h3 className="font-bold mb-2">Learns per customer, not just per segment</h3>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <CheckCircle className="h-8 w-8 text-brand-pink mb-3" />
+                  <CheckCircle className="h-8 w-8 text-primary mb-3" />
                   <h3 className="font-bold mb-2">Autonomous agents {'>'}  rule-based journeys</h3>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <CheckCircle className="h-8 w-8 text-brand-pink mb-3" />
+                  <CheckCircle className="h-8 w-8 text-primary mb-3" />
                   <h3 className="font-bold mb-2">Integrates with your stack — no rip and replace</h3>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <CheckCircle className="h-8 w-8 text-brand-pink mb-3" />
+                  <CheckCircle className="h-8 w-8 text-primary mb-3" />
                   <h3 className="font-bold mb-2">Transparent decisioning, full observability</h3>
                 </div>
               </div>
@@ -454,7 +454,7 @@ const Brochure = () => {
                     🎯 Ideal Use Cases
                   </h2>
                   <div className="space-y-4">
-                    <div className="border-l-4 border-brand-pink pl-4">
+                    <div className="border-l-4 border-primary pl-4">
                       <h3 className="font-bold text-lg">Policy Renewals</h3>
                       <p className="text-gray-600">Term, Health, Life, Auto</p>
                     </div>
@@ -543,10 +543,10 @@ const Brochure = () => {
                   Ready for the transformation?
                 </p>
                 <p className="text-xl font-bold">
-                  We are reachable at <a href="mailto:hello@thoughtnudge.com" className="text-brand-pink underline">hello@thoughtnudge.com</a>
+                  We are reachable at <a href="mailto:hello@thoughtnudge.com" className="text-primary underline">hello@thoughtnudge.com</a>
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-                  <Button variant="pink" size="lg">
+                  <Button variant="default" size="lg">
                     <Mail className="h-5 w-5 mr-2" />
                     Contact Us
                   </Button>

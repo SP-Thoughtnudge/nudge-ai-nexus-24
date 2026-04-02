@@ -5,7 +5,7 @@ const AutonomousSection = () => {
   return (
     <section className="py-20 bg-gray-50 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute -right-40 top-20 w-80 h-80 bg-brand-pink/10 rounded-full blur-3xl"></div>
+      <div className="absolute -right-40 top-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
       <div className="absolute -left-40 bottom-20 w-80 h-80 bg-brand-yellow/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -91,7 +91,7 @@ const AutonomousSection = () => {
           </div>
 
           <div className="bg-white p-8 rounded-xl shadow-sm">
-            <BrainCircuit className="w-12 h-12 text-brand-pink mb-6" />
+            <BrainCircuit className="w-12 h-12 text-primary mb-6" />
             <h3 className="text-xl font-bold text-brand-black mb-4">
               Learns What Works For Each User
             </h3>

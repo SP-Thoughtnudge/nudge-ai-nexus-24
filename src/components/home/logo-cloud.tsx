@@ -31,7 +31,7 @@ const LogoCloud = () => {
           {/* Metrics - Static on the right */}
           <div className="hidden lg:flex items-center space-x-8 pl-8 border-l border-gray-200">
             <div className="text-center">
-              <p className="text-2xl font-bold text-brand-pink">2X</p>
+              <p className="text-2xl font-bold text-primary">2X</p>
               <p className="text-sm text-brand-gray">Revenue Lift</p>
             </div>
             <div className="text-center">
@@ -48,7 +48,7 @@ const LogoCloud = () => {
         {/* Mobile Metrics */}
         <div className="grid grid-cols-3 gap-4 lg:hidden">
           <div className="text-center p-4 bg-gray-50 rounded-lg">
-            <p className="text-xl font-bold text-brand-pink">2X</p>
+            <p className="text-xl font-bold text-primary">2X</p>
             <p className="text-xs text-brand-gray">Revenue Lift</p>
           </div>
           <div className="text-center p-4 bg-gray-50 rounded-lg">

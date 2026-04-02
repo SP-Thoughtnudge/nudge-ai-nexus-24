@@ -5,17 +5,17 @@ import { Brain, Target, Heart, Shield, Globe, BookOpen } from "lucide-react";
 const ValuesSection = () => {
   const values = [
     {
-      icon: <Target className="h-7 w-7 text-brand-pink" />,
+      icon: <Target className="h-7 w-7 text-primary" />,
       title: "Outcome-Obsessed",
       description: "Our success is measured only by the real-world results we drive for our clients. We are relentlessly focused on delivering measurable revenue impact."
     },
     {
-      icon: <Brain className="h-7 w-7 text-brand-pink" />,
+      icon: <Brain className="h-7 w-7 text-primary" />,
       title: "First-Principles Thinking",
       description: "We challenge industry assumptions. Instead of incremental improvements, we break down problems to their core and build fundamentally better solutions."
     },
     {
-      icon: <Heart className="h-7 w-7 text-brand-pink" />,
+      icon: <Heart className="h-7 w-7 text-primary" />,
       title: "Build with Empathy",
       description: "We build for the end customer. Our technology aims to create more relevant, respectful, and valuable interactions—transforming noise into meaningful communication."
     }

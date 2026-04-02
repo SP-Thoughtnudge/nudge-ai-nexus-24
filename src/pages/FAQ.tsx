@@ -186,7 +186,7 @@ const FAQ = () => {
                         value={`item-${index}`}
                         className="bg-white rounded-lg border border-gray-200 px-6"
                       >
-                        <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:no-underline hover:text-brand-pink transition-colors py-6">
+                        <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:no-underline hover:text-primary transition-colors py-6">
                           <h3 id={`faq-${index + 1}`}>{faq.question}</h3>
                         </AccordionTrigger>
                         <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
@@ -204,7 +204,7 @@ const FAQ = () => {
 
           {/* CTA Section */}
           <LazySection>
-            <section className="py-20 bg-gradient-to-br from-brand-pink/5 to-brand-orange/5">
+            <section className="py-20 bg-gradient-to-br from-primary/5 to-brand-orange/5">
               <div className="container mx-auto px-4 md:px-6">
                 <div className="max-w-3xl mx-auto text-center">
                   <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">

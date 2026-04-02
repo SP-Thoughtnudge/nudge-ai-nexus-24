@@ -47,7 +47,7 @@ const ToolkitBuilder = () => {
   useEffect(() => {
     if (!isIntersecting) return;
     
-    const timeouts: NodeJS.Timeout[] = [];
+    const timeouts: ReturnType<typeof setTimeout>[] = [];
     
     // Phase 1: Show AI brain
     timeouts.push(setTimeout(() => setAnimationPhase(1), 500));

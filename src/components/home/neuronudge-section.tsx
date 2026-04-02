@@ -57,7 +57,7 @@ const NeuronudgeSection = () => {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-brand-pink">
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
               <h3 className="text-xl font-bold text-brand-black mb-3">Adaptive Experience Engine</h3>
               <p className="text-gray-600">
                 Our AI generates insights about each customer and then acts on them immediately. It delivers the right nudge (emotion, tone, copy, offer) at the right time on the right channel with perfect frequency.

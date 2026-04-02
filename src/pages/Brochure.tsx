@@ -546,7 +546,7 @@ const Brochure = () => {
                   We are reachable at <a href="mailto:hello@thoughtnudge.com" className="text-brand-pink underline">hello@thoughtnudge.com</a>
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-                  <Button variant="pink" size="lg">
+                  <Button variant="default" size="lg">
                     <Mail className="h-5 w-5 mr-2" />
                     Contact Us
                   </Button>

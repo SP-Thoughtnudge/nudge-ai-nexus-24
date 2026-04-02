@@ -46,7 +46,7 @@ const Navbar = () => {
             About Us
           </Link>
           <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
-            <Button variant="pink" className="ml-4">
+            <Button variant="default" className="ml-4">
               Book a Demo
             </Button>
           </a>
@@ -101,7 +101,7 @@ const Navbar = () => {
               About Us
             </Link>
             <a href="https://calendly.com/himanshu_chauhan/30min" target="_blank" rel="noopener noreferrer">
-              <Button variant="pink" className="mt-2">
+              <Button variant="default" className="mt-2">
                 Book a Demo
               </Button>
             </a>

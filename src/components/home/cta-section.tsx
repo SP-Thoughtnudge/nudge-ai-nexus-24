@@ -21,7 +21,7 @@ const CtaSection = () => {
               Join forward-thinking brands using Thoughtnudge's autonomous growth agents to build intelligence that unifies customer experiences across all touchpoints and delivers real business outcomes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="pink" size="xl" className="group">
+              <Button variant="default" size="xl" className="group">
                 Book a Demo
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>

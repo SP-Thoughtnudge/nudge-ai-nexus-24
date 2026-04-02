@@ -260,7 +260,7 @@ useEffect(() => {
                   placeholder="Enter your email"
                   className="flex-1"
                 />
-                <Button variant="pink" size="lg" className="sm:w-auto">
+                <Button variant="default" size="lg" className="sm:w-auto">
                   Subscribe
                 </Button>
               </div>

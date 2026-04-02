@@ -72,7 +72,7 @@ const About = () => {
               <p className="text-lg text-gray-600 mb-8">
                 We're looking for ambitious and curious minds to join us on our mission. If you're excited by the challenge of building a new category and solving complex problems with AI, we'd love to hear from you.
               </p>
-              <Button variant="pink" size="lg">
+              <Button variant="default" size="lg">
                 View Open Positions
               </Button>
             </div>

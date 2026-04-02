@@ -41,7 +41,7 @@ const TelecomBrochure = () => {
                     The agentic AI system that knows what to say, when to say it, and how to grow your revenue — autonomously.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button variant="pink" size="lg" asChild>
+                    <Button variant="default" size="lg" asChild>
                       <Link to="/demo">
                         Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
                       </Link>
@@ -431,7 +431,7 @@ const TelecomBrochure = () => {
                       Let Thoughtnudge agents do the thinking — and deliver measurable outcomes for your enterprise.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <Button variant="pink" size="lg" className="group" asChild>
+                      <Button variant="default" size="lg" className="group" asChild>
                         <Link to="/demo">
                           Book a Demo
                           <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

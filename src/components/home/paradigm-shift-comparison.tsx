@@ -1,69 +1,72 @@
+import { Card } from "@/components/ui/card";
+import { XCircle, CheckCircle } from "lucide-react";
+
 export const ParadigmShiftComparison = () => {
+  const oldWay = [
+    "Batch campaigns to cold segments",
+    "Manual A/B tests that take weeks",
+    "Static win-back flows that ignore context",
+    "One-size-fits-all renewal reminders",
+  ];
+
+  const newWay = [
+    "Per-user retention decisions in real time",
+    "Continuous micro-experiments per customer",
+    "Adaptive re-engagement based on behavior",
+    "1:1 renewal nudges timed to each user",
+  ];
+
   return (
     <section className="py-20 bg-secondary/10">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-16 text-center">
-            A New Way to Grow: The{" "}
-            <span className="text-primary">Thoughtnudge Difference</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-center">
+            Why Retention Programs Fail
           </h2>
+          <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+            Your users are unique. Your retention strategy shouldn't treat them all the same.
+          </p>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Stressed Marketer Image */}
-            <div className="flex justify-center">
-              <div className="relative w-full max-w-lg">
-                <img 
-                  src="/lovable-uploads/bd69a98a-5562-4e47-b201-28dd66278989.png" 
-                  alt="Overwhelmed marketer dealing with complex tools and multiple challenges" 
-                  className="w-full h-auto rounded-2xl shadow-lg"
-                />
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* The Old Way */}
+            <Card className="p-8 bg-card border-border">
+              <h3 className="text-2xl font-bold text-foreground mb-6">
+                The Status Quo
+              </h3>
+              <div className="space-y-4">
+                {oldWay.map((item, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <XCircle className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">{item}</span>
+                  </div>
+                ))}
               </div>
-            </div>
+              <div className="mt-8 p-4 bg-destructive/5 rounded-lg border border-destructive/10">
+                <p className="text-sm text-muted-foreground italic">
+                  Result: 30–50% of users churn within 90 days. Win-back campaigns recover &lt;5%.
+                </p>
+              </div>
+            </Card>
             
-            {/* Right Column - Visual Comparison Lists */}
-            <div className="space-y-8">
-              {/* The Old Way */}
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-6">
-                  The Old Way: The Manual Toolbox
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <span className="text-destructive text-xl">❌</span>
-                    <span className="text-foreground font-medium">Endless Journey Building</span>
+            {/* The New Way */}
+            <Card className="p-8 bg-card border-2 border-primary/30">
+              <h3 className="text-2xl font-bold text-primary mb-6">
+                With Thoughtnudge
+              </h3>
+              <div className="space-y-4">
+                {newWay.map((item, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground font-medium">{item}</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="text-destructive text-xl">❌</span>
-                    <span className="text-foreground font-medium">Manual A/B Testing</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="text-destructive text-xl">❌</span>
-                    <span className="text-foreground font-medium">Static, Rule-Based Segments</span>
-                  </div>
-                </div>
+                ))}
               </div>
-              
-              {/* The New Way */}
-              <div>
-                <h3 className="text-2xl font-bold text-primary mb-6">
-                  The New Way: The Autonomous Engine
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <span className="text-primary text-xl">✅</span>
-                    <span className="text-foreground font-medium">Goal-Driven Outcomes</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="text-primary text-xl">✅</span>
-                    <span className="text-foreground font-medium">Continuous AI Optimization</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="text-primary text-xl">✅</span>
-                    <span className="text-foreground font-medium">Dynamic 1:1 Decisions</span>
-                  </div>
-                </div>
+              <div className="mt-8 p-4 bg-primary/5 rounded-lg border border-primary/10">
+                <p className="text-sm text-foreground italic">
+                  Result: 40% higher renewal rates. 3× dormant reactivation. Measurable CLTV lift in weeks.
+                </p>
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </div>

@@ -7,21 +7,31 @@ export const HeroSectionNew = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-8 leading-tight">
-            AI Decisioning for 1:1 Personalized CX
+            AI-Powered Retention for B2C Apps
           </h1>
           
           <h2 className="text-lg md:text-xl lg:text-2xl font-normal text-muted-foreground mb-12 leading-relaxed max-w-5xl mx-auto">
-            Agentic learning infrastructure that activates your first-party data to autonomously learn, decide and act - replacing static rules, A/B tests and manual analysis. Our AI agents run millions of micro-experiments, infer individual intent, and adapt every customer touchpoint in real-time to maximise LTV.
+            Stop losing subscribers. Thoughtnudge's agentic AI learns what keeps each user engaged — and acts autonomously to reduce churn, drive renewals, and maximize lifetime value. No rules. No guesswork. Just adaptive, 1:1 retention intelligence.
           </h2>
 
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               asChild 
               size="xl" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Link to="/growth-audit">
-                Book a Demo
+                Get a Retention Audit
+              </Link>
+            </Button>
+            <Button 
+              asChild 
+              size="xl" 
+              variant="outline"
+              className="px-8 py-4 text-lg font-semibold rounded-lg"
+            >
+              <Link to="/how-it-works">
+                See How It Works
               </Link>
             </Button>
           </div>

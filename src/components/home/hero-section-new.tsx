@@ -1,38 +1,49 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 export const HeroSectionNew = () => {
+  const scrollToHowItWorks = () => {
+    document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-24 bg-gradient-to-br from-background via-secondary/20 to-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-foreground mb-8 leading-tight">
-            AI-Powered Retention for B2C Apps
+    <section className="pt-32 pb-24 md:pt-44 md:pb-32 bg-background relative overflow-hidden">
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
+        backgroundSize: '60px 60px'
+      }} />
+      
+      <div className="container mx-auto px-4 relative">
+        <div className="max-w-4xl">
+          <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-foreground mb-8 leading-[1.05] tracking-tight">
+            Every customer gets their own journey.
           </h1>
           
-          <h2 className="text-lg md:text-xl lg:text-2xl font-normal text-muted-foreground mb-12 leading-relaxed max-w-5xl mx-auto">
-            Stop losing subscribers. Thoughtnudge's agentic AI learns what keeps each user engaged — and acts autonomously to reduce churn, drive renewals, and maximize lifetime value. No rules. No guesswork. Just adaptive, 1:1 retention intelligence.
-          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
+            Thoughtnudge is the AI-native system behind every customer interaction — deciding what to do next, generating creative variations to test, constantly learning, and optimizing performance across your entire lifecycle.
+          </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               asChild 
-              size="xl" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              size="lg" 
+              className="bg-foreground hover:bg-foreground/90 text-background px-8 py-6 text-base font-medium rounded-lg transition-all duration-300"
             >
               <Link to="/growth-audit">
-                Get a Retention Audit
+                Request a Demo
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>
             <Button 
-              asChild 
-              size="xl" 
-              variant="outline"
-              className="px-8 py-4 text-lg font-semibold rounded-lg"
+              size="lg" 
+              variant="ghost"
+              className="px-8 py-6 text-base font-medium text-muted-foreground hover:text-foreground"
+              onClick={scrollToHowItWorks}
             >
-              <Link to="/how-it-works">
-                See How It Works
-              </Link>
+              See how it works
             </Button>
           </div>
         </div>

@@ -1,60 +1,56 @@
-import { TrendingUp, Brain, DollarSign } from "lucide-react";
+
+import { TrendingUp, TrendingDown, Timer, Eye } from "lucide-react";
 
 const OutcomesSection = () => {
+  const metrics = [
+    {
+      icon: TrendingUp,
+      value: "35%",
+      label: "Higher conversion rates",
+      description: "Per-customer optimization drives significantly higher action rates vs. batch campaigns.",
+    },
+    {
+      icon: TrendingDown,
+      value: "40%",
+      label: "Reduction in churn",
+      description: "Early detection and intervention through continuous behavioral learning.",
+    },
+    {
+      icon: Timer,
+      value: "Weeks",
+      label: "Time to measurable ROI",
+      description: "Not months. The system starts learning from day one and compounds.",
+    },
+    {
+      icon: Eye,
+      value: "∞",
+      label: "Behavioral insights",
+      description: "Continuous discovery of customer motivations, timing patterns, and preferences.",
+    },
+  ];
+
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            More Revenue. Less Effort. Smarter Engagement.
+    <section className="py-24 md:py-32 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto mb-20">
+          <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">Outcomes</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            From batch campaigns to individual intelligence.
           </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+            When every customer gets their own journey, the numbers change.
+          </p>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* Column 1: Higher Conversions */}
-          <div className="text-center space-y-6">
-            <div className="flex justify-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                <TrendingUp className="w-8 h-8 text-primary" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-foreground">
-              Guaranteed Conversion Lift
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              We replace guesswork with science. By understanding each customer at a personal level, our empirical approach resonates more deeply and delivers verifiably higher conversion rates than any one-size-fits-all strategy.
-            </p>
-          </div>
 
-          {/* Column 2: Autonomous Engine */}
-          <div className="text-center space-y-6">
-            <div className="flex justify-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                <Brain className="w-8 h-8 text-primary" />
-              </div>
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {metrics.map((metric, i) => (
+            <div key={i} className="p-8 rounded-xl border border-border bg-card group hover:border-primary/20 transition-all duration-300">
+              <metric.icon className="w-5 h-5 text-primary mb-4" strokeWidth={1.5} />
+              <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">{metric.value}</div>
+              <div className="text-base font-semibold text-foreground mb-2">{metric.label}</div>
+              <p className="text-sm text-muted-foreground leading-relaxed">{metric.description}</p>
             </div>
-            <h3 className="text-2xl font-bold text-foreground">
-              Zero Manual Work
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Our platform is truly autonomous. You set the goal, and our AI handles everything else—no more building segments, A/B testing, or designing complex journeys. This frees your team and dramatically increases efficiency.
-            </p>
-          </div>
-
-          {/* Column 3: Optimized Costs */}
-          <div className="text-center space-y-6">
-            <div className="flex justify-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                <DollarSign className="w-8 h-8 text-primary" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-foreground">
-              Profit-Driven Decisions
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Our AI makes profit-driven decisions. It finds the minimum effective offer for each user—knowing many don't need one at all—and optimizes messaging frequency to reduce costs and build better customer relationships.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>

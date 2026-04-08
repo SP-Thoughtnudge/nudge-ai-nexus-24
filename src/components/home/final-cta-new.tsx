@@ -1,57 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 export const FinalCtaNew = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 via-secondary/10 to-background">
+    <section className="py-24 md:py-32 bg-foreground text-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-            Ready to Fix{" "}
-            <span className="text-primary">Your Retention Problem?</span>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            Turn every customer interaction into impact.
           </h2>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed">
-            Get a free retention audit. We'll analyze your churn patterns and show you exactly where AI can recover lost revenue.
+          <p className="text-lg text-background/70 mb-10 leading-relaxed max-w-xl mx-auto">
+            Stop guessing. Start learning. Let every customer experience a journey built just for them.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              asChild 
-              size="xl" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <Link to="/growth-audit">
-                Get a Retention Audit
-              </Link>
-            </Button>
-            <Button 
-              asChild 
-              size="xl" 
-              variant="outline"
-              className="px-8 py-4 text-lg font-semibold rounded-lg"
-            >
-              <Link to="/product">
-                Explore the Platform
-              </Link>
-            </Button>
-          </div>
-          
-          {/* Trust Signals */}
-          <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span>SOC 2 Compliant</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span>GDPR Ready</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span>Enterprise Security</span>
-            </div>
-          </div>
+          <Button 
+            asChild 
+            size="lg" 
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-medium rounded-lg"
+          >
+            <Link to="/growth-audit">
+              Request a Demo
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

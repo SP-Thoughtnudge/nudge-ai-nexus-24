@@ -1,66 +1,47 @@
-import { AlertTriangle, DollarSign, MessageSquare } from "lucide-react";
-import { useFadeInOnScroll } from "@/hooks/use-fade-in-on-scroll";
+
+import { ArrowRight } from "lucide-react";
 
 const ProblemStatement = () => {
-  const { elementRef, isVisible } = useFadeInOnScroll({ threshold: 0.1, rootMargin: '100px' });
-  
-  const problems = [
-    {
-      icon: AlertTriangle,
-      title: "Manual Work Overload",
-      description: "Your team is trapped in an endless cycle of segmenting, testing, and building rigid journeys that don't scale."
-    },
-    {
-      icon: DollarSign,
-      title: "Wasted Offer Spend",
-      description: "You're burning cash on one-size-fits-all discounts, giving away margin to customers who would have converted anyway."
-    },
-    {
-      icon: MessageSquare,
-      title: "Generic Messaging",
-      description: "Your campaigns fail to resonate because they ignore the individual psychology of each user, leaving engagement and revenue on the table."
-    }
+  const legacySteps = [
+    { label: "Static Rules", desc: "If user did X, send Y" },
+    { label: "Broad Segments", desc: "Group millions into 5 buckets" },
+    { label: "Batch Campaigns", desc: "Same message, same time, everyone" },
+    { label: "Manual A/B Tests", desc: "Test 2 variants, wait 2 weeks" },
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-inter">
-            Your Growth Strategy is <span className="text-primary">Leaking Revenue</span>
+    <section className="py-24 md:py-32 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">The problem</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            Your stack wasn't built for 1:1.
           </h2>
-        </div>
+          <p className="text-lg text-muted-foreground mb-16 leading-relaxed max-w-2xl">
+            Most lifecycle tools force you into the same loop: segment users, build journeys, 
+            run A/B tests, repeat. The result? Every customer gets roughly the same experience.
+          </p>
 
-        <div ref={elementRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {problems.map((problem, index) => (
-            <div 
-              key={index} 
-              className={`
-                bg-white p-8 rounded-xl shadow-sm border border-gray-100 
-                transition-all duration-500 ease-out
-                hover:scale-[1.03] hover:shadow-lg hover:-translate-y-1
-                ${isVisible 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-                }
-              `}
-              style={{
-                transitionDelay: isVisible ? `${index * 100}ms` : '0ms'
-              }}
-            >
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <problem.icon className="w-8 h-8 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+            {legacySteps.map((step, i) => (
+              <div key={i} className="relative">
+                <div className="p-6 rounded-xl border border-border bg-card">
+                  <div className="text-xs font-mono text-muted-foreground/60 mb-3">STEP {i + 1}</div>
+                  <h3 className="font-semibold text-foreground mb-1">{step.label}</h3>
+                  <p className="text-sm text-muted-foreground">{step.desc}</p>
                 </div>
+                {i < 3 && (
+                  <ArrowRight className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/30 z-10" />
+                )}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center font-inter">
-                {problem.title}
-              </h3>
-              <p className="text-gray-600 text-center leading-relaxed font-inter">
-                {problem.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <div className="p-8 rounded-xl bg-foreground text-background">
+            <p className="text-lg md:text-xl font-medium leading-relaxed">
+              "You have 10 million customers and 10 million unique contexts. But your tools treat them as 5 segments."
+            </p>
+          </div>
         </div>
       </div>
     </section>

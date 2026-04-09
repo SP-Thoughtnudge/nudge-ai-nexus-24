@@ -34,6 +34,7 @@ const Index = () => {
         <FadeInSection delay={100}><HowItWorksSimple /></FadeInSection>
         <FadeInSection delay={100}><EngineSection /></FadeInSection>
         <FadeInSection delay={100}><OutcomesSection /></FadeInSection>
+        <CustomerProof />
         <FadeInSection delay={100}><EnterpriseSection /></FadeInSection>
         <FinalCtaNew />
       </main>

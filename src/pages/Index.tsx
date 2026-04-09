@@ -9,6 +9,7 @@ import { EngineSection } from "@/components/home/engine-section";
 import OutcomesSection from "@/components/home/outcomes-section";
 import { EnterpriseSection } from "@/components/home/enterprise-section";
 import { FinalCtaNew } from "@/components/home/final-cta-new";
+import CustomerProof from "@/components/home/customer-proof";
 import FadeInSection from "@/components/ui/fade-in-section";
 import { updateSEOTags, addStructuredData, organizationSchema } from "@/lib/seo";
 

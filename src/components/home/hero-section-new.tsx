@@ -18,12 +18,19 @@ export const HeroSectionNew = () => {
       
       <div className="container mx-auto px-4 relative">
         <div className="max-w-4xl">
+          {/* Social proof badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-muted/30 mb-8">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span className="text-sm text-muted-foreground">Powering 1:1 journeys for Chalo, Cookd & more</span>
+          </div>
+
           <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-foreground mb-8 leading-[1.05] tracking-tight">
-            Every customer gets their own journey.
+            Stop running campaigns.<br />
+            <span className="text-primary">Start running outcomes.</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl">
-            Thoughtnudge is the AI-native system behind every customer interaction — deciding what to do next, generating creative variations to test, constantly learning, and optimizing performance across your entire lifecycle.
+            Thoughtnudge is the AI-native system that autonomously decides the next best action for every customer — learning what works, generating variations, and optimizing your entire lifecycle without manual rules.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">

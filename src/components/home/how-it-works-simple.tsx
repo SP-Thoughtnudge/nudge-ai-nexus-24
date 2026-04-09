@@ -1,5 +1,5 @@
 
-import { Brain, Zap, BarChart3, RefreshCw } from "lucide-react";
+import { Brain, Zap, BarChart3, RefreshCw, ArrowDown } from "lucide-react";
 
 const HowItWorksSimple = () => {
   const steps = [
@@ -7,60 +7,75 @@ const HowItWorksSimple = () => {
       icon: Brain,
       title: "Learn",
       subtitle: "Deep Reinforcement Learning",
-      description: "Every interaction is a learning signal. The system builds a persistent understanding of each customer — their motivations, timing preferences, channel affinity, and sensitivity to offers.",
+      description: "Every interaction is a learning signal. The system builds a persistent understanding of each customer's motivations, timing, and channel affinity.",
+      color: "bg-primary/10 text-primary",
     },
     {
       icon: Zap,
       title: "Decide",
       subtitle: "Agentic Memory & Context",
-      description: "For each customer, an autonomous agent decides what to do next — what message, what channel, what timing, what offer. No rules. No segments. Pure contextual intelligence.",
+      description: "An autonomous agent decides what to do next for each customer — what message, channel, timing, and offer. No rules. No segments.",
+      color: "bg-primary/15 text-primary",
     },
     {
       icon: BarChart3,
       title: "Act",
       subtitle: "Behavioral Science",
-      description: "The system generates and executes the optimal action — crafting creative variations, selecting channels, and timing delivery to maximize the probability of the desired outcome.",
+      description: "Generates and executes the optimal action — crafting creative variations, selecting channels, and timing delivery for maximum impact.",
+      color: "bg-primary/20 text-primary",
     },
     {
       icon: RefreshCw,
       title: "Repeat",
       subtitle: "Continuous Optimization",
-      description: "Every outcome feeds back into the learning loop. The system gets smarter with every interaction — discovering patterns no human analyst could find.",
+      description: "Every outcome feeds back into the loop. The system compounds intelligence — discovering patterns no human analyst could find.",
+      color: "bg-primary/25 text-primary",
     },
   ];
 
   return (
-    <section id="how-it-works" className="py-24 md:py-32 bg-background">
+    <section id="how-it-works" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto mb-20">
-          <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">How it works</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Learn. Decide. Act. Repeat.
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            Thoughtnudge replaces static journeys with an autonomous loop that learns from every 
-            customer interaction and continuously optimizes toward your business goal.
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">How it works</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+              Set your goal, then let Thoughtnudge take it from there.
+            </h2>
+            <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Agents analyze your customers, generate creatives, test ideas, and share insights. 
+              What used to take weeks happens continuously, so every interaction gets better.
+            </p>
+          </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {steps.map((step, i) => (
-            <div 
-              key={i} 
-              className="group p-8 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-300"
-            >
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <step.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
+          {/* Horizontal flow on desktop, vertical on mobile */}
+          <div className="relative">
+            {/* Connection line (desktop) */}
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-y-1/2 z-0" />
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative z-10">
+              {steps.map((step, i) => (
+                <div key={i} className="relative group">
+                  <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-lg transition-all duration-300 h-full">
+                    <div className={`w-12 h-12 rounded-xl ${step.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <step.icon className="w-6 h-6" strokeWidth={1.5} />
+                    </div>
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <h3 className="text-lg font-bold text-foreground">{step.title}</h3>
+                    </div>
+                    <p className="text-xs font-medium text-primary uppercase tracking-wider mb-3">{step.subtitle}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                  </div>
+                  {/* Arrow between cards on mobile */}
+                  {i < 3 && (
+                    <div className="md:hidden flex justify-center py-2">
+                      <ArrowDown className="w-4 h-4 text-primary/30" />
+                    </div>
+                  )}
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground">{step.title}</h3>
-                  <p className="text-xs font-medium text-primary uppercase tracking-wider">{step.subtitle}</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
